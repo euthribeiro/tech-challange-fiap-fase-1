@@ -6,7 +6,7 @@ Projeto do Tech Challange FIAP
 |------|-----------|--------|---------|
 | Thiago Rodrigues Ribeiro Santana Santos | RM 370291 | thiago_santos14@hotmail.com | thiagoribeiro0611 |
 | Bruno da Cruz Barreto | RM XXXXXX | email@email.com | bbarreto08 |
-| Gabriel Sanchez Zamai Fadel | RM XXXXXX | email@email.com | gsfzamai |
+| Gabriel Sanchez Fadel Zamai | RM XXXXXX | email@email.com | gsfzamai |
 
 ## Wrench Auto Repair
 

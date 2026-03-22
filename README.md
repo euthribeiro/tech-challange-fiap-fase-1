@@ -1,7 +1,7 @@
 # Tech Challange - FASE 01 (DDD)
 
 **Nome do Projeto**: Projeto Chave Inglesa
-**Descrição**: Esse projeto aborda a criação de um ** Sistema Integrado de Atendimento e Execução de Serviços** aplicando as boas práticas do DDD e desenvolvimento seguro.
+**Descrição**: Esse projeto aborda a criação de um **Sistema Integrado de Atendimento e Execução de Serviços** aplicando as boas práticas do DDD e desenvolvimento seguro.
 
 ## Participantes - Grupo BGT³
 | Nome | Matrícula | E-mail | Discord |

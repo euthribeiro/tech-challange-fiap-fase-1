@@ -10,7 +10,7 @@ Projeto do Tech Challange FIAP
 
 ## Wrench Auto Repair
 
-![Logo Wrench Auto Repair](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/Wrench%20Auto%20Repair.svg)
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/Wrench%20Auto%20Repair.svg" width="350">
 
 ## A História
 

@@ -1,12 +1,14 @@
 # Tech Challange - FASE 01 (DDD)
-Projeto do Tech Challange FIAP 
+
+**Nome do Projeto**: Projeto Chave Inglesa
+**Descrição**: Esse projeto aborda a criação de um ** Sistema Integrado de Atendimento e Execução de Serviços** aplicando as boas práticas do DDD e desenvolvimento seguro.
 
 ## Participantes - Grupo BGT³
 | Nome | Matrícula | E-mail | Discord |
 |------|-----------|--------|---------|
 | Thiago Rodrigues Ribeiro Santana Santos | RM 370291 | thiago_santos14@hotmail.com | thiagoribeiro0611 |
-| Bruno da Cruz Barreto | RM XXXXXX | email@email.com | bbarreto08 |
-| Gabriel Sanchez Fadel Zamai | RM XXXXXX | email@email.com | gsfzamai |
+| Bruno da Cruz Barreto | RM XXXXXX | brunocbarreto2012@gmail.com | bbarreto08 |
+| Gabriel Sanchez Fadel Zamai | RM XXXXXX | gsfzamai@gmail.com | gsfzamai |
 
 ## Wrench Auto Repair
 

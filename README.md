@@ -13,7 +13,7 @@
 
 ## Wrench Auto Repair
 
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/Wrench%20Auto%20Repair.svg" width="350">
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="350">
 
 ## A História
 

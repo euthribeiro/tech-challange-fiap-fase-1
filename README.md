@@ -44,4 +44,4 @@ Com o apoio de uma equipe de desenvolvedores, o projeto foi batizado internament
 
 # Linguagem Pictográfica (AS-IS)
 
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/wrench-auto-repair-pictographic-language.svg" width="100%">
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/wrench-auto-repair-pictographic-language-as-is.svg" width="100%">

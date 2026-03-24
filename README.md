@@ -8,8 +8,8 @@
 | Nome | Matrícula | E-mail | Discord |
 |------|-----------|--------|---------|
 | Thiago Rodrigues Ribeiro Santana Santos | RM 370291 | thiago_santos14@hotmail.com | thiagoribeiro0611 |
-| Bruno da Cruz Barreto | RM XXXXXX | brunocbarreto2012@gmail.com | bbarreto08 |
-| Gabriel Sanchez Fadel Zamai | RM XXXXXX | gsfzamai@gmail.com | gsfzamai |
+| Bruno da Cruz Barreto | RM 370310 | brunocbarreto2012@gmail.com | bbarreto08 |
+| Gabriel Sanchez Fadel Zamai | RM 370308 | gsfzamai@gmail.com | gsfzamai |
 
 ## Wrench Auto Repair
 

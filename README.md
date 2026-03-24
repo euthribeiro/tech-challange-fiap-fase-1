@@ -42,6 +42,14 @@ Roberto começou a chegar mais cedo e sair mais tarde, apagando incêndios que p
 Foi a filha de Roberto, Camila Mendes, recém-formada em Sistemas de Informação, quem trouxe a resposta. Ela convenceu o pai de que a oficina precisava de mais do que planilhas improvisadas — precisava de um sistema integrado, robusto e feito sob medida para a realidade da Wrench.
 Com o apoio de uma equipe de desenvolvedores, o projeto foi batizado internamente de "Projeto Chave Inglesa" — uma brincadeira com o nome da oficina — e o desenvolvimento do back-end do sistema começou. A proposta era clara: digitalizar cada etapa do atendimento, desde o momento em que o cliente chega com o carro até a entrega das chaves com o serviço concluído.
 
-# Linguagem Pictográfica (AS-IS)
+# Linguagem Pictográfica
+
+## Jornada AS-IS
 
 <img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/wrench-auto-repair-pictographic-language-as-is.svg" width="100%">
+
+## Jornada TO BE (Ordem de Serviço)
+
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/wrench-auto-repair-pictographic-language-as-is.svg" width="100%">
+
+

@@ -121,27 +121,27 @@
       "name": "envia",
       "id": "connection_0470",
       "pickedColor": "black",
-      "number": 20,
+      "number": 18,
       "waypoints": [
         {
           "original": {
-            "x": 5528,
-            "y": 1465
+            "x": 4717,
+            "y": 1467
           },
-          "x": 5571,
-          "y": 1465
+          "x": 4760,
+          "y": 1467
         },
         {
           "original": {
-            "x": 5776,
-            "y": 1465
+            "x": 4965,
+            "y": 1467
           },
-          "x": 5738,
-          "y": 1465
+          "x": 4927,
+          "y": 1467
         }
       ],
       "source": "shape_1730",
-      "target": "shape_5914",
+      "target": "shape_7096",
       "multipleNumberAllowed": false
     },
     {
@@ -149,26 +149,26 @@
       "name": "executa",
       "id": "connection_0730",
       "pickedColor": "black",
-      "number": 17,
+      "number": 16,
       "waypoints": [
         {
           "original": {
-            "x": 4619,
+            "x": 4215,
             "y": 1466
           },
-          "x": 4619,
+          "x": 4215,
           "y": 1428
         },
         {
-          "x": 4619,
+          "x": 4215,
           "y": 1340
         },
         {
           "original": {
-            "x": 4915,
+            "x": 4511,
             "y": 1340
           },
-          "x": 4877,
+          "x": 4473,
           "y": 1340
         }
       ],
@@ -178,25 +178,25 @@
     },
     {
       "type": "domainStory:activity",
-      "name": "devolve",
+      "name": "atualiza",
       "id": "connection_0844",
       "pickedColor": "black",
-      "number": 18,
+      "number": 17,
       "waypoints": [
         {
           "original": {
-            "x": 4619,
+            "x": 4215,
             "y": 1466
           },
-          "x": 4662,
+          "x": 4258,
           "y": 1466
         },
         {
           "original": {
-            "x": 4915,
+            "x": 4511,
             "y": 1466
           },
-          "x": 4877,
+          "x": 4473,
           "y": 1466
         }
       ],
@@ -294,51 +294,23 @@
       "waypoints": [
         {
           "original": {
-            "x": 5776,
-            "y": 1465
+            "x": 4965,
+            "y": 1467
           },
-          "x": 5819,
-          "y": 1465
+          "x": 5008,
+          "y": 1467
         },
         {
           "original": {
-            "x": 5981,
-            "y": 1465
+            "x": 5170,
+            "y": 1467
           },
-          "x": 5943,
-          "y": 1465
+          "x": 5132,
+          "y": 1467
         }
       ],
-      "source": "shape_5914",
+      "source": "shape_7096",
       "target": "shape_1701",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
-      "name": "para",
-      "id": "connection_1956",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 3965,
-            "y": 1466
-          },
-          "x": 4008,
-          "y": 1466
-        },
-        {
-          "original": {
-            "x": 4150,
-            "y": 1466
-          },
-          "x": 4112,
-          "y": 1466
-        }
-      ],
-      "source": "shape_5451",
-      "target": "shape_5512",
       "multipleNumberAllowed": false
     },
     {
@@ -466,49 +438,24 @@
       "waypoints": [
         {
           "original": {
-            "x": 6582,
-            "y": 1465
+            "x": 5771,
+            "y": 1467
           },
-          "x": 6625,
-          "y": 1465
+          "x": 5814,
+          "y": 1467
         },
         {
           "original": {
-            "x": 6780,
-            "y": 1466
+            "x": 5969,
+            "y": 1468
           },
-          "x": 6742,
-          "y": 1466
+          "x": 5931,
+          "y": 1468
         }
       ],
       "source": "shape_1619",
       "target": "shape_9756",
       "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:connection",
-      "name": "",
-      "id": "connection_2986",
-      "waypoints": [
-        {
-          "original": {
-            "x": 5329,
-            "y": 1465
-          },
-          "x": 5329,
-          "y": 1512
-        },
-        {
-          "original": {
-            "x": 5329,
-            "y": 1617
-          },
-          "x": 5329,
-          "y": 1596
-        }
-      ],
-      "source": "shape_4409",
-      "target": "shape_8465"
     },
     {
       "type": "domainStory:connection",
@@ -552,10 +499,10 @@
         },
         {
           "original": {
-            "x": 3965,
+            "x": 3990,
             "y": 1466
           },
-          "x": 3927,
+          "x": 3952,
           "y": 1466
         }
       ],
@@ -587,34 +534,6 @@
       ],
       "source": "shape_0414",
       "target": "shape_5759"
-    },
-    {
-      "type": "domainStory:activity",
-      "name": "para",
-      "id": "connection_3207",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 4915,
-            "y": 1466
-          },
-          "x": 4958,
-          "y": 1466
-        },
-        {
-          "original": {
-            "x": 5121,
-            "y": 1466
-          },
-          "x": 5083,
-          "y": 1466
-        }
-      ],
-      "source": "shape_3777",
-      "target": "shape_2079",
-      "multipleNumberAllowed": false
     },
     {
       "type": "domainStory:activity",
@@ -730,23 +649,23 @@
       "name": "realiza",
       "id": "connection_3716",
       "pickedColor": "black",
-      "number": 22,
+      "number": 20,
       "waypoints": [
         {
           "original": {
-            "x": 5981,
-            "y": 1465
+            "x": 5170,
+            "y": 1467
           },
-          "x": 6024,
-          "y": 1465
+          "x": 5213,
+          "y": 1467
         },
         {
           "original": {
-            "x": 6152,
-            "y": 1465
+            "x": 5341,
+            "y": 1467
           },
-          "x": 6152,
-          "y": 1465
+          "x": 5341,
+          "y": 1467
         }
       ],
       "source": "shape_1701",
@@ -762,18 +681,18 @@
       "waypoints": [
         {
           "original": {
-            "x": 4915,
+            "x": 4511,
             "y": 1340
           },
-          "x": 4958,
+          "x": 4554,
           "y": 1340
         },
         {
           "original": {
-            "x": 5121,
+            "x": 4717,
             "y": 1340
           },
-          "x": 5083,
+          "x": 4679,
           "y": 1340
         }
       ],
@@ -786,23 +705,23 @@
       "name": "entrega",
       "id": "connection_3762",
       "pickedColor": "black",
-      "number": 24,
+      "number": 22,
       "waypoints": [
         {
           "original": {
-            "x": 6377,
-            "y": 1465
+            "x": 5566,
+            "y": 1467
           },
-          "x": 6377,
-          "y": 1512
+          "x": 5566,
+          "y": 1514
         },
         {
           "original": {
-            "x": 6377,
-            "y": 1624
+            "x": 5566,
+            "y": 1626
           },
-          "x": 6377,
-          "y": 1586
+          "x": 5566,
+          "y": 1588
         }
       ],
       "source": "shape_3177",
@@ -931,19 +850,19 @@
       "waypoints": [
         {
           "original": {
-            "x": 6196,
-            "y": 1465
+            "x": 5385,
+            "y": 1467
           },
-          "x": 6239,
-          "y": 1465
+          "x": 5428,
+          "y": 1467
         },
         {
           "original": {
-            "x": 6377,
-            "y": 1465
+            "x": 5566,
+            "y": 1467
           },
-          "x": 6339,
-          "y": 1465
+          "x": 5528,
+          "y": 1467
         }
       ],
       "source": "shape_0576",
@@ -1071,19 +990,19 @@
       "waypoints": [
         {
           "original": {
-            "x": 6377,
-            "y": 1624
+            "x": 5566,
+            "y": 1626
           },
-          "x": 6420,
-          "y": 1624
+          "x": 5609,
+          "y": 1626
         },
         {
           "original": {
-            "x": 6582,
-            "y": 1624
+            "x": 5771,
+            "y": 1626
           },
-          "x": 6544,
-          "y": 1624
+          "x": 5733,
+          "y": 1626
         }
       ],
       "source": "shape_9456",
@@ -1144,31 +1063,56 @@
       "target": "shape_3102"
     },
     {
-      "type": "domainStory:activity",
-      "name": "atualiza",
-      "id": "connection_6075",
-      "pickedColor": "black",
-      "number": 19,
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_5889",
       "waypoints": [
         {
           "original": {
-            "x": 5121,
+            "x": 4511,
             "y": 1466
           },
-          "x": 5163,
+          "x": 4510,
+          "y": 1513
+        },
+        {
+          "original": {
+            "x": 4509,
+            "y": 1599
+          },
+          "x": 4509,
+          "y": 1599
+        }
+      ],
+      "source": "shape_3777",
+      "target": "shape_8465"
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_6189",
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 4511,
+            "y": 1466
+          },
+          "x": 4554,
           "y": 1466
         },
         {
           "original": {
-            "x": 5329,
-            "y": 1465
+            "x": 4674,
+            "y": 1466
           },
-          "x": 5291,
-          "y": 1465
+          "x": 4674,
+          "y": 1466
         }
       ],
-      "source": "shape_2079",
-      "target": "shape_4409",
+      "source": "shape_3777",
+      "target": "shape_1730",
       "multipleNumberAllowed": false
     },
     {
@@ -1225,6 +1169,34 @@
       ],
       "source": "shape_1287",
       "target": "shape_9208",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "para",
+      "id": "connection_6448",
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 3990,
+            "y": 1466
+          },
+          "x": 4033,
+          "y": 1466
+        },
+        {
+          "original": {
+            "x": 4215,
+            "y": 1466
+          },
+          "x": 4177,
+          "y": 1466
+        }
+      ],
+      "source": "shape_5451",
+      "target": "shape_7719",
       "multipleNumberAllowed": false
     },
     {
@@ -1414,22 +1386,22 @@
       "waypoints": [
         {
           "original": {
-            "x": 5776,
-            "y": 1465
+            "x": 4965,
+            "y": 1467
           },
-          "x": 5776,
-          "y": 1512
+          "x": 4965,
+          "y": 1514
         },
         {
           "original": {
-            "x": 5776,
-            "y": 1611
+            "x": 4965,
+            "y": 1626
           },
-          "x": 5776,
-          "y": 1596
+          "x": 4965,
+          "y": 1598
         }
       ],
-      "source": "shape_5914",
+      "source": "shape_7096",
       "target": "shape_6771"
     },
     {
@@ -1439,19 +1411,19 @@
       "waypoints": [
         {
           "original": {
-            "x": 6582,
-            "y": 1465
+            "x": 5771,
+            "y": 1467
           },
-          "x": 6582,
-          "y": 1427
+          "x": 5771,
+          "y": 1429
         },
         {
           "original": {
-            "x": 6582,
-            "y": 1340
+            "x": 5771,
+            "y": 1342
           },
-          "x": 6582,
-          "y": 1362
+          "x": 5771,
+          "y": 1364
         }
       ],
       "source": "shape_1619",
@@ -1543,34 +1515,6 @@
     },
     {
       "type": "domainStory:activity",
-      "name": "envia",
-      "id": "connection_8482",
-      "pickedColor": "black",
-      "number": 16,
-      "waypoints": [
-        {
-          "original": {
-            "x": 4150,
-            "y": 1466
-          },
-          "x": 4193,
-          "y": 1466
-        },
-        {
-          "original": {
-            "x": 4379,
-            "y": 1466
-          },
-          "x": 4341,
-          "y": 1466
-        }
-      ],
-      "source": "shape_5512",
-      "target": "shape_1863",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
       "name": "do",
       "id": "connection_8580",
       "pickedColor": "black",
@@ -1630,55 +1574,27 @@
       "name": "atualiza",
       "id": "connection_8635",
       "pickedColor": "black",
-      "number": 23,
+      "number": 21,
       "waypoints": [
         {
           "original": {
-            "x": 6377,
-            "y": 1465
+            "x": 5566,
+            "y": 1467
           },
-          "x": 6420,
-          "y": 1465
+          "x": 5609,
+          "y": 1467
         },
         {
           "original": {
-            "x": 6582,
-            "y": 1465
+            "x": 5771,
+            "y": 1467
           },
-          "x": 6544,
-          "y": 1465
+          "x": 5733,
+          "y": 1467
         }
       ],
       "source": "shape_3177",
       "target": "shape_1619",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
-      "name": "para",
-      "id": "connection_8740",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 4379,
-            "y": 1466
-          },
-          "x": 4422,
-          "y": 1466
-        },
-        {
-          "original": {
-            "x": 4619,
-            "y": 1466
-          },
-          "x": 4581,
-          "y": 1466
-        }
-      ],
-      "source": "shape_1863",
-      "target": "shape_7719",
       "multipleNumberAllowed": false
     },
     {
@@ -1827,59 +1743,31 @@
       "name": "desloca-se",
       "id": "connection_9709",
       "pickedColor": "black",
-      "number": 21,
+      "number": 19,
       "waypoints": [
         {
           "original": {
-            "x": 5981,
-            "y": 1465
+            "x": 5170,
+            "y": 1467
           },
-          "x": 5981,
-          "y": 1427
+          "x": 5170,
+          "y": 1429
         },
         {
-          "x": 5981,
-          "y": 1322
+          "x": 5170,
+          "y": 1324
         },
         {
           "original": {
-            "x": 6196,
-            "y": 1322
+            "x": 5385,
+            "y": 1324
           },
-          "x": 6158,
-          "y": 1322
+          "x": 5347,
+          "y": 1324
         }
       ],
       "source": "shape_1701",
       "target": "shape_0096",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
-      "name": "no",
-      "id": "connection_9721",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 5329,
-            "y": 1465
-          },
-          "x": 5372,
-          "y": 1465
-        },
-        {
-          "original": {
-            "x": 5528,
-            "y": 1465
-          },
-          "x": 5490,
-          "y": 1465
-        }
-      ],
-      "source": "shape_4409",
-      "target": "shape_1730",
       "multipleNumberAllowed": false
     },
     {
@@ -1953,8 +1841,8 @@
       "type": "domainStory:workObjectCommute",
       "name": "Oficina Mecânica",
       "id": "shape_0096",
-      "x": 6158,
-      "y": 1284
+      "x": 5347,
+      "y": 1286
     },
     {
       "type": "domainStory:workObjectSettings",
@@ -1999,8 +1887,8 @@
       "type": "domainStory:workObjectDollar",
       "name": "Pagamento",
       "id": "shape_0576",
-      "x": 6158,
-      "y": 1427
+      "x": 5347,
+      "y": 1429
     },
     {
       "type": "domainStory:workObjectCommute",
@@ -2055,8 +1943,8 @@
       "type": "domainStory:workObjectAssessment",
       "name": "Ordem de serviço",
       "id": "shape_1619",
-      "x": 6544,
-      "y": 1427
+      "x": 5733,
+      "y": 1429
     },
     {
       "type": "domainStory:workObjectCar",
@@ -2076,15 +1964,15 @@
       "type": "domainStory:actorPerson",
       "name": "Cliente",
       "id": "shape_1701",
-      "x": 5943,
-      "y": 1427
+      "x": 5132,
+      "y": 1429
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_1730",
-      "x": 5490,
-      "y": 1427
+      "x": 4679,
+      "y": 1429
     },
     {
       "type": "domainStory:actorPerson",
@@ -2094,13 +1982,6 @@
       "y": 656
     },
     {
-      "type": "domainStory:workObjectAssessment",
-      "name": "Ordem de Serviço",
-      "id": "shape_1863",
-      "x": 4341,
-      "y": 1428
-    },
-    {
       "type": "domainStory:workObjectWrench",
       "name": "Peças e insumos",
       "id": "shape_1909",
@@ -2108,17 +1989,10 @@
       "y": 1112
     },
     {
-      "type": "domainStory:actorFace",
-      "name": "Atendente",
-      "id": "shape_2079",
-      "x": 5083,
-      "y": 1428
-    },
-    {
       "type": "domainStory:workObjectCar",
       "name": "Veículo",
       "id": "shape_2113",
-      "x": 5083,
+      "x": 4679,
       "y": 1302
     },
     {
@@ -2143,7 +2017,7 @@
       "type": "domainStory:workObjectSettings",
       "name": "Conserto",
       "id": "shape_2526",
-      "x": 4877,
+      "x": 4473,
       "y": 1302
     },
     {
@@ -2182,8 +2056,8 @@
       "type": "domainStory:actorFace",
       "name": "Atendente",
       "id": "shape_3177",
-      "x": 6339,
-      "y": 1427
+      "x": 5528,
+      "y": 1429
     },
     {
       "type": "domainStory:actorPerson",
@@ -2214,7 +2088,7 @@
       "type": "domainStory:workObjectAssessment",
       "name": "Ordem de serviço",
       "id": "shape_3777",
-      "x": 4877,
+      "x": 4473,
       "y": 1428
     },
     {
@@ -2228,8 +2102,8 @@
       "type": "domainStory:textAnnotation",
       "name": "",
       "id": "shape_3901",
-      "x": 6532,
-      "y": 1319,
+      "x": 5721,
+      "y": 1321,
       "text": "Status da OS: Entregue",
       "number": 42.9600882890194,
       "height": 42.9600882890194,
@@ -2241,13 +2115,6 @@
       "id": "shape_4119",
       "x": 2578,
       "y": 954
-    },
-    {
-      "type": "domainStory:workObjectAssessment",
-      "name": "Ordem de serviço",
-      "id": "shape_4409",
-      "x": 5291,
-      "y": 1427
     },
     {
       "type": "domainStory:actorPerson",
@@ -2278,14 +2145,7 @@
       "type": "domainStory:workObjectAssessment",
       "name": "Ordem de serviço",
       "id": "shape_5451",
-      "x": 3927,
-      "y": 1428
-    },
-    {
-      "type": "domainStory:actorFace",
-      "name": "Atendente",
-      "id": "shape_5512",
-      "x": 4112,
+      "x": 3952,
       "y": 1428
     },
     {
@@ -2314,13 +2174,6 @@
       "y": 655.0000019073486
     },
     {
-      "type": "domainStory:workObjectCall",
-      "name": "Notificação",
-      "id": "shape_5914",
-      "x": 5738,
-      "y": 1427
-    },
-    {
       "type": "domainStory:actorFace",
       "name": "Atendente",
       "id": "shape_6224",
@@ -2345,12 +2198,19 @@
       "type": "domainStory:textAnnotation",
       "name": "",
       "id": "shape_6771",
-      "x": 5726,
-      "y": 1596,
-      "text": "Notificação é feita via Sistema",
-      "number": 56.66482593366492,
-      "height": 56.66482593366492,
-      "width": 99.98772501462868
+      "x": 4915,
+      "y": 1598,
+      "text": "Status da OS: Finalizada",
+      "number": 43.18348759742562,
+      "height": 43.18348759742562,
+      "width": 99.97727449445428
+    },
+    {
+      "type": "domainStory:workObjectAssessment",
+      "name": "Ordem de Serviço",
+      "id": "shape_7096",
+      "x": 4927,
+      "y": 1429
     },
     {
       "type": "domainStory:actorSystem",
@@ -2363,7 +2223,7 @@
       "type": "domainStory:actorHow-To-Reg",
       "name": "Mecânico",
       "id": "shape_7719",
-      "x": 4581,
+      "x": 4177,
       "y": 1428
     },
     {
@@ -2391,12 +2251,12 @@
       "type": "domainStory:textAnnotation",
       "name": "",
       "id": "shape_8465",
-      "x": 5279,
-      "y": 1596,
+      "x": 4461,
+      "y": 1603,
       "text": "Status da OS: Finalizada",
-      "number": 42.9600882890194,
-      "height": 42.9600882890194,
-      "width": 99.99274099883856
+      "number": 42.939514283709194,
+      "height": 42.939514283709194,
+      "width": 99.97727449445429
     },
     {
       "type": "domainStory:actorSystem",
@@ -2437,22 +2297,22 @@
       "type": "domainStory:workObjectCar",
       "name": "Veículo",
       "id": "shape_9456",
-      "x": 6339,
-      "y": 1586
+      "x": 5528,
+      "y": 1588
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Cliente",
       "id": "shape_9742",
-      "x": 6544,
-      "y": 1586
+      "x": 5733,
+      "y": 1588
     },
     {
       "name": "Sistema",
       "id": "shape_9756",
       "type": "domainStory:actorSystem",
-      "x": 6742,
-      "y": 1428
+      "x": 5931,
+      "y": 1430
     },
     {
       "type": "domainStory:actorFace",

@@ -55,18 +55,18 @@
         {
           "original": {
             "x": 3969,
-            "y": 975
+            "y": 881
           },
           "x": 4012,
-          "y": 975
+          "y": 881
         },
         {
           "original": {
             "x": 4136,
-            "y": 975
+            "y": 881
           },
           "x": 4098,
-          "y": 975
+          "y": 881
         }
       ],
       "source": "shape_5063",
@@ -83,18 +83,18 @@
         {
           "original": {
             "x": 2718,
-            "y": 829
+            "y": 735
           },
           "x": 2760,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 2983,
-            "y": 829
+            "y": 735
           },
           "x": 2945,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_0710",
@@ -111,50 +111,50 @@
         {
           "original": {
             "x": 662,
-            "y": 704
+            "y": 610
           },
           "x": 697,
-          "y": 720
+          "y": 626
         },
         {
           "x": 936,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 1089,
-            "y": 829
+            "y": 735
           },
           "x": 1051,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_2223",
       "target": "shape_8065",
-      "multipleNumberAllowed": true
+      "multipleNumberAllowed": false
     },
     {
       "type": "domainStory:activity",
       "name": "envia",
       "id": "connection_0470",
       "pickedColor": "black",
-      "number": 20,
+      "number": 19,
       "waypoints": [
         {
           "original": {
             "x": 4948,
-            "y": 829
+            "y": 735
           },
           "x": 4991,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 5196,
-            "y": 829
+            "y": 735
           },
           "x": 5158,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_1730",
@@ -166,27 +166,27 @@
       "name": "executa",
       "id": "connection_0730",
       "pickedColor": "black",
-      "number": 17,
+      "number": 16,
       "waypoints": [
         {
           "original": {
             "x": 4136,
-            "y": 829
+            "y": 735
           },
           "x": 4136,
-          "y": 791
+          "y": 697
         },
         {
           "x": 4136,
-          "y": 704
+          "y": 610
         },
         {
           "original": {
             "x": 4323,
-            "y": 704
+            "y": 610
           },
           "x": 4285,
-          "y": 704
+          "y": 610
         }
       ],
       "source": "shape_8649",
@@ -198,28 +198,53 @@
       "name": "devolve",
       "id": "connection_0844",
       "pickedColor": "black",
-      "number": 18,
+      "number": 17,
       "waypoints": [
         {
           "original": {
             "x": 4136,
-            "y": 829
+            "y": 735
           },
           "x": 4179,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 4279,
-            "y": 829
+            "y": 735
           },
           "x": 4279,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_8649",
       "target": "shape_8244",
       "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_1219",
+      "waypoints": [
+        {
+          "original": {
+            "x": 1252,
+            "y": 610
+          },
+          "x": 1294,
+          "y": 610
+        },
+        {
+          "original": {
+            "x": 1368,
+            "y": 610
+          },
+          "x": 1368,
+          "y": 610
+        }
+      ],
+      "source": "shape_1308",
+      "target": "shape_3663"
     },
     {
       "type": "domainStory:activity",
@@ -231,18 +256,18 @@
         {
           "original": {
             "x": 2304,
-            "y": 829
+            "y": 735
           },
           "x": 2346,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 2478,
-            "y": 829
+            "y": 735
           },
           "x": 2440,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_3900",
@@ -250,52 +275,27 @@
       "multipleNumberAllowed": false
     },
     {
-      "type": "domainStory:connection",
-      "name": "",
-      "id": "connection_1442",
-      "waypoints": [
-        {
-          "original": {
-            "x": 1689,
-            "y": 704
-          },
-          "x": 1732,
-          "y": 704
-        },
-        {
-          "original": {
-            "x": 1848,
-            "y": 704
-          },
-          "x": 1798,
-          "y": 704
-        }
-      ],
-      "source": "shape_6610",
-      "target": "shape_2941"
-    },
-    {
       "type": "domainStory:activity",
       "name": "autoriza",
       "id": "connection_1697",
       "pickedColor": "black",
-      "number": 14,
+      "number": 13,
       "waypoints": [
         {
           "original": {
             "x": 2983,
-            "y": 829
+            "y": 735
           },
           "x": 3025,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 3181,
-            "y": 829
+            "y": 735
           },
           "x": 3143,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_6438",
@@ -312,18 +312,18 @@
         {
           "original": {
             "x": 3969,
-            "y": 829
+            "y": 735
           },
           "x": 4012,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 4136,
-            "y": 829
+            "y": 735
           },
           "x": 4098,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_1904",
@@ -340,18 +340,18 @@
         {
           "original": {
             "x": 5196,
-            "y": 829
+            "y": 735
           },
           "x": 5239,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 5401,
-            "y": 829
+            "y": 735
           },
           "x": 5363,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_5914",
@@ -368,18 +368,18 @@
         {
           "original": {
             "x": 3582,
-            "y": 829
+            "y": 735
           },
           "x": 3625,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 3767,
-            "y": 829
+            "y": 735
           },
           "x": 3729,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_5594",
@@ -396,26 +396,54 @@
         {
           "original": {
             "x": 2478,
-            "y": 829.0000019073486
+            "y": 735.0000019073486
           },
           "x": 2478,
-          "y": 791
+          "y": 697
         },
         {
           "x": 2478,
-          "y": 532
+          "y": 438
         },
         {
           "original": {
             "x": 2718,
-            "y": 532.0000019073486
+            "y": 438.00000190734863
           },
           "x": 2680,
-          "y": 532
+          "y": 438
         }
       ],
       "source": "shape_1307",
       "target": "shape_8768",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_2432",
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1133,
+            "y": 887
+          },
+          "x": 1135,
+          "y": 887
+        },
+        {
+          "original": {
+            "x": 1252,
+            "y": 887
+          },
+          "x": 1214,
+          "y": 887
+        }
+      ],
+      "source": "shape_7013",
+      "target": "shape_7543",
       "multipleNumberAllowed": false
     },
     {
@@ -428,22 +456,22 @@
         {
           "original": {
             "x": 1089,
-            "y": 364
+            "y": 270
           },
           "x": 1089,
-          "y": 326
+          "y": 232
         },
         {
           "x": 1089,
-          "y": 212
+          "y": 118
         },
         {
           "original": {
             "x": 1252,
-            "y": 212
+            "y": 118
           },
           "x": 1214,
-          "y": 212
+          "y": 118
         }
       ],
       "source": "shape_2828",
@@ -460,18 +488,18 @@
         {
           "original": {
             "x": 6002,
-            "y": 829
+            "y": 735
           },
           "x": 6045,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 6154,
-            "y": 830
+            "y": 736
           },
           "x": 6154,
-          "y": 830
+          "y": 736
         }
       ],
       "source": "shape_6405",
@@ -488,50 +516,22 @@
         {
           "original": {
             "x": 372,
-            "y": 704
+            "y": 610
           },
           "x": 414,
-          "y": 704
+          "y": 610
         },
         {
           "original": {
             "x": 625,
-            "y": 704
+            "y": 610
           },
           "x": 624,
-          "y": 704
+          "y": 610
         }
       ],
       "source": "shape_1409",
       "target": "shape_2223",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
-      "name": "da",
-      "id": "connection_2954",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 1089,
-            "y": 975.0000019073486
-          },
-          "x": 1132,
-          "y": 975.0000019073486
-        },
-        {
-          "original": {
-            "x": 1252,
-            "y": 975.0000019073486
-          },
-          "x": 1214,
-          "y": 975.0000019073486
-        }
-      ],
-      "source": "shape_2877",
-      "target": "shape_7013",
       "multipleNumberAllowed": false
     },
     {
@@ -544,18 +544,18 @@
         {
           "original": {
             "x": 1984,
-            "y": 828.0000019073486
+            "y": 734.0000019073486
           },
           "x": 1984,
-          "y": 790.0000019073486
+          "y": 696.0000019073486
         },
         {
           "original": {
             "x": 1984,
-            "y": 531.0000019073486
+            "y": 437.00000190734863
           },
           "x": 1984,
-          "y": 578.0000019073486
+          "y": 484.00000190734863
         }
       ],
       "source": "shape_1954",
@@ -570,73 +570,70 @@
         {
           "original": {
             "x": 4749,
-            "y": 829
+            "y": 735
           },
           "x": 4749,
-          "y": 876
+          "y": 782
         },
         {
           "original": {
             "x": 4749,
-            "y": 975
+            "y": 881
           },
           "x": 4749,
-          "y": 960
+          "y": 866
         }
       ],
       "source": "shape_8590",
       "target": "shape_8465"
     },
     {
-      "type": "domainStory:activity",
-      "name": "atualiza",
-      "id": "connection_3072",
-      "pickedColor": "black",
-      "number": 6,
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_3062",
       "waypoints": [
         {
           "original": {
-            "x": 1252,
-            "y": 704
+            "x": 2718,
+            "y": 438
           },
-          "x": 1294,
-          "y": 704
+          "x": 2760,
+          "y": 438
         },
         {
           "original": {
-            "x": 1435,
-            "y": 704
+            "x": 2864,
+            "y": 437
           },
-          "x": 1435,
-          "y": 704
+          "x": 2814,
+          "y": 437
         }
       ],
-      "source": "shape_1308",
-      "target": "shape_5931",
-      "multipleNumberAllowed": false
+      "source": "shape_8768",
+      "target": "shape_5032"
     },
     {
       "type": "domainStory:activity",
       "name": "envia",
       "id": "connection_3114",
       "pickedColor": "black",
-      "number": 15,
+      "number": 14,
       "waypoints": [
         {
           "original": {
             "x": 3376,
-            "y": 829
+            "y": 735
           },
           "x": 3419,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 3582,
-            "y": 829
+            "y": 735
           },
           "x": 3544,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_3805",
@@ -653,18 +650,18 @@
         {
           "original": {
             "x": 4367,
-            "y": 829
+            "y": 735
           },
           "x": 4368,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 4541,
-            "y": 829
+            "y": 735
           },
           "x": 4503,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_8244",
@@ -681,18 +678,18 @@
         {
           "original": {
             "x": 372,
-            "y": 531.0000019073486
+            "y": 437.00000190734863
           },
           "x": 414,
-          "y": 531.0000019073486
+          "y": 437.00000190734863
         },
         {
           "original": {
             "x": 549,
-            "y": 530.0000019073486
+            "y": 436.00000190734863
           },
           "x": 536,
-          "y": 530.0000019073486
+          "y": 436.00000190734863
         }
       ],
       "source": "shape_5807",
@@ -709,18 +706,18 @@
         {
           "original": {
             "x": 193,
-            "y": 704.0000019073486
+            "y": 610.0000019073486
           },
           "x": 215,
-          "y": 683.0000019073486
+          "y": 589.0000019073486
         },
         {
           "original": {
             "x": 372,
-            "y": 531.0000019073486
+            "y": 437.00000190734863
           },
           "x": 334,
-          "y": 568.0000019073486
+          "y": 474.00000190734863
         }
       ],
       "source": "shape_3418",
@@ -735,18 +732,18 @@
         {
           "original": {
             "x": 1252,
-            "y": 364
+            "y": 270
           },
           "x": 1295,
-          "y": 364
+          "y": 270
         },
         {
           "original": {
             "x": 1423,
-            "y": 364
+            "y": 270
           },
           "x": 1373,
-          "y": 364
+          "y": 270
         }
       ],
       "source": "shape_2878",
@@ -757,23 +754,23 @@
       "name": "cadastra",
       "id": "connection_3639",
       "pickedColor": "black",
-      "number": 4,
+      "number": 5,
       "waypoints": [
         {
           "original": {
             "x": 662,
-            "y": 704
+            "y": 610
           },
           "x": 692,
-          "y": 692
+          "y": 598
         },
         {
           "original": {
             "x": 1089,
-            "y": 532
+            "y": 438
           },
           "x": 1051,
-          "y": 547
+          "y": 453
         }
       ],
       "source": "shape_2223",
@@ -788,18 +785,18 @@
         {
           "original": {
             "x": 3582,
-            "y": 829
+            "y": 735
           },
           "x": 3582,
-          "y": 876
+          "y": 782
         },
         {
           "original": {
             "x": 3582,
-            "y": 942
+            "y": 848
           },
           "x": 3582,
-          "y": 927
+          "y": 833
         }
       ],
       "source": "shape_5594",
@@ -810,23 +807,23 @@
       "name": "realiza",
       "id": "connection_3716",
       "pickedColor": "black",
-      "number": 21,
+      "number": 20,
       "waypoints": [
         {
           "original": {
             "x": 5401,
-            "y": 829
+            "y": 735
           },
           "x": 5444,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 5572,
-            "y": 829
+            "y": 735
           },
           "x": 5572,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_1701",
@@ -835,31 +832,88 @@
     },
     {
       "type": "domainStory:activity",
-      "name": "atualiza",
-      "id": "connection_3922",
+      "name": "devolve",
+      "id": "connection_3762",
       "pickedColor": "black",
-      "number": 12,
+      "number": 22,
       "waypoints": [
         {
           "original": {
-            "x": 2478,
-            "y": 829
+            "x": 5797,
+            "y": 735
           },
-          "x": 2503,
-          "y": 811
+          "x": 5797,
+          "y": 782
         },
         {
           "original": {
-            "x": 2718,
-            "y": 657
+            "x": 5797,
+            "y": 894
           },
-          "x": 2680,
-          "y": 684
+          "x": 5797,
+          "y": 856
         }
       ],
-      "source": "shape_1307",
-      "target": "shape_7059",
+      "source": "shape_0143",
+      "target": "shape_9456",
       "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "atualiza",
+      "id": "connection_3900",
+      "pickedColor": "black",
+      "number": 7,
+      "waypoints": [
+        {
+          "original": {
+            "x": 662,
+            "y": 610
+          },
+          "x": 662,
+          "y": 657
+        },
+        {
+          "x": 662,
+          "y": 885
+        },
+        {
+          "original": {
+            "x": 1044,
+            "y": 885
+          },
+          "x": 1044,
+          "y": 885
+        }
+      ],
+      "source": "shape_2223",
+      "target": "shape_7013",
+      "multipleNumberAllowed": true
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_4204",
+      "waypoints": [
+        {
+          "original": {
+            "x": 1252,
+            "y": 887
+          },
+          "x": 1296,
+          "y": 889
+        },
+        {
+          "original": {
+            "x": 1423,
+            "y": 894
+          },
+          "x": 1373,
+          "y": 892
+        }
+      ],
+      "source": "shape_7543",
+      "target": "shape_2336"
     },
     {
       "type": "domainStory:activity",
@@ -871,18 +925,18 @@
         {
           "original": {
             "x": 5616,
-            "y": 829
+            "y": 735
           },
           "x": 5659,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 5797,
-            "y": 829
+            "y": 735
           },
           "x": 5759,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_0576",
@@ -899,18 +953,18 @@
         {
           "original": {
             "x": 1089,
-            "y": 364
+            "y": 270
           },
           "x": 1131,
-          "y": 364
+          "y": 270
         },
         {
           "original": {
             "x": 1252,
-            "y": 364
+            "y": 270
           },
           "x": 1214,
-          "y": 364
+          "y": 270
         }
       ],
       "source": "shape_2828",
@@ -927,23 +981,48 @@
         {
           "original": {
             "x": 3969,
-            "y": 829
+            "y": 735
           },
           "x": 3969,
-          "y": 876
+          "y": 782
         },
         {
           "original": {
             "x": 3969,
-            "y": 975
+            "y": 881
           },
           "x": 3969,
-          "y": 937
+          "y": 843
         }
       ],
       "source": "shape_1904",
       "target": "shape_5063",
       "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_5552",
+      "waypoints": [
+        {
+          "original": {
+            "x": 1252,
+            "y": 21
+          },
+          "x": 1295,
+          "y": 21
+        },
+        {
+          "original": {
+            "x": 1423,
+            "y": 22
+          },
+          "x": 1373,
+          "y": 22
+        }
+      ],
+      "source": "shape_0358",
+      "target": "shape_1575"
     },
     {
       "type": "domainStory:activity",
@@ -955,18 +1034,18 @@
         {
           "original": {
             "x": 1476,
-            "y": 829
+            "y": 735
           },
           "x": 1518,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 1984,
-            "y": 828
+            "y": 734
           },
           "x": 1946,
-          "y": 828
+          "y": 734
         }
       ],
       "source": "shape_3709",
@@ -983,22 +1062,50 @@
         {
           "original": {
             "x": 3181,
-            "y": 829
+            "y": 735
           },
           "x": 3224,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 3376,
-            "y": 829
+            "y": 735
           },
           "x": 3338,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_1912",
       "target": "shape_3805",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "para",
+      "id": "connection_5626",
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 5797,
+            "y": 894
+          },
+          "x": 5840,
+          "y": 894
+        },
+        {
+          "original": {
+            "x": 6002,
+            "y": 894
+          },
+          "x": 5964,
+          "y": 894
+        }
+      ],
+      "source": "shape_9456",
+      "target": "shape_9742",
       "multipleNumberAllowed": false
     },
     {
@@ -1011,18 +1118,18 @@
         {
           "original": {
             "x": 1089,
-            "y": 532.0000019073486
+            "y": 438.00000190734863
           },
           "x": 1132,
-          "y": 532.0000019073486
+          "y": 438.00000190734863
         },
         {
           "original": {
             "x": 1252,
-            "y": 532.0000019073486
+            "y": 438.00000190734863
           },
           "x": 1214,
-          "y": 532.0000019073486
+          "y": 438.00000190734863
         }
       ],
       "source": "shape_1688",
@@ -1037,18 +1144,18 @@
         {
           "original": {
             "x": 3181,
-            "y": 829
+            "y": 735
           },
           "x": 3181,
-          "y": 876
+          "y": 782
         },
         {
           "original": {
             "x": 3181,
-            "y": 942
+            "y": 848
           },
           "x": 3181,
-          "y": 920
+          "y": 826
         }
       ],
       "source": "shape_1912",
@@ -1059,23 +1166,23 @@
       "name": "atualiza",
       "id": "connection_6075",
       "pickedColor": "black",
-      "number": 19,
+      "number": 18,
       "waypoints": [
         {
           "original": {
             "x": 4541,
-            "y": 829
+            "y": 735
           },
           "x": 4584,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 4704,
-            "y": 830
+            "y": 736
           },
           "x": 4704,
-          "y": 830
+          "y": 736
         }
       ],
       "source": "shape_8121",
@@ -1084,54 +1191,26 @@
     },
     {
       "type": "domainStory:activity",
-      "name": "da",
-      "id": "connection_6551",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 1476,
-            "y": 704
-          },
-          "x": 1519,
-          "y": 704
-        },
-        {
-          "original": {
-            "x": 1689,
-            "y": 704
-          },
-          "x": 1651,
-          "y": 704
-        }
-      ],
-      "source": "shape_5931",
-      "target": "shape_6610",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
       "name": "inicia",
       "id": "connection_6828",
       "pickedColor": "black",
-      "number": 5,
+      "number": 6,
       "waypoints": [
         {
           "original": {
             "x": 662,
-            "y": 704
+            "y": 610
           },
           "x": 704,
-          "y": 704
+          "y": 610
         },
         {
           "original": {
             "x": 1089,
-            "y": 704
+            "y": 610
           },
           "x": 1051,
-          "y": 704
+          "y": 610
         }
       ],
       "source": "shape_2223",
@@ -1148,18 +1227,18 @@
         {
           "original": {
             "x": 193,
-            "y": 704.0000019073486
+            "y": 610.0000019073486
           },
           "x": 236,
-          "y": 704.0000019073486
+          "y": 610.0000019073486
         },
         {
           "original": {
             "x": 372,
-            "y": 704.0000019073486
+            "y": 610.0000019073486
           },
           "x": 334,
-          "y": 704.0000019073486
+          "y": 610.0000019073486
         }
       ],
       "source": "shape_3418",
@@ -1167,29 +1246,64 @@
       "multipleNumberAllowed": false
     },
     {
-      "type": "domainStory:connection",
-      "name": "",
-      "id": "connection_7039",
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_7052",
+      "pickedColor": "black",
+      "number": null,
       "waypoints": [
         {
           "original": {
-            "x": 1252,
-            "y": 975
+            "x": 1089,
+            "y": 22
           },
-          "x": 1294,
-          "y": 975
+          "x": 1131,
+          "y": 22
         },
         {
           "original": {
-            "x": 1476,
-            "y": 975
+            "x": 1252,
+            "y": 21
           },
-          "x": 1426,
-          "y": 975
+          "x": 1214,
+          "y": 21
         }
       ],
-      "source": "shape_7013",
-      "target": "shape_6465"
+      "source": "shape_9076",
+      "target": "shape_0358",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Busca",
+      "id": "connection_7238",
+      "pickedColor": "black",
+      "number": 3,
+      "waypoints": [
+        {
+          "original": {
+            "x": 662,
+            "y": 610
+          },
+          "x": 663,
+          "y": 572
+        },
+        {
+          "x": 675,
+          "y": 21
+        },
+        {
+          "original": {
+            "x": 1047,
+            "y": 21
+          },
+          "x": 1047,
+          "y": 21
+        }
+      ],
+      "source": "shape_2223",
+      "target": "shape_9076",
+      "multipleNumberAllowed": false
     },
     {
       "type": "domainStory:activity",
@@ -1201,18 +1315,18 @@
         {
           "original": {
             "x": 1089,
-            "y": 829.0000019073486
+            "y": 735.0000019073486
           },
           "x": 1132,
-          "y": 829.0000019073486
+          "y": 735.0000019073486
         },
         {
           "original": {
             "x": 1252,
-            "y": 829.0000019073486
+            "y": 735.0000019073486
           },
           "x": 1214,
-          "y": 829.0000019073486
+          "y": 735.0000019073486
         }
       ],
       "source": "shape_8065",
@@ -1222,23 +1336,48 @@
     {
       "type": "domainStory:connection",
       "name": "",
+      "id": "connection_7375",
+      "waypoints": [
+        {
+          "original": {
+            "x": 5196,
+            "y": 735
+          },
+          "x": 5196,
+          "y": 782
+        },
+        {
+          "original": {
+            "x": 5196,
+            "y": 881
+          },
+          "x": 5196,
+          "y": 866
+        }
+      ],
+      "source": "shape_5914",
+      "target": "shape_6771"
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
       "id": "connection_7548",
       "waypoints": [
         {
           "original": {
             "x": 6002,
-            "y": 829
+            "y": 735
           },
           "x": 6002,
-          "y": 876
+          "y": 697
         },
         {
           "original": {
             "x": 6002,
-            "y": 975
+            "y": 604
           },
           "x": 6002,
-          "y": 960
+          "y": 632
         }
       ],
       "source": "shape_6405",
@@ -1254,18 +1393,18 @@
         {
           "original": {
             "x": 1089,
-            "y": 704.0000019073486
+            "y": 610.0000019073486
           },
           "x": 1132,
-          "y": 704.0000019073486
+          "y": 610.0000019073486
         },
         {
           "original": {
             "x": 1252,
-            "y": 704.0000019073486
+            "y": 610.0000019073486
           },
           "x": 1214,
-          "y": 704.0000019073486
+          "y": 610.0000019073486
         }
       ],
       "source": "shape_4256",
@@ -1274,54 +1413,26 @@
     },
     {
       "type": "domainStory:activity",
-      "name": "da",
-      "id": "connection_8169",
-      "pickedColor": "black",
-      "number": null,
-      "waypoints": [
-        {
-          "original": {
-            "x": 2718,
-            "y": 657
-          },
-          "x": 2760,
-          "y": 657
-        },
-        {
-          "original": {
-            "x": 2958,
-            "y": 657
-          },
-          "x": 2920,
-          "y": 657
-        }
-      ],
-      "source": "shape_7059",
-      "target": "shape_6263",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:activity",
       "name": "solicita",
       "id": "connection_8482",
       "pickedColor": "black",
-      "number": 16,
+      "number": 15,
       "waypoints": [
         {
           "original": {
             "x": 3767,
-            "y": 829
+            "y": 735
           },
           "x": 3810,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 3969,
-            "y": 829
+            "y": 735
           },
           "x": 3931,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_5805",
@@ -1338,18 +1449,18 @@
         {
           "original": {
             "x": 1252,
-            "y": 829
+            "y": 735
           },
           "x": 1294,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 1476,
-            "y": 829
+            "y": 735
           },
           "x": 1438,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_6564",
@@ -1361,23 +1472,23 @@
       "name": "atualiza",
       "id": "connection_8635",
       "pickedColor": "black",
-      "number": 22,
+      "number": 21,
       "waypoints": [
         {
           "original": {
             "x": 5797,
-            "y": 829
+            "y": 735
           },
           "x": 5840,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 6002,
-            "y": 829
+            "y": 735
           },
           "x": 5964,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_0143",
@@ -1394,18 +1505,18 @@
         {
           "original": {
             "x": 1984,
-            "y": 531.0000019073486
+            "y": 437.00000190734863
           },
           "x": 2027,
-          "y": 531.0000019073486
+          "y": 437.00000190734863
         },
         {
           "original": {
             "x": 2304,
-            "y": 531.0000019073486
+            "y": 437.00000190734863
           },
           "x": 2266,
-          "y": 531.0000019073486
+          "y": 437.00000190734863
         }
       ],
       "source": "shape_6933",
@@ -1414,83 +1525,26 @@
     },
     {
       "type": "domainStory:activity",
-      "name": "atualiza",
-      "id": "connection_8750",
-      "pickedColor": "black",
-      "number": 7,
-      "waypoints": [
-        {
-          "original": {
-            "x": 662,
-            "y": 704
-          },
-          "x": 687,
-          "y": 751
-        },
-        {
-          "x": 913,
-          "y": 975
-        },
-        {
-          "original": {
-            "x": 1089,
-            "y": 975
-          },
-          "x": 1051,
-          "y": 975
-        }
-      ],
-      "source": "shape_2223",
-      "target": "shape_2877",
-      "multipleNumberAllowed": false
-    },
-    {
-      "type": "domainStory:connection",
-      "name": "",
-      "id": "connection_9098",
-      "waypoints": [
-        {
-          "original": {
-            "x": 2958,
-            "y": 657
-          },
-          "x": 3000,
-          "y": 657
-        },
-        {
-          "original": {
-            "x": 3181,
-            "y": 657
-          },
-          "x": 3131,
-          "y": 657
-        }
-      ],
-      "source": "shape_6263",
-      "target": "shape_8063"
-    },
-    {
-      "type": "domainStory:activity",
       "name": "envia",
       "id": "connection_9355",
       "pickedColor": "black",
-      "number": 13,
+      "number": 12,
       "waypoints": [
         {
           "original": {
             "x": 2478,
-            "y": 829
+            "y": 735
           },
           "x": 2520,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 2718,
-            "y": 829
+            "y": 735
           },
           "x": 2680,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_1307",
@@ -1507,18 +1561,18 @@
         {
           "original": {
             "x": 1984,
-            "y": 828
+            "y": 734
           },
           "x": 2027,
-          "y": 828
+          "y": 734
         },
         {
           "original": {
             "x": 2304,
-            "y": 829
+            "y": 735
           },
           "x": 2266,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_1954",
@@ -1530,32 +1584,57 @@
       "name": "realiza",
       "id": "connection_9651",
       "pickedColor": "black",
-      "number": 3,
+      "number": 4,
       "waypoints": [
         {
           "original": {
             "x": 662,
-            "y": 704
+            "y": 610
           },
           "x": 679,
-          "y": 678
+          "y": 584
         },
         {
           "x": 883,
-          "y": 364
+          "y": 270
         },
         {
           "original": {
             "x": 1089,
-            "y": 364
+            "y": 270
           },
           "x": 1051,
-          "y": 364
+          "y": 270
         }
       ],
       "source": "shape_2223",
       "target": "shape_2828",
       "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_9704",
+      "waypoints": [
+        {
+          "original": {
+            "x": 1252,
+            "y": 438
+          },
+          "x": 1294,
+          "y": 438
+        },
+        {
+          "original": {
+            "x": 1423,
+            "y": 437
+          },
+          "x": 1373,
+          "y": 437
+        }
+      ],
+      "source": "shape_8993",
+      "target": "shape_0552"
     },
     {
       "type": "domainStory:activity",
@@ -1567,18 +1646,18 @@
         {
           "original": {
             "x": 4749,
-            "y": 829
+            "y": 735
           },
           "x": 4792,
-          "y": 829
+          "y": 735
         },
         {
           "original": {
             "x": 4948,
-            "y": 829
+            "y": 735
           },
           "x": 4910,
-          "y": 829
+          "y": 735
         }
       ],
       "source": "shape_8590",
@@ -1590,155 +1669,177 @@
       "name": "",
       "id": "shape_0068",
       "x": 1373,
-      "y": 328,
-      "text": "Busca por CPF/CNPJ e o sistema traz os dados, se existir. Caso não exista um novo cadastro é feito.",
-      "number": 128.99501037597656,
-      "height": 128.99501037597656,
-      "width": 99.9644775390625
+      "y": 234,
+      "text": "Apenas um por CPF/CNPJ",
+      "number": 43.16954928049353,
+      "height": 43.16954928049353,
+      "width": 99.94939271255062
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Atendente",
       "id": "shape_0143",
       "x": 5759,
-      "y": 791
+      "y": 697
+    },
+    {
+      "type": "domainStory:actorPerson",
+      "name": "Cliente",
+      "id": "shape_0358",
+      "x": 1214,
+      "y": -17
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_0552",
+      "x": 1373,
+      "y": 422,
+      "text": "Veículo é vinculado ao Cliente",
+      "number": 56.900666842754156,
+      "height": 56.900666842754156,
+      "width": 99.99274099883856
     },
     {
       "type": "domainStory:workObjectDollar",
       "name": "Pagamento",
       "id": "shape_0576",
       "x": 5578,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:workObjectCommute",
       "name": "Oficina mecânica",
       "id": "shape_0657",
       "x": 536,
-      "y": 494.00000190734863
+      "y": 400.00000190734863
     },
     {
       "type": "domainStory:workObjectAssignment",
       "name": "Orçamento",
       "id": "shape_0710",
       "x": 2680,
-      "y": 791.0000019073486
+      "y": 697.0000019073486
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_1307",
       "x": 2440,
-      "y": 791.0000019073486
+      "y": 697.0000019073486
     },
     {
       "name": "Sistema",
       "id": "shape_1308",
       "type": "domainStory:actorSystem",
       "x": 1214,
-      "y": 666.0000019073486
+      "y": 572.0000019073486
     },
     {
       "type": "domainStory:workObjectConversation",
       "name": "Atendimento",
       "id": "shape_1409",
       "x": 334,
-      "y": 666.0000019073486
+      "y": 572.0000019073486
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_1575",
+      "x": 1373,
+      "y": 7,
+      "text": "Busca por CPF/CNPJ e o sistema traz os dados, se existir",
+      "number": 86.35826471202608,
+      "height": 86.35826471202608,
+      "width": 99.98772501462868
     },
     {
       "type": "domainStory:workObjectCar",
       "name": "Veículo",
       "id": "shape_1688",
       "x": 1051,
-      "y": 494.00000190734863
+      "y": 400.00000190734863
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Cliente",
       "id": "shape_1701",
       "x": 5363,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_1730",
       "x": 4910,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:workObjectSettings",
       "name": "Conserto",
       "id": "shape_1904",
       "x": 3931,
-      "y": 791
+      "y": 697
     },
     {
       "name": "Ordem serviço",
       "id": "shape_1912",
       "type": "domainStory:workObjectBriefcase",
       "x": 3143,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Atendente",
       "id": "shape_1954",
       "x": 1946,
-      "y": 790.0000019073486
+      "y": 696.0000019073486
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Atendente",
       "id": "shape_2223",
       "x": 624,
-      "y": 666.0000019073486
+      "y": 572.0000019073486
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_2336",
+      "x": 1373,
+      "y": 879,
+      "text": "Status da OS: Em diagnóstico",
+      "number": 42.9600882890194,
+      "height": 42.9600882890194,
+      "width": 99.99274099883856
     },
     {
       "type": "domainStory:workObjectSettings",
       "name": "Conserto",
       "id": "shape_2526",
       "x": 4285,
-      "y": 666
+      "y": 572
     },
     {
       "type": "domainStory:workObjectBook",
       "name": "Cadastro",
       "id": "shape_2828",
       "x": 1051,
-      "y": 326.00000190734863
-    },
-    {
-      "type": "domainStory:workObjectCheck-Circle",
-      "name": "Status",
-      "id": "shape_2877",
-      "x": 1051,
-      "y": 937.0000019073486
+      "y": 232.00000190734863
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_2878",
       "x": 1214,
-      "y": 326
-    },
-    {
-      "type": "domainStory:textAnnotation",
-      "name": "",
-      "id": "shape_2941",
-      "x": 1798,
-      "y": 682,
-      "text": "Status da OS: Recebida",
-      "number": 43.029253330985775,
-      "height": 43.029253330985775,
-      "width": 99.9941210328199
+      "y": 232
     },
     {
       "type": "domainStory:textAnnotation",
       "name": "",
       "id": "shape_3102",
       "x": 3131,
-      "y": 920,
+      "y": 826,
       "text": "Status da OS: Em execução",
       "number": 43.029256613857775,
       "height": 43.029256613857775,
@@ -1749,42 +1850,53 @@
       "name": "Cliente",
       "id": "shape_3317",
       "x": 4098,
-      "y": 937
+      "y": 843
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Cliente",
       "id": "shape_3418",
       "x": 155,
-      "y": 666.0000019073486
+      "y": 572.0000019073486
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_3663",
+      "x": 1373,
+      "y": 589,
+      "text": "Status da OS: Recebida",
+      "number": 42.9930825405143,
+      "height": 42.9930825405143,
+      "width": 99.99274099883856
     },
     {
       "name": "Diagnóstico",
       "id": "shape_3709",
       "type": "domainStory:workObjectInfo",
       "x": 1438,
-      "y": 791.0000019073486
+      "y": 697.0000019073486
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_3805",
       "x": 3338,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:workObjectWrench",
       "name": "Peças e insumos",
       "id": "shape_3900",
       "x": 2266,
-      "y": 791.0000019073486
+      "y": 697.0000019073486
     },
     {
       "type": "domainStory:textAnnotation",
       "name": "",
       "id": "shape_3901",
       "x": 5952,
-      "y": 960,
+      "y": 589,
       "text": "Status da OS: Entregue",
       "number": 42.9600882890194,
       "height": 42.9600882890194,
@@ -1795,7 +1907,7 @@
       "name": "",
       "id": "shape_4167",
       "x": 3532,
-      "y": 927,
+      "y": 833,
       "text": "Via sistema",
       "number": 29.9900895346873,
       "height": 29.9900895346873,
@@ -1806,169 +1918,148 @@
       "id": "shape_4256",
       "type": "domainStory:workObjectBriefcase",
       "x": 1051,
-      "y": 666.0000019073486
+      "y": 572.0000019073486
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Cliente",
       "id": "shape_4578",
       "x": 1214,
-      "y": 174
+      "y": 80
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_5032",
+      "x": 2814,
+      "y": 422,
+      "text": "Status da OS: Aguardando aprovação",
+      "number": 56.9886360168457,
+      "height": 56.9886360168457,
+      "width": 100
     },
     {
       "type": "domainStory:workObjectCar",
       "name": "Veículo",
       "id": "shape_5063",
       "x": 3931,
-      "y": 937
+      "y": 843
     },
     {
       "type": "domainStory:workObjectCall",
       "name": "Notificação",
       "id": "shape_5594",
       "x": 3544,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Atendente",
       "id": "shape_5805",
       "x": 3729,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:workObjectCar",
       "name": "Veículo",
       "id": "shape_5807",
       "x": 334,
-      "y": 493.00000190734863
+      "y": 399.00000190734863
     },
     {
       "type": "domainStory:workObjectCall",
       "name": "Notificação",
       "id": "shape_5914",
       "x": 5158,
-      "y": 791
-    },
-    {
-      "name": "Status",
-      "id": "shape_5931",
-      "type": "domainStory:workObjectCheck-Circle",
-      "x": 1438,
-      "y": 666
-    },
-    {
-      "name": "Ordem serviço",
-      "id": "shape_6263",
-      "type": "domainStory:workObjectBriefcase",
-      "x": 2920,
-      "y": 619.0000019073486
+      "y": 697
     },
     {
       "type": "domainStory:workObjectBriefcase",
       "name": "Ordem serviço",
       "id": "shape_6405",
       "x": 5964,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Cliente",
       "id": "shape_6438",
       "x": 2945,
-      "y": 791.0000019073486
-    },
-    {
-      "type": "domainStory:textAnnotation",
-      "name": "",
-      "id": "shape_6465",
-      "x": 1426,
-      "y": 960,
-      "text": "Status: Em diagnóstico",
-      "number": 42.98649978637695,
-      "height": 42.98649978637695,
-      "width": 99.99998474121094
+      "y": 697.0000019073486
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Mecânico",
       "id": "shape_6564",
       "x": 1214,
-      "y": 791.0000019073486
+      "y": 697.0000019073486
     },
     {
-      "name": "Ordem serviço",
-      "id": "shape_6610",
-      "type": "domainStory:workObjectBriefcase",
-      "x": 1651,
-      "y": 666
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_6771",
+      "x": 5146,
+      "y": 866,
+      "text": "Notificação é feita via Sistema",
+      "number": 56.66482593366492,
+      "height": 56.66482593366492,
+      "width": 99.98772501462868
     },
     {
       "type": "domainStory:workObjectReceipt",
       "name": "Serviços",
       "id": "shape_6933",
       "x": 1946,
-      "y": 493.00000190734863
+      "y": 399.00000190734863
     },
     {
       "name": "Ordem serviço",
       "id": "shape_7013",
       "type": "domainStory:workObjectBriefcase",
-      "x": 1214,
-      "y": 937.0000019073486
-    },
-    {
-      "type": "domainStory:workObjectCheck-Circle",
-      "name": "Status",
-      "id": "shape_7059",
-      "x": 2680,
-      "y": 619.0000019073486
+      "x": 1051,
+      "y": 843.0000019073486
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_7216",
       "x": 2266,
-      "y": 493.00000190734863
+      "y": 399.00000190734863
     },
     {
-      "type": "domainStory:textAnnotation",
-      "name": "",
-      "id": "shape_8063",
-      "x": 3131,
-      "y": 629,
-      "text": "Status da OS: Aguardando aprovação",
-      "number": 56.995731353759766,
-      "height": 56.995731353759766,
-      "width": 99.99998474121094
+      "type": "domainStory:actorSystem",
+      "name": "Sistema",
+      "id": "shape_7543",
+      "x": 1214,
+      "y": 849
     },
     {
       "type": "domainStory:workObjectInfo",
       "name": "Diagnóstico",
       "id": "shape_8065",
       "x": 1051,
-      "y": 791.0000019073486
+      "y": 697.0000019073486
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Atendente",
       "id": "shape_8121",
       "x": 4503,
-      "y": 791
+      "y": 697
     },
     {
       "name": "Ordem serviço",
       "id": "shape_8244",
       "type": "domainStory:workObjectBriefcase",
       "x": 4286,
-      "y": 783
+      "y": 689
     },
     {
       "type": "domainStory:textAnnotation",
       "name": "",
       "id": "shape_8465",
       "x": 4699,
-      "y": 960,
+      "y": 866,
       "text": "Status da OS: Finalizada",
       "number": 42.9600882890194,
       "height": 42.9600882890194,
@@ -1979,35 +2070,56 @@
       "id": "shape_8590",
       "type": "domainStory:workObjectBriefcase",
       "x": 4711,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:actorPerson",
       "name": "Mecânico",
       "id": "shape_8649",
       "x": 4098,
-      "y": 791
+      "y": 697
     },
     {
       "type": "domainStory:workObjectBriefcase",
       "name": "Ordem serviço",
       "id": "shape_8768",
       "x": 2680,
-      "y": 494.00000190734863
+      "y": 400.00000190734863
     },
     {
       "type": "domainStory:actorSystem",
       "name": "Sistema",
       "id": "shape_8993",
       "x": 1214,
-      "y": 494.00000190734863
+      "y": 400.00000190734863
+    },
+    {
+      "name": "Cadastro",
+      "id": "shape_9076",
+      "type": "domainStory:workObjectBook",
+      "x": 1051,
+      "y": -16
+    },
+    {
+      "type": "domainStory:workObjectCar",
+      "name": "Veículo",
+      "id": "shape_9456",
+      "x": 5759,
+      "y": 856
+    },
+    {
+      "type": "domainStory:actorPerson",
+      "name": "Cliente",
+      "id": "shape_9742",
+      "x": 5964,
+      "y": 856
     },
     {
       "name": "Sistema",
       "id": "shape_9756",
       "type": "domainStory:actorSystem",
       "x": 6162,
-      "y": 792
+      "y": 698
     },
     {
       "info": "Fluxo de cadastro e execução de serviços"

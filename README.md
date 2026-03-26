@@ -55,3 +55,11 @@ Com o apoio de uma equipe de desenvolvedores, o projeto foi batizado internament
 ## Jornada TO BE (Estoque)
 
 <img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/wrench-auto-repair-pictographic-language-to-be-stock.svg" width="100%">
+
+# Contextos Delimitados
+
+**TODO**
+
+# Event Storming
+
+**TODO**

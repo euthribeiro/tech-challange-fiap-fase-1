@@ -1,25 +1,58 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11626.173
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.cadastro", "wrench.cadastro", "{3DCBF5AA-4103-490C-BB2E-520B6338BF1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.core", "wrench.core", "{2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.core", "wrench.auto.repair.core\wrench.auto.repair.core.csproj", "{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.core", "src\wrench.auto.repair.core\wrench.auto.repair.core.csproj", "{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.domain", "wrench.auto.repair.cadastro.domain\wrench.auto.repair.cadastro.domain.csproj", "{9B3C4B4A-44FD-40F6-8376-7B84091CC174}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.domain", "src\wrench.auto.repair.cadastro.domain\wrench.auto.repair.cadastro.domain.csproj", "{9B3C4B4A-44FD-40F6-8376-7B84091CC174}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.estoque", "wrench.estoque", "{BC17499A-3521-4DAA-8DF2-A531E7EF064A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.ordem.servico", "wrench.ordem.servico", "{236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.application", "src\wrench.auto.repair.cadastro.application\wrench.auto.repair.cadastro.application.csproj", "{276C95F5-0DAA-480F-8201-B3649BF1AE6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.infra", "src\wrench.auto.repair.cadastro.infra\wrench.auto.repair.cadastro.infra.csproj", "{3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.web", "wrench.web", "{0CCE5DED-25C7-4AD2-BAB3-E721FAE67CB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.web.api", "src\wrench.web.api\wrench.web.api.csproj", "{DD66452C-DB7A-49E8-835A-37368885C88A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CB1750C5-BEA4-4645-9859-C1B40E99AAEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.application.test", "tests\wrench.auto.repair.cadastro.application.test\wrench.auto.repair.cadastro.application.test.csproj", "{CA1A67A3-FD72-446E-8DA3-5B942F2B4777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.domain.test", "tests\wrench.auto.repair.cadastro.domain.test\wrench.auto.repair.cadastro.domain.test.csproj", "{CE94CDF4-0E99-4547-BB30-1EEB12370435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.infra.tests", "tests\wrench.auto.repair.cadastro.infra.tests\wrench.auto.repair.cadastro.infra.tests.csproj", "{9530F577-31A5-46BA-B762-33194E0AF5F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C8E1F5DF-1B08-4122-BD1B-700D2EE06EB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5E6AD4BA-E4EB-4E18-BED4-484EF94514F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8C7B9B71-B651-476D-B41E-DD2B4BBB64B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.estoque.application", "src\wrench.auto.repair.estoque.application\wrench.auto.repair.estoque.application.csproj", "{40A6153A-9034-4509-BB56-A4B3D7FF133A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.estoque.domain", "src\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj", "{3D9D9A87-F5F5-4779-B557-52E0249FC20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.estoque.infra", "src\wrench.auto.repair.estoque.infra\wrench.auto.repair.estoque.infra.csproj", "{BB696098-A98A-41C9-B954-AFD20B77A19B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.application", "src\wrench.auto.repair.ordem.servico.application\wrench.auto.repair.ordem.servico.application.csproj", "{5712D35E-10AA-4F54-AFC7-18C6781C415F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.domain", "wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj", "{7DD054FE-E7C6-4156-9F04-0AEA8A040196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.infra", "wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj", "{015DA22C-690D-41FB-A6B3-0190A117BBDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4} = {2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}
-		{9B3C4B4A-44FD-40F6-8376-7B84091CC174} = {3DCBF5AA-4103-490C-BB2E-520B6338BF1A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +63,76 @@ Global
 		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276C95F5-0DAA-480F-8201-B3649BF1AE6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276C95F5-0DAA-480F-8201-B3649BF1AE6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276C95F5-0DAA-480F-8201-B3649BF1AE6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276C95F5-0DAA-480F-8201-B3649BF1AE6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD66452C-DB7A-49E8-835A-37368885C88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD66452C-DB7A-49E8-835A-37368885C88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD66452C-DB7A-49E8-835A-37368885C88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD66452C-DB7A-49E8-835A-37368885C88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1A67A3-FD72-446E-8DA3-5B942F2B4777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1A67A3-FD72-446E-8DA3-5B942F2B4777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1A67A3-FD72-446E-8DA3-5B942F2B4777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1A67A3-FD72-446E-8DA3-5B942F2B4777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE94CDF4-0E99-4547-BB30-1EEB12370435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE94CDF4-0E99-4547-BB30-1EEB12370435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE94CDF4-0E99-4547-BB30-1EEB12370435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE94CDF4-0E99-4547-BB30-1EEB12370435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9530F577-31A5-46BA-B762-33194E0AF5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9530F577-31A5-46BA-B762-33194E0AF5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9530F577-31A5-46BA-B762-33194E0AF5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9530F577-31A5-46BA-B762-33194E0AF5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A6153A-9034-4509-BB56-A4B3D7FF133A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A6153A-9034-4509-BB56-A4B3D7FF133A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A6153A-9034-4509-BB56-A4B3D7FF133A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A6153A-9034-4509-BB56-A4B3D7FF133A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9D9A87-F5F5-4779-B557-52E0249FC20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9D9A87-F5F5-4779-B557-52E0249FC20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9D9A87-F5F5-4779-B557-52E0249FC20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9D9A87-F5F5-4779-B557-52E0249FC20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB696098-A98A-41C9-B954-AFD20B77A19B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB696098-A98A-41C9-B954-AFD20B77A19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB696098-A98A-41C9-B954-AFD20B77A19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB696098-A98A-41C9-B954-AFD20B77A19B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD054FE-E7C6-4156-9F04-0AEA8A040196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD054FE-E7C6-4156-9F04-0AEA8A040196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD054FE-E7C6-4156-9F04-0AEA8A040196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD054FE-E7C6-4156-9F04-0AEA8A040196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015DA22C-690D-41FB-A6B3-0190A117BBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015DA22C-690D-41FB-A6B3-0190A117BBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015DA22C-690D-41FB-A6B3-0190A117BBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015DA22C-690D-41FB-A6B3-0190A117BBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4} = {2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}
+		{9B3C4B4A-44FD-40F6-8376-7B84091CC174} = {3DCBF5AA-4103-490C-BB2E-520B6338BF1A}
+		{276C95F5-0DAA-480F-8201-B3649BF1AE6A} = {3DCBF5AA-4103-490C-BB2E-520B6338BF1A}
+		{3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA} = {3DCBF5AA-4103-490C-BB2E-520B6338BF1A}
+		{DD66452C-DB7A-49E8-835A-37368885C88A} = {0CCE5DED-25C7-4AD2-BAB3-E721FAE67CB2}
+		{CB1750C5-BEA4-4645-9859-C1B40E99AAEF} = {3DCBF5AA-4103-490C-BB2E-520B6338BF1A}
+		{CA1A67A3-FD72-446E-8DA3-5B942F2B4777} = {CB1750C5-BEA4-4645-9859-C1B40E99AAEF}
+		{CE94CDF4-0E99-4547-BB30-1EEB12370435} = {CB1750C5-BEA4-4645-9859-C1B40E99AAEF}
+		{9530F577-31A5-46BA-B762-33194E0AF5F0} = {CB1750C5-BEA4-4645-9859-C1B40E99AAEF}
+		{C8E1F5DF-1B08-4122-BD1B-700D2EE06EB2} = {BC17499A-3521-4DAA-8DF2-A531E7EF064A}
+		{5E6AD4BA-E4EB-4E18-BED4-484EF94514F7} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
+		{8C7B9B71-B651-476D-B41E-DD2B4BBB64B0} = {0CCE5DED-25C7-4AD2-BAB3-E721FAE67CB2}
+		{40A6153A-9034-4509-BB56-A4B3D7FF133A} = {BC17499A-3521-4DAA-8DF2-A531E7EF064A}
+		{3D9D9A87-F5F5-4779-B557-52E0249FC20D} = {BC17499A-3521-4DAA-8DF2-A531E7EF064A}
+		{BB696098-A98A-41C9-B954-AFD20B77A19B} = {BC17499A-3521-4DAA-8DF2-A531E7EF064A}
+		{5712D35E-10AA-4F54-AFC7-18C6781C415F} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
+		{7DD054FE-E7C6-4156-9F04-0AEA8A040196} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
+		{015DA22C-690D-41FB-A6B3-0190A117BBDF} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
 	EndGlobalSection
 EndGlobal

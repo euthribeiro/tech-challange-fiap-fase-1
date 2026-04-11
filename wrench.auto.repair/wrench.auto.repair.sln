@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.cadastro", "wrench.cadastro", "{3DCBF5AA-4103-490C-BB2E-520B6338BF1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.core", "wrench.core", "{2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.core", "wrench.auto.repair.core\wrench.auto.repair.core.csproj", "{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.domain", "wrench.auto.repair.cadastro.domain\wrench.auto.repair.cadastro.domain.csproj", "{9B3C4B4A-44FD-40F6-8376-7B84091CC174}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.estoque", "wrench.estoque", "{BC17499A-3521-4DAA-8DF2-A531E7EF064A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.ordem.servico", "wrench.ordem.servico", "{236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4} = {2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}
+		{9B3C4B4A-44FD-40F6-8376-7B84091CC174} = {3DCBF5AA-4103-490C-BB2E-520B6338BF1A}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3C4B4A-44FD-40F6-8376-7B84091CC174}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

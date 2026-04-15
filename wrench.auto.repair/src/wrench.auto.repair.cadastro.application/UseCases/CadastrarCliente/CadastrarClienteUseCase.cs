@@ -1,6 +1,6 @@
 ﻿namespace wrench.auto.repair.cadastro.application.UseCases;
 
-public class CadastrarCliente
+public class CadastrarClienteUseCase : ICadastrarClienteUseCase
 {
-    
+
 }

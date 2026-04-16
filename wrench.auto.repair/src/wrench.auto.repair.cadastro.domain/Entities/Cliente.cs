@@ -5,7 +5,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 {
     public class Cliente : Entity, IAggregateRoot
     {
-        public Cliente(CpfCnpj documento, NomeCompleto nomeCompleto, DateTime dataNascimento, Telefone telefone, Email email, Guid enderecoId, DateTime dataCadastro)
+        public Cliente(CpfCnpj documento, NomeCompleto nomeCompleto, DataNascimento dataNascimento, Telefone telefone, Email email, Guid enderecoId, DateTime dataCadastro)
         {
             Documento = documento;
             NomeCompleto = nomeCompleto;
@@ -20,7 +20,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         public NomeCompleto NomeCompleto { get; private set; }
 
-        public DateTime DataNascimento { get; set; }
+        public DataNascimento DataNascimento { get; set; }
 
         public Telefone Telefone { get; private set; }
 
@@ -32,10 +32,30 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         public Endereco Endereco { get; private set; }
 
-        public void AlterarEndereco(Endereco endereco)
+        public void AtualizarNomeCompleto(NomeCompleto nomeCompleto)
         {
-            EnderecoId = Endereco.Id;
+            NomeCompleto = nomeCompleto;
+        }
+
+        public void AtualizarNascimento(DataNascimento dataNascimento)
+        {
+            DataNascimento = dataNascimento;
+        }
+
+        public void AtualizarTelefone(Telefone telefone)
+        {
+            Telefone = telefone;
+        }
+
+        public void AtualizarEmail(Email email)
+        {
+            Email = email;
+        }
+
+        public void AtualizarEndereco(Endereco endereco)
+        {
             Endereco = endereco;
+            EnderecoId = endereco.Id;
         }
     }
 }

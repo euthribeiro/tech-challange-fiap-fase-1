@@ -30,6 +30,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
             Validacoes.ValidarSeVazio(Pais, "País não pode ser vazio");
         }
 
+
         public string Logradouro { get; private set; }
 
         public string Numero { get; private set; }

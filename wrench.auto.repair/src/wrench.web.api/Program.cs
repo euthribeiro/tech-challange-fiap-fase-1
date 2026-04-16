@@ -1,41 +1,44 @@
+using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
+using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
+using wrench.auto.repair.ordem.servico.infra.Context;
+using wrench.auto.repair.ordem.servico.infra.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Configurar o DbContext para usar PostgreSQL e pasta migration do contexto ser criada
+// no projeto infra do contexto
+
+// TODO: Mover string de conexão para secrets ou configuração externa
+builder.Services.AddDbContext<OrdemServicoDbContext>(options =>
+{
+    options.UseNpgsql("Host=localhost;Port=5432;Database=db_wrench;Username=postgres;Password=postgres", 
+        p => p.MigrationsAssembly("wrench.auto.repair.ordem.servico.infra"));
+});
+
+// TODO: COnfigurar demais contextos
+
+// Registrar MediatR apontando para o Assembly da Camada Application
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
+    typeof(wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico.CriarOrdemServicoCommand).Assembly
+));
+
+// Registrar Dependências de Repositório (DI)
+builder.Services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference("/docs");
 }
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast");
+// Registrar os endpoints de Ordem de Servico
+wrench.web.api.Endpoints.OrdemServicoEndpoint.MapOrdemServicoEndpoints(app);
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

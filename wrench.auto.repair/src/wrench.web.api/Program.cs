@@ -28,6 +28,8 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
 // Registrar Dependências de Repositório (DI)
 builder.Services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -39,6 +41,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Registrar os endpoints de Ordem de Servico
-wrench.web.api.Endpoints.OrdemServicoEndpoint.MapOrdemServicoEndpoints(app);
+app.MapControllers();
 
 app.Run();

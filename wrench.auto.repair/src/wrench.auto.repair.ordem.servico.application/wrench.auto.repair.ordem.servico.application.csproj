@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="UseCases\IniciaConsertoVeiculo\" />
+    <Folder Include="UseCases\AtualizaOrdemServico\" />
+    <Folder Include="UseCases\AprovaOrcamento\" />
+    <Folder Include="UseCases\NotificaCliente\" />
+    <Folder Include="UseCases\RegistraEntregaVeiculo\" />
+    <Folder Include="UseCases\RealizaDiagnostico\" />
+    <Folder Include="UseCases\SolicitaDiagnostico\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
@@ -15,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj" />
     <ProjectReference Include="..\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj" />
   </ItemGroup>
 

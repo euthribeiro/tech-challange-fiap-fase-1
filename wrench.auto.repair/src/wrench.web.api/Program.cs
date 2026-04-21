@@ -21,9 +21,16 @@ builder.Services.AddDbContext<OrdemServicoDbContext>(options =>
 // TODO: COnfigurar demais contextos
 
 // Registrar MediatR apontando para o Assembly da Camada Application
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
-    typeof(wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico.CriarOrdemServicoCommand).Assembly
-));
+//builder.Services.AddMediatR(cfg => typeof(Program).Assembly
+
+//    //typeof(wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico.CriarOrdemServicoCommand).Assembly
+
+//);
+
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssemblies(typeof(Program).Assembly);
+});
 
 // Registrar Dependências de Repositório (DI)
 builder.Services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();

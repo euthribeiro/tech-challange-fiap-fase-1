@@ -10,7 +10,6 @@
     <Folder Include="UseCases\IniciaConsertoVeiculo\" />
     <Folder Include="UseCases\AtualizaOrdemServico\" />
     <Folder Include="UseCases\AprovaOrcamento\" />
-    <Folder Include="UseCases\NotificaCliente\" />
     <Folder Include="UseCases\RegistraEntregaVeiculo\" />
     <Folder Include="UseCases\RealizaDiagnostico\" />
     <Folder Include="UseCases\SolicitaDiagnostico\" />

@@ -28,7 +28,6 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("CriarOrdemServico")]
         public async Task<IActionResult> Post([FromBody] CriarOrdemServicoRequest request)
         {
             var result = await _mediator.Send((CriarOrdemServicoCommand)request);

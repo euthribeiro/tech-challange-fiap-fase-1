@@ -19,6 +19,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServic
             var ordemServico = new OrdemServico(
                 request.ClienteId,
                 request.VeiculoId,
+                request.AtendenteId,
                 request.Descricao,
                 OrdemServicoStatus.Recebida
             );

@@ -8,19 +8,24 @@ namespace wrench.web.api.Models.Requests
     public class CriarOrdemServicoRequest
     {
         /// <summary>
-        /// Propriedade de exemplo para demonstração. Substitua por propriedades reais conforme necessário.
+        /// Identificado do cliente
         /// </summary>
-        public int MyProperty { get; set; }
+        public Guid ClienteId { get; set; }
 
         /// <summary>
-        /// Propriedade de exemplo para demonstração. Substitua por propriedades reais conforme necessário. 
+        /// Identificador do veículo
         /// </summary>
-        public int MyProperty1 { get; set; }
+        public Guid Veiculo { get; set; }
 
         /// <summary>
-        /// Propriedade de exemplo para demonstração. Substitua por propriedades reais conforme necessário.
+        /// Identificado do atendente que está iniciando a ordem de serviço
         /// </summary>
-        public int MyProperty2 { get; set; }
+        public Guid Atendente { get; set; }
+
+        /// <summary>
+        /// Descrição da ordem de serviço
+        /// </summary>
+        public string Descricao { get; set; }
 
         public static implicit operator CriarOrdemServicoCommand(CriarOrdemServicoRequest request)
         {
@@ -28,11 +33,11 @@ namespace wrench.web.api.Models.Requests
 
             return new CriarOrdemServicoCommand
             {
-                ClienteId = default,
-                VeiculoId = default,
-                AtendenteId = default,
-                Descricao = default,
-                DataCriacao = default
+                ClienteId = request.ClienteId,
+                VeiculoId = request.Veiculo,
+                AtendenteId = request.Atendente,
+                Descricao = request.Descricao,
+                DataCriacao = DateTime.UtcNow
             };
         }
     }

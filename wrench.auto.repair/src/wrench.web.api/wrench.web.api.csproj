@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
@@ -7,7 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1"/>
+        <!--<PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.3.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.6" />-->
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\wrench.auto.repair.autenticacao.application\wrench.auto.repair.autenticacao.application.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.autenticacao.domain\wrench.auto.repair.autenticacao.domain.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.autenticacao.infra\wrench.auto.repair.autenticacao.infra.csproj" />
     </ItemGroup>
 
 </Project>

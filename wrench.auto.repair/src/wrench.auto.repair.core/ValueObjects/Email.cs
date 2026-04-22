@@ -6,6 +6,8 @@ namespace wrench.auto.repair.core.ValueObjects
 {
     public class Email
     {
+        protected Email() { } // EF Core
+
         public string Endereco { get; private set; }
 
         public string Dominio { get; private set; }
@@ -32,7 +34,7 @@ namespace wrench.auto.repair.core.ValueObjects
 
         public override bool Equals(object? obj)
         {
-            return base.Equals(obj);
+            return obj is Email other && Equals(other);
         }
 
         public bool Equals(Email other) =>

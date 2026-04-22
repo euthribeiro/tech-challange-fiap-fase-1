@@ -39,15 +39,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.estoque.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.application", "src\wrench.auto.repair.ordem.servico.application\wrench.auto.repair.ordem.servico.application.csproj", "{5712D35E-10AA-4F54-AFC7-18C6781C415F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.infra", "wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj", "{D630555F-F947-4DB0-814E-E79DBB3D80B2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.domain", "wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj", "{0DF34896-4456-4986-9A79-27F51AB4D48C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1DEE0715-60D0-4A5C-A097-40D34619315B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.core.tests", "tests\wrench.auto.repair.core.tests\wrench.auto.repair.core.tests.csproj", "{37591B86-3A17-4B90-A56A-2C0F6AA1B01E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.domain.tests", "tests\wrench.auto.repair.cadastro.domain.tests\wrench.auto.repair.cadastro.domain.tests.csproj", "{16D81E17-80A0-4A61-B822-7021701BC1DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrench.autenticacao", "wrench.autenticacao", "{0782777B-B950-4645-9B60-AD906D17707D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.autenticacao.domain", "src\wrench.auto.repair.autenticacao.domain\wrench.auto.repair.autenticacao.domain.csproj", "{A867483D-4266-4830-85E7-858ED772BE43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.domain", "src\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj", "{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.infra", "src\wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj", "{1833332F-3211-B89C-07DF-347A7E5AADA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4E63BF8F-4656-4680-AFAD-05E3CFCE287C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.autenticacao.infra", "src\wrench.auto.repair.autenticacao.infra\wrench.auto.repair.autenticacao.infra.csproj", "{2F452ADC-B9BB-44DC-96DC-D2CA944F1637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.autenticacao.domain.tests", "tests\wrench.auto.repair.autenticacao.domain.tests\wrench.auto.repair.autenticacao.domain.tests.csproj", "{42836D60-E9B7-A1C3-D162-ECBDD6AA4410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.autenticacao.application", "src\wrench.auto.repair.autenticacao.application\wrench.auto.repair.autenticacao.application.csproj", "{567BC47A-6E88-E128-435C-E8A83795C08A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,14 +103,6 @@ Global
 		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5712D35E-10AA-4F54-AFC7-18C6781C415F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D630555F-F947-4DB0-814E-E79DBB3D80B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D630555F-F947-4DB0-814E-E79DBB3D80B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D630555F-F947-4DB0-814E-E79DBB3D80B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D630555F-F947-4DB0-814E-E79DBB3D80B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DF34896-4456-4986-9A79-27F51AB4D48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DF34896-4456-4986-9A79-27F51AB4D48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DF34896-4456-4986-9A79-27F51AB4D48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DF34896-4456-4986-9A79-27F51AB4D48C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{37591B86-3A17-4B90-A56A-2C0F6AA1B01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37591B86-3A17-4B90-A56A-2C0F6AA1B01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37591B86-3A17-4B90-A56A-2C0F6AA1B01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -107,6 +111,30 @@ Global
 		{16D81E17-80A0-4A61-B822-7021701BC1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16D81E17-80A0-4A61-B822-7021701BC1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16D81E17-80A0-4A61-B822-7021701BC1DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A867483D-4266-4830-85E7-858ED772BE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A867483D-4266-4830-85E7-858ED772BE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A867483D-4266-4830-85E7-858ED772BE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A867483D-4266-4830-85E7-858ED772BE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F452ADC-B9BB-44DC-96DC-D2CA944F1637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F452ADC-B9BB-44DC-96DC-D2CA944F1637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F452ADC-B9BB-44DC-96DC-D2CA944F1637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F452ADC-B9BB-44DC-96DC-D2CA944F1637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42836D60-E9B7-A1C3-D162-ECBDD6AA4410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42836D60-E9B7-A1C3-D162-ECBDD6AA4410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42836D60-E9B7-A1C3-D162-ECBDD6AA4410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42836D60-E9B7-A1C3-D162-ECBDD6AA4410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567BC47A-6E88-E128-435C-E8A83795C08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567BC47A-6E88-E128-435C-E8A83795C08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567BC47A-6E88-E128-435C-E8A83795C08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567BC47A-6E88-E128-435C-E8A83795C08A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,11 +153,16 @@ Global
 		{3D9D9A87-F5F5-4779-B557-52E0249FC20D} = {BC17499A-3521-4DAA-8DF2-A531E7EF064A}
 		{BB696098-A98A-41C9-B954-AFD20B77A19B} = {BC17499A-3521-4DAA-8DF2-A531E7EF064A}
 		{5712D35E-10AA-4F54-AFC7-18C6781C415F} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
-		{D630555F-F947-4DB0-814E-E79DBB3D80B2} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
-		{0DF34896-4456-4986-9A79-27F51AB4D48C} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
 		{1DEE0715-60D0-4A5C-A097-40D34619315B} = {2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}
 		{37591B86-3A17-4B90-A56A-2C0F6AA1B01E} = {1DEE0715-60D0-4A5C-A097-40D34619315B}
 		{16D81E17-80A0-4A61-B822-7021701BC1DB} = {CB1750C5-BEA4-4645-9859-C1B40E99AAEF}
+		{A867483D-4266-4830-85E7-858ED772BE43} = {0782777B-B950-4645-9B60-AD906D17707D}
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
+		{1833332F-3211-B89C-07DF-347A7E5AADA3} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
+		{4E63BF8F-4656-4680-AFAD-05E3CFCE287C} = {0782777B-B950-4645-9B60-AD906D17707D}
+		{2F452ADC-B9BB-44DC-96DC-D2CA944F1637} = {0782777B-B950-4645-9B60-AD906D17707D}
+		{42836D60-E9B7-A1C3-D162-ECBDD6AA4410} = {4E63BF8F-4656-4680-AFAD-05E3CFCE287C}
+		{567BC47A-6E88-E128-435C-E8A83795C08A} = {0782777B-B950-4645-9B60-AD906D17707D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BAADC8F2-11BC-48A2-AD2B-06BEE9B8CEC0}

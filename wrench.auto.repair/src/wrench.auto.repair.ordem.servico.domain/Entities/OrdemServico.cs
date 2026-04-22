@@ -1,5 +1,4 @@
-﻿using System;
-using wrench.auto.repair.ordem.servico.domain.Enums;
+﻿using wrench.auto.repair.ordem.servico.domain.Enums;
 
 namespace wrench.auto.repair.ordem.servico.domain.Entities
 {
@@ -26,7 +25,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
 
         public OrdemServico()
         {
-            
+
         }
     }
 }

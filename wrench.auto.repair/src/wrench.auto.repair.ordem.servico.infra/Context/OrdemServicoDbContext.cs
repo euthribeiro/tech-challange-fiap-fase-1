@@ -11,7 +11,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Context
 
         public OrdemServicoDbContext(DbContextOptions<OrdemServicoDbContext> options) : base(options)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

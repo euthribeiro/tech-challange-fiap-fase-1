@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico;
 using wrench.web.api.Models.Requests;

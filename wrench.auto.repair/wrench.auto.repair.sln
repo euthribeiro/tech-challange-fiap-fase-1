@@ -39,15 +39,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.estoque.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.application", "src\wrench.auto.repair.ordem.servico.application\wrench.auto.repair.ordem.servico.application.csproj", "{5712D35E-10AA-4F54-AFC7-18C6781C415F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.infra", "wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj", "{D630555F-F947-4DB0-814E-E79DBB3D80B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.web.api.integration.tests", "tests\wrench.web.api.integration.tests\wrench.web.api.integration.tests.csproj", "{D8C547B6-53C4-4C20-B508-CDE64D255A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.domain", "wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj", "{0DF34896-4456-4986-9A79-27F51AB4D48C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.infra", "src\wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj", "{1833332F-3211-B89C-07DF-347A7E5AADA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1DEE0715-60D0-4A5C-A097-40D34619315B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.core.tests", "tests\wrench.auto.repair.core.tests\wrench.auto.repair.core.tests.csproj", "{37591B86-3A17-4B90-A56A-2C0F6AA1B01E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.domain.tests", "tests\wrench.auto.repair.cadastro.domain.tests\wrench.auto.repair.cadastro.domain.tests.csproj", "{16D81E17-80A0-4A61-B822-7021701BC1DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.ordem.servico.domain", "src\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj", "{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,18 @@ Global
 		{16D81E17-80A0-4A61-B822-7021701BC1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16D81E17-80A0-4A61-B822-7021701BC1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16D81E17-80A0-4A61-B822-7021701BC1DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C547B6-53C4-4C20-B508-CDE64D255A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C547B6-53C4-4C20-B508-CDE64D255A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C547B6-53C4-4C20-B508-CDE64D255A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C547B6-53C4-4C20-B508-CDE64D255A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1833332F-3211-B89C-07DF-347A7E5AADA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,8 +144,11 @@ Global
 		{1DEE0715-60D0-4A5C-A097-40D34619315B} = {2CCD1FD5-CB8F-4C8D-BE0F-70054251DF55}
 		{37591B86-3A17-4B90-A56A-2C0F6AA1B01E} = {1DEE0715-60D0-4A5C-A097-40D34619315B}
 		{16D81E17-80A0-4A61-B822-7021701BC1DB} = {CB1750C5-BEA4-4645-9859-C1B40E99AAEF}
+		{D8C547B6-53C4-4C20-B508-CDE64D255A25} = {8C7B9B71-B651-476D-B41E-DD2B4BBB64B0}
+		{1833332F-3211-B89C-07DF-347A7E5AADA3} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
+		{54C6362C-DEA3-2347-BE5E-A6DD2D098A27} = {236A9D7D-035C-4DBD-9CF1-88B13C1DBAEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BAADC8F2-11BC-48A2-AD2B-06BEE9B8CEC0}
+		SolutionGuid = {090F31A5-4C72-4B0E-AEE7-FA6419FDC637}
 	EndGlobalSection
 EndGlobal

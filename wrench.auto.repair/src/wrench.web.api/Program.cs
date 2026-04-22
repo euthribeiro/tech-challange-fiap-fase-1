@@ -1,4 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
+using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
+using wrench.auto.repair.ordem.servico.infra.Context;
+using wrench.auto.repair.ordem.servico.infra.Repositories;
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using wrench.auto.repair.autenticacao.infra;
 using wrench.web.api.Options;
@@ -10,6 +16,29 @@ var isDevelopment = builder.Environment.IsDevelopment();
 builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
 
 builder.Services.AddOpenApi();
+
+// Configurar o DbContext para usar PostgreSQL e pasta migration do contexto ser criada
+// no projeto infra do contexto
+
+// TODO: Mover string de conexão para secrets ou configuração externa
+builder.Services.AddDbContext<OrdemServicoDbContext>(options =>
+{
+    options.UseNpgsql("Host=localhost;Port=5432;Database=db_wrench;Username=postgres;Password=postgres", 
+        p => p.MigrationsAssembly("wrench.auto.repair.ordem.servico.infra"));
+});
+
+// TODO: COnfigurar demais contextos
+
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssemblies(typeof(Program).Assembly);
+    config.RegisterServicesFromAssemblies(typeof(wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico.CriarOrdemServicoCommand).Assembly);
+});
+
+// Registrar Dependências de Repositório (DI)
+builder.Services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
+
+builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AutenticacaoContext>((serviceProvider, dbContextOptionsBuilder) =>
 {
@@ -38,8 +67,32 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference("/docs");
 }
 
 app.UseHttpsRedirection();
 
+// Registrar os endpoints de Ordem de Servico
+app.MapControllers();
+
 app.Run();
+app.MapGet("/weatherforecast", () =>
+    {
+        var forecast = Enumerable.Range(1, 5).Select(index =>
+                new WeatherForecast
+                (
+                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                    Random.Shared.Next(-20, 55),
+                    summaries[Random.Shared.Next(summaries.Length)]
+                ))
+            .ToArray();
+        return forecast;
+    })
+    .WithName("GetWeatherForecast");
+
+app.Run();
+
+record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}

@@ -7,8 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\" />
+    <Folder Include="UseCases\IniciaConsertoVeiculo\" />
+    <Folder Include="UseCases\AtualizaOrdemServico\" />
+    <Folder Include="UseCases\AprovaOrcamento\" />
+    <Folder Include="UseCases\RegistraEntregaVeiculo\" />
+    <Folder Include="UseCases\RealizaDiagnostico\" />
+    <Folder Include="UseCases\SolicitaDiagnostico\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,13 +4,13 @@ using wrench.auto.repair.core.Data;
 
 namespace wrench.auto.repair.autenticacao.infra
 {
-    public class AutenticacaoContext : DbContext, IUnitOfWork
+    public class AutenticacaoContext(
+        DbContextOptions<AutenticacaoContext> options
+    ) : DbContext(options), IUnitOfWork
     {
-        public AutenticacaoContext(DbContextOptions<AutenticacaoContext> options) :
-            base(options)
-        { }
-
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Perfil> Perfis { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

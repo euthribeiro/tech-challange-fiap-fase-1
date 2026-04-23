@@ -12,8 +12,8 @@ using wrench.auto.repair.autenticacao.infra;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     [DbContext(typeof(AutenticacaoContext))]
-    [Migration("20260422052711_InitialWrenchAutoRepairStore")]
-    partial class InitialWrenchAutoRepairStore
+    [Migration("20260423055614_ValueObjectEmail")]
+    partial class ValueObjectEmail
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfil");
+                    b.ToTable("Perfis");
                 });
 
             modelBuilder.Entity("wrench.auto.repair.autenticacao.domain.Entities.Usuario", b =>

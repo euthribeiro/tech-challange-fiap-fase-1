@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialWrenchAutoRepairStore : Migration
+    public partial class ValueObjectEmail : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Perfil",
+                name: "Perfis",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -23,7 +23,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Perfil", x => x.Id);
+                    table.PrimaryKey("PK_Perfis", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -41,9 +41,9 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Usuarios_Perfil_PerfilId",
+                        name: "FK_Usuarios_Perfis_PerfilId",
                         column: x => x.PerfilId,
-                        principalTable: "Perfil",
+                        principalTable: "Perfis",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -67,7 +67,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
-                name: "Perfil");
+                name: "Perfis");
         }
     }
 }

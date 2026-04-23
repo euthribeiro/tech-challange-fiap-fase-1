@@ -12,14 +12,15 @@ namespace wrench.auto.repair.autenticacao.infra.Mappings
 
             builder.OwnsOne(x => x.Email, email =>
             {
+                email.WithOwner();
+
                 email.Ignore(e => e.Dominio);
 
                 email.Property(e => e.Endereco)
                     .HasColumnName("Email")
                     .IsRequired();
 
-                email.HasIndex(e => e.Endereco)
-                    .IsUnique();
+                email.HasIndex(e => e.Endereco).IsUnique();
             });
 
             builder

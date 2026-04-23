@@ -6,6 +6,7 @@ namespace wrench.auto.repair.core.Data
     public interface IRepository<TEntity> : IDisposable
         where TEntity : Entity, IAggregateRoot
     {
+        IUnitOfWork UnitOfWork { get; }
         Task Adicionar(TEntity entidade, CancellationToken cancellationToken);
         Task Atualizar(TEntity entidade);
         Task Remover(TEntity entidade);

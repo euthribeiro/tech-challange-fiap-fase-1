@@ -10,6 +10,8 @@ namespace wrench.auto.repair.autenticacao.infra.Repositories
     {
         protected readonly DbSet<TEntity> DbSet = _context.Set<TEntity>();
 
+        IUnitOfWork IRepository<TEntity>.UnitOfWork => _context;
+
         public virtual async Task<TEntity?> ObterPorId(Guid id, CancellationToken cancellationToken)
         {
             return await DbSet.FindAsync(id, cancellationToken);

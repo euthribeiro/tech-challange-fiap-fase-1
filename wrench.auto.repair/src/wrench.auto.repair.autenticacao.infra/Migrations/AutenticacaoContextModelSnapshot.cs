@@ -44,7 +44,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Perfil");
+                    b.ToTable("Perfis");
                 });
 
             modelBuilder.Entity("wrench.auto.repair.autenticacao.domain.Entities.Usuario", b =>

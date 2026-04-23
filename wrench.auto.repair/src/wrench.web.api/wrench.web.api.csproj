@@ -10,26 +10,18 @@
     <ItemGroup>
         <PackageReference Include="MediatR" Version="14.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.6">
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+      <!--<PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.3.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.6" />-->
         <PackageReference Include="Scalar.AspNetCore" Version="2.13.22" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\wrench.auto.repair.ordem.servico.application\wrench.auto.repair.ordem.servico.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj" />
-        <!--<PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.3.9" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.6" />-->
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\wrench.auto.repair.autenticacao.application\wrench.auto.repair.autenticacao.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.autenticacao.domain\wrench.auto.repair.autenticacao.domain.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.autenticacao.infra\wrench.auto.repair.autenticacao.infra.csproj" />

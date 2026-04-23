@@ -4,6 +4,7 @@ using wrench.auto.repair.autenticacao.application.Commands;
 using wrench.auto.repair.autenticacao.application.tests.Fixtures;
 using wrench.auto.repair.autenticacao.domain.Data;
 using wrench.auto.repair.autenticacao.domain.Entities;
+using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.ValueObjects;
 
 namespace wrench.auto.repair.autenticacao.application.tests.UsuarioCommand
@@ -39,6 +40,7 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioCommand
 
             // Assert
             Assert.True(result.Sucesso);
+            Assert.Equal(ResultadoStatusEnum.CRIADO, result.ResultadoStatus);
             mocker.GetMock<IUsuarioRepository>().Verify(
                 u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()),
                 Times.Once
@@ -74,6 +76,7 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioCommand
 
             // Assert
             Assert.False(result.Sucesso);
+            Assert.Equal(TipoErroEnum.VALIDACAO, result.TipoErro);
             Assert.Contains("Usuário já cadastrado", result.Erros);
 
             mocker.GetMock<IUsuarioRepository>().Verify(

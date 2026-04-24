@@ -20,6 +20,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.estoque.infra\wrench.auto.repair.estoque.infra.csproj" />
+        <ProjectReference Include="..\wrench.auto.repair.estoque.application\wrench.auto.repair.estoque.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.ordem.servico.application\wrench.auto.repair.ordem.servico.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.autenticacao.application\wrench.auto.repair.autenticacao.application.csproj" />

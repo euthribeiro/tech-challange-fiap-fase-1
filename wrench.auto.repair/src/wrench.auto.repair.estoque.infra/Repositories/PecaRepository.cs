@@ -1,47 +1,28 @@
 ﻿using wrench.auto.repair.estoque.domain.Entities;
 using wrench.auto.repair.estoque.domain.Interfaces.Repositories;
+using wrench.auto.repair.estoque.infra.Context;
 
 namespace wrench.auto.repair.estoque.infra.Repositories;
 
 public class PecaRepository: IPecaRepository
 {
-    public void CriarPeca(Peca peca)
+    private readonly PecaDbContext _context;
+
+    public PecaRepository(PecaDbContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+    public async Task CriarPeca(Peca peca)
+    {
+        await _context.Pecas.AddAsync(peca);
+        await _context.SaveChangesAsync();
     }
 
     public void DeletaPeca(Guid idPeca)
     {
-        throw new NotImplementedException();
+        var peca = _context.Pecas.FirstOrDefault(p => p.Id == idPeca);
+       _context.Pecas.Remove(peca);
+       _context.SaveChanges();
     }
-
-    public void EntradaPeca(Guid idPeca, double quantidadeEntrada)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ReservarPeca(Guid idPeca, double quantidadeReserva)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SaidaPeca(Guid idPeca, double quantidadeSaida)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<Peca> ConsultaPecaPorNome(string nomePeca)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Peca ConsultaPecaPorId(Guid idPeca)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<Peca> ConsultaPecaPorDescricao(string descricaoPeca)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

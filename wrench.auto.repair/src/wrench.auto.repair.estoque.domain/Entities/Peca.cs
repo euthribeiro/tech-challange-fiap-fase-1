@@ -2,11 +2,20 @@
 
 public class Peca
 {
-    public Guid Id { get; } = Guid.NewGuid();
+    
+
+    public Guid Id { get; private set; }
     public string Nome { get; set; }
     public string Descricao   {get; set; }
-    public double Quantidade { get; set; }
     public double Valor { get; set; }
-    public DateTime DataCadastro { get; } = DateTime.Now;
-    public DateTime DataAlteracao { get; } = DateTime.Now;
+    public DateTime DataCadastro { get; private set; }
+    
+    public Peca(string nome, string descricao, double valor)
+    {
+        Id = Guid.NewGuid();
+        Nome = nome;
+        Descricao = descricao;
+        Valor = valor;
+        DataCadastro = DateTime.UtcNow;
+    }
 }

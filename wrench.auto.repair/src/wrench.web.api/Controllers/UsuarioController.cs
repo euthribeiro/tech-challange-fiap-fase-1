@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.autenticacao.application.Commands;
-using wrench.auto.repair.autenticacao.application.Models.ViewModels;
+using wrench.auto.repair.autenticacao.application.Commands.ViewModels;
+using wrench.auto.repair.autenticacao.application.Queries;
+using wrench.auto.repair.autenticacao.application.Queries.ViewModels;
 using wrench.auto.repair.core.Mediator;
 using wrench.web.api.Extensions;
 
@@ -12,6 +15,7 @@ namespace wrench.web.api.Controllers
     /// <param name="_mediatorHandler"></param>
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsuarioController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
@@ -20,11 +24,42 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CriarUsuarioViewModel request)
         {
             var command = new CriarUsuarioCommand(request.Email, request.Senha, request.PerfilId, request.Ativo);
 
-            var result = await _mediatorHandler.EnviarComando(command);
+            var result = await _mediatorHandler.EnviarComando<CriarUsuarioCommand, Guid>(command);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Lista todos os usuários cadastrados
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery();
+
+            var result = await _mediatorHandler
+                .EnviarComando<ObterTodosUsuariosQuery, IEnumerable<UsuarioViewModel>>(obterTodosUsuariosQuery);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Busca usuário pelo id
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("/{id:guid}")]
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
+        {
+            var obterUsuarioPorIdQuery = new ObterUsuarioPorIdQuery(id);
+
+            var result = await _mediatorHandler
+                .EnviarComando<ObterUsuarioPorIdQuery, UsuarioViewModel>(obterUsuarioPorIdQuery);
 
             return result.ToActionResult();
         }

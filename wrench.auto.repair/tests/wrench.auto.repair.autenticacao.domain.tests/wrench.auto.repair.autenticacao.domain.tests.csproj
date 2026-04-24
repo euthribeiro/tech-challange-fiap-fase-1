@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\wrench.auto.repair.autenticacao.domain\wrench.auto.repair.autenticacao.domain.csproj" />
+    <ProjectReference Include="..\..\src\wrench.auto.repair.autenticacao.infra\wrench.auto.repair.autenticacao.infra.csproj" />
     <ProjectReference Include="..\..\src\wrench.auto.repair.core\wrench.auto.repair.core.csproj" />
   </ItemGroup>
 

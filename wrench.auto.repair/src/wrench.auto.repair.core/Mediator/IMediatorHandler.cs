@@ -8,7 +8,6 @@ namespace wrench.auto.repair.core.Mediator
         Task PublicarEvento<T>(T evento) where T : Event;
         Task<Result> EnviarComando<T>(T comando) where T : Command;
         Task<Result<TOut>> EnviarComando<T, TOut>(T comando)
-            where T : Command<TOut>
-            where TOut : class;
+            where T : Command<TOut>;
     }
 }

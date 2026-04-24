@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using wrench.auto.repair.autenticacao.domain.Entities;
+using wrench.auto.repair.autenticacao.infra.Security;
 using wrench.auto.repair.core.ValueObjects;
 
 namespace wrench.auto.repair.autenticacao.application.tests.Fixtures
@@ -31,6 +32,11 @@ namespace wrench.auto.repair.autenticacao.application.tests.Fixtures
         public Usuario GerarUsuario()
         {
             return new Usuario(Email.CriarEmail(GerarEmail()), Guid.NewGuid(), true, DateTime.Now);
+        }
+
+        public string GerarHashSenha(string senha)
+        {
+            return new PasswordHasher().GerarHash(senha);
         }
     }
 }

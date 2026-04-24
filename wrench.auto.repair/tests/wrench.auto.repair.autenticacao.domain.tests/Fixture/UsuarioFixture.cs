@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using wrench.auto.repair.autenticacao.domain.Entities;
+using wrench.auto.repair.autenticacao.infra.Security;
 using wrench.auto.repair.core.ValueObjects;
 
 namespace wrench.auto.repair.autenticacao.domain.tests.Fixture
@@ -32,6 +33,11 @@ namespace wrench.auto.repair.autenticacao.domain.tests.Fixture
         public string GerarSenha(int tamanho)
         {
             return new Faker("pt_BR").Internet.Password(length: tamanho);
+        }
+
+        public string GerarHashSenha(string senha)
+        {
+            return new PasswordHasher().GerarHash(senha);
         }
     }
 }

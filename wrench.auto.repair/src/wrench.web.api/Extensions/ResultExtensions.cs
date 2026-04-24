@@ -28,6 +28,7 @@ namespace wrench.web.api.Extensions
                 TipoErroEnum.VALIDACAO => new BadRequestObjectResult(result.Erros),
                 TipoErroEnum.NAO_ENCONTRADO => new NotFoundObjectResult(result.Erros),
                 TipoErroEnum.CONFLITO => new ConflictObjectResult(result.Erros),
+                TipoErroEnum.NAO_AUTORIZADO => new UnauthorizedObjectResult(result.Erros),
                 TipoErroEnum.INESPERADO => new ObjectResult(result.Erros) { StatusCode = 500 },
                 _ => new ObjectResult(result.Erros) { StatusCode = 500 }
             };

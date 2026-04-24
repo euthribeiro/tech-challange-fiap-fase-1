@@ -4,7 +4,7 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.autenticacao.application.Commands
 {
-    public class CriarUsuarioCommand(string email, string? senha, Guid perfilId, bool ativo) : Command
+    public class CriarUsuarioCommand(string email, string? senha, Guid perfilId, bool ativo) : Command<Guid>
     {
         public string Email { get; private set; } = email;
         public string? Senha { get; private set; } = senha;

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico;
 using wrench.web.api.Models.Requests;
@@ -12,15 +13,9 @@ namespace wrench.web.api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class OrdemServicoController : ControllerBase
+    [Authorize]
+    public class OrdemServicoController(IMediator _mediator) : ControllerBase
     {
-        private readonly IMediator _mediator;
-
-        public OrdemServicoController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
         /// <summary>
         /// Cria ordem de serviço
         /// </summary>

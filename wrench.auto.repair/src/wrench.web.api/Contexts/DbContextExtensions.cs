@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using wrench.auto.repair.autenticacao.infra;
+using wrench.auto.repair.estoque.infra.Context;
 using wrench.auto.repair.ordem.servico.infra.Context;
 using wrench.web.api.Options;
 
@@ -12,6 +13,14 @@ namespace wrench.web.api.Contexts
         {
             AddOrdemDeServicoContexto(builder);
             AddAutenticacaoContext(builder);
+            AddEstoqueContext(builder);
+        }
+
+        private static void AddEstoqueContext(WebApplicationBuilder builder)
+        {
+            builder.Services.AddDbContext<PecaDbContext>(options =>
+                            options.UseNpgsql("Host=localhost;Port=5432;Database=db_wrench;Username=postgres;Password=postgres",
+                                p => p.MigrationsAssembly("wrench.auto.repair.estoque.infra")));
         }
 
         private static void AddOrdemDeServicoContexto(WebApplicationBuilder builder)

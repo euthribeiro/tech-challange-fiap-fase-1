@@ -4,7 +4,7 @@ using wrench.auto.repair.estoque.infra.Context;
 
 namespace wrench.auto.repair.estoque.infra.Repositories;
 
-public class PecaRepository: IPecaRepository
+public class PecaRepository : IPecaRepository
 {
     private readonly PecaDbContext _context;
 
@@ -21,8 +21,7 @@ public class PecaRepository: IPecaRepository
     public void DeletaPeca(Guid idPeca)
     {
         var peca = _context.Pecas.FirstOrDefault(p => p.Id == idPeca);
-       _context.Pecas.Remove(peca);
-       _context.SaveChanges();
+        _context.Pecas.Remove(peca);
+        _context.SaveChanges();
     }
-    
 }

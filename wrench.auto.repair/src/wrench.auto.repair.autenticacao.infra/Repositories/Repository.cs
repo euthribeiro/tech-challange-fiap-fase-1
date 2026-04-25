@@ -12,12 +12,12 @@ namespace wrench.auto.repair.autenticacao.infra.Repositories
 
         IUnitOfWork IRepository<TEntity>.UnitOfWork => _context;
 
-        public virtual async Task<TEntity?> ObterPorId(Guid id, CancellationToken cancellationToken)
+        public virtual async Task<TEntity?> ObterPorIdAsync(Guid id, CancellationToken cancellationToken)
         {
             return await DbSet.FindAsync(id, cancellationToken);
         }
 
-        public virtual async Task<IEnumerable<TEntity>> ObterTodos(CancellationToken cancellationToken)
+        public virtual async Task<IEnumerable<TEntity>> ObterTodosAsync(CancellationToken cancellationToken)
         {
             return await DbSet.ToListAsync(cancellationToken);
         }

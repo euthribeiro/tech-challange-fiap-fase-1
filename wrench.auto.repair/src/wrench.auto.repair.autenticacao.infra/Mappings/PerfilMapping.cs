@@ -10,10 +10,18 @@ namespace wrench.auto.repair.autenticacao.infra.Mappings
         {
             builder.HasKey(p => p.Id);
 
-            //builder.HasData([
-            //    new Perfil("Admin", "Perfil Adminstrativo", true, DateTime.Now),
-            //    new Perfil("Employee", "Perfil Funcionário", true, DateTime.Now),
-            //]);
+            var dataFixa = new DateTime(2026, 03, 06, 19, 0, 0, DateTimeKind.Utc);
+
+            var perfilAdminstrativo = new Perfil("Admin", "Perfil Adminstrativo", true, dataFixa);
+            perfilAdminstrativo.Id = Guid.Parse("63A459DE-75BA-4FAA-BD0E-9FCA7C9063AB");
+
+            var perfilFuncionario = new Perfil("Employee", "Perfil Funcionário", true, dataFixa);
+            perfilFuncionario.Id = Guid.Parse("5665D39C-4907-40A9-B648-E9CBB041AFED");
+
+            builder.HasData([
+                perfilAdminstrativo,
+                perfilFuncionario
+            ]);
         }
     }
 }

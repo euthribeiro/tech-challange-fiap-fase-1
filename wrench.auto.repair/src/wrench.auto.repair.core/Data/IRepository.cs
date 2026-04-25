@@ -10,8 +10,8 @@ namespace wrench.auto.repair.core.Data
         Task Adicionar(TEntity entidade, CancellationToken cancellationToken);
         Task Atualizar(TEntity entidade);
         Task Remover(TEntity entidade);
-        Task<TEntity?> ObterPorId(Guid id, CancellationToken cancellationToken);
-        Task<IEnumerable<TEntity>> ObterTodos(CancellationToken cancellationToken);
+        Task<TEntity?> ObterPorIdAsync(Guid id, CancellationToken cancellationToken);
+        Task<IEnumerable<TEntity>> ObterTodosAsync(CancellationToken cancellationToken);
         Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
     }
 }

@@ -12,7 +12,18 @@ using wrench.auto.repair.autenticacao.application.Commands;
 using wrench.auto.repair.autenticacao.domain.Data;
 using wrench.auto.repair.autenticacao.infra.Repositories;
 using wrench.auto.repair.core.Mediator;
+using wrench.auto.repair.autenticacao.application.Extensions;
+using wrench.auto.repair.autenticacao.infra.Extensions;
+using wrench.auto.repair.cadastro.application.Extensions;
+using wrench.auto.repair.cadastro.infra.Extensions;
+using wrench.auto.repair.core.Extensions;
+using wrench.auto.repair.estoque.application.Extensions;
+using wrench.auto.repair.estoque.infra.Extensions;
+using wrench.auto.repair.ordem.servico.application.Extensions;
+using wrench.auto.repair.ordem.servico.infra.Extensions;
+using wrench.web.api.Configuration;
 using wrench.web.api.Contexts;
+using wrench.web.api.Docs;
 using wrench.web.api.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,40 +31,10 @@ var builder = WebApplication.CreateBuilder(args);
 var isDevelopment = builder.Environment.IsDevelopment();
 
 builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
+builder.Services.ConfigureOptions<JwtOptionsSetup>();
+builder.Services.ConfigureAuthentication(builder.Configuration);
 
-builder.Services.AddOpenApi();
-
-// Configurar o DbContext para usar PostgreSQL e pasta migration do contexto ser criada
-// no projeto infra do contexto
-
-// TODO: Mover string de conexão para secrets ou configuração externa
-builder.Services.AddDbContext<OrdemServicoDbContext>(options =>
-{
-    options.UseNpgsql("Host=localhost;Port=5432;Database=db_wrench;Username=postgres;Password=postgres",
-        p => p.MigrationsAssembly("wrench.auto.repair.ordem.servico.infra"));
-});
-
-builder.Services.AddDbContext<AutenticacaoContext>((serviceProvider, dbContextOptionsBuilder) =>
-{
-    var databaseOptions = serviceProvider.GetService<IOptions<DatabaseOptions>>()!.Value;
-
-    var connectionString = builder.Configuration.GetConnectionString("Database");
-
-    //dbContextOptionsBuilder.UseNpgsql(connectionString, sqlAction =>
-    //{
-    //    sqlAction.EnableRetryOnFailure(databaseOptions.MaxRetryCount);
-    //    sqlAction.CommandTimeout(databaseOptions.CommandTimeout);
-    //});
-
-    dbContextOptionsBuilder.UseSqlServer(connectionString, sqlAction =>
-    {
-        sqlAction.EnableRetryOnFailure(databaseOptions.MaxRetryCount);
-        sqlAction.CommandTimeout(databaseOptions.CommandTimeout);
-    });
-
-    dbContextOptionsBuilder.EnableDetailedErrors(isDevelopment);
-    dbContextOptionsBuilder.EnableSensitiveDataLogging(isDevelopment);
-});
+builder.AddContexts();
 
 // TODO: COnfigurar demais contextos
 builder.Services.AddDbContext<PecaDbContext>(options =>
@@ -61,18 +42,21 @@ builder.Services.AddDbContext<PecaDbContext>(options =>
         p => p.MigrationsAssembly("wrench.auto.repair.estoque.infra")));
 builder.AddContexts();
 
-builder.Services.AddMediatR(config =>
-{
-    config.RegisterServicesFromAssemblies(typeof(Program).Assembly);
-    config.RegisterServicesFromAssemblies(typeof(Program).Assembly, typeof(UsuarioCommandHandler).Assembly);
-    config.RegisterServicesFromAssemblies(typeof(wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico.CriarOrdemServicoCommand).Assembly);
-});
-
 // Registrar Dependências de Repositório (DI)
-builder.Services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
 builder.Services.AddScoped<IPecaRepository, PecaRepository>();
-builder.Services.AddScoped<IMediatorHandler, MediatorHandler>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+builder.Services
+    .AddCore()
+    .AddAutenticacaoApplication()
+    .AddAutenticacaoInfra()
+    .AddCadastroApplication()
+    .AddCadastroInfra()
+    .AddEstoqueApplication()
+    .AddEstoqueInfra()
+    .AddOrdemServicoApplication()
+    .AddOrdemServicoInfra();
+
+builder.Services.ConfigureOpenApi();
 
 builder.Services.AddControllers();
 
@@ -81,12 +65,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    app.MapScalarApiReference("/docs");
+    app.MapScalarApiReference("docs-ui", options =>
+    {
+        options.Title = "Wrench API";
+    });
 }
 
 app.UseHttpsRedirection();
 
 // Registrar os endpoints de Ordem de Servico
+app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

@@ -30,17 +30,12 @@ namespace wrench.auto.repair.autenticacao.domain.Entities
             Validacoes.ValidarSeVerdadeiro(PerfilId == Guid.Empty, "Perfil não pode ser vazio");
         }
 
-        public void DefinirSenha(string senha)
+        public void DefinirSenha(string hashSenha)
         {
-            Validacoes.ValidarSeVazio(senha, "Senha não pode ser vazio");
-            Validacoes.ValidarMinimoMaximo(senha.Length, 12, 24, "A Senha deve ter entre 12 e 24 caracteres");
+            Validacoes.ValidarSeVazio(hashSenha, "Senha não pode ser vazio");
+            Validacoes.ValidarSeDiferente(hashSenha.Length, 60, "O hash da senha deve ter 60 caracteres");
 
-            Senha = BCrypt.Net.BCrypt.HashPassword(senha);
-        }
-
-        public bool ValidarSenha(string senhaInformada)
-        {
-            return BCrypt.Net.BCrypt.Verify(senhaInformada, Senha);
+            Senha = hashSenha;
         }
 
         public void AlterarPerfil(Perfil perfil)

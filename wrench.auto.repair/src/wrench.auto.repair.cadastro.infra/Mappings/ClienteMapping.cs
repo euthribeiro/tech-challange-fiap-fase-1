@@ -12,8 +12,6 @@ namespace wrench.auto.repair.cadastro.infra.Mappings
             {
                 e.ToTable("ClienteEnderecos");
             });
-
-            throw new NotImplementedException();
         }
     }
 }

@@ -8,7 +8,9 @@ namespace wrench.auto.repair.cadastro.infra.Mappings
     {
         public void Configure(EntityTypeBuilder<Veiculo> builder)
         {
-            throw new NotImplementedException();
+            builder
+                .HasIndex(v => v.PlacaDoVeiculo)
+                .IsUnique();
         }
     }
 }

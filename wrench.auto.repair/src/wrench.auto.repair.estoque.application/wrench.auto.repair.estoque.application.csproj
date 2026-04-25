@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="UseCases\EntradaPeca\" />
+    <Folder Include="UseCases\ReservarPeca\" />
+    <Folder Include="UseCases\SaidaPeca\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.7" />
   </ItemGroup>
 

@@ -8,7 +8,8 @@ namespace wrench.auto.repair.autenticacao.infra.Extensions
 {
     public static class DependencyInjectionExtension
     {
-        public static IServiceCollection AddAutenticacaoInfra(this IServiceCollection services)
+        public static IServiceCollection AddAutenticacaoInfra(
+            this IServiceCollection services)
         {
             #region segurança
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();

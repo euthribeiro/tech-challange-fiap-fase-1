@@ -6,6 +6,13 @@ namespace wrench.auto.repair.core.ValueObjects
     {
         public DateTime Nascimento { get; private set; }
 
+        public DataNascimento(DateTime nascimento)
+        {
+            Validar(nascimento.Day, nascimento.Month, nascimento.Year);
+
+            Nascimento = nascimento;
+        }
+
         public DataNascimento(int dia, int mes, int ano)
         {
             Validar(dia, mes, ano);

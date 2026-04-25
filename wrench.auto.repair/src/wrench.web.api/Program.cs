@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Scalar.AspNetCore;
 using wrench.auto.repair.autenticacao.application.Extensions;
 using wrench.auto.repair.autenticacao.infra.Extensions;
@@ -12,16 +13,15 @@ using wrench.web.api.Configuration;
 using wrench.web.api.Contexts;
 using wrench.web.api.Docs;
 using wrench.web.api.Options;
+using wrench.web.api.Transformers;
 
 var builder = WebApplication.CreateBuilder(args);
-
-var isDevelopment = builder.Environment.IsDevelopment();
 
 builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
 builder.Services.ConfigureOptions<JwtOptionsSetup>();
 builder.Services.ConfigureAuthentication(builder.Configuration);
 
-builder.AddContexts();
+builder.Services.AddDbContexts();
 
 builder.Services
     .AddCore()
@@ -36,7 +36,12 @@ builder.Services
 
 builder.Services.ConfigureOpenApi();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Conventions.Add(
+        new RouteTokenTransformerConvention(
+            new SlugifyParameterTransformer()));
+});
 
 var app = builder.Build();
 

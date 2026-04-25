@@ -62,5 +62,24 @@ namespace wrench.auto.repair.core.tests.ValueObjects
             Assert.Equal(mes, dataNascimento.Nascimento.Month);
             Assert.Equal(ano, dataNascimento.Nascimento.Year);
         }
+
+        [Fact(DisplayName = "Criar Data Nascimento Válida Com DateTime Deve Retornar Nascimento")]
+        [Trait("Core", "ValueObjects")]
+        public void CriarDataNascimentoComDateTime_DataValida_DeveRetornarNascimento()
+        {
+            // Arrange
+            var dia = 15;
+            var mes = 3;
+            var ano = 1998;
+            var nasc = new DateTime(ano, mes, dia);
+
+            // Arrange & Act 
+            var dataNascimento = new DataNascimento(nasc);
+
+            // Assert
+            Assert.Equal(dia, dataNascimento.Nascimento.Day);
+            Assert.Equal(mes, dataNascimento.Nascimento.Month);
+            Assert.Equal(ano, dataNascimento.Nascimento.Year);
+        }
     }
 }

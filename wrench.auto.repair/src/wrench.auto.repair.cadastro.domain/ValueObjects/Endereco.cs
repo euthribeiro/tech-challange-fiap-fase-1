@@ -1,8 +1,9 @@
-﻿using wrench.auto.repair.core.DomainObjects;
+﻿using wrench.auto.repair.cadastro.domain.Entities;
+using wrench.auto.repair.core.DomainObjects;
 
-namespace wrench.auto.repair.cadastro.domain.Entities
+namespace wrench.auto.repair.cadastro.domain.ValueObjects
 {
-    public class Endereco : Entity
+    public class Endereco
     {
         public Endereco(string logradouro, string numero, string complemento, string bairro, string cep, string cidade, string unidadeFederativa, string pais)
         {
@@ -30,6 +31,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
             Validacoes.ValidarSeVazio(Pais, "País não pode ser vazio");
         }
 
+        public Guid Id { get; private set; } = Guid.NewGuid();
 
         public string Logradouro { get; private set; }
 
@@ -47,10 +49,13 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         public string Pais { get; private set; }
 
+        // EF Relation
+        public Cliente Cliente { get; private set; }
+
         public string ObterEnderecoFormatado()
         {
             var cepFormatado = Cep?.Length == 8
-                ? $"{Cep.Substring(0, 5)}-{Cep.Substring(5, 3)}"
+                ? $"{Cep[..5]}-{Cep.Substring(5, 3)}"
                 : Cep;
 
             var complemento = string.IsNullOrWhiteSpace(Complemento)

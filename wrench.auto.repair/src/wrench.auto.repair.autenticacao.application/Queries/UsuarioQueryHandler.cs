@@ -27,8 +27,6 @@ namespace wrench.auto.repair.autenticacao.application.Queries
 
         public async Task<Result<IEnumerable<UsuarioViewModel>>> Handle(ObterTodosUsuariosQuery request, CancellationToken cancellationToken)
         {
-            // TODO: Aplicar testes
-
             var usuarios = await _usuarioRepository.ObterTodosAsync(cancellationToken);
 
             if (usuarios == null)
@@ -41,8 +39,6 @@ namespace wrench.auto.repair.autenticacao.application.Queries
 
         public async Task<Result<UsuarioViewModel>> Handle(ObterUsuarioPorIdQuery request, CancellationToken cancellationToken)
         {
-            // TODO: Aplicar testes
-
             var usuario = await _usuarioRepository.ObterPorIdAsync(request.Id, cancellationToken);
 
             if (usuario == null)

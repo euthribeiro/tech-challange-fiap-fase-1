@@ -16,9 +16,12 @@ namespace wrench.auto.repair.core.ValueObjects
             if (!match.Success)
                 throw new DomainException("Somente telefones brasileiros são aceitos");
 
-            var ddi = match.Groups["pais"].Value ?? "55";
+            var ddi = match.Groups["pais"].Value;
             var ddd = match.Groups["ddd"].Value;
             var numero = match.Groups["prefixo"].Value + match.Groups["sufixo"].Value;
+
+            if (string.IsNullOrWhiteSpace(ddi))
+                ddi = "55";
 
             Validar(ddi, ddd, numero);
 

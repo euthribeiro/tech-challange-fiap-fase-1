@@ -2,6 +2,8 @@
 {
     public enum TipoErroEnum
     {
+        ENTIDADE_NAO_PROCESSAVEL,
+
         // Retorna Bad Request
         VALIDACAO,
 
@@ -14,6 +16,7 @@
         // Retornar Inesperado
         INESPERADO,
 
-        NAO_AUTORIZADO
+        // Não autorizado
+        NAO_AUTORIZADO,
     }
 }

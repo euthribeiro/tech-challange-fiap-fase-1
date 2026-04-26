@@ -5,6 +5,7 @@ using wrench.auto.repair.autenticacao.application.Commands.ViewModels;
 using wrench.auto.repair.autenticacao.application.Queries;
 using wrench.auto.repair.autenticacao.application.Queries.ViewModels;
 using wrench.auto.repair.core.Mediator;
+using wrench.auto.repair.core.Pagination;
 using wrench.web.api.Extensions;
 
 namespace wrench.web.api.Controllers
@@ -39,12 +40,12 @@ namespace wrench.web.api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] RequisicaoPaginada request)
         {
-            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery();
+            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery(request);
 
             var result = await _mediatorHandler
-                .EnviarComando<ObterTodosUsuariosQuery, IEnumerable<UsuarioViewModel>>(obterTodosUsuariosQuery);
+                .EnviarComando<ObterTodosUsuariosQuery, ResultadoPaginado<UsuarioViewModel>>(obterTodosUsuariosQuery);
 
             return result.ToActionResult();
         }

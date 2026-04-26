@@ -63,10 +63,5 @@ namespace wrench.auto.repair.core.ValueObjects
                 return false;
             }
         }
-
-        public static Email CriarEmail(string email)
-        {
-            return new Email(email);
-        }
     }
 }

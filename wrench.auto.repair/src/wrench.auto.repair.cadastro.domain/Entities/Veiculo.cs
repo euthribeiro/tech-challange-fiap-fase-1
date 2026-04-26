@@ -42,6 +42,12 @@ namespace wrench.auto.repair.cadastro.domain.Entities
             Cliente = cliente;
         }
 
+        public void AlterarCor(string cor)
+        {
+            Validacoes.ValidarSeVazio(cor, "A cor do veículo não pode ser vazio");
+            Cor = cor;
+        }
+
         public void AtualizarQuilometragem(int quilometragem)
         {
             Validacoes.ValidarSeMenorQue(quilometragem, 0, "A quilometragem não pode ser negativa");
@@ -50,7 +56,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
             QuilometragemAtual = quilometragem;
         }
 
-        public void AtualizarDescricao(string descricao)
+        public void AtualizarDescricao(string? descricao)
         {
             Descricao = descricao;
         }

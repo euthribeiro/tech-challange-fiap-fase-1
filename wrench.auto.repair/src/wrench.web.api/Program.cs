@@ -12,10 +12,13 @@ using wrench.auto.repair.ordem.servico.infra.Extensions;
 using wrench.web.api.Configuration;
 using wrench.web.api.Contexts;
 using wrench.web.api.Docs;
+using wrench.web.api.Middlewares;
 using wrench.web.api.Options;
 using wrench.web.api.Transformers;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddProblemDetails();
 
 builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
 builder.Services.ConfigureOptions<JwtOptionsSetup>();
@@ -47,11 +50,17 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
+
     app.MapOpenApi();
     app.MapScalarApiReference("docs-ui", options =>
     {
         options.Title = "Wrench API";
     });
+}
+else
+{
+    app.UseGlobalExceptionHandler();
 }
 
 app.UseHttpsRedirection();

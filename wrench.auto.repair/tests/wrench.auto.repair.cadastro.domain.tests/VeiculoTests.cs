@@ -93,6 +93,17 @@ namespace wrench.auto.repair.cadastro.domain.tests
             Assert.Equal(cliente.Id, veiculo.ClienteId);
         }
 
+        [Fact(DisplayName = "Veiculo Atualizar Cor Vazio Deve Retornar Exception")]
+        [Trait("Cadastro", "Domains")]
+        public void Veiculo_AtualizarCorVazio_DeveRetornarException()
+        {
+            // Arrange
+            var veiculo = _veiculoFixture.CriarVeiculoValido();
+
+            // Act & Assert
+            Assert.Throws<DomainException>(() => veiculo.AlterarCor(""));
+        }
+
         [Fact(DisplayName = "Veiculo Atualizar Quilometragem Negativa Deve Retornar Exception")]
         [Trait("Cadastro", "Domains")]
         public void Veiculo_AtualizarQuilometragemNegativa_DeveRetornarException()

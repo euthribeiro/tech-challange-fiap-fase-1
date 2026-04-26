@@ -8,6 +8,45 @@ namespace wrench.auto.repair.cadastro.infra.Mappings
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {
+            builder.OwnsOne(x => x.Email, email =>
+            {
+                email.WithOwner();
+
+                email.Ignore(e => e.Dominio);
+
+                email.Property(e => e.Endereco)
+                    .HasColumnName("Email")
+                    .IsRequired();
+
+            });
+
+            builder.OwnsOne(c => c.Documento, documento =>
+            {
+                documento.WithOwner();
+
+                documento.Ignore(d => d.TipoDocumento);
+
+                documento.Property(d => d.Numeracao)
+                    .HasColumnName("Documento")
+                    .IsRequired();
+
+                documento.HasIndex(d => d.Numeracao).IsUnique();
+            });
+
+            builder.OwnsOne(c => c.Nome, nome =>
+            {
+                nome.WithOwner();
+
+                nome.Property(d => d.Nome)
+                    .HasColumnName("Nome")
+                    .IsRequired();
+            });
+
+            builder.OwnsOne(c => c.Telefone, telefone =>
+            {
+                telefone.ToTable("ClienteTelefones");
+            });
+
             builder.OwnsOne(c => c.Endereco, e =>
             {
                 e.ToTable("ClienteEnderecos");

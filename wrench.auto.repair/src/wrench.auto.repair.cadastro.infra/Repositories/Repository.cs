@@ -4,9 +4,9 @@ using wrench.auto.repair.core.Data;
 using wrench.auto.repair.core.DomainObjects;
 using wrench.auto.repair.core.Pagination;
 
-namespace wrench.auto.repair.autenticacao.infra.Repositories
+namespace wrench.auto.repair.cadastro.infra.Repositories
 {
-    public class Repository<TEntity>(AutenticacaoContext _context) : IRepository<TEntity>
+    public class Repository<TEntity>(CadastroContext _context) : IRepository<TEntity>
         where TEntity : Entity, IAggregateRoot
     {
         protected readonly DbSet<TEntity> DbSet = _context.Set<TEntity>();

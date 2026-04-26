@@ -4,6 +4,7 @@ using wrench.auto.repair.autenticacao.application.Queries;
 using wrench.auto.repair.autenticacao.application.tests.Fixtures;
 using wrench.auto.repair.autenticacao.domain.Data;
 using wrench.auto.repair.autenticacao.domain.Entities;
+using wrench.auto.repair.core.Pagination;
 
 namespace wrench.auto.repair.autenticacao.application.tests.UsuarioQuery
 {
@@ -37,7 +38,7 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioQuery
         public async Task Usuarios_ObterTodos_DeveRetornarComSucesso()
         {
             // Arrange
-            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery();
+            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery(new RequisicaoPaginada());
             var autoMocker = new AutoMocker();
             var usuarioQueryHandler = autoMocker.CreateInstance<UsuarioQueryHandler>();
             autoMocker.GetMock<IUsuarioRepository>().

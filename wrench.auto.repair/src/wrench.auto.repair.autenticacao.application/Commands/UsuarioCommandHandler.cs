@@ -19,18 +19,18 @@ namespace wrench.auto.repair.autenticacao.application.Commands
         public async Task<Result<Guid>> Handle(CriarUsuarioCommand request, CancellationToken cancellationToken)
         {
             if (!request.EhValido())
-                return Result<Guid>.WithFailure(TipoErroEnum.VALIDACAO, request.ObterErros());
+                return Result<Guid>.ValidationError(request.ObterErros());
 
             var usuario = await _usuarioRepository
-                .ObterPorEmailAsync(Email.CriarEmail(request.Email), cancellationToken);
+                .ObterPorEmailAsync(new Email(request.Email), cancellationToken);
 
-            if (usuario != null) return Result<Guid>.WithFailure(TipoErroEnum.VALIDACAO, "Usuário já cadastrado");
+            if (usuario != null) return Result<Guid>.ValidationError("Usuário já cadastrado");
 
             var perfil = await _usuarioRepository.ObterPerfilPorIdAsync(request.PerfilId);
 
-            if (perfil == null) return Result<Guid>.WithFailure(TipoErroEnum.VALIDACAO, "Perfil não encontrado");
+            if (perfil == null) return Result<Guid>.ValidationError("Perfil não encontrado");
 
-            var novoUsuario = new Usuario(Email.CriarEmail(request.Email), perfil.Id, request.Ativo, DateTime.Now);
+            var novoUsuario = new Usuario(new Email(request.Email), perfil.Id, request.Ativo, DateTime.Now);
 
             if (!string.IsNullOrWhiteSpace(request.Senha))
             {
@@ -42,7 +42,7 @@ namespace wrench.auto.repair.autenticacao.application.Commands
 
             var salvo = await _usuarioRepository.UnitOfWork.CommitAsync();
 
-            if (!salvo) return Result<Guid>.WithFailure(TipoErroEnum.INESPERADO, "Não foi possível cadastrar o usuário, por favor tente novamente.");
+            if (!salvo) return Result<Guid>.Unexpected("Não foi possível cadastrar o usuário, por favor tente novamente.");
 
             return Result<Guid>.Created(novoUsuario.Id);
         }
@@ -50,16 +50,16 @@ namespace wrench.auto.repair.autenticacao.application.Commands
         public async Task<Result<TokenAcesso>> Handle(AutenticarUsuarioCommand request, CancellationToken cancellationToken)
         {
             if (!request.EhValido())
-                return Result<TokenAcesso>.WithFailure(TipoErroEnum.VALIDACAO, request.ObterErros());
+                return Result<TokenAcesso>.ValidationError(request.ObterErros());
 
             var usuario = await _usuarioRepository
-                .ObterPorEmailAsync(Email.CriarEmail(request.Email), cancellationToken);
+                .ObterPorEmailAsync(new Email(request.Email), cancellationToken);
 
-            if (usuario == null) return Result<TokenAcesso>.WithFailure(TipoErroEnum.NAO_AUTORIZADO, "Usuário não autorizado.");
+            if (usuario == null) return Result<TokenAcesso>.Unauthorized("Usuário não autorizado.");
 
             var senhaValida = _passwordHasher.ValidarSenha(request.Senha, usuario.Senha);
 
-            if (!senhaValida) return Result<TokenAcesso>.WithFailure(TipoErroEnum.NAO_AUTORIZADO, "Usuário não autorizado.");
+            if (!senhaValida) return Result<TokenAcesso>.Unauthorized("Usuário não autorizado.");
 
             var tokenAccess = _jwtTokenGenerator.GerarToken(usuario);
 

@@ -11,6 +11,12 @@ namespace wrench.auto.repair.cadastro.infra.Mappings
             builder
                 .HasIndex(v => v.PlacaDoVeiculo)
                 .IsUnique();
+
+            builder
+                .HasOne(c => c.Cliente)
+                .WithMany(c => c.Veiculos)
+                .HasForeignKey(v => v.ClienteId)
+                .IsRequired();
         }
     }
 }

@@ -18,7 +18,8 @@ public class CriarPecaHandler : IRequestHandler<CriarPecaCommand, Guid>
         var peca = new Peca(
             request.Nome,
             request.Descricao,
-            request.Valor
+            request.Valor,
+            request.Quantidade
         );
         
       await _pecaRepository.CriarPeca(peca);

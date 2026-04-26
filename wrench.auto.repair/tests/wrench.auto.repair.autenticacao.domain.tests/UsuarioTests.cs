@@ -30,91 +30,31 @@ namespace wrench.auto.repair.autenticacao.domain.tests
             var exception = Assert.Throws<DomainException>(() => usuario.DefinirSenha(""));
         }
 
-        [Fact(DisplayName = "Criar Usuario Definir Senha Menor Que 12 Caracteres Deve Retornar Exception")]
+        [Fact(DisplayName = "Criar Usuario Definir Senha Menor Que 60 Caracteres Deve Retornar Exception")]
         [Trait("Autenticacao", "Domains")]
-        public void CriarUsuario_DefinirSenhaMenorQue12Caracteres_DeveRetornarException()
+        public void CriarUsuario_DefinirSenhaMenorQue60Caracteres_DeveRetornarException()
         {
             // Arrange
             var usuario = _fixture.GerarUsuario();
 
             // Act & Assert
-            var exception = Assert.Throws<DomainException>(() => usuario.DefinirSenha("senha"));
+            var exception = Assert.Throws<DomainException>(() => usuario.DefinirSenha("hash_senha"));
         }
 
-        [Fact(DisplayName = "Criar Usuario Definir Senha Maior Que 24 Caracteres Deve Retornar Exception")]
-        [Trait("Autenticacao", "Domains")]
-        public void CriarUsuario_DefinirSenhaMaiorQue24Caracteres_DeveRetornarException()
-        {
-            // Arrange
-            var usuario = _fixture.GerarUsuario();
-            var senha = _fixture.GerarSenha(tamanho: 25);
-
-            // Act & Assert
-            var exception = Assert.Throws<DomainException>(() => usuario.DefinirSenha(senha));
-        }
-
-        [Fact(DisplayName = "Criar Usuario Definir Senha Deve Fazer Hash da Senha")]
+        [Fact(DisplayName = "Criar Usuario Definir Senha Com Sucesso")]
         [Trait("Autenticacao", "Domains")]
         public void CriarUsuario_DefinirSenha_DeveFazerHashDaSenha()
         {
             // Arrange
             var usuario = _fixture.GerarUsuario();
             var senha = _fixture.GerarSenha(tamanho: 24);
+            var hashSenha = _fixture.GerarHashSenha(senha);
 
             // Act
-            usuario.DefinirSenha(senha);
+            usuario.DefinirSenha(hashSenha);
 
             // Assert
-            Assert.NotEqual(senha, usuario.Senha);
-        }
-
-        [Fact(DisplayName = "Definir Senha Validar Senha Incorreta Deve Ser Inválido")]
-        [Trait("Autenticacao", "Domains")]
-        public void DefinirSenha_ValidarSenhaIncorreta_DeveSerInvalido()
-        {
-            // Arrange
-            var usuario = _fixture.GerarUsuario();
-            var senha = _fixture.GerarSenha(tamanho: 24);
-            var senhaIncorreta = _fixture.GerarSenha(tamanho: 24);
-
-            // Act
-            usuario.DefinirSenha(senha);
-
-            // Assert
-            Assert.False(usuario.ValidarSenha(senhaIncorreta));
-        }
-
-        [Fact(DisplayName = "Definir Senha Alterar Um Caractere Da Senha Correta Deve Ser Inválido")]
-        [Trait("Autenticacao", "Domains")]
-        public void DefinirSenha_AlterarUmCaractereDaSenhaCorreta_DeveSerInvalido()
-        {
-            // Arrange
-            var usuario = _fixture.GerarUsuario();
-            var senha = _fixture.GerarSenha(tamanho: 24);
-            var lastCharactere = senha.Last();
-            var senhaAlterada = senha[..^1];
-            senhaAlterada = string.Concat(senhaAlterada, lastCharactere == 'a' ? "b" : "a");
-
-            // Act
-            usuario.DefinirSenha(senha);
-
-            // Assert
-            Assert.False(usuario.ValidarSenha(senhaAlterada));
-        }
-
-        [Fact(DisplayName = "Definir Senha Validar Senha Correta Deve Ser Valido")]
-        [Trait("Autenticacao", "Domains")]
-        public void DefinirSenha_ValidarSenhaCorreta_DeveSerValido()
-        {
-            // Arrange
-            var usuario = _fixture.GerarUsuario();
-            var senha = _fixture.GerarSenha(tamanho: 24);
-
-            // Act
-            usuario.DefinirSenha(senha);
-
-            // Assert
-            Assert.True(usuario.ValidarSenha(senha));
+            Assert.Equal(hashSenha, usuario.Senha);
         }
 
         [Fact(DisplayName = "Criar Perfil Com Dados Vazio Deve Retornar Exception")]

@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class ValueObjectEmail : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,6 +48,15 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                         principalTable: "Perfis",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Perfis",
+                columns: new[] { "Id", "Ativo", "DataCriacao", "Descricao", "Nome" },
+                values: new object[,]
+                {
+                    { new Guid("5665d39c-4907-40a9-b648-e9cbb041afed"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Funcionário", "Employee" },
+                    { new Guid("63a459de-75ba-4faa-bd0e-9fca7c9063ab"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Adminstrativo", "Admin" }
                 });
 
             migrationBuilder.CreateIndex(

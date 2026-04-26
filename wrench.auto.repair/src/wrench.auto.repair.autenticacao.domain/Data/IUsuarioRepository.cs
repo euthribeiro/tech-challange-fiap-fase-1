@@ -10,6 +10,6 @@ namespace wrench.auto.repair.autenticacao.domain.Data
 
         Task<Perfil?> ObterPerfilPorIdAsync(Guid id);
 
-        Task<IEnumerable<Perfil>> ObterTodosPerfis(CancellationToken cancellationToken);
+        Task<IEnumerable<Perfil>> ObterTodosPerfisAsync(CancellationToken cancellationToken);
     }
 }

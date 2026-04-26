@@ -13,7 +13,6 @@ namespace wrench.auto.repair.core.Mediator
 
         public async Task<Result<TOut>> EnviarComando<T, TOut>(T comando)
             where T : Command<TOut>
-            where TOut : class
         {
             return await _mediator.Send(comando);
         }

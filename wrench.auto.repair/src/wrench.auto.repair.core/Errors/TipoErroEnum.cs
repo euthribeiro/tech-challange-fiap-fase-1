@@ -12,6 +12,8 @@
         CONFLITO,
 
         // Retornar Inesperado
-        INESPERADO
+        INESPERADO,
+
+        NAO_AUTORIZADO
     }
 }

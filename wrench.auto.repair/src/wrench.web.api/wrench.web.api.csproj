@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="14.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.7" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,10 +21,15 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\wrench.auto.repair.cadastro.application\wrench.auto.repair.cadastro.application.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.cadastro.domain\wrench.auto.repair.cadastro.domain.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.cadastro.infra\wrench.auto.repair.cadastro.infra.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.core\wrench.auto.repair.core.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.estoque.application\wrench.auto.repair.estoque.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.estoque.infra\wrench.auto.repair.estoque.infra.csproj" />
-        <ProjectReference Include="..\wrench.auto.repair.estoque.application\wrench.auto.repair.estoque.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.ordem.servico.application\wrench.auto.repair.ordem.servico.application.csproj" />
+      <ProjectReference Include="..\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.autenticacao.application\wrench.auto.repair.autenticacao.application.csproj" />
       <ProjectReference Include="..\wrench.auto.repair.autenticacao.domain\wrench.auto.repair.autenticacao.domain.csproj" />

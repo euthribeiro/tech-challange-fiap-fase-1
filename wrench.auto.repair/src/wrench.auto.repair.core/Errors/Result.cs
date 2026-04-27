@@ -36,7 +36,7 @@
             new(ResultadoStatusEnum.CRIADO);
 
         public static Result NoContent() =>
-            new(ResultadoStatusEnum.CRIADO);
+            new(ResultadoStatusEnum.SEM_CONTEUDO);
 
         public static Result NotFound(params string[] errors) =>
             new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);

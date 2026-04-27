@@ -39,7 +39,7 @@
             new(ResultadoStatusEnum.CRIADO, valor);
 
         public static Result<T> NoContent() =>
-            new(ResultadoStatusEnum.CRIADO, default);
+            new(ResultadoStatusEnum.SEM_CONTEUDO, default);
 
         public static Result<T> NotFound(params string[] errors) =>
             new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);

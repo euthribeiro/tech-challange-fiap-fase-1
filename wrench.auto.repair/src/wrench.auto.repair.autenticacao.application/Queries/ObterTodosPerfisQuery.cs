@@ -5,6 +5,9 @@ namespace wrench.auto.repair.autenticacao.application.Queries
 {
     public class ObterTodosPerfisQuery : Command<IEnumerable<PerfilViewModel>>
     {
-
+        public override bool EhValido()
+        {
+            return true;
+        }
     }
 }

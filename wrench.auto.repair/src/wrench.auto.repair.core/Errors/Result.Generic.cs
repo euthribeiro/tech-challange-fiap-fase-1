@@ -32,12 +32,6 @@
             ResultadoStatus = resultadoStatus;
         }
 
-        public static Result<T> WithFailure(TipoErroEnum tipoErro, string erro, params string[] erros) =>
-            new(tipoErro, [erro, .. erros]);
-
-        public static Result<T> WithFailure(TipoErroEnum tipoErro, IEnumerable<string> errors) =>
-            new(tipoErro, errors);
-
         public static Result<T> Ok(T valor) =>
             new(ResultadoStatusEnum.OK, valor);
 
@@ -45,6 +39,42 @@
             new(ResultadoStatusEnum.CRIADO, valor);
 
         public static Result<T> NoContent() =>
-            new(ResultadoStatusEnum.CRIADO, default);
+            new(ResultadoStatusEnum.SEM_CONTEUDO, default);
+
+        public static Result<T> NotFound(params string[] errors) =>
+            new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);
+
+        public static Result<T> Unauthorized(params string[] errors) =>
+            new(TipoErroEnum.NAO_AUTORIZADO, [.. errors]);
+
+        public static Result<T> Unexpected(params string[] errors) =>
+            new(TipoErroEnum.INESPERADO, [.. errors]);
+
+        public static Result<T> Conflicted(params string[] errors) =>
+            new(TipoErroEnum.CONFLITO, [.. errors]);
+
+        public static Result<T> ValidationError(params string[] errors) =>
+            new(TipoErroEnum.VALIDACAO, [.. errors]);
+
+        public static Result<T> UnprocessableEntity(params string[] errors) =>
+            new(TipoErroEnum.ENTIDADE_NAO_PROCESSAVEL, [.. errors]);
+
+        public static Result<T> NotFound(IEnumerable<string> errors) =>
+            new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);
+
+        public static Result<T> Unauthorized(IEnumerable<string> errors) =>
+            new(TipoErroEnum.NAO_AUTORIZADO, [.. errors]);
+
+        public static Result<T> Unexpected(IEnumerable<string> errors) =>
+            new(TipoErroEnum.INESPERADO, [.. errors]);
+
+        public static Result<T> Conflicted(IEnumerable<string> errors) =>
+            new(TipoErroEnum.CONFLITO, [.. errors]);
+
+        public static Result<T> ValidationError(IEnumerable<string> errors) =>
+            new(TipoErroEnum.VALIDACAO, [.. errors]);
+
+        public static Result<T> UnprocessableEntity(IEnumerable<string> errors) =>
+            new(TipoErroEnum.ENTIDADE_NAO_PROCESSAVEL, [.. errors]);
     }
 }

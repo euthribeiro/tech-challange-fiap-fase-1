@@ -1,0 +1,154 @@
+﻿using AutoMapper;
+using Moq;
+using Moq.AutoMock;
+using wrench.auto.repair.cadastro.application.Queries;
+using wrench.auto.repair.cadastro.application.Queries.ViewModels;
+using wrench.auto.repair.cadastro.application.tests.Fixture;
+using wrench.auto.repair.cadastro.domain.Data;
+using wrench.auto.repair.cadastro.domain.Entities;
+using wrench.auto.repair.core.Pagination;
+
+namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
+{
+    [Collection(nameof(ClienteCollection))]
+    public class ClienteQueryHandlerTests(ClienteFixture _fixture)
+    {
+        [Fact(DisplayName = "Buscar Todos Os Clientes Com Sucesso")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_ListarTodosClientes_DeveRetornarListaComSucesso()
+        {
+            // Arrange
+            var paginacao = new RequisicaoPaginada();
+            var resultadoPaginadoCliente =
+                new ResultadoPaginado<Cliente>([], 0, 1, 10);
+
+            var resultadoPaginadoClienteViewModel =
+                new ResultadoPaginado<ClienteViewModel>([], 0, 1, 10);
+
+            var obterTodosOsClientesQuery = new ObterTodosClientesQuery(paginacao);
+            var mapper = _fixture.ConfigurarMapeamentoEGerarMapper();
+            var automocker = new AutoMocker();
+            var clienteQueryHandler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            automocker.GetMock<IClienteRepository>()
+                .Setup(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None))
+                .Returns(Task.FromResult<ResultadoPaginado<Cliente>>(resultadoPaginadoCliente));
+
+            automocker.GetMock<IMapper>()
+                .Setup(c => c.Map<ResultadoPaginado<ClienteViewModel>>(It.IsAny<ResultadoPaginado<Cliente>>()))
+                .Returns(resultadoPaginadoClienteViewModel);
+
+            // Act
+            var result = await clienteQueryHandler.Handle(obterTodosOsClientesQuery, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None), Times.Once);
+
+            automocker.GetMock<IMapper>()
+                .Verify(c => c.Map<ResultadoPaginado<ClienteViewModel>>(It.IsAny<ResultadoPaginado<Cliente>>()), Times.Once);
+        }
+
+        [Fact(DisplayName = "Buscar Todos Os Clientes Falha Ao Consultar")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_ListarTodosClientes_FalhaAoConsultar()
+        {
+            // Arrange
+            var paginacao = new RequisicaoPaginada();
+            var resultadoPaginadoCliente =
+                new ResultadoPaginado<Cliente>([], 0, 1, 10);
+
+            var resultadoPaginadoClienteViewModel =
+                new ResultadoPaginado<ClienteViewModel>([], 0, 1, 10);
+
+            var obterTodosOsClientesQuery = new ObterTodosClientesQuery(paginacao);
+            var mapper = _fixture.ConfigurarMapeamentoEGerarMapper();
+            var automocker = new AutoMocker();
+            var clienteQueryHandler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            automocker.GetMock<IClienteRepository>()
+                .Setup(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None))
+                .Returns(Task.FromResult<ResultadoPaginado<Cliente>>(null!));
+
+            // Act
+            var result = await clienteQueryHandler.Handle(obterTodosOsClientesQuery, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None), Times.Once);
+
+            automocker.GetMock<IMapper>()
+                .Verify(c => c.Map<ResultadoPaginado<ClienteViewModel>>(It.IsAny<ResultadoPaginado<Cliente>>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Buscar Cliente Por Id Com Sucesso")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_BuscarClientePorId_DeveRetornarClienteSolicitado()
+        {
+            // Arrange
+            var mapper = _fixture.ConfigurarMapeamentoEGerarMapper();
+            var cliente = _fixture.GerarClienteValido();
+            var clienteViewModel = mapper.Map<ClienteViewModel>(cliente);
+            var obterClientePorIdQuery = new ObterClientePorIdQuery(cliente.Id);
+            var automocker = new AutoMocker();
+            var clienteQueryHandler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            automocker.GetMock<IClienteRepository>()
+                .Setup(c => c.ObterPorIdAsync(cliente.Id, CancellationToken.None))
+                .Returns(Task.FromResult<Cliente?>(cliente));
+
+            automocker.GetMock<IMapper>()
+                .Setup(c => c.Map<ClienteViewModel>(It.IsAny<Cliente>()))
+                .Returns(clienteViewModel);
+
+            // Act
+            var result = await clienteQueryHandler.Handle(obterClientePorIdQuery, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.ObterPorIdAsync(cliente.Id, CancellationToken.None), Times.Once);
+
+            automocker.GetMock<IMapper>()
+                .Verify(c => c.Map<ClienteViewModel>(It.IsAny<Cliente>()), Times.Once);
+        }
+
+        [Fact(DisplayName = "Buscar Cliente Por Documento Com Sucesso")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_BuscarClientePorDocumento_DeveRetornarClienteSolicitado()
+        {
+            // Arrange
+            var mapper = _fixture.ConfigurarMapeamentoEGerarMapper();
+            var cliente = _fixture.GerarClienteValido();
+            var clienteViewModel = mapper.Map<ClienteViewModel>(cliente);
+            var obterClientePorDocumentoQuery = new ObterClientePorDocumentoQuery(cliente.Documento.Numeracao);
+            var automocker = new AutoMocker();
+            var clienteQueryHandler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            automocker.GetMock<IClienteRepository>()
+                .Setup(c => c.ObterPorDocumentAsync(cliente.Documento.Numeracao, CancellationToken.None))
+                .Returns(Task.FromResult<Cliente?>(cliente));
+
+            automocker.GetMock<IMapper>()
+                .Setup(c => c.Map<ClienteViewModel>(It.IsAny<Cliente>()))
+                .Returns(clienteViewModel);
+
+            // Act
+            var result = await clienteQueryHandler.Handle(obterClientePorDocumentoQuery, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.ObterPorDocumentAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            automocker.GetMock<IMapper>()
+                .Verify(c => c.Map<ClienteViewModel>(It.IsAny<Cliente>()), Times.Once);
+        }
+    }
+}

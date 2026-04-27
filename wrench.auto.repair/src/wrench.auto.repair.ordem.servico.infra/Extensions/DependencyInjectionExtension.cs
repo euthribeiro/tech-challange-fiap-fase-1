@@ -6,6 +6,8 @@ namespace wrench.auto.repair.ordem.servico.infra.Extensions
     {
         public static IServiceCollection AddOrdemServicoInfra(this IServiceCollection services)
         {
+
+
             return services;
         }
     }

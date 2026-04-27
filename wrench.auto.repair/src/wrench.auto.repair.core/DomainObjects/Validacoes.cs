@@ -48,6 +48,15 @@ namespace wrench.auto.repair.core.DomainObjects
             }
         }
 
+        public static void ValidarSeVazio(Guid valor, string mensagem)
+        {
+            if (valor == Guid.Empty)
+            {
+                throw new DomainException(mensagem);
+            }
+        }
+
+
         public static void ValidarSeVazio(string valor, string mensagem)
         {
             if (valor == null || valor.Trim().Length == 0)

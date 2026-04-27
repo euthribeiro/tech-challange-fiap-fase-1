@@ -7,6 +7,8 @@ namespace wrench.auto.repair.core.ValueObjects
     {
         private const string TELEFONE_BRASILEIRO_PATTERN = @"^\+?55?\s?\(?\d{2}\)?\s?(9\d{4}|\d{4})-?\d{4}$";
 
+        protected Telefone() { } // EF Core
+
         public Telefone(string telefone)
         {
             var pattern = @"^(?:\+?(?<pais>55)\s?)?\(?(?<ddd>\d{2})\)?\s?(?<prefixo>9\d{4}|\d{4})-?(?<sufixo>\d{4})$";
@@ -16,9 +18,12 @@ namespace wrench.auto.repair.core.ValueObjects
             if (!match.Success)
                 throw new DomainException("Somente telefones brasileiros são aceitos");
 
-            var ddi = match.Groups["pais"].Value ?? "55";
+            var ddi = match.Groups["pais"].Value;
             var ddd = match.Groups["ddd"].Value;
             var numero = match.Groups["prefixo"].Value + match.Groups["sufixo"].Value;
+
+            if (string.IsNullOrWhiteSpace(ddi))
+                ddi = "55";
 
             Validar(ddi, ddd, numero);
 

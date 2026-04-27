@@ -1,5 +1,9 @@
 ﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using wrench.auto.repair.cadastro.application.Commands;
+using wrench.auto.repair.cadastro.application.Commands.Dtos;
+using wrench.auto.repair.cadastro.application.Commands.ViewModels;
 using wrench.auto.repair.cadastro.application.Queries;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.core.Mediator;
@@ -15,6 +19,7 @@ namespace wrench.web.api.Controllers
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClienteController(
         IMediatorHandler _mediatorHandler
     ) : ControllerBase
@@ -63,6 +68,68 @@ namespace wrench.web.api.Controllers
 
             var result = await _mediatorHandler
                 .EnviarComando<ObterClientePorDocumentoQuery, ClienteViewModel>(obterClientePorDocumentoQuery);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Cadastra um cliente no sistema
+        /// </summary>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> CadastrarCliente([FromBody] CadastrarClienteViewModel requisicao)
+        {
+            var endereco = new EnderecoDto(
+                requisicao.Endereco.Logradouro,
+                requisicao.Endereco.Numero,
+                requisicao.Endereco.Complemento,
+                requisicao.Endereco.Bairro,
+                requisicao.Endereco.Cep,
+                requisicao.Endereco.Cidade,
+                requisicao.Endereco.UnidadeFederativa
+            );
+
+            var cadastrarClienteCommand = new CadastrarClienteCommand(
+                requisicao.Documento, requisicao.Nome, requisicao.Telefone,
+                requisicao.Email, endereco
+            );
+
+            var result = await _mediatorHandler
+                .EnviarComando<CadastrarClienteCommand, Guid>(cadastrarClienteCommand);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Atualiza um cliente no sistema
+        /// </summary>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IActionResult> AtualizarCliente([FromBody] AtualizarClienteViewModel requisicao)
+        {
+            EnderecoDto? endereco = null;
+
+            if (requisicao.Endereco != null)
+            {
+                endereco = new EnderecoDto(
+                    requisicao.Endereco.Logradouro,
+                    requisicao.Endereco.Numero,
+                    requisicao.Endereco.Complemento,
+                    requisicao.Endereco.Bairro,
+                    requisicao.Endereco.Cep,
+                    requisicao.Endereco.Cidade,
+                    requisicao.Endereco.UnidadeFederativa
+                );
+            }
+
+            var atualizarClienteCommand =
+                new AtualizarClienteCommand(requisicao.ClienteId, requisicao.Nome,
+                                            requisicao.Telefone, requisicao.Email, endereco);
+
+            var result = await _mediatorHandler
+                .EnviarComando<AtualizarClienteCommand>(atualizarClienteCommand);
 
             return result.ToActionResult();
         }

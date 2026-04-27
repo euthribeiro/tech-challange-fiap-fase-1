@@ -95,8 +95,9 @@ namespace wrench.auto.repair.cadastro.application.tests.Fixture
             var nome = GerarNomeValido();
             var telefone = GerarTelefoneValido();
             var email = GerarEmailValido();
+            var endereco = GerarEnderecoValido();
 
-            return new Cliente(cnpj, nome, telefone, email, Guid.NewGuid(), DateTime.Now);
+            return new Cliente(cnpj, nome, telefone, email, endereco, DateTime.Now);
         }
 
         public Endereco GerarEnderecoValido()

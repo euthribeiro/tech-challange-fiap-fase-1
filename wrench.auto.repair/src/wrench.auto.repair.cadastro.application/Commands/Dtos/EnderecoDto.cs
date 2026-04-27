@@ -10,7 +10,7 @@ namespace wrench.auto.repair.cadastro.application.Commands.Dtos
         string cep,
         string cidade,
         string unidadeFederativa,
-        string pais
+        string pais = "Brasil"
     )
     {
         public string Logradouro { get; private set; } = logradouro;

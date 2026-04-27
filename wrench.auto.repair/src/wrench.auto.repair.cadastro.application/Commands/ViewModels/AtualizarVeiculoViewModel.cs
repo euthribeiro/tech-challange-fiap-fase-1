@@ -1,12 +1,12 @@
-﻿namespace wrench.auto.repair.cadastro.application.Queries.ViewModels
+﻿namespace wrench.auto.repair.cadastro.application.Commands.ViewModels
 {
-    public class VeiculoViewModel
+    public class AtualizarVeiculoViewModel
     {
-        public Guid Id { get; init; }
+        public Guid VeiculoId { get; init; }
         public Guid ClienteId { get; init; }
         public string Marca { get; init; }
         public string Modelo { get; init; }
-        public string Cor { get; init; }
+        public string Cor { get; set; }
         public int AnoFabricacao { get; init; }
         public int AnoModelo { get; init; }
         public string PlacaDoVeiculo { get; init; }

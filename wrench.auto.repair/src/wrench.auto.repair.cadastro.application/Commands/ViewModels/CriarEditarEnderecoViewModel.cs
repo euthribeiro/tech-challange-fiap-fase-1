@@ -1,6 +1,6 @@
 ﻿namespace wrench.auto.repair.cadastro.application.Commands.ViewModels
 {
-    public class EnderecoViewModel
+    public class CriarEditarEnderecoViewModel
     {
         public string Logradouro { get; init; }
 
@@ -15,7 +15,5 @@
         public string Cidade { get; init; }
 
         public string UnidadeFederativa { get; init; }
-
-        public string Pais { get; init; }
     }
 }

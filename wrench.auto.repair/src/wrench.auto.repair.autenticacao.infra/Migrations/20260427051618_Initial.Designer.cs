@@ -12,7 +12,7 @@ using wrench.auto.repair.autenticacao.infra;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     [DbContext(typeof(AutenticacaoContext))]
-    [Migration("20260424053002_Initial")]
+    [Migration("20260427051618_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

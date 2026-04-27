@@ -31,7 +31,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
             var telefone = new Telefone(request.Telefone);
             var email = new Email(request.Email);
 
-            var novoCliente = new Cliente(document, nomeCompleto, telefone, email, endereco.Id, DateTime.Now);
+            var novoCliente = new Cliente(document, nomeCompleto, telefone, email, endereco, DateTime.Now);
 
             await _clienteRepository.Adicionar(novoCliente, cancellationToken);
 

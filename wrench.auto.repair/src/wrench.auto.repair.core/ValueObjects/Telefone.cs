@@ -7,6 +7,8 @@ namespace wrench.auto.repair.core.ValueObjects
     {
         private const string TELEFONE_BRASILEIRO_PATTERN = @"^\+?55?\s?\(?\d{2}\)?\s?(9\d{4}|\d{4})-?\d{4}$";
 
+        protected Telefone() { } // EF Core
+
         public Telefone(string telefone)
         {
             var pattern = @"^(?:\+?(?<pais>55)\s?)?\(?(?<ddd>\d{2})\)?\s?(?<prefixo>9\d{4}|\d{4})-?(?<sufixo>\d{4})$";

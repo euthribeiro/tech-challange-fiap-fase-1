@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using wrench.auto.repair.cadastro.application.Commands.Dtos;
-using wrench.auto.repair.cadastro.application.Commands.ViewModels;
+using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.domain.ValueObjects;
 
 namespace wrench.auto.repair.cadastro.application.AutoMapper

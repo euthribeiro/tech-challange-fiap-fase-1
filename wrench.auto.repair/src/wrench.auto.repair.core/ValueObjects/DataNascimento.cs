@@ -4,6 +4,9 @@ namespace wrench.auto.repair.core.ValueObjects
 {
     public class DataNascimento
     {
+        protected DataNascimento() { } // EF Core
+
+
         public DateTime Nascimento { get; private set; }
 
         public DataNascimento(DateTime nascimento)

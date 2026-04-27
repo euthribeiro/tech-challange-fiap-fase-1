@@ -11,6 +11,8 @@ namespace wrench.auto.repair.core.ValueObjects
 
         public string Nome { get; set; }
 
+        protected NomeRazaoSocial() { } // EF Core
+
         public NomeRazaoSocial(string nome)
         {
             Validar(nome);

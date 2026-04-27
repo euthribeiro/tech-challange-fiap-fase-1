@@ -6,6 +6,8 @@ namespace wrench.auto.repair.cadastro.domain.ValueObjects
 {
     public class Endereco
     {
+        protected Endereco() { }
+
         public Endereco(string logradouro, string numero, string complemento, string bairro, string cep, string cidade, string unidadeFederativa, string pais)
         {
             Logradouro = logradouro.Trim().ToUpperInvariant().RemoverAcentos();
@@ -33,8 +35,6 @@ namespace wrench.auto.repair.cadastro.domain.ValueObjects
             Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(UnidadeFederativa, @"^\w{2}$", "A unidade federativa deve conter apenas 2 caracteres.");
             Validacoes.ValidarSeVazio(Pais, "País não pode ser vazio");
         }
-
-        public Guid Id { get; private set; } = Guid.NewGuid();
 
         public string Logradouro { get; private set; }
 

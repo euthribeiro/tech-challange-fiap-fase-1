@@ -16,7 +16,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
         string? descricao,
         DateTime? ultimaRevisao,
         int quilometragemAtual
-    ) : Command<Guid>
+    ) : Command
     {
         public Guid VeiculoId { get; private set; } = veiculoId;
         public Guid ClienteId { get; private set; } = clienteId;

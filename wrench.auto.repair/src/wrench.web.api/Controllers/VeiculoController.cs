@@ -1,5 +1,8 @@
 ﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using wrench.auto.repair.cadastro.application.Commands;
+using wrench.auto.repair.cadastro.application.Commands.ViewModels;
 using wrench.auto.repair.cadastro.application.Queries;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.core.Mediator;
@@ -15,6 +18,7 @@ namespace wrench.web.api.Controllers
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize]
     public class VeiculoController(
         IMediatorHandler _mediatorHandler
     ) : ControllerBase
@@ -65,6 +69,51 @@ namespace wrench.web.api.Controllers
                 .EnviarComando<ObterVeiculoPorPlacaQuery, VeiculoViewModel>(obterVeiculoPorPlacaQuery);
 
             return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Cadastra um veiculo no sistema
+        /// </summary>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> CadastrarVeiculo([FromBody] CadastrarVeiculoViewModel requisicao)
+        {
+            var cadastrarVeiculoCommand = new CadastrarVeiculoCommand
+            (
+                requisicao.ClienteId, requisicao.Marca,
+                requisicao.Modelo, requisicao.Cor,
+                requisicao.AnoFabricacao, requisicao.AnoModelo,
+                requisicao.PlacaDoVeiculo, requisicao.Descricao,
+                requisicao.UltimaRevisao, requisicao.QuilometragemAtual
+            );
+
+            var result = await _mediatorHandler
+                .EnviarComando<CadastrarVeiculoCommand, Guid>(cadastrarVeiculoCommand);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Atualiza um veiculo no sistema
+        /// </summary>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IActionResult> AtualizarVeiculo([FromBody] AtualizarVeiculoViewModel requisicao)
+        {
+            var atualizarVeiculoCommand = new AtualizarVeiculoCommand
+            (
+                requisicao.VeiculoId, requisicao.ClienteId, requisicao.Marca,
+                requisicao.Modelo, requisicao.Cor, requisicao.AnoFabricacao,
+                requisicao.AnoModelo, requisicao.PlacaDoVeiculo, requisicao.Descricao,
+                requisicao.UltimaRevisao, requisicao.QuilometragemAtual
+            );
+
+            var result = await _mediatorHandler
+                .EnviarComando<AtualizarVeiculoCommand>(atualizarVeiculoCommand);
+
+            return result.ToActionResult();
         }
     }
 }

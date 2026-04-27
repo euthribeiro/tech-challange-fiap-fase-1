@@ -6,6 +6,8 @@ namespace wrench.auto.repair.core.ValueObjects
 {
     public class CpfCnpj
     {
+        protected CpfCnpj() { } // EF Core
+
         public string Numeracao { get; set; }
         public TipoDocumentoEnum TipoDocumento { get; private set; }
 

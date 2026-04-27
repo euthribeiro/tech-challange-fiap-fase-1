@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using wrench.auto.repair.autenticacao.infra;
+using wrench.auto.repair.cadastro.infra;
 using wrench.auto.repair.estoque.infra.Context;
 using wrench.auto.repair.ordem.servico.infra.Context;
 using wrench.web.api.Options;
@@ -14,6 +15,7 @@ namespace wrench.web.api.Contexts
             AddAutenticacaoDbContext(services);
             AddEstoqueDbContext(services);
             AddOrdemServicoDbContext(services);
+            AddCadastroDbContext(services);
         }
 
         private static void AddOrdemServicoDbContext(IServiceCollection services)
@@ -56,6 +58,29 @@ namespace wrench.web.api.Contexts
         private static void AddAutenticacaoDbContext(IServiceCollection services)
         {
             services.AddDbContext<AutenticacaoContext>((serviceProvider, dbContextOptionsBuilder) =>
+            {
+                var databaseOptions = serviceProvider.GetService<IOptions<DatabaseOptions>>()!.Value;
+
+                //dbContextOptionsBuilder.UseNpgsql(connectionString, sqlAction =>
+                //{
+                //    sqlAction.EnableRetryOnFailure(databaseOptions.MaxRetryCount);
+                //    sqlAction.CommandTimeout(databaseOptions.CommandTimeout);
+                //});
+
+                dbContextOptionsBuilder.UseSqlServer(databaseOptions.ConnectionString, sqlAction =>
+                {
+                    sqlAction.EnableRetryOnFailure(databaseOptions.MaxRetryCount);
+                    sqlAction.CommandTimeout(databaseOptions.CommandTimeout);
+                });
+
+                dbContextOptionsBuilder.EnableDetailedErrors(databaseOptions.EnableDetailedErrors);
+                dbContextOptionsBuilder.EnableSensitiveDataLogging(databaseOptions.EnableSensitiveDataLogging);
+            });
+        }
+
+        private static void AddCadastroDbContext(IServiceCollection services)
+        {
+            services.AddDbContext<CadastroContext>((serviceProvider, dbContextOptionsBuilder) =>
             {
                 var databaseOptions = serviceProvider.GetService<IOptions<DatabaseOptions>>()!.Value;
 

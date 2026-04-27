@@ -12,8 +12,6 @@ namespace wrench.auto.repair.core.ValueObjects
 
         protected Email() { } // EF Core
 
-        public Guid UsuarioId { get; private set; } // EF Core
-
         public string Endereco { get; private set; }
 
         public string Dominio { get; private set; }

@@ -16,31 +16,32 @@ namespace wrench.auto.repair.cadastro.domain.tests
             var nome = _fixture.GerarNomeValido();
             var telefone = _fixture.GerarTelefoneValido();
             var email = _fixture.GerarEmailValido();
+            var endereco = _fixture.GerarEnderecoValido();
 
             // Act & Assert
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(null, nome, telefone, email, Guid.NewGuid(), DateTime.Now);
+                new Cliente(null, nome, telefone, email, endereco, DateTime.Now);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, null, telefone, email, Guid.NewGuid(), DateTime.Now);
+                new Cliente(document, null, telefone, email, endereco, DateTime.Now);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, nome, null, email, Guid.NewGuid(), DateTime.Now);
+                new Cliente(document, nome, null, email, endereco, DateTime.Now);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, nome, telefone, null, Guid.NewGuid(), DateTime.Now);
+                new Cliente(document, nome, telefone, null, endereco, DateTime.Now);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, nome, telefone, email, Guid.Empty, DateTime.Now);
+                new Cliente(document, nome, telefone, email, null, DateTime.Now);
             });
         }
 
@@ -146,7 +147,6 @@ namespace wrench.auto.repair.cadastro.domain.tests
 
             // Assert
             Assert.Equal(endereco, cliente.Endereco);
-            Assert.Equal(endereco.Id, cliente.EnderecoId);
         }
     }
 }

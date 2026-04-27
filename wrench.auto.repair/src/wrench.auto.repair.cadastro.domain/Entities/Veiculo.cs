@@ -4,6 +4,9 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 {
     public class Veiculo : Entity, IAggregateRoot
     {
+
+        protected Veiculo() { } // EF Core
+
         public Veiculo(Guid clienteId, string marca, string modelo, string cor, int anoFabricacao, int anoModelo, string placaDoVeiculo, string? descricao, DateTime? ultimaRevisao, int quilometragemAtual)
         {
             ClienteId = clienteId;

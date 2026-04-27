@@ -1,5 +1,6 @@
 ﻿using wrench.auto.repair.cadastro.domain.Entities;
 using wrench.auto.repair.core.DomainObjects;
+using wrench.auto.repair.core.Extensions;
 
 namespace wrench.auto.repair.cadastro.domain.ValueObjects
 {
@@ -7,14 +8,14 @@ namespace wrench.auto.repair.cadastro.domain.ValueObjects
     {
         public Endereco(string logradouro, string numero, string complemento, string bairro, string cep, string cidade, string unidadeFederativa, string pais)
         {
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Bairro = bairro;
-            Cep = cep;
-            Cidade = cidade;
-            UnidadeFederativa = unidadeFederativa;
-            Pais = pais;
+            Logradouro = logradouro.Trim().ToUpperInvariant().RemoverAcentos();
+            Numero = numero.Trim().ToUpperInvariant().RemoverAcentos();
+            Complemento = complemento.Trim().ToUpperInvariant().RemoverAcentos();
+            Bairro = bairro.Trim().ToUpperInvariant().RemoverAcentos();
+            Cep = cep.Replace("-", "").Trim();
+            Cidade = cidade.Trim().ToUpperInvariant().RemoverAcentos();
+            UnidadeFederativa = unidadeFederativa.Trim().ToUpperInvariant().RemoverAcentos();
+            Pais = pais.Trim().ToUpperInvariant().RemoverAcentos();
 
             Validar();
         }
@@ -25,9 +26,11 @@ namespace wrench.auto.repair.cadastro.domain.ValueObjects
             Validacoes.ValidarSeVazio(Numero, "Número não pode ser vazio");
             Validacoes.ValidarSeVazio(Bairro, "Bairro não pode ser vazio");
             Validacoes.ValidarSeVazio(Cep, "CEP não pode ser vazio");
+            Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(Cep, @"^\d{5}-?\d{3}$", "CEP inválido.");
             Validacoes.ValidarMinimoMaximo(Cep.Length, 8, 8, "CEP deve ter exatamente 8 caracteres");
             Validacoes.ValidarSeVazio(Cidade, "Cidade não pode ser vazio");
             Validacoes.ValidarSeVazio(UnidadeFederativa, "Unidade Federativa não pode ser vazio");
+            Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(UnidadeFederativa, @"^\w{2}$", "A unidade federativa deve conter apenas 2 caracteres.");
             Validacoes.ValidarSeVazio(Pais, "País não pode ser vazio");
         }
 
@@ -64,5 +67,21 @@ namespace wrench.auto.repair.cadastro.domain.ValueObjects
 
             return $"{Logradouro}, {Numero}{complemento}, {Bairro}, {Cidade} - {UnidadeFederativa}, CEP: {cepFormatado}, {Pais}";
         }
+
+        public override string ToString() => ObterEnderecoFormatado();
+
+        public bool Equals(Endereco other) =>
+            other is not null &&
+            ObterEnderecoFormatado()
+            .Equals(other.ObterEnderecoFormatado(), StringComparison.InvariantCultureIgnoreCase);
+
+        public override int GetHashCode()
+            => ObterEnderecoFormatado().GetHashCode();
+
+        public static bool operator ==(Endereco left, Endereco right)
+            => Equals(left, right);
+
+        public static bool operator !=(Endereco left, Endereco right)
+            => !Equals(left, right);
     }
 }

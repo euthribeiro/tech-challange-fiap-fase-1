@@ -64,10 +64,10 @@ namespace wrench.auto.repair.cadastro.application.Commands
             "A cor do veículo deve ser informado";
 
         public static string TamanhoMinimoCorError =>
-            $"A cor do veículo deve ter no mínimo {TAMANHO_MINIMO_COR}";
+            $"A cor do veículo deve ter no mínimo {TAMANHO_MINIMO_COR} caracteres";
 
         public static string TamanhoMaximoCorError =>
-            $"A cor do veículo deve ter no mínimo {TAMANHO_MAXIMO_COR}";
+            $"A cor do veículo deve ter no mínimo {TAMANHO_MAXIMO_COR} caracteres";
 
         public static string MenorAnoDeFabricacaoError =>
             $"A ano de fabricação de veículo não pode ser menor que {MENOR_ANO_FABRICACAO_MODELO}";
@@ -107,21 +107,21 @@ namespace wrench.auto.repair.cadastro.application.Commands
             RuleFor(c => c.Cor)
                 .NotEmpty()
                 .WithMessage(CorVazioError)
-                .MinimumLength(3)
+                .MinimumLength(TAMANHO_MINIMO_COR)
                 .WithMessage(TamanhoMinimoCorError)
-                .MaximumLength(30)
+                .MaximumLength(TAMANHO_MAXIMO_COR)
                 .WithMessage(TamanhoMaximoCorError);
 
             RuleFor(c => c.AnoFabricacao)
-                .GreaterThan(MENOR_ANO_FABRICACAO_MODELO)
+                .GreaterThanOrEqualTo(MENOR_ANO_FABRICACAO_MODELO)
                 .WithMessage(MenorAnoDeFabricacaoError)
-                .LessThan(MAIOR_ANO_FABRICACAO)
+                .LessThanOrEqualTo(MAIOR_ANO_FABRICACAO)
                 .WithMessage(MaiorAnoDeFabricacaoError);
 
             RuleFor(c => c.AnoModelo)
-                .GreaterThan(MENOR_ANO_FABRICACAO_MODELO)
+                .GreaterThanOrEqualTo(MENOR_ANO_FABRICACAO_MODELO)
                 .WithMessage(MenorAnoModeloError)
-                .LessThan(MAIOR_ANO_FABRICACAO)
+                .LessThanOrEqualTo(MAIOR_ANO_FABRICACAO)
                 .WithMessage(MaiorAnoModeloError);
 
             RuleFor(c => c.PlacaDoVeiculo)
@@ -131,7 +131,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
                 .WithMessage(PlacaVeiculoInvalidoError);
 
             RuleFor(c => c.QuilometragemAtual)
-                .GreaterThan(0)
+                .GreaterThanOrEqualTo(0)
                 .WithMessage(QuilometragemInvalidaError);
         }
     }

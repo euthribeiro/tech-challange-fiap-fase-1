@@ -1,11 +1,15 @@
 ﻿using System.Net.Mail;
 using System.Text.RegularExpressions;
 using wrench.auto.repair.core.DomainObjects;
+using wrench.auto.repair.core.Extensions;
 
 namespace wrench.auto.repair.core.ValueObjects
 {
-    public class Email
+    public partial class Email
     {
+        [GeneratedRegex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase | RegexOptions.Compiled, "pt-BR")]
+        private static partial Regex EmailRegex();
+
         protected Email() { } // EF Core
 
         public Guid UsuarioId { get; private set; } // EF Core
@@ -14,21 +18,18 @@ namespace wrench.auto.repair.core.ValueObjects
 
         public string Dominio { get; private set; }
 
-        private static readonly Regex EmailRegex = new(@"^[^@\s]+@[^@\s]+\.[^@\s]+$",
-            RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
         public Email(string value)
         {
             Validar(value);
 
-            Endereco = value.Trim().ToLowerInvariant();
-            Dominio = Endereco.Split('@')[1];
+            Endereco = value.RemoverAcentos().Trim().ToLowerInvariant();
+            Dominio = Endereco.Split('@')[1].ToLowerInvariant();
         }
 
         private static void Validar(string value)
         {
             Validacoes.ValidarSeVazio(value, "E-mail não pode ser vazio");
-            Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(value, EmailRegex, "E-mail inválido");
+            Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(value, EmailRegex(), "E-mail inválido");
             if (!EhValido(value)) throw new DomainException("E-mail inválido");
         }
 
@@ -63,5 +64,7 @@ namespace wrench.auto.repair.core.ValueObjects
                 return false;
             }
         }
+
+
     }
 }

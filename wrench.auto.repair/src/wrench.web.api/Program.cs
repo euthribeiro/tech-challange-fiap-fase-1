@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Scalar.AspNetCore;
 using wrench.auto.repair.autenticacao.application.Extensions;
@@ -44,6 +45,13 @@ builder.Services.AddControllers(options =>
     options.Conventions.Add(
         new RouteTokenTransformerConvention(
             new SlugifyParameterTransformer()));
+});
+
+builder.Services.AddApiVersioning(setupAction =>
+{
+    setupAction.DefaultApiVersion = new ApiVersion(1.0);
+    setupAction.ReportApiVersions = true;
+    setupAction.AssumeDefaultVersionWhenUnspecified = true;
 });
 
 var app = builder.Build();

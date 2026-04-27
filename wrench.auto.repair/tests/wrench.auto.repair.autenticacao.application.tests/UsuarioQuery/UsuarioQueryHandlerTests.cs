@@ -38,19 +38,21 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioQuery
         public async Task Usuarios_ObterTodos_DeveRetornarComSucesso()
         {
             // Arrange
+            var resultadoPaginadoUsuario = new ResultadoPaginado<Usuario>([], 0, 1, 10);
             var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery(new RequisicaoPaginada());
             var autoMocker = new AutoMocker();
             var usuarioQueryHandler = autoMocker.CreateInstance<UsuarioQueryHandler>();
             autoMocker.GetMock<IUsuarioRepository>().
-                Setup(u => u.ObterTodosAsync(It.IsAny<CancellationToken>()))
-                .Returns(Task.FromResult<IEnumerable<Usuario>>([]));
+                Setup(u => u.BuscaPaginadaAsync(It.IsAny<RequisicaoPaginada>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<ResultadoPaginado<Usuario>>(resultadoPaginadoUsuario));
 
             // Act
             var result = await usuarioQueryHandler.Handle(obterTodosUsuariosQuery, CancellationToken.None);
 
             // Assert
             Assert.True(result.Sucesso);
-            autoMocker.GetMock<IUsuarioRepository>().Verify(u => u.ObterTodosAsync(It.IsAny<CancellationToken>()), Times.Once);
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.BuscaPaginadaAsync(It.IsAny<RequisicaoPaginada>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
 

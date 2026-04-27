@@ -23,16 +23,23 @@ namespace wrench.auto.repair.cadastro.application.Commands
             if (veiculo != null)
                 return Result<Guid>.Conflicted("A placa informada já está cadastrado para outro veículo.");
 
-            veiculo = _mapper.Map<CadastrarVeiculoCommand, Veiculo>(request);
+            var cliente = await _clienteRepository.ObterPorIdAsync(request.ClienteId, cancellationToken);
 
-            await _veiculoRepository.Adicionar(veiculo, cancellationToken);
+            if (cliente == null) return Result<Guid>.NotFound("Cliente não encontrado.");
+
+            var novoVeiculo = new Veiculo(cliente.Id, request.Marca, request.Modelo,
+                                          request.Cor, request.AnoFabricacao, request.AnoModelo,
+                                          request.PlacaDoVeiculo, request.Descricao, request.UltimaRevisao,
+                                          request.QuilometragemAtual);
+
+            await _veiculoRepository.Adicionar(novoVeiculo, cancellationToken);
 
             var alteracoesRegistradas = await _veiculoRepository.UnitOfWork.CommitAsync();
 
             if (!alteracoesRegistradas)
-                return Result<Guid>.Unexpected("Não foi possível cadastrar/atualizar os dados do veículo. Por favor tente novamente");
+                return Result<Guid>.Unexpected("Não foi possível cadastrar os dados do veículo. Por favor tente novamente");
 
-            return Result<Guid>.Created(veiculo.Id);
+            return Result<Guid>.Created(novoVeiculo.Id);
         }
 
         public async Task<Result<Guid>> Handle(AtualizarVeiculoCommand request, CancellationToken cancellationToken)

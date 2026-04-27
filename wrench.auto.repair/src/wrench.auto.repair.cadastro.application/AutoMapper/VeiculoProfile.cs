@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using wrench.auto.repair.cadastro.application.Commands;
+using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.domain.Entities;
 
 namespace wrench.auto.repair.cadastro.application.AutoMapper
@@ -8,7 +8,7 @@ namespace wrench.auto.repair.cadastro.application.AutoMapper
     {
         public VeiculoProfile()
         {
-            CreateMap<CadastrarVeiculoCommand, Veiculo>();
+            CreateMap<Veiculo, VeiculoViewModel>();
         }
     }
 }

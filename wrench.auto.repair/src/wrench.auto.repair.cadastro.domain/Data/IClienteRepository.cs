@@ -5,6 +5,6 @@ namespace wrench.auto.repair.cadastro.domain.Data
 {
     public interface IClienteRepository : IRepository<Cliente>
     {
-
+        Task<Cliente?> ObterPorDocumentAsync(string documento, CancellationToken cancellationToken);
     }
 }

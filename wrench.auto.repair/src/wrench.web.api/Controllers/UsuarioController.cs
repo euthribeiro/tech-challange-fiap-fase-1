@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.autenticacao.application.Commands;
 using wrench.auto.repair.autenticacao.application.Commands.ViewModels;
@@ -14,7 +15,8 @@ namespace wrench.web.api.Controllers
     /// Serviço para criação de usuários
     /// </summary>
     /// <param name="_mediatorHandler"></param>
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [Authorize]
     public class UsuarioController(IMediatorHandler _mediatorHandler) : ControllerBase
@@ -54,7 +56,7 @@ namespace wrench.web.api.Controllers
         /// Busca usuário pelo id
         /// </summary>
         /// <returns></returns>
-        [HttpGet("/{id:guid}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var obterUsuarioPorIdQuery = new ObterUsuarioPorIdQuery(id);

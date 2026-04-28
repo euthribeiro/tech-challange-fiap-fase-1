@@ -9,10 +9,10 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioCommand
         public void AutenticarUsuarioCommand_ComandoValido_DevePassarNaValidacao()
         {
             // Arrange
-            var criarUsuarioCommand = new AutenticarUsuarioCommand("email@email.com", "My@Secret123!");
+            var autenticarUsuarioCommand = new AutenticarUsuarioCommand("email@email.com", "My@Secret123!");
 
             // Act
-            var result = criarUsuarioCommand.EhValido();
+            var result = autenticarUsuarioCommand.EhValido();
 
             // Assert
             Assert.True(result);

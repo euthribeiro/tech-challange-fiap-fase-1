@@ -23,15 +23,15 @@ namespace wrench.auto.repair.autenticacao.application.tests.Fixtures
             return new Faker().Internet.Password(tamanho);
         }
 
-        public Perfil GerarPerfil()
+        public Perfil GerarPerfil(string nomeDoPerfil = "Admin")
         {
             return new Faker<Perfil>("pt_BR")
-            .CustomInstantiator((fk) => new Perfil("Admin", fk.Random.Word(), true, fk.Date.Recent()));
+            .CustomInstantiator((fk) => new Perfil(nomeDoPerfil, fk.Random.Word(), true, fk.Date.Recent()));
         }
 
-        public Usuario GerarUsuario()
+        public Usuario GerarUsuario(bool ativo = true)
         {
-            return new Usuario(new Email(GerarEmail()), Guid.NewGuid(), true, DateTime.UtcNow);
+            return new Usuario(new Email(GerarEmail()), Guid.NewGuid(), ativo, DateTime.UtcNow);
         }
 
         public string GerarHashSenha(string senha)

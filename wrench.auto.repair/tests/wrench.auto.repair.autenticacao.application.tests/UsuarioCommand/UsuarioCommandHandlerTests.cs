@@ -228,5 +228,445 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioCommand
             autoMocker.GetMock<IJwtTokenGenerator>()
                 .Verify(u => u.GerarToken(It.IsAny<Usuario>()), Times.Never);
         }
+
+        [Fact(DisplayName = "Ativar Usuário Com Sucesso")]
+        [Trait("Autenticacao", "Application")]
+        public async Task AtivarUsuario_UsuarioEncontrado_DeveAtivarUsuarioComSucesso()
+        {
+            // Arrange
+            var usuario = _fixture.GerarUsuario(ativo: false);
+
+            var ativarUsuarioCommand = new AtivarUsuarioCommand(usuario.Id);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(ativarUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Once);
+        }
+
+
+        [Fact(DisplayName = "Ativar Usuario Não Encontrado")]
+        [Trait("Autenticacao", "Application")]
+        public async Task AtivarUsuario_UsuarioNaoEncontrado_DeveRetornarErro()
+        {
+            // Arrange
+            var ativarUsuarioCommand = new AtivarUsuarioCommand(Guid.NewGuid());
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(null));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(ativarUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
+
+
+        [Fact(DisplayName = "Inativar Usuário Com Sucesso")]
+        [Trait("Autenticacao", "Application")]
+        public async Task InativarUsuario_UsuarioEncontrado_DeveInativarUsuarioComSucesso()
+        {
+            // Arrange
+            var perfil = _fixture.GerarPerfil("Cliente");
+            var usuario = _fixture.GerarUsuario();
+            usuario.AlterarPerfil(perfil);
+
+            var inativarUsuarioCommand = new InativarUsuarioCommand(usuario.Id);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(inativarUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Once);
+        }
+
+        [Fact(DisplayName = "Inativar Usuário Não Encontrado")]
+        [Trait("Autenticacao", "Application")]
+        public async Task InativarUsuario_UsuarioNaoEncontrado_DeveRetornarErro()
+        {
+            // Arrange
+            var inativarUsuarioCommand = new InativarUsuarioCommand(Guid.NewGuid());
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(null));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(inativarUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
+
+        [Fact(DisplayName = "Resetar Senha Usuário Com Sucesso")]
+        [Trait("Autenticacao", "Application")]
+        public async Task ResetarSenhaUsuario_UsuarioNaoAdminEAtivo_DeveResetarComSucesso()
+        {
+            // Arrange
+            var perfil = _fixture.GerarPerfil("Cliente");
+            var usuario = _fixture.GerarUsuario();
+            usuario.AlterarPerfil(perfil);
+
+            var resetarSenhaUsuarioCommand = new ResetarSenhaUsuarioCommand(usuario.Id);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+            var hasher = new PasswordHasher();
+            var passwordHash = hasher.GerarHash("My@Secret@123!");
+
+            usuario.DefinirSenha(passwordHash);
+
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(resetarSenhaUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Once);
+        }
+
+        [Fact(DisplayName = "Resetar Senha Usuário Admin e Ativo Não Deve Resetar")]
+        [Trait("Autenticacao", "Application")]
+        public async Task ResetarSenhaUsuario_UsuarioAdminEAtivo_NaoDeveResetar()
+        {
+            // Arrange
+            var perfil = _fixture.GerarPerfil("Admin");
+            var usuario = _fixture.GerarUsuario();
+            usuario.AlterarPerfil(perfil);
+
+            var resetarSenhaUsuarioCommand = new ResetarSenhaUsuarioCommand(usuario.Id);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+            var hasher = new PasswordHasher();
+            var passwordHash = hasher.GerarHash("My@Secret@123!");
+
+            usuario.DefinirSenha(passwordHash);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(resetarSenhaUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
+
+        [Fact(DisplayName = "Resetar Senha Usuário Inativo Não Deve Resetar")]
+        [Trait("Autenticacao", "Application")]
+        public async Task ResetarSenhaUsuario_UsuarioInativo_NaoDeveResetar()
+        {
+            // Arrange
+            var perfil = _fixture.GerarPerfil("Cliente");
+            var usuario = _fixture.GerarUsuario(ativo: false);
+            usuario.AlterarPerfil(perfil);
+
+            var resetarSenhaUsuarioCommand = new ResetarSenhaUsuarioCommand(usuario.Id);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+            var hasher = new PasswordHasher();
+            var passwordHash = hasher.GerarHash("My@Secret@123!");
+
+            usuario.DefinirSenha(passwordHash);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(resetarSenhaUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
+
+        [Fact(DisplayName = "Resetar Senha Usuário Com Senha Já Resetada Deve Retornar Sucesso")]
+        [Trait("Autenticacao", "Application")]
+        public async Task ResetarSenhaUsuario_UsuarioNaoAdminEAtivoComSenhaJaResetada_DeveRetornarSucesso()
+        {
+            // Arrange
+            var perfil = _fixture.GerarPerfil("Cliente");
+            var usuario = _fixture.GerarUsuario();
+            usuario.AlterarPerfil(perfil);
+
+            var resetarSenhaUsuarioCommand = new ResetarSenhaUsuarioCommand(usuario.Id);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(resetarSenhaUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
+
+        [Fact(DisplayName = "Primeiro Acesso Usuário Deve Cadastrar Senha")]
+        [Trait("Autenticacao", "Application")]
+        public async Task Usuario_PrimeiroAcessoUsuario_DeveCadastrarSenha()
+        {
+            // Arrange
+            var passwordHash = new PasswordHasher();
+            var perfil = _fixture.GerarPerfil("Cliente");
+            var usuario = _fixture.GerarUsuario();
+            var senhaSemHash = _fixture.GerarSenha(24);
+            var hashSenha = passwordHash.GerarHash(senhaSemHash);
+            usuario.AlterarPerfil(perfil);
+
+            var primeiroAcessoUsuarioCommand = new PrimeiroAcessoUsuarioCommand(usuario.Email.Endereco, senhaSemHash);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IPasswordHasher>()
+                .Setup(u => u.GerarHash(senhaSemHash))
+                .Returns(hashSenha);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(primeiroAcessoUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.True(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Once);
+
+            autoMocker.GetMock<IPasswordHasher>()
+               .Verify(u => u.GerarHash(It.IsAny<string>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Once);
+        }
+
+        [Fact(DisplayName = "Primeiro Acesso Usuário Nao Encontrado")]
+        [Trait("Autenticacao", "Application")]
+        public async Task PrimeiroAcessoUsuario_UsuarioNaoEncontrado_DeveRetornarErro()
+        {
+            // Arrange
+            var passwordHash = new PasswordHasher();
+            var email = _fixture.GerarEmail();
+            var senhaSemHash = _fixture.GerarSenha(24);
+            var hashSenha = passwordHash.GerarHash(senhaSemHash);
+
+            var primeiroAcessoUsuarioCommand = new PrimeiroAcessoUsuarioCommand(email, senhaSemHash);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(null));
+
+            autoMocker.GetMock<IPasswordHasher>()
+                .Setup(u => u.GerarHash(senhaSemHash))
+                .Returns(hashSenha);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(primeiroAcessoUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IPasswordHasher>()
+               .Verify(u => u.GerarHash(It.IsAny<string>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
+
+        [Fact(DisplayName = "Primeiro Acesso Usuário Admin")]
+        [Trait("Autenticacao", "Application")]
+        public async Task PrimeiroAcessoUsuario_UsuarioAdmin_NaoDeveResetarSenha()
+        {
+            // Arrange
+            var passwordHash = new PasswordHasher();
+            var perfil = _fixture.GerarPerfil("Admin");
+            var usuario = _fixture.GerarUsuario();
+            var senhaSemHash = _fixture.GerarSenha(24);
+            var hashSenha = passwordHash.GerarHash(senhaSemHash);
+            usuario.AlterarPerfil(perfil);
+
+            var primeiroAcessoUsuarioCommand = new PrimeiroAcessoUsuarioCommand(usuario.Email.Endereco, senhaSemHash);
+            var autoMocker = new AutoMocker();
+            var usuarioCommandHandler = autoMocker.CreateInstance<UsuarioCommandHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<Usuario?>(usuario));
+
+            autoMocker.GetMock<IPasswordHasher>()
+                .Setup(u => u.GerarHash(senhaSemHash))
+                .Returns(hashSenha);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.UnitOfWork.CommitAsync())
+                .Returns(Task.FromResult(true));
+
+            // Act
+            var result = await usuarioCommandHandler.Handle(primeiroAcessoUsuarioCommand, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorEmailAsync(It.IsAny<Email>(), It.IsAny<CancellationToken>()), Times.Once);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.Atualizar(It.IsAny<Usuario>()), Times.Never);
+
+            autoMocker.GetMock<IPasswordHasher>()
+               .Verify(u => u.GerarHash(It.IsAny<string>()), Times.Never);
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.UnitOfWork.CommitAsync(), Times.Never);
+        }
     }
 }

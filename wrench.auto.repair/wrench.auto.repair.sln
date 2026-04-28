@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.autentic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.autenticacao.application.tests", "tests\wrench.auto.repair.autenticacao.application.tests\wrench.auto.repair.autenticacao.application.tests.csproj", "{0E45FCBF-E7CC-CD84-546A-21199B231B09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrench.auto.repair.cadastro.application.tests", "tests\wrench.auto.repair.cadastro.application.tests\wrench.auto.repair.cadastro.application.tests.csproj", "{692F98D5-3BA1-4064-9FEC-F658684CE96B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{0E45FCBF-E7CC-CD84-546A-21199B231B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E45FCBF-E7CC-CD84-546A-21199B231B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E45FCBF-E7CC-CD84-546A-21199B231B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692F98D5-3BA1-4064-9FEC-F658684CE96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692F98D5-3BA1-4064-9FEC-F658684CE96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692F98D5-3BA1-4064-9FEC-F658684CE96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692F98D5-3BA1-4064-9FEC-F658684CE96B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +176,7 @@ Global
 		{42836D60-E9B7-A1C3-D162-ECBDD6AA4410} = {4E63BF8F-4656-4680-AFAD-05E3CFCE287C}
 		{567BC47A-6E88-E128-435C-E8A83795C08A} = {0782777B-B950-4645-9B60-AD906D17707D}
 		{0E45FCBF-E7CC-CD84-546A-21199B231B09} = {4E63BF8F-4656-4680-AFAD-05E3CFCE287C}
+		{692F98D5-3BA1-4064-9FEC-F658684CE96B} = {CB1750C5-BEA4-4645-9859-C1B40E99AAEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {090F31A5-4C72-4B0E-AEE7-FA6419FDC637}

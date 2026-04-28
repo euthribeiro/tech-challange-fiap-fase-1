@@ -31,6 +31,7 @@ namespace wrench.web.api.Extensions
                 TipoErroEnum.NAO_AUTORIZADO => new UnauthorizedObjectResult(result.Erros),
                 TipoErroEnum.ENTIDADE_NAO_PROCESSAVEL => new UnprocessableEntityObjectResult(result.Erros),
                 TipoErroEnum.INESPERADO => new ObjectResult(result.Erros) { StatusCode = 500 },
+                TipoErroEnum.PROIBIDO => new ForbidResult(),
                 _ => new ObjectResult(result.Erros) { StatusCode = 500 }
             };
         }
@@ -58,7 +59,10 @@ namespace wrench.web.api.Extensions
                 TipoErroEnum.VALIDACAO => new BadRequestObjectResult(result.Erros),
                 TipoErroEnum.NAO_ENCONTRADO => new NotFoundObjectResult(result.Erros),
                 TipoErroEnum.CONFLITO => new ConflictObjectResult(result.Erros),
+                TipoErroEnum.NAO_AUTORIZADO => new UnauthorizedObjectResult(result.Erros),
+                TipoErroEnum.ENTIDADE_NAO_PROCESSAVEL => new UnprocessableEntityObjectResult(result.Erros),
                 TipoErroEnum.INESPERADO => new ObjectResult(result.Erros) { StatusCode = 500 },
+                TipoErroEnum.PROIBIDO => new ForbidResult(),
                 _ => new ObjectResult(result.Erros) { StatusCode = 500 }
             };
         }

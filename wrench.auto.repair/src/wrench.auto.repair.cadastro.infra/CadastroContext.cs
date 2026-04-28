@@ -14,6 +14,14 @@ namespace wrench.auto.repair.cadastro.infra
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Cliente>()
+                .Navigation(c => c.Endereco)
+                .AutoInclude();
+
+            modelBuilder.Entity<Cliente>()
+                .Navigation(c => c.Veiculos)
+                .AutoInclude();
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CadastroContext).Assembly);
 
             base.OnModelCreating(modelBuilder);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.autenticacao.application.Commands;
 using wrench.auto.repair.autenticacao.application.Commands.ViewModels;
@@ -12,7 +13,8 @@ namespace wrench.web.api.Controllers
     /// Autenticar Usuário
     /// </summary>
     /// <param name="_mediatorHandler"></param>
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class AutenticacaoController(IMediatorHandler _mediatorHandler) : ControllerBase
     {

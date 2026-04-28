@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.autenticacao.application.Queries;
 using wrench.auto.repair.autenticacao.application.Queries.ViewModels;
@@ -10,8 +11,10 @@ namespace wrench.web.api.Controllers
     /// <summary>
     /// Serviço para listagem de Perfis
     /// </summary>
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class PerfilController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
@@ -19,7 +22,6 @@ namespace wrench.web.api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             var result = await _mediatorHandler

@@ -1,24 +1,36 @@
-﻿using wrench.auto.repair.core.DomainObjects;
+﻿using System.Text.RegularExpressions;
+using wrench.auto.repair.core.DomainObjects;
+using wrench.auto.repair.core.Extensions;
 
 namespace wrench.auto.repair.core.ValueObjects
 {
-    public sealed class NomeRazaoSocial
+    public sealed partial class NomeRazaoSocial
     {
+        [GeneratedRegex(@"\s+")]
+        private static partial Regex EspacosDuplicadosRegex();
+
         public string Nome { get; set; }
+
+        protected NomeRazaoSocial() { } // EF Core
 
         public NomeRazaoSocial(string nome)
         {
             Validar(nome);
 
-            Nome = nome.Trim().ToUpper();
+            Nome = EspacosDuplicadosRegex()
+                .Replace(nome, " ")
+                .Trim()
+                .RemoverAcentos()
+                .ToUpper();
         }
-
 
         private static void Validar(string nome)
         {
             Validacoes.ValidarSeVazio(nome, "O nome ou razão social não pode estar vazio");
 
-            var nomes = nome.Trim().Split(' ');
+            var nomeCorrigido = EspacosDuplicadosRegex().Replace(nome, " ").Trim();
+
+            var nomes = nomeCorrigido.Split(' ');
 
             Validacoes.ValidarSeIgual(nomes.Length, 1, "O nome ou razão social deve ser composto");
         }

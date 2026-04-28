@@ -18,5 +18,8 @@
 
         // Não autorizado
         NAO_AUTORIZADO,
+
+        // Retornar Forbidden
+        PROIBIDO
     }
 }

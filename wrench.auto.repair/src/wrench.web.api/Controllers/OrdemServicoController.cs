@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.Os;
@@ -11,10 +13,11 @@ namespace wrench.web.api.Controllers
     /// responsável por expor os endpoints relacionados a criação, consulta, 
     /// atualização e exclusão de ordens de serviço.
     /// </summary>
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [AllowAnonymous] // TODO: Esperando a configuração do banco de dados do contexto autenticação
-    public class OrdemServicoController(IMediatorHandler _mediatorHandler) : ControllerBase
+    [Authorize(Roles = "Admin,Funcionario")]
+    public class OrdemServicoController(IMediator _mediator) : ControllerBase
     {
         /// <summary>
         /// Cria ordem de serviço

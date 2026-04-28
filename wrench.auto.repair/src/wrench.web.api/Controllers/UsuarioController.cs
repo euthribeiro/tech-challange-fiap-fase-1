@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.autenticacao.application.Commands;
 using wrench.auto.repair.autenticacao.application.Commands.ViewModels;
@@ -14,9 +15,10 @@ namespace wrench.web.api.Controllers
     /// Serviço para criação de usuários
     /// </summary>
     /// <param name="_mediatorHandler"></param>
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class UsuarioController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
@@ -25,7 +27,6 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody] CriarUsuarioViewModel request)
         {
             var command = new CriarUsuarioCommand(request.Email, request.Senha, request.PerfilId, request.Ativo);
@@ -54,7 +55,7 @@ namespace wrench.web.api.Controllers
         /// Busca usuário pelo id
         /// </summary>
         /// <returns></returns>
-        [HttpGet("/{id:guid}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var obterUsuarioPorIdQuery = new ObterUsuarioPorIdQuery(id);
@@ -63,6 +64,68 @@ namespace wrench.web.api.Controllers
                 .EnviarComando<ObterUsuarioPorIdQuery, UsuarioViewModel>(obterUsuarioPorIdQuery);
 
             return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Endpoint para inativar um usuário
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
+        {
+            var inativarUsuarioCommand = new InativarUsuarioCommand(id);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<InativarUsuarioCommand>(inativarUsuarioCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Realizar o primeiro acesso do usuário sem senha cadastrada.
+        /// Obs: endpoint criado para simular o primeiro acesso pelo cliente (web, app, etc)
+        /// </summary>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpPut("primeiro-acesso")]
+        public async Task<IActionResult> PrimeiroAcessoSenhaAsync([FromBody] PrimeirAcessoUsuarioViewModel requisicao)
+        {
+            var primeiroAcessoUsuarioCommand =
+                new PrimeiroAcessoUsuarioCommand(requisicao.Email, requisicao.Senha);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<PrimeiroAcessoUsuarioCommand>(primeiroAcessoUsuarioCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Reseta o acesso do usuário
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/resetar-acesso")]
+        public async Task<IActionResult> ResetarAcessoAsync([FromRoute] Guid id)
+        {
+            var alterarSenhaUsuarioCommand = new ResetarSenhaUsuarioCommand(id);
+
+            var resultado = await _mediatorHandler
+               .EnviarComando<ResetarSenhaUsuarioCommand>(alterarSenhaUsuarioCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        [HttpPut("{id:guid}/ativar")]
+        public async Task<IActionResult> AtivarUsuarioAsync([FromRoute] Guid id)
+        {
+            var ativarUsuarioCommand = new AtivarUsuarioCommand(id);
+
+            var resultado = await _mediatorHandler
+               .EnviarComando<AtivarUsuarioCommand>(ativarUsuarioCommand);
+
+            return resultado.ToActionResult();
         }
     }
 }

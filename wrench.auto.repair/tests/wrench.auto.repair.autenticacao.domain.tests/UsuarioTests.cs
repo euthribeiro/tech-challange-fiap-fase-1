@@ -15,8 +15,8 @@ namespace wrench.auto.repair.autenticacao.domain.tests
             var email = _fixture.GerarEmail();
 
             // Act & Assert
-            Assert.Throws<DomainException>(() => new Usuario(null, perfilId: Guid.NewGuid(), false, DateTime.Now));
-            Assert.Throws<DomainException>(() => new Usuario(email, perfilId: Guid.Empty, false, DateTime.Now));
+            Assert.Throws<DomainException>(() => new Usuario(null, perfilId: Guid.NewGuid(), false, DateTime.UtcNow));
+            Assert.Throws<DomainException>(() => new Usuario(email, perfilId: Guid.Empty, false, DateTime.UtcNow));
         }
 
         [Fact(DisplayName = "Criar Usuario Definir Senha Vazia Deve Retornar Exception")]
@@ -62,8 +62,8 @@ namespace wrench.auto.repair.autenticacao.domain.tests
         public void CriarPerfilDadosVazioDeveRetornarException()
         {
             // Arrange & Act & Assert
-            Assert.Throws<DomainException>(() => new Perfil(nome: "", descricao: "Perfil Administrativo", true, DateTime.Now));
-            Assert.Throws<DomainException>(() => new Perfil(nome: "Admin", descricao: "", true, DateTime.Now));
+            Assert.Throws<DomainException>(() => new Perfil(nome: "", descricao: "Perfil Administrativo", true, DateTime.UtcNow));
+            Assert.Throws<DomainException>(() => new Perfil(nome: "Admin", descricao: "", true, DateTime.UtcNow));
         }
 
         [Fact(DisplayName = "Alterar Descricao Perfil Nova Descricao Vazia Deve Retornar Exception")]

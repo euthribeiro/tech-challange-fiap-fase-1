@@ -4,12 +4,13 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.autenticacao.application.Commands
 {
-    public class CriarUsuarioCommand(string email, string? senha, Guid perfilId, bool ativo) : Command<Guid>
+    public class CriarUsuarioCommand(string email, string? senha, Guid perfilId, bool ativo, bool requerSenha = true) : Command<Guid>
     {
         public string Email { get; private set; } = email;
         public string? Senha { get; private set; } = senha;
         public Guid PerfilId { get; private set; } = perfilId;
         public bool Ativo { get; private set; } = ativo;
+        public bool RequerSenha { get; private set; } = requerSenha;
 
         public override bool EhValido()
         {
@@ -36,7 +37,7 @@ namespace wrench.auto.repair.autenticacao.application.Commands
                 .NotEmpty()
                 .WithMessage(PerfilVazioErro);
 
-            When(c => !string.IsNullOrWhiteSpace(c.Senha), () =>
+            When(c => c.RequerSenha, () =>
             {
                 RuleFor(c => c.Senha!)
                 .SetValidator(new PasswordValidator(string.Empty, null, null));

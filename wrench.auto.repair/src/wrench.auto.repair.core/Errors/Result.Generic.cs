@@ -13,7 +13,7 @@
         private Result(TipoErroEnum? tipoErro, IEnumerable<string> erros)
         {
             Id = Guid.NewGuid();
-            Timestamp = DateTime.Now;
+            Timestamp = DateTime.UtcNow;
             Sucesso = false;
             Valor = default;
             Erros = erros;
@@ -24,7 +24,7 @@
         private Result(ResultadoStatusEnum resultadoStatus, T? valor)
         {
             Id = Guid.NewGuid();
-            Timestamp = DateTime.Now;
+            Timestamp = DateTime.UtcNow;
             Sucesso = true;
             Valor = valor;
             Erros = [];
@@ -39,7 +39,7 @@
             new(ResultadoStatusEnum.CRIADO, valor);
 
         public static Result<T> NoContent() =>
-            new(ResultadoStatusEnum.CRIADO, default);
+            new(ResultadoStatusEnum.SEM_CONTEUDO, default);
 
         public static Result<T> NotFound(params string[] errors) =>
             new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);
@@ -59,6 +59,9 @@
         public static Result<T> UnprocessableEntity(params string[] errors) =>
             new(TipoErroEnum.ENTIDADE_NAO_PROCESSAVEL, [.. errors]);
 
+        public static Result<T> Forbidden(params string[] errors) =>
+            new(TipoErroEnum.PROIBIDO, [.. errors]);
+
         public static Result<T> NotFound(IEnumerable<string> errors) =>
             new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);
 
@@ -76,5 +79,8 @@
 
         public static Result<T> UnprocessableEntity(IEnumerable<string> errors) =>
             new(TipoErroEnum.ENTIDADE_NAO_PROCESSAVEL, [.. errors]);
+
+        public static Result<T> Forbidden(IEnumerable<string> errors) =>
+            new(TipoErroEnum.PROIBIDO, [.. errors]);
     }
 }

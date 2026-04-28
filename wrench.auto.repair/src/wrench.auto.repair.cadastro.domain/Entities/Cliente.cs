@@ -6,13 +6,15 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 {
     public class Cliente : Entity, IAggregateRoot
     {
-        public Cliente(CpfCnpj documento, NomeRazaoSocial nomeCompleto, Telefone telefone, Email email, Guid enderecoId, DateTime dataCadastro)
+        protected Cliente() { } // EF Core
+
+        public Cliente(CpfCnpj documento, NomeRazaoSocial nomeCompleto, Telefone telefone, Email email, Endereco endereco, DateTime dataCadastro)
         {
             Documento = documento;
             Nome = nomeCompleto;
             Telefone = telefone;
             Email = email;
-            EnderecoId = enderecoId;
+            Endereco = endereco;
             DataCadastro = dataCadastro;
 
             Validar();
@@ -26,11 +28,8 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         public Email Email { get; private set; }
 
-        public Guid EnderecoId { get; private set; }
-
         public DateTime DataCadastro { get; private set; }
 
-        // EF Relation
         public Endereco Endereco { get; private set; }
 
         // EF Relation
@@ -58,7 +57,6 @@ namespace wrench.auto.repair.cadastro.domain.Entities
         {
             Validacoes.ValidarSeNulo(endereco, "Endereço não pode ser nulo");
             Endereco = endereco;
-            EnderecoId = endereco.Id;
         }
 
         private void Validar()
@@ -67,7 +65,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
             Validacoes.ValidarSeNulo(Nome, "Nome não pode ser nulo");
             Validacoes.ValidarSeNulo(Telefone, "Telefone não pode ser nulo");
             Validacoes.ValidarSeNulo(Email, "E-mail não pode ser nulo");
-            Validacoes.ValidarSeVazio(EnderecoId, "ID do Endereço não pode ser vazio");
+            Validacoes.ValidarSeNulo(Endereco, "Endereço não pode ser nulo");
         }
     }
 }

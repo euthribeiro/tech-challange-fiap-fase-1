@@ -18,7 +18,7 @@ namespace wrench.auto.repair.autenticacao.domain.Entities
         }
 
         public Email Email { get; private set; }
-        public string Senha { get; private set; }
+        public string? Senha { get; private set; }
         public Guid PerfilId { get; private set; }
         public bool Ativo { get; private set; }
         public DateTime DateCadastro { get; private set; }
@@ -42,6 +42,21 @@ namespace wrench.auto.repair.autenticacao.domain.Entities
         {
             Perfil = perfil;
             PerfilId = perfil.Id;
+        }
+
+        public void Inativar()
+        {
+            Ativo = false;
+        }
+
+        public void Ativar()
+        {
+            Ativo = true;
+        }
+
+        public void ResetarSenha()
+        {
+            Senha = null;
         }
     }
 }

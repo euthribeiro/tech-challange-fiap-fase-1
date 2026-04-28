@@ -11,7 +11,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
         IClienteRepository _clienteRepository,
         IVeiculoRepository _veiculoRepository
     ) : IRequestHandler<CadastrarVeiculoCommand, Result<Guid>>,
-        IRequestHandler<AtualizarVeiculoCommand, Result<Guid>>
+        IRequestHandler<AtualizarVeiculoCommand, Result>
     {
         public async Task<Result<Guid>> Handle(CadastrarVeiculoCommand request, CancellationToken cancellationToken)
         {
@@ -23,31 +23,38 @@ namespace wrench.auto.repair.cadastro.application.Commands
             if (veiculo != null)
                 return Result<Guid>.Conflicted("A placa informada já está cadastrado para outro veículo.");
 
-            veiculo = _mapper.Map<CadastrarVeiculoCommand, Veiculo>(request);
+            var cliente = await _clienteRepository.ObterPorIdAsync(request.ClienteId, cancellationToken);
 
-            await _veiculoRepository.Adicionar(veiculo, cancellationToken);
+            if (cliente == null) return Result<Guid>.NotFound("Cliente não encontrado.");
+
+            var novoVeiculo = new Veiculo(cliente.Id, request.Marca, request.Modelo,
+                                          request.Cor, request.AnoFabricacao, request.AnoModelo,
+                                          request.PlacaDoVeiculo, request.Descricao, request.UltimaRevisao,
+                                          request.QuilometragemAtual);
+
+            await _veiculoRepository.Adicionar(novoVeiculo, cancellationToken);
 
             var alteracoesRegistradas = await _veiculoRepository.UnitOfWork.CommitAsync();
 
             if (!alteracoesRegistradas)
-                return Result<Guid>.Unexpected("Não foi possível cadastrar/atualizar os dados do veículo. Por favor tente novamente");
+                return Result<Guid>.Unexpected("Não foi possível cadastrar os dados do veículo. Por favor tente novamente");
 
-            return Result<Guid>.Created(veiculo.Id);
+            return Result<Guid>.Created(novoVeiculo.Id);
         }
 
-        public async Task<Result<Guid>> Handle(AtualizarVeiculoCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(AtualizarVeiculoCommand request, CancellationToken cancellationToken)
         {
             var veiculo = await _veiculoRepository
                 .ObterPorIdAsync(request.VeiculoId, cancellationToken);
 
             if (veiculo == null)
-                return Result<Guid>.NotFound("Veículo não encontrado");
+                return Result.NotFound("Veículo não encontrado");
 
             if (veiculo.ClienteId != request.ClienteId)
             {
                 var cliente = await _clienteRepository.ObterPorIdAsync(request.ClienteId, cancellationToken);
 
-                if (cliente == null) return Result<Guid>.NotFound("Cliente não encontrado");
+                if (cliente == null) return Result.NotFound("Cliente não encontrado");
 
                 veiculo.AlterarCliente(cliente);
             }
@@ -58,7 +65,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
                     .ObterVeiculoPelaPlacaAsync(request.PlacaDoVeiculo, cancellationToken);
 
                 if (veiculoExistente != null)
-                    return Result<Guid>.Conflicted("A placa informada já está cadastrado para outro veículo.");
+                    return Result.Conflicted("A placa informada já está cadastrado para outro veículo.");
 
                 veiculo.CorrigirPlacaVeiculo(request.PlacaDoVeiculo);
             }
@@ -89,7 +96,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
                 request.UltimaRevisao.HasValue)
             {
                 if (veiculo.UltimaRevisao > request.UltimaRevisao.Value)
-                    return Result<Guid>.ValidationError("A data da última revisão é menor que a data da revisão anterior");
+                    return Result.ValidationError("A data da última revisão é menor que a data da revisão anterior");
 
                 veiculo.AtualizarUltimaRevisao(request.UltimaRevisao.Value);
             }
@@ -99,9 +106,9 @@ namespace wrench.auto.repair.cadastro.application.Commands
             var alteracoesRegistradas = await _veiculoRepository.UnitOfWork.CommitAsync();
 
             if (!alteracoesRegistradas)
-                return Result<Guid>.Unexpected("Não foi possível atualizar os dados do veículo. Por favor tente novamente");
+                return Result.Unexpected("Não foi possível atualizar os dados do veículo. Por favor tente novamente");
 
-            return Result<Guid>.NoContent();
+            return Result.NoContent();
         }
     }
 }

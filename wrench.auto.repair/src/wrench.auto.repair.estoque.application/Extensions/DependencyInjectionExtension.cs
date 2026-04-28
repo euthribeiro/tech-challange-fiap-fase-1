@@ -6,6 +6,7 @@ namespace wrench.auto.repair.estoque.application.Extensions
     {
         public static IServiceCollection AddEstoqueApplication(this IServiceCollection services)
         {
+            services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(DependencyInjectionExtension).Assembly));
             return services;
         }
     }

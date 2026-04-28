@@ -9,4 +9,11 @@ public class PecaDbContext: DbContext
     public DbSet<Peca> Pecas { get; set; }
     
     public PecaDbContext(DbContextOptions<PecaDbContext> options): base(options) {}
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.HasDefaultSchema("peca");
+
+        base.OnModelCreating(modelBuilder);
+    }
 }

@@ -17,6 +17,7 @@ namespace wrench.auto.repair.estoque.infra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("peca")
                 .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -39,12 +40,15 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<double>("Quantidade")
+                        .HasColumnType("double precision");
+
                     b.Property<double>("Valor")
                         .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pecas");
+                    b.ToTable("Pecas", "peca");
                 });
 #pragma warning restore 612, 618
         }

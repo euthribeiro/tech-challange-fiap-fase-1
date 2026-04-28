@@ -1,4 +1,5 @@
 ﻿using wrench.auto.repair.estoque.domain.Entities;
+using wrench.auto.repair.estoque.domain.Enums;
 using wrench.auto.repair.estoque.domain.Interfaces.Repositories;
 using wrench.auto.repair.estoque.infra.Context;
 

@@ -12,14 +12,15 @@ using wrench.auto.repair.estoque.infra.Context;
 namespace wrench.auto.repair.estoque.infra.Migrations
 {
     [DbContext(typeof(PecaDbContext))]
-    [Migration("20260424011745_InitialPecaMigration")]
-    partial class InitialPecaMigration
+    [Migration("20260428004701_PecaInitialCreate")]
+    partial class PecaInitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("peca")
                 .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -42,12 +43,15 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<double>("Quantidade")
+                        .HasColumnType("double precision");
+
                     b.Property<double>("Valor")
                         .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pecas");
+                    b.ToTable("Pecas", "peca");
                 });
 #pragma warning restore 612, 618
         }

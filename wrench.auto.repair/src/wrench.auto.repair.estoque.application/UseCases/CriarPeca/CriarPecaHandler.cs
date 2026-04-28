@@ -4,7 +4,7 @@ using wrench.auto.repair.estoque.domain.Interfaces.Repositories;
 
 namespace wrench.auto.repair.estoque.application.UseCases.CriarPeca;
 
-public class CriarPecaHandler : IRequestHandler<CriarPecaCommand, Guid>
+public class CriarPecaHandler : IRequestHandler<CriarPecaCommand, Peca>
 {
     private readonly IPecaRepository _pecaRepository;
 
@@ -13,7 +13,7 @@ public class CriarPecaHandler : IRequestHandler<CriarPecaCommand, Guid>
         _pecaRepository = pecaRepository;
     }
 
-    public async Task<Guid> Handle(CriarPecaCommand request, CancellationToken cancellationToken)
+    public async Task<Peca> Handle(CriarPecaCommand request, CancellationToken cancellationToken)
     {
         var peca = new Peca(
             request.Nome,
@@ -23,7 +23,7 @@ public class CriarPecaHandler : IRequestHandler<CriarPecaCommand, Guid>
         );
         
       await _pecaRepository.CriarPeca(peca);
-      return peca.Id;
+      return peca;
     }
 }
 

@@ -1,14 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
+using wrench.auto.repair.ordem.servico.infra.Repositories;
 
 namespace wrench.auto.repair.ordem.servico.infra.Extensions
 {
     public static class DependencyInjectionExtension
     {
-        public static IServiceCollection AddOrdemServicoInfra(this IServiceCollection services)
+        public static void AddOrdemServicoInfra(this IServiceCollection services)
         {
-
-
-            return services;
+            services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
+            services.AddScoped<IDiagnosticoRepository, DiagnosticoRepository>();
         }
     }
 }

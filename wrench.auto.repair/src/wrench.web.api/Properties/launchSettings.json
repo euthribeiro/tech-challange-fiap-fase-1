@@ -20,7 +20,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ADMIN_EMAIL": "admin@wrench.com.br",
+        "ADMIN_PASSWORD": "?X7I3n~(694*7kGjy9'Zf%tN"
       },
       "launchUrl": "docs-ui"
     }

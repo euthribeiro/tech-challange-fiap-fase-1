@@ -21,27 +21,27 @@ namespace wrench.auto.repair.cadastro.domain.tests
             // Act & Assert
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(null, nome, telefone, email, endereco, DateTime.Now);
+                new Cliente(null, nome, telefone, email, endereco, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, null, telefone, email, endereco, DateTime.Now);
+                new Cliente(document, null, telefone, email, endereco, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, nome, null, email, endereco, DateTime.Now);
+                new Cliente(document, nome, null, email, endereco, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, nome, telefone, null, endereco, DateTime.Now);
+                new Cliente(document, nome, telefone, null, endereco, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Cliente(document, nome, telefone, email, null, DateTime.Now);
+                new Cliente(document, nome, telefone, email, null, DateTime.UtcNow);
             });
         }
 

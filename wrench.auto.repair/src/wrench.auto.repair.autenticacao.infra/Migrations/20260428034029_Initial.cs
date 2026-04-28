@@ -17,11 +17,11 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 name: "Perfis",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Ativo = table.Column<bool>(type: "bit", nullable: false),
-                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Nome = table.Column<string>(type: "text", nullable: false),
+                    Descricao = table.Column<string>(type: "text", nullable: false),
+                    Ativo = table.Column<bool>(type: "boolean", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,12 +32,12 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 name: "Usuarios",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PerfilId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Ativo = table.Column<bool>(type: "bit", nullable: false),
-                    DateCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    Senha = table.Column<string>(type: "text", nullable: false),
+                    PerfilId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Ativo = table.Column<bool>(type: "boolean", nullable: false),
+                    DateCadastro = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,8 +55,9 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 columns: new[] { "Id", "Ativo", "DataCriacao", "Descricao", "Nome" },
                 values: new object[,]
                 {
-                    { new Guid("5665d39c-4907-40a9-b648-e9cbb041afed"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Funcionário", "Employee" },
-                    { new Guid("63a459de-75ba-4faa-bd0e-9fca7c9063ab"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Adminstrativo", "Admin" }
+                    { new Guid("5665d39c-4907-40a9-b648-e9cbb041afed"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Funcionário", "Funcionario" },
+                    { new Guid("63a459de-75ba-4faa-bd0e-9fca7c9063ab"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Adminstrativo", "Admin" },
+                    { new Guid("70b89dce-8ea8-461c-b7c2-47a40ab906ba"), true, new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc), "Perfil Cliente", "Cliente" }
                 });
 
             migrationBuilder.CreateIndex(

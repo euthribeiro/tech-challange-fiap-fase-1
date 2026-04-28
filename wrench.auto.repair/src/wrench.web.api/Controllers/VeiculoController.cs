@@ -19,6 +19,7 @@ namespace wrench.web.api.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [Authorize]
+    [Authorize(Roles = "Admin,Funcionario")]
     public class VeiculoController(
         IMediatorHandler _mediatorHandler
     ) : ControllerBase

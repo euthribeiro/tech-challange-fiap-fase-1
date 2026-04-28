@@ -36,7 +36,7 @@ namespace wrench.auto.repair.core.ValueObjects
 
             var data = new DateTime(ano, mes, dia);
 
-            if (data > DateTime.Now.Date)
+            if (data > DateTime.UtcNow.Date)
                 throw new DomainException("A data não pode ser superior a data atual.");
         }
 

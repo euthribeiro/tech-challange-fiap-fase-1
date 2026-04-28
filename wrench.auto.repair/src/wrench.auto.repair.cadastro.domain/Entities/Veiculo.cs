@@ -88,8 +88,8 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         public void CorrigirAnoFabricacao(int anoFabricacao)
         {
-            var anoAtual = DateTime.Now.Year;
-            var proximoAno = DateTime.Now.AddYears(1).Year;
+            var anoAtual = DateTime.UtcNow.Year;
+            var proximoAno = DateTime.UtcNow.AddYears(1).Year;
             Validacoes.ValidarMinimoMaximo(anoFabricacao, 1886, proximoAno, $"Ano de fabricação deve estar entre 1886 e {anoAtual}.");
 
             AnoFabricacao = anoFabricacao;
@@ -97,7 +97,7 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         public void CorrigirAnoModelo(int anoModelo)
         {
-            var proximoAno = DateTime.Now.AddYears(1).Year;
+            var proximoAno = DateTime.UtcNow.AddYears(1).Year;
 
             Validacoes.ValidarMinimoMaximo(anoModelo, 1886, proximoAno, $"Ano do modelo deve estar entre 1886 e {proximoAno}.");
 
@@ -124,8 +124,8 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         private void Validar()
         {
-            var anoAtual = DateTime.Now.Year;
-            var proximoAno = DateTime.Now.AddYears(1).Year;
+            var anoAtual = DateTime.UtcNow.Year;
+            var proximoAno = DateTime.UtcNow.AddYears(1).Year;
 
             Validacoes.ValidarSeVazio(ClienteId, "O ID do cliente não pode ser vazio");
             Validacoes.ValidarSeVazio(Marca, "A marca do veículo não pode ser vazio");

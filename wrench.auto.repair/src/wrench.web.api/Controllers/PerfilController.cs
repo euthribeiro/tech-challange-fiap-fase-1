@@ -14,6 +14,7 @@ namespace wrench.web.api.Controllers
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class PerfilController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
@@ -21,7 +22,6 @@ namespace wrench.web.api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             var result = await _mediatorHandler

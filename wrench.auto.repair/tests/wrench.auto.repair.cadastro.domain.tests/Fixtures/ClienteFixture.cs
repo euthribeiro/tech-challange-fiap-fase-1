@@ -60,7 +60,7 @@ namespace wrench.auto.repair.cadastro.domain.tests.Fixtures
             var email = GerarEmailValido();
             var endereco = GerarEnderecoValido();
 
-            return new Cliente(cnpj, nome, telefone, email, endereco, DateTime.Now);
+            return new Cliente(cnpj, nome, telefone, email, endereco, DateTime.UtcNow);
         }
 
         public Endereco GerarEnderecoValido()

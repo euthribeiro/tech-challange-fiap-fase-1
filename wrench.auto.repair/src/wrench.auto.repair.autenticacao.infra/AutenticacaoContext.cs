@@ -16,6 +16,10 @@ namespace wrench.auto.repair.autenticacao.infra
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AutenticacaoContext).Assembly);
 
+            modelBuilder.Entity<Usuario>()
+              .Navigation(c => c.Perfil)
+              .AutoInclude();
+
             base.OnModelCreating(modelBuilder);
         }
 

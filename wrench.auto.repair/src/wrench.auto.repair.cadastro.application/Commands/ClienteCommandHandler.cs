@@ -4,12 +4,15 @@ using wrench.auto.repair.cadastro.domain.Data;
 using wrench.auto.repair.cadastro.domain.Entities;
 using wrench.auto.repair.cadastro.domain.ValueObjects;
 using wrench.auto.repair.core.Errors;
+using wrench.auto.repair.core.Mediator;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegrationEvents;
 using wrench.auto.repair.core.ValueObjects;
 
 namespace wrench.auto.repair.cadastro.application.Commands
 {
     public class ClienteCommandHandler(
         IMapper _mapper,
+        IMediatorHandler _mediatorHandler,
         IClienteRepository _clienteRepository
     ) : IRequestHandler<CadastrarClienteCommand, Result<Guid>>,
         IRequestHandler<AtualizarClienteCommand, Result>
@@ -24,14 +27,20 @@ namespace wrench.auto.repair.cadastro.application.Commands
             if (cliente != null)
                 return Result<Guid>.Conflicted("Cliente já cadastrado.");
 
+            var email = new Email(request.Email);
+
+            var clienteEmail = await _clienteRepository.ObterPorEmailAsync(email, cancellationToken);
+
+            if (clienteEmail != null)
+                return Result<Guid>.Conflicted("E-mail já cadastrado para outro cliente.");
+
             var endereco = _mapper.Map<Endereco>(request.Endereco);
 
             var document = new CpfCnpj(request.Documento);
             var nomeCompleto = new NomeRazaoSocial(request.Nome);
             var telefone = new Telefone(request.Telefone);
-            var email = new Email(request.Email);
 
-            var novoCliente = new Cliente(document, nomeCompleto, telefone, email, endereco, DateTime.Now);
+            var novoCliente = new Cliente(document, nomeCompleto, telefone, email, endereco, DateTime.UtcNow);
 
             await _clienteRepository.Adicionar(novoCliente, cancellationToken);
 
@@ -39,6 +48,8 @@ namespace wrench.auto.repair.cadastro.application.Commands
 
             if (!alteracoesRegistradas)
                 return Result<Guid>.Unexpected("Não foi possível cadastrar o cliente. Por favor tente novamente");
+
+            await _mediatorHandler.PublicarEvento(new ClienteCadastradoEvent(novoCliente.Id, email.Endereco));
 
             return Result<Guid>.Created(novoCliente.Id);
         }

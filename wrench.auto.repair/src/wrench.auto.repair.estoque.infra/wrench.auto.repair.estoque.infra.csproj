@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\wrench.auto.repair.core\wrench.auto.repair.core.csproj" />
     <ProjectReference Include="..\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj" />
   </ItemGroup>
 

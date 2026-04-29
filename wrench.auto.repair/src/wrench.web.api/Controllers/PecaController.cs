@@ -1,10 +1,12 @@
-﻿using MediatR;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using wrench.auto.repair.estoque.application.UseCases.ConsultaPecaPorId;
-using wrench.auto.repair.estoque.application.UseCases.ConsultaPecaPorNome;
-using wrench.auto.repair.estoque.application.UseCases.ConsultaPecas;
-using wrench.auto.repair.estoque.application.UseCases.CriarPeca;
-using wrench.auto.repair.estoque.domain.Entities;
+using wrench.auto.repair.core.Mediator;
+using wrench.auto.repair.core.Pagination;
+using wrench.auto.repair.estoque.application.Commands;
+using wrench.auto.repair.estoque.application.Queries;
+using wrench.auto.repair.estoque.application.Queries.ViewModels;
+using wrench.web.api.Extensions;
 using wrench.web.api.Models.Requests;
 
 namespace wrench.web.api.Controllers
@@ -14,15 +16,42 @@ namespace wrench.web.api.Controllers
     /// responsável por expor os endpoints relacionados a criação, consulta, 
     /// atualização e exclusão peças.
     /// </summary>
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    public class PecaController: ControllerBase
+    [Authorize(Roles = "Admin,Funcionario")]
+    public class PecaController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
-        private IMediator _mediator;
-
-        public PecaController(IMediator mediator)
+        /// <summary>
+        /// Busca peça por Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns name="peca"></returns>
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetPecaPorId([FromRoute] Guid id)
         {
-            _mediator = mediator;
+            var consultaPecaPorIdQuery = new ConsultarPecaPorIdQuery(id);
+
+            var result = await _mediatorHandler
+                .EnviarComando<ConsultarPecaPorIdQuery, PecaViewModel>(consultaPecaPorIdQuery);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Lista todas as peças de forma paginada
+        /// </summary>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> GetAll([FromQuery] RequisicaoPaginada requisicao)
+        {
+            var obterTodasPecasQuery = new ObterTodasPecasQuery(requisicao);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<ObterTodasPecasQuery, ResultadoPaginado<PecaViewModel>>(obterTodasPecasQuery);
+
+            return resultado.ToActionResult();
         }
 
         /// <summary>
@@ -31,50 +60,98 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Post([FromBody] CriarPecaRequest request)
         {
-            var novaPeca = await _mediator.Send((CriarPecaCommand)request);
+            var cadastrarPecaCommand = (CadastrarPecaCommand)request;
 
-            return CreatedAtAction(nameof(GetPecaPorId), new {id = novaPeca.Id}, novaPeca );
+            var resultado = await _mediatorHandler
+                .EnviarComando<CadastrarPecaCommand, Guid>(cadastrarPecaCommand);
 
+            return resultado.ToActionResult();
         }
-        
+
         /// <summary>
-        /// Busca peça por Id
+        /// Atualiza informações da peça
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IActionResult> AtualizarPeca([FromBody] AtualizarPecaRequest request)
+        {
+            var atualizarPecaCommand = new AtualizarPecaCommand(request.Id, request.Nome, request.Descricao, request.Valor, request.Ativo);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<AtualizarPecaCommand>(atualizarPecaCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Repor peças no estoque
         /// </summary>
         /// <param name="id"></param>
-        /// <returns name="peca"></returns>
-        [HttpGet("{id}")]
-        [ProducesResponseType(typeof(Peca),StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetPecaPorId([FromRoute] Guid id)
+        /// <param name="quantidade"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/repor")]
+        public async Task<IActionResult> ReporEstoque([FromRoute] Guid id, [FromQuery] int quantidade)
         {
-            ConsultarPecaPorIdRequest request = new ConsultarPecaPorIdRequest() { IdPeca = id };
-            var peca = await _mediator.Send((ConsultarPecaPorIdCommand)request);
-            return Ok(peca);
-        }
-        
-        /// <summary>
-        /// Busca peças
-        /// </summary>
-        /// <param name="nomePeca"></param>
-        /// <returns name="peca"></returns>
-        [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<Peca>),StatusCodes.Status200OK)]
-        public async Task<IActionResult> Get([FromQuery] string? nomePeca)
-        {
-            IEnumerable<Peca> pecas;
-            if (string.IsNullOrWhiteSpace(nomePeca))
-            {
-                pecas = await _mediator.Send(new ConsultaPecasCommand());
-                return Ok(pecas);
-            }
+            var reporPecaCommand = new ReporPecaCommand(id, quantidade);
 
-            var request = new ConsultaPecaPorNomeRequest() { NomePeca = nomePeca };
-            pecas = await _mediator.Send((ConsultaPecaPorNomeCommand)request);
-            return Ok(pecas);
+            var resultado = await _mediatorHandler
+                .EnviarComando<ReporPecaCommand>(reporPecaCommand);
+
+            return resultado.ToActionResult();
         }
-        
-       
+
+        /// <summary>
+        /// Baixar peça no estoque
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="quantidade"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/baixar")]
+        public async Task<IActionResult> BaixarEstoque([FromRoute] Guid id, [FromQuery] int quantidade)
+        {
+            var baixarPecaCommand = new BaixarPecaCommand(id, quantidade);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<BaixarPecaCommand>(baixarPecaCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Reativar peça
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="quantidade"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/ativar")]
+        public async Task<IActionResult> ReativarPeca([FromRoute] Guid id)
+        {
+            var ativarPecaCommand = new AtivarPecaCommand(id);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<AtivarPecaCommand>(ativarPecaCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Desativar peça
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="quantidade"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/desativar")]
+        public async Task<IActionResult> DesativarPeca([FromRoute] Guid id)
+        {
+            var inativarPecaCommand = new InativarPecaCommand(id);
+
+            var resultado = await _mediatorHandler
+                .EnviarComando<InativarPecaCommand>(inativarPecaCommand);
+
+            return resultado.ToActionResult();
+        }
     }
 }

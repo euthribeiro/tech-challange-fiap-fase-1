@@ -2,7 +2,6 @@
 
 public abstract class Entity
 {
-    // [KeyId]
     public Guid Id { get; set; }
 
     protected Entity()

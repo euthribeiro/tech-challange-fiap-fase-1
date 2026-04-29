@@ -1,5 +1,4 @@
-﻿using wrench.auto.repair.estoque.application.UseCases.CriarPeca;
-using wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico;
+﻿using wrench.auto.repair.estoque.application.Commands;
 
 namespace wrench.web.api.Models.Requests
 {
@@ -26,17 +25,14 @@ namespace wrench.web.api.Models.Requests
         /// </summary>
         public double Quantidade { get; set; }
 
-        public static implicit operator CriarPecaCommand(CriarPecaRequest request)
-        {
-            if (request is null) return null;
+        /// <summary>
+        /// Estado da peça no sistema
+        /// </summary>
+        public bool Ativo { get; set; }
 
-            return new CriarPecaCommand
-            {
-                Nome = request.Nome,
-                Descricao = request.Descricao,
-                Valor = request.Valor,
-                Quantidade = request.Quantidade,
-            };
+        public static implicit operator CadastrarPecaCommand(CriarPecaRequest request)
+        {
+            return new CadastrarPecaCommand(request.Nome, request.Descricao, request.Valor, request.Quantidade, request.Ativo);
         }
     }
 }

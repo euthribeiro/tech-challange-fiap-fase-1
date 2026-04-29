@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace wrench.auto.repair.core.Extensions
 {
@@ -21,6 +22,11 @@ namespace wrench.auto.repair.core.Extensions
             }
 
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+        }
+
+        public static string RemoverEspacosDuplicados(this string text)
+        {
+            return Regex.Replace(text, @"\s+", " ");
         }
     }
 }

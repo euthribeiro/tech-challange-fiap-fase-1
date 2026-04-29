@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UseCases\ReservarPeca\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj" />
   </ItemGroup>
 

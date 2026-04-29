@@ -11,22 +11,19 @@
             TamanhoPagina = 10;
             OrdenarPor = null;
             Decrescente = false;
-            Busca = null;
         }
 
         public RequisicaoPaginada(
             int numeroPagina = 1,
             int tamanhoPagina = 10,
             string? ordenarPor = null,
-            bool decrescente = false,
-            string? busca = null
+            bool decrescente = false
         )
         {
             NumeroPagina = numeroPagina;
             TamanhoPagina = tamanhoPagina;
             OrdenarPor = ordenarPor;
             Decrescente = decrescente;
-            Busca = busca;
         }
 
         private int _numeroPagina = 1;
@@ -46,7 +43,5 @@
         public string? OrdenarPor { get; set; }
 
         public bool Decrescente { get; set; } = false;
-
-        public string? Busca { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using wrench.auto.repair.autenticacao.infra.Extensions;
 using wrench.auto.repair.cadastro.application.Extensions;
 using wrench.auto.repair.cadastro.infra.Extensions;
 using wrench.auto.repair.core.Extensions;
+using wrench.auto.repair.core.Security;
 using wrench.auto.repair.estoque.application.Extensions;
 using wrench.auto.repair.estoque.infra.Extensions;
 using wrench.auto.repair.ordem.servico.application.Extensions;
@@ -45,6 +46,9 @@ builder.Services.AddControllers(options =>
     options.Conventions.Add(
         new RouteTokenTransformerConvention(
             new SlugifyParameterTransformer()));
+}).AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new SensitiveDataConverter());
 });
 
 builder.Services.AddApiVersioning(setupAction =>

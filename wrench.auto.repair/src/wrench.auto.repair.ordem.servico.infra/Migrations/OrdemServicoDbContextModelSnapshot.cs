@@ -18,10 +18,37 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("ordem_servico")
-                .HasAnnotation("ProductVersion", "10.0.6")
+                .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.Diagnostico", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("DataDiagnostico")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("MecanicoId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("OrdemServicoId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("SolucaoProposta")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrdemServicoId")
+                        .IsUnique();
+
+                    b.ToTable("Diagnostico", "ordem_servico");
+                });
 
             modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", b =>
                 {
@@ -51,6 +78,21 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrdemServico", "ordem_servico");
+                });
+
+            modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.Diagnostico", b =>
+                {
+                    b.HasOne("wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", null)
+                        .WithOne("Diagnostico")
+                        .HasForeignKey("wrench.auto.repair.ordem.servico.domain.Entities.Diagnostico", "OrdemServicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", b =>
+                {
+                    b.Navigation("Diagnostico")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

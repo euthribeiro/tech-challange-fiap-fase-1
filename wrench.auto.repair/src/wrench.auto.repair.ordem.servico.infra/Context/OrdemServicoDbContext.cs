@@ -3,11 +3,13 @@ using wrench.auto.repair.ordem.servico.domain.Entities;
 
 namespace wrench.auto.repair.ordem.servico.infra.Context
 {
-
-    // Run migration note: dotnet ef database update --project .\src\wrench.auto.repair.ordem.servico.infra --startup-project .\src\wrench.web.api
+    // dotnet ef migrations add OrdemServicoInit --project .\src\wrench.auto.repair.ordem.servico.infra --startup-project .\src\wrench.web.api --context OrdemServicoDbContext
+    // dotnet ef database update --project .\src\wrench.auto.repair.autenticacao.infra --startup-project .\src\wrench.web.api --context OrdemServicoDbContext
     public class OrdemServicoDbContext : DbContext
     {
         public DbSet<OrdemServico> OrdemServico { get; set; }
+        public DbSet<Diagnostico> Diagnostico { get; set; }
+        public DbSet<Orcamento> Orcamento { get; set; }
 
         public OrdemServicoDbContext(DbContextOptions<OrdemServicoDbContext> options) : base(options)
         {

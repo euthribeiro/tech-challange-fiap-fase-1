@@ -1,9 +1,9 @@
 ﻿using Asp.Versioning;
-using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico;
-using wrench.web.api.Models.Requests;
+using wrench.auto.repair.core.Mediator;
+using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
+using wrench.web.api.Extensions;
 
 namespace wrench.web.api.Controllers
 {
@@ -16,7 +16,7 @@ namespace wrench.web.api.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin,Funcionario")]
-    public class OrdemServicoController(IMediator _mediator) : ControllerBase
+    public class OrdemServicoController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
         /// Cria ordem de serviço
@@ -24,11 +24,11 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CriarOrdemServicoRequest request)
+        public async Task<IActionResult> Post([FromBody] CriarOrdemServicoCommand request)
         {
-            var result = await _mediator.Send((CriarOrdemServicoCommand)request);
-
-            return Ok(result);
+            var result = await _mediatorHandler.EnviarComando<CriarOrdemServicoCommand, Guid>(request);
+            
+            return result.ToActionResult();
         }
     }
 }

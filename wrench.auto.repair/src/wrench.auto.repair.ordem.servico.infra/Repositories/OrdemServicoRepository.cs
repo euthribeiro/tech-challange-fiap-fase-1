@@ -18,6 +18,17 @@ namespace wrench.auto.repair.ordem.servico.infra.Repositories
             await _context.OrdemServico.AddAsync(ordemServico);
             await _context.SaveChangesAsync();
         }
+
+        public async Task AtualizarAsync(OrdemServico ordemServico)
+        {
+            _context.OrdemServico.Update(ordemServico);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<OrdemServico> ObterPorIdAsync(Guid id)
+        {
+            return await _context.OrdemServico.FindAsync(id);
+        }
     }
 }
 

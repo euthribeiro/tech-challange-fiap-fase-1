@@ -45,11 +45,23 @@ public class PecaRepository : IPecaRepository
         _context.SaveChanges();
         return peca.Quantidade;
     }
-    
+
+    public IEnumerable<Peca> ConsultaPecaPorNome(string nomePeca)
+    {
+        var pecas = _context.Pecas.Where(p => p.Nome.Contains(nomePeca)).ToList();
+        return pecas;
+    }
+
 
     public Peca ConsultaPecaPorId(Guid idPeca)
     {
         var peca =  _context.Pecas.FirstOrDefault(p => p.Id == idPeca);
         return peca;
+    }
+
+    public IEnumerable<Peca> ConsultaPecas()
+    {
+        var pecas = _context.Pecas.ToList();
+        return pecas;
     }
 }

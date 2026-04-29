@@ -9,7 +9,8 @@ public interface IPecaRepository
     void DeletaPeca(Guid idPeca);
     double MovimentaEstoque(Guid idPeca, TipoMovimentacao tipoMovimentacao, double quantidade);
     //void ReservarPeca(Guid idPeca, double quantidadeReserva);
-    //List<Peca> ConsultaPecaPorNome(string nomePeca);
+    IEnumerable<Peca> ConsultaPecaPorNome(string nomePeca);
     Peca ConsultaPecaPorId(Guid idPeca);
+    IEnumerable<Peca> ConsultaPecas();
     //List<Peca> ConsultaPecaPorDescricao(string descricaoPeca);
 }

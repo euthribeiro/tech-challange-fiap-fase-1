@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.estoque.application.UseCases.ConsultaPecaPorId;
+using wrench.auto.repair.estoque.application.UseCases.ConsultaPecaPorNome;
+using wrench.auto.repair.estoque.application.UseCases.ConsultaPecas;
 using wrench.auto.repair.estoque.application.UseCases.CriarPeca;
 using wrench.auto.repair.estoque.domain.Entities;
 using wrench.web.api.Models.Requests;
@@ -34,7 +36,7 @@ namespace wrench.web.api.Controllers
         {
             var novaPeca = await _mediator.Send((CriarPecaCommand)request);
 
-            return CreatedAtAction(nameof(Get), new {id = novaPeca.Id}, novaPeca );
+            return CreatedAtAction(nameof(GetPecaPorId), new {id = novaPeca.Id}, novaPeca );
 
         }
         
@@ -45,11 +47,34 @@ namespace wrench.web.api.Controllers
         /// <returns name="peca"></returns>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(Peca),StatusCodes.Status200OK)]
-        public async Task<IActionResult> Get([FromRoute] Guid id)
+        public async Task<IActionResult> GetPecaPorId([FromRoute] Guid id)
         {
             ConsultarPecaPorIdRequest request = new ConsultarPecaPorIdRequest() { IdPeca = id };
             var peca = await _mediator.Send((ConsultarPecaPorIdCommand)request);
             return Ok(peca);
         }
+        
+        /// <summary>
+        /// Busca peças
+        /// </summary>
+        /// <param name="nomePeca"></param>
+        /// <returns name="peca"></returns>
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Peca>),StatusCodes.Status200OK)]
+        public async Task<IActionResult> Get([FromQuery] string? nomePeca)
+        {
+            IEnumerable<Peca> pecas;
+            if (string.IsNullOrWhiteSpace(nomePeca))
+            {
+                pecas = await _mediator.Send(new ConsultaPecasCommand());
+                return Ok(pecas);
+            }
+
+            var request = new ConsultaPecaPorNomeRequest() { NomePeca = nomePeca };
+            pecas = await _mediator.Send((ConsultaPecaPorNomeCommand)request);
+            return Ok(pecas);
+        }
+        
+       
     }
 }

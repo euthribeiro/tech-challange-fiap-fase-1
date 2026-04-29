@@ -8,7 +8,7 @@ namespace wrench.auto.repair.core.Messages
 
         protected Event()
         {
-            Timestamp = DateTime.Now;
+            Timestamp = DateTime.UtcNow;
         }
     }
 }

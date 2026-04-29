@@ -18,6 +18,7 @@ namespace wrench.auto.repair.cadastro.infra.Mappings
                     .HasColumnName("Email")
                     .IsRequired();
 
+                email.HasIndex(e => e.Endereco).IsUnique();
             });
 
             builder.OwnsOne(c => c.Documento, documento =>

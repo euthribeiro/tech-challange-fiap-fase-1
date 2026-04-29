@@ -20,7 +20,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _fixture.GerarCorAleatoria();
             var placaVeiculo = _fixture.GerarPlacaVeiculoValida();
             var atualizarVeiculoCommand =
-                new AtualizarVeiculoCommand(veiculoId, clienteId, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new AtualizarVeiculoCommand(veiculoId, clienteId, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
 
             // Act
             var valido = atualizarVeiculoCommand.EhValido();

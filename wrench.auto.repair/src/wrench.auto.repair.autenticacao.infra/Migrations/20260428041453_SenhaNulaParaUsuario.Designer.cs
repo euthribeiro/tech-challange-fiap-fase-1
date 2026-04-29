@@ -2,9 +2,9 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using wrench.auto.repair.autenticacao.infra;
 
 #nullable disable
@@ -12,8 +12,8 @@ using wrench.auto.repair.autenticacao.infra;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     [DbContext(typeof(AutenticacaoContext))]
-    [Migration("20260427051618_Initial")]
-    partial class Initial
+    [Migration("20260428041453_SenhaNulaParaUsuario")]
+    partial class SenhaNulaParaUsuario
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,29 +21,29 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "10.0.7")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("wrench.auto.repair.autenticacao.domain.Entities.Perfil", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
+                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -64,7 +64,15 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                             Ativo = true,
                             DataCriacao = new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc),
                             Descricao = "Perfil Funcionário",
-                            Nome = "Employee"
+                            Nome = "Funcionario"
+                        },
+                        new
+                        {
+                            Id = new Guid("70b89dce-8ea8-461c-b7c2-47a40ab906ba"),
+                            Ativo = true,
+                            DataCriacao = new DateTime(2026, 3, 6, 19, 0, 0, 0, DateTimeKind.Utc),
+                            Descricao = "Perfil Cliente",
+                            Nome = "Cliente"
                         });
                 });
 
@@ -72,20 +80,19 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
+                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("DateCadastro")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("PerfilId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -105,11 +112,11 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                     b.OwnsOne("wrench.auto.repair.core.ValueObjects.Email", "Email", b1 =>
                         {
                             b1.Property<Guid>("UsuarioId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uuid");
 
                             b1.Property<string>("Endereco")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(450)")
+                                .HasColumnType("text")
                                 .HasColumnName("Email");
 
                             b1.HasKey("UsuarioId");

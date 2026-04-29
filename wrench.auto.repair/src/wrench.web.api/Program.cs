@@ -56,6 +56,8 @@ builder.Services.AddApiVersioning(setupAction =>
 
 var app = builder.Build();
 
+await app.UseSeeds();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();

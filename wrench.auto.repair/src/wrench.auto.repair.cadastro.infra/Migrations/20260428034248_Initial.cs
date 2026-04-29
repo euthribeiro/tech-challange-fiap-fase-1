@@ -15,11 +15,11 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Documento = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Documento = table.Column<string>(type: "text", nullable: false),
+                    Nome = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,15 +30,15 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                 name: "ClienteEnderecos",
                 columns: table => new
                 {
-                    ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Logradouro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Numero = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Complemento = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cep = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UnidadeFederativa = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Pais = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ClienteId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Logradouro = table.Column<string>(type: "text", nullable: false),
+                    Numero = table.Column<string>(type: "text", nullable: false),
+                    Complemento = table.Column<string>(type: "text", nullable: false),
+                    Bairro = table.Column<string>(type: "text", nullable: false),
+                    Cep = table.Column<string>(type: "text", nullable: false),
+                    Cidade = table.Column<string>(type: "text", nullable: false),
+                    UnidadeFederativa = table.Column<string>(type: "text", nullable: false),
+                    Pais = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,10 +55,10 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                 name: "ClienteTelefones",
                 columns: table => new
                 {
-                    ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DDI = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DDD = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Numero = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ClienteId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DDI = table.Column<string>(type: "text", nullable: false),
+                    DDD = table.Column<string>(type: "text", nullable: false),
+                    Numero = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -75,17 +75,17 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                 name: "Veiculos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ClienteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Marca = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Modelo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AnoFabricacao = table.Column<int>(type: "int", nullable: false),
-                    AnoModelo = table.Column<int>(type: "int", nullable: false),
-                    PlacaDoVeiculo = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UltimaRevisao = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    QuilometragemAtual = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ClienteId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Marca = table.Column<string>(type: "text", nullable: false),
+                    Modelo = table.Column<string>(type: "text", nullable: false),
+                    Cor = table.Column<string>(type: "text", nullable: false),
+                    AnoFabricacao = table.Column<int>(type: "integer", nullable: false),
+                    AnoModelo = table.Column<int>(type: "integer", nullable: false),
+                    PlacaDoVeiculo = table.Column<string>(type: "text", nullable: false),
+                    Descricao = table.Column<string>(type: "text", nullable: true),
+                    UltimaRevisao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    QuilometragemAtual = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

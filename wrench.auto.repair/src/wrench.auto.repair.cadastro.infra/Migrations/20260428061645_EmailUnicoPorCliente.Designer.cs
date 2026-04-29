@@ -2,9 +2,9 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using wrench.auto.repair.cadastro.infra;
 
 #nullable disable
@@ -12,8 +12,8 @@ using wrench.auto.repair.cadastro.infra;
 namespace wrench.auto.repair.cadastro.infra.Migrations
 {
     [DbContext(typeof(CadastroContext))]
-    [Migration("20260427051638_Initial")]
-    partial class Initial
+    [Migration("20260428061645_EmailUnicoPorCliente")]
+    partial class EmailUnicoPorCliente
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,18 +21,18 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "10.0.7")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("wrench.auto.repair.cadastro.domain.Entities.Cliente", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -43,41 +43,41 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<int>("AnoFabricacao")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("AnoModelo")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("ClienteId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Cor")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Marca")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Modelo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("PlacaDoVeiculo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("text");
 
                     b.Property<int>("QuilometragemAtual")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UltimaRevisao")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -94,39 +94,39 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     b.OwnsOne("wrench.auto.repair.cadastro.domain.ValueObjects.Endereco", "Endereco", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uuid");
 
                             b1.Property<string>("Bairro")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Cep")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Cidade")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Complemento")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Logradouro")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Numero")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Pais")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("UnidadeFederativa")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.HasKey("ClienteId");
 
@@ -141,11 +141,11 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     b.OwnsOne("wrench.auto.repair.core.ValueObjects.CpfCnpj", "Documento", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uuid");
 
                             b1.Property<string>("Numeracao")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(450)")
+                                .HasColumnType("text")
                                 .HasColumnName("Documento");
 
                             b1.HasKey("ClienteId");
@@ -162,14 +162,17 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     b.OwnsOne("wrench.auto.repair.core.ValueObjects.Email", "Email", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uuid");
 
                             b1.Property<string>("Endereco")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)")
+                                .HasColumnType("text")
                                 .HasColumnName("Email");
 
                             b1.HasKey("ClienteId");
+
+                            b1.HasIndex("Endereco")
+                                .IsUnique();
 
                             b1.ToTable("Clientes");
 
@@ -180,11 +183,11 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     b.OwnsOne("wrench.auto.repair.core.ValueObjects.NomeRazaoSocial", "Nome", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uuid");
 
                             b1.Property<string>("Nome")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)")
+                                .HasColumnType("text")
                                 .HasColumnName("Nome");
 
                             b1.HasKey("ClienteId");
@@ -198,19 +201,19 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     b.OwnsOne("wrench.auto.repair.core.ValueObjects.Telefone", "Telefone", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("uuid");
 
                             b1.Property<string>("DDD")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("DDI")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.Property<string>("Numero")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("text");
 
                             b1.HasKey("ClienteId");
 

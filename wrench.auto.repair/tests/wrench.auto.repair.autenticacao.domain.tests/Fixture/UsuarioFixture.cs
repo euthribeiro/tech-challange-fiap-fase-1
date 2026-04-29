@@ -21,7 +21,7 @@ namespace wrench.auto.repair.autenticacao.domain.tests.Fixture
 
         public Usuario GerarUsuario()
         {
-            return new Usuario(GerarEmail(), Guid.NewGuid(), true, DateTime.Now);
+            return new Usuario(GerarEmail(), Guid.NewGuid(), true, DateTime.UtcNow);
         }
 
         public Perfil GerarPerfil()

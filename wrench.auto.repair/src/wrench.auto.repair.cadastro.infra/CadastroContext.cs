@@ -22,7 +22,6 @@ namespace wrench.auto.repair.cadastro.infra
                 .Navigation(c => c.Veiculos)
                 .AutoInclude();
 
-
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CadastroContext).Assembly);
 
             base.OnModelCreating(modelBuilder);

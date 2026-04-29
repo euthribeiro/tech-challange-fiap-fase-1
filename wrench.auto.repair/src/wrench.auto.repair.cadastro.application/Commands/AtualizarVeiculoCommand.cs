@@ -50,8 +50,8 @@ namespace wrench.auto.repair.cadastro.application.Commands
         private static int TAMANHO_MINIMO_COR => 3;
         private static int TAMANHO_MAXIMO_COR => 30;
         private static int MENOR_ANO_FABRICACAO_MODELO => 1886;
-        private static int MAIOR_ANO_FABRICACAO => DateTime.Now.Year;
-        private static int MAIOR_ANO_MODELO => DateTime.Now.Year + 1;
+        private static int MAIOR_ANO_FABRICACAO => DateTime.UtcNow.Year;
+        private static int MAIOR_ANO_MODELO => DateTime.UtcNow.Year + 1;
         private static int QUILOMETRAGEM_MINIMA => 0;
 
         public static string VeiculoIdVazioError =>

@@ -60,7 +60,7 @@ namespace wrench.auto.repair.cadastro.domain.tests
             var placa = _veiculoFixture.GerarPlacaVeiculo();
 
             // Act
-            var veiculo = new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 2019, placa, null, DateTime.Now, 100000);
+            var veiculo = new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 2019, placa, null, DateTime.UtcNow, 100000);
 
             // Assert
             Assert.NotNull(veiculo);
@@ -160,10 +160,10 @@ namespace wrench.auto.repair.cadastro.domain.tests
         public void AtualizarUltimaRevisao_DataAnterior_DeveRetornarException()
         {
             // Arrange
-            var veiculo = _veiculoFixture.CriarVeiculoValido(ultimaRevisao: DateTime.Now);
+            var veiculo = _veiculoFixture.CriarVeiculoValido(ultimaRevisao: DateTime.UtcNow);
 
             // Act & Assert
-            Assert.Throws<DomainException>(() => veiculo.AtualizarUltimaRevisao(DateTime.Now.AddDays(-1)));
+            Assert.Throws<DomainException>(() => veiculo.AtualizarUltimaRevisao(DateTime.UtcNow.AddDays(-1)));
         }
 
         [Fact(DisplayName = "Veiculo Atualizar Última Revisão Com Sucesso")]
@@ -171,8 +171,8 @@ namespace wrench.auto.repair.cadastro.domain.tests
         public void AtualizarUltimaRevisao_DataValida_DeveAtualizarComSucesso()
         {
             // Arrange
-            var veiculo = _veiculoFixture.CriarVeiculoValido(ultimaRevisao: DateTime.Now.AddDays(-1));
-            var dataNovaRevisao = DateTime.Now;
+            var veiculo = _veiculoFixture.CriarVeiculoValido(ultimaRevisao: DateTime.UtcNow.AddDays(-1));
+            var dataNovaRevisao = DateTime.UtcNow;
 
             // Act
             veiculo.AtualizarUltimaRevisao(dataNovaRevisao);

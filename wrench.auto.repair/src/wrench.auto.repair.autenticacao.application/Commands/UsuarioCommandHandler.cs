@@ -14,7 +14,11 @@ namespace wrench.auto.repair.autenticacao.application.Commands
         IUsuarioRepository _usuarioRepository,
         IJwtTokenGenerator _jwtTokenGenerator
     ) : IRequestHandler<CriarUsuarioCommand, Result<Guid>>,
-        IRequestHandler<AutenticarUsuarioCommand, Result<TokenAcesso>>
+        IRequestHandler<AutenticarUsuarioCommand, Result<TokenAcesso>>,
+        IRequestHandler<AtivarUsuarioCommand, Result>,
+        IRequestHandler<InativarUsuarioCommand, Result>,
+        IRequestHandler<PrimeiroAcessoUsuarioCommand, Result>,
+        IRequestHandler<ResetarSenhaUsuarioCommand, Result>
     {
         public async Task<Result<Guid>> Handle(CriarUsuarioCommand request, CancellationToken cancellationToken)
         {
@@ -30,7 +34,7 @@ namespace wrench.auto.repair.autenticacao.application.Commands
 
             if (perfil == null) return Result<Guid>.ValidationError("Perfil não encontrado");
 
-            var novoUsuario = new Usuario(new Email(request.Email), perfil.Id, request.Ativo, DateTime.Now);
+            var novoUsuario = new Usuario(new Email(request.Email), perfil.Id, request.Ativo, DateTime.UtcNow);
 
             if (!string.IsNullOrWhiteSpace(request.Senha))
             {
@@ -55,7 +59,11 @@ namespace wrench.auto.repair.autenticacao.application.Commands
             var usuario = await _usuarioRepository
                 .ObterPorEmailAsync(new Email(request.Email), cancellationToken);
 
-            if (usuario == null) return Result<TokenAcesso>.Unauthorized("Usuário não autorizado.");
+            if (usuario == null || !usuario.Ativo)
+                return Result<TokenAcesso>.Unauthorized("Usuário não autorizado.");
+
+            if (string.IsNullOrWhiteSpace(usuario.Senha))
+                return Result<TokenAcesso>.Unauthorized("Usuário sem senha cadastrada");
 
             var senhaValida = _passwordHasher.ValidarSenha(request.Senha, usuario.Senha);
 
@@ -64,6 +72,117 @@ namespace wrench.auto.repair.autenticacao.application.Commands
             var tokenAccess = _jwtTokenGenerator.GerarToken(usuario);
 
             return Result<TokenAcesso>.Ok(tokenAccess);
+        }
+
+        public async Task<Result> Handle(InativarUsuarioCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result.ValidationError(request.ObterErros());
+
+            var usuario = await _usuarioRepository
+                .ObterPorIdAsync(request.UsuarioId, cancellationToken);
+
+            if (usuario == null) return Result.NotFound("Usuário não encontrado");
+
+            if (!usuario.Ativo)
+                return Result.NoContent();
+
+            if (usuario.Perfil.Nome == "Admin")
+                return Result.Forbidden("Usuário adminstrador não pode ser inativado");
+
+            usuario.Inativar();
+
+            await _usuarioRepository.Atualizar(usuario);
+
+            var alteracoesSalvas = await _usuarioRepository.UnitOfWork.CommitAsync();
+
+            if (!alteracoesSalvas)
+                return Result.Unexpected("Não foi possível inativar o usuário. Por favor tente novamente.");
+
+            return Result.NoContent();
+        }
+
+        public async Task<Result> Handle(PrimeiroAcessoUsuarioCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result.ValidationError(request.ObterErros());
+
+            var usuario = await _usuarioRepository
+                .ObterPorEmailAsync(new Email(request.Email), cancellationToken);
+
+            if (usuario == null || !usuario.Ativo) return Result.NotFound("Usuário não encontrado");
+
+            if (!string.IsNullOrWhiteSpace(usuario.Senha))
+                return Result.Forbidden("Não permitido.");
+
+            if (usuario.Perfil.Nome == "Admin")
+                return Result.Forbidden("Senha do usuário adminstrador não pode ser alterado por esse serviço.");
+
+            var passwordHash = _passwordHasher.GerarHash(request.Senha);
+
+            usuario.DefinirSenha(passwordHash);
+
+            await _usuarioRepository.Atualizar(usuario);
+
+            var alteracoesSalvas = await _usuarioRepository.UnitOfWork.CommitAsync();
+
+            if (!alteracoesSalvas)
+                return Result.Unexpected("Não foi possível alterar a senha do usuário. Por favor tente novamente.");
+
+            return Result.NoContent();
+        }
+
+        public async Task<Result> Handle(ResetarSenhaUsuarioCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result.ValidationError(request.ObterErros());
+
+            var usuario = await _usuarioRepository
+                .ObterPorIdAsync(request.UsuarioId, cancellationToken);
+
+            if (usuario == null || !usuario.Ativo) return Result.NotFound("Usuário não encontrado");
+
+            if (string.IsNullOrWhiteSpace(usuario.Senha))
+                return Result.NoContent();
+
+            if (usuario.Perfil.Nome == "Admin")
+                return Result.Forbidden("Senha do usuário adminstrador não pode ser resetada.");
+
+            usuario.ResetarSenha();
+
+            await _usuarioRepository.Atualizar(usuario);
+
+            var alteracoesSalvas = await _usuarioRepository.UnitOfWork.CommitAsync();
+
+            if (!alteracoesSalvas)
+                return Result.Unexpected("Não foi possível alterar a senha do usuário. Por favor tente novamente.");
+
+            return Result.NoContent();
+        }
+
+        public async Task<Result> Handle(AtivarUsuarioCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result.ValidationError(request.ObterErros());
+
+            var usuario = await _usuarioRepository
+                .ObterPorIdAsync(request.UsuarioId, cancellationToken);
+
+            if (usuario == null) return Result.NotFound("Usuário não encontrado");
+
+            if (usuario.Ativo)
+                return Result.NoContent();
+
+            usuario.Ativar();
+
+            await _usuarioRepository.Atualizar(usuario);
+
+            var alteracoesSalvas = await _usuarioRepository.UnitOfWork.CommitAsync();
+
+            if (!alteracoesSalvas)
+                return Result.Unexpected("Não foi possível ativar o usuário. Por favor tente novamente.");
+
+            return Result.NoContent();
         }
     }
 }

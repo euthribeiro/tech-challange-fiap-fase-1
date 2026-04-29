@@ -28,7 +28,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var cadastrarVeiculoCommand =
-                new CadastrarVeiculoCommand(cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new CadastrarVeiculoCommand(cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 
@@ -78,7 +78,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var cadastrarVeiculoCommand =
-                new CadastrarVeiculoCommand(cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new CadastrarVeiculoCommand(cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 
@@ -130,7 +130,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var cadastrarVeiculoCommand =
-                new CadastrarVeiculoCommand(cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new CadastrarVeiculoCommand(cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 
@@ -183,7 +183,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var atualizarVeiculoCommand =
-                new AtualizarVeiculoCommand(veiculoEncontrado.Id, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new AtualizarVeiculoCommand(veiculoEncontrado.Id, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 
@@ -240,7 +240,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var atualizarVeiculoCommand =
-                new AtualizarVeiculoCommand(veiculoId, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new AtualizarVeiculoCommand(veiculoId, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 
@@ -298,7 +298,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var atualizarVeiculoCommand =
-                new AtualizarVeiculoCommand(veiculoEncontrado.Id, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new AtualizarVeiculoCommand(veiculoEncontrado.Id, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 
@@ -355,7 +355,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoCommand
             var cor = _veiculoFixture.GerarCorAleatoria();
             var placaVeiculo = _veiculoFixture.GerarPlacaVeiculoValida();
             var atualizarVeiculoCommand =
-                new AtualizarVeiculoCommand(veiculoEncontrado.Id, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.Now, 0);
+                new AtualizarVeiculoCommand(veiculoEncontrado.Id, cliente.Id, marca, modelo, cor, anoFabricacao, anoModelo, placaVeiculo, null, DateTime.UtcNow, 0);
             var automocker = new AutoMocker();
             var veiculoCommandHandler = automocker.CreateInstance<VeiculoCommandHandler>();
 

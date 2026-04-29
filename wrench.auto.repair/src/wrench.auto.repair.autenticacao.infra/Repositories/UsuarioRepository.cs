@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using wrench.auto.repair.autenticacao.domain.Data;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.core.ValueObjects;
@@ -31,7 +32,12 @@ namespace wrench.auto.repair.autenticacao.infra.Repositories
 
         public async Task<IEnumerable<Perfil>> ObterTodosPerfisAsync(CancellationToken cancellationToken)
         {
-            return await _context.Perfis.ToListAsync();
+            return await _context.Perfis.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<IEnumerable<Perfil>> BuscarPerfil(Expression<Func<Perfil, bool>> predicate, CancellationToken cancellationToken)
+        {
+            return await _context.Perfis.AsNoTracking().Where(predicate).ToListAsync(cancellationToken);
         }
     }
 }

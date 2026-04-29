@@ -11,7 +11,7 @@ namespace wrench.auto.repair.core.Messages
 
         protected Command()
         {
-            Timestamp = DateTime.Now;
+            Timestamp = DateTime.UtcNow;
         }
 
         public virtual bool EhValido()

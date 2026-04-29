@@ -15,7 +15,7 @@ namespace wrench.web.api.Controllers
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin,Funcionario")]
     public class OrdemServicoController(IMediator _mediator) : ControllerBase
     {
         /// <summary>

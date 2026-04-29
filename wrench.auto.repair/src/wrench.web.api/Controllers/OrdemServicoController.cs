@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.Extensions;
+using wrench.web.api.Models.OrdemServico;
 
 namespace wrench.web.api.Controllers
 {
@@ -24,10 +25,11 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CriarOrdemServicoCommand request)
+        public async Task<IActionResult> Post([FromBody] CriarOrdemServicoRequest request)
         {
-            var result = await _mediatorHandler.EnviarComando<CriarOrdemServicoCommand, Guid>(request);
-            
+            var result = await _mediatorHandler
+                .EnviarComando<CriarOrdemServicoCommand, Guid>((CriarOrdemServicoCommand)request);
+
             return result.ToActionResult();
         }
     }

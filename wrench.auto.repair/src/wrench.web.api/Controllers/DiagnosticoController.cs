@@ -1,18 +1,17 @@
-﻿using Azure.Core;
-using MediatR;
+﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
-using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.Extensions;
+using wrench.web.api.Models.Diagnostico;
 
 namespace wrench.web.api.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [AllowAnonymous]
+    [Authorize(Roles = "Admin,Funcionario")]
     public class DiagnosticoController : ControllerBase
     {
         private readonly IMediatorHandler _mediatorHandler;
@@ -23,21 +22,21 @@ namespace wrench.web.api.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put([FromBody] SolicitarDiagnosticoCommand command)
+        public async Task<IActionResult> Put([FromBody] SolicitarDiagnosticoRequest request)
         {
-            if (command == null) return BadRequest();
+            var command = new SolicitarDiagnosticoCommand(request.OrdemServicoId);
 
-            var result = await _mediatorHandler.EnviarComando<SolicitarDiagnosticoCommand, Guid>(command);
+            var result = await _mediatorHandler
+                .EnviarComando<SolicitarDiagnosticoCommand>(command);
 
             return result.ToActionResult();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] RealizarDiagnosticoCommand command)
+        public async Task<IActionResult> Post([FromBody] RealizarDiagnosticoRequest request)
         {
-            if (command == null) return BadRequest();
-
-            var result = await _mediatorHandler.EnviarComando<RealizarDiagnosticoCommand, Guid>(command);
+            var result = await _mediatorHandler
+                .EnviarComando<RealizarDiagnosticoCommand, Guid>((RealizarDiagnosticoCommand)request);
 
             return result.ToActionResult();
         }

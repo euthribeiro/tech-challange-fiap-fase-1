@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\wrench.auto.repair.core\wrench.auto.repair.core.csproj" />
     <ProjectReference Include="..\wrench.auto.repair.ordem.servico.domain\wrench.auto.repair.ordem.servico.domain.csproj" />
   </ItemGroup>
 

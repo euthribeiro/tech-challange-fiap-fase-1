@@ -1,10 +1,11 @@
-﻿using wrench.auto.repair.ordem.servico.domain.Enums;
+﻿using wrench.auto.repair.core.DomainObjects;
+using wrench.auto.repair.ordem.servico.domain.Enums;
+using wrench.auto.repair.ordem.servico.domain.ValueObjects;
 
 namespace wrench.auto.repair.ordem.servico.domain.Entities
 {
-    public class OrdemServico
+    public class OrdemServico : Entity, IAggregateRoot
     {
-        public Guid Id { get; private set; }
         public Guid ClienteId { get; private set; }
         public Guid VeiculoId { get; set; }
         public Guid AtendenteId { get; set; }
@@ -12,24 +13,25 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public DateTime DataCriacao { get; private set; }
         public OrdemServicoStatus Status { get; private set; }
         public Diagnostico Diagnostico { get; private set; }
+
         public OrdemServico(Guid clienteId, Guid veiculoId, Guid atendenteId, string descricao, OrdemServicoStatus status, DateTime dataCriacao)
         {
-            Id = Guid.NewGuid();
             ClienteId = clienteId;
             VeiculoId = veiculoId;
             AtendenteId = atendenteId;
             Descricao = descricao;
             DataCriacao = dataCriacao;
             Status = status;
+
+            Validar();
         }
-        public OrdemServico() { }
 
         public void AdicionarDiagnostico(Guid mecanicoId, string solucao, decimal valorEstimado)
         {
             if (Status != OrdemServicoStatus.EmDiagnostico)
-                throw new Exception("A ordem de serviço não está em um status que permite diagnóstico.");
+                throw new DomainException("A ordem de serviço não está em um status que permite diagnóstico.");
 
-            Diagnostico = new Diagnostico(this.Id, mecanicoId, solucao, valorEstimado);
+            Diagnostico = new Diagnostico(mecanicoId, solucao, valorEstimado);
 
             Status = OrdemServicoStatus.AguardandoAprovacao;
         }
@@ -37,9 +39,19 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public void SolicitaDiagnostico()
         {
             if (Status != OrdemServicoStatus.Recebida)
-                throw new Exception("A ordem de serviço não está em um status que permite solicitar diagnóstico.");
-            Status = OrdemServicoStatus.EmDiagnostico;
+                throw new DomainException("A ordem de serviço não está em um status que permite solicitar diagnóstico.");
 
+            Status = OrdemServicoStatus.EmDiagnostico;
+        }
+
+        private void Validar()
+        {
+            Validacoes.ValidarSeVazio(ClienteId, "O identificador do cliente não pode ser vazio");
+            Validacoes.ValidarSeVazio(VeiculoId, "O identificador do veículo não pode ser vazio");
+            Validacoes.ValidarSeVazio(AtendenteId, "O identificador da atendente não pode ser vazio");
+            Validacoes.ValidarSeVazio(Descricao, "A descrição não pode ser vazia");
+            Validacoes.ValidarSeVazio(Descricao, "A descrição não pode ser vazia");
+            Validacoes.ValidarSeMenorQue((int)Status, 1, "O status precisa ser informado");
         }
     }
 }

@@ -1,44 +1,47 @@
 ﻿using Moq;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
+using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
-using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
 
 namespace wrench.auto.repair.ordem.servico.application.tests
 {
     public class OrdemServicoTests
     {
         private readonly Mock<IOrdemServicoRepository> _repositoryMock;
-        private readonly Mock<IDiagnosticoRepository> _diagnosticoRepositoryMock;
         private readonly OrdemServicoCommandHandler _handler;
 
         public OrdemServicoTests()
         {
             _repositoryMock = new Mock<IOrdemServicoRepository>();
-            _diagnosticoRepositoryMock = new Mock<IDiagnosticoRepository>();
 
-            _handler = new OrdemServicoCommandHandler(_repositoryMock.Object, _diagnosticoRepositoryMock.Object);
+            _handler = new OrdemServicoCommandHandler(_repositoryMock.Object);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Criar Ordem Serviço Com Sucesso")]
+        [Trait("Ordem Serviço", "Application")]
         public async Task CriarOrdemServico_DeveCriarEAdicionarOrdemServico_QuandoCommandValido()
         {
             // Arrange
             var command = new CriarOrdemServicoCommand(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), "Cliente falou que o carro tá com barulho na roda.");
 
             // Setup de comportamentos do mock (se necessário)
-            _repositoryMock.Setup(r => r.IncluirAsync(It.IsAny<OrdemServico>()))
+            _repositoryMock.Setup(r => r.Adicionar(It.IsAny<OrdemServico>(), It.IsAny<CancellationToken>()))
                            .Returns(Task.CompletedTask);
+
+            _repositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                         .Returns(Task.FromResult(true));
 
             // Act
             var resultado = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(resultado); 
+            Assert.NotNull(resultado);
             Assert.True(resultado.Sucesso);
-            _repositoryMock.Verify(r => r.IncluirAsync(It.IsAny<OrdemServico>()), Times.Once);
+            _repositoryMock.Verify(r => r.Adicionar(It.IsAny<OrdemServico>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Criar Ordem Serviço Comando Inválido")]
+        [Trait("Ordem Serviço", "Application")]
         public async Task CriarOrdemServico_DeveRetornarErro_QuandoDadosForemInvalidos()
         {
             // Arrange

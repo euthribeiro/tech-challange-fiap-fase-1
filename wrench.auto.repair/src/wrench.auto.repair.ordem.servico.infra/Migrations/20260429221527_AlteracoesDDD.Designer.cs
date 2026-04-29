@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using wrench.auto.repair.ordem.servico.infra.Context;
@@ -11,9 +12,11 @@ using wrench.auto.repair.ordem.servico.infra.Context;
 namespace wrench.auto.repair.ordem.servico.infra.Migrations
 {
     [DbContext(typeof(OrdemServicoDbContext))]
-    partial class OrdemServicoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260429221527_AlteracoesDDD")]
+    partial class AlteracoesDDD
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,7 +101,8 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                                 .HasForeignKey("OrdemServicoId");
                         });
 
-                    b.Navigation("Diagnostico");
+                    b.Navigation("Diagnostico")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

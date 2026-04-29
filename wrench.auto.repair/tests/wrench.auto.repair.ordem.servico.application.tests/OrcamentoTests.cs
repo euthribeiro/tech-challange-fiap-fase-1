@@ -1,21 +1,16 @@
 ﻿using Moq;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
+using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
 using wrench.auto.repair.ordem.servico.domain.Enums;
-using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
-using Xunit;
 
 namespace wrench.auto.repair.ordem.servico.application.tests
 {
     public class OrcamentoTests
     {
 
-        [Fact]
+        [Fact(DisplayName = "Criar Orçamento Ordem De Serviço Válido")]
+        [Trait("Ordem Serviço", "Application")]
         public async Task CriarOrcamento_QuandoCommandForValido()
         {
             // Arrange
@@ -27,7 +22,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, Guid.NewGuid(), "Barulho na roda", OrdemServicoStatus.Recebida, DateTime.Now);
 
             mockOrdemServicoRepository
-                .Setup(repo => repo.ObterPorIdAsync(ordemServicoId))
+                .Setup(repo => repo.ObterPorIdAsync(ordemServicoId, CancellationToken.None))
                 .ReturnsAsync(ordemServicoFake);
 
             var handler = new OrcamentoCommandHandler(mockOrdemServicoRepository.Object, mockOrcamentoRepository.Object);
@@ -38,10 +33,12 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Assert
             Assert.NotNull(result);
             Assert.True(result.Sucesso);
-            mockOrcamentoRepository.Verify(x => x.IncluirOrcamento(It.IsAny<Orcamento>()), Times.Once);
+            mockOrcamentoRepository
+                .Verify(x => x.Adicionar(It.IsAny<Orcamento>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Criar Orçamento Ordem Serviço Não Encontrada")]
+        [Trait("Ordem Serviço", "Application")]
         public async Task CriarOrcamento_OrdemServico_NaoEncontrada()
         {
             // Arrange
@@ -52,7 +49,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var ordemServicoFake = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), "Barulho na roda", OrdemServicoStatus.Recebida, DateTime.Now);
 
             mockOrdemServicoRepository
-                .Setup(repo => repo.ObterPorIdAsync(Guid.NewGuid()))
+                .Setup(repo => repo.ObterPorIdAsync(Guid.NewGuid(), CancellationToken.None))
                 .ReturnsAsync(ordemServicoFake);
 
             var handler = new OrcamentoCommandHandler(mockOrdemServicoRepository.Object, mockOrcamentoRepository.Object);
@@ -63,7 +60,8 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Assert
             Assert.NotNull(result);
             Assert.False(result.Sucesso);
-            mockOrcamentoRepository.Verify(x => x.IncluirOrcamento(It.IsAny<Orcamento>()), Times.Never);
+            mockOrcamentoRepository
+                .Verify(x => x.Adicionar(It.IsAny<Orcamento>(), It.IsAny<CancellationToken>()), Times.Never);
         }
     }
 }

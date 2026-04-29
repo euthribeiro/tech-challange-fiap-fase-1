@@ -1,9 +1,7 @@
 ﻿using MediatR;
 using wrench.auto.repair.core.Errors;
-using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
+using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
-using wrench.auto.repair.ordem.servico.domain.Enums;
-using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase
 {
@@ -11,30 +9,26 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
 
     {
         private readonly IOrdemServicoRepository _ordemServicoRepository;
-        private readonly IDiagnosticoRepository _diagnosticoRepository;
 
-        public OrdemServicoCommandHandler(IOrdemServicoRepository repository, IDiagnosticoRepository diagnosticoRepository)
+        public OrdemServicoCommandHandler(IOrdemServicoRepository repository)
         {
             _ordemServicoRepository = repository;
-            _diagnosticoRepository = diagnosticoRepository;
         }
 
         public async Task<Result<Guid>> Handle(CriarOrdemServicoCommand request, CancellationToken cancellationToken)
         {
+            if (!request.EhValido())
+                return Result<Guid>.ValidationError(request.ObterErros());
+
             OrdemServico ordemServico = request;
 
-            if (!request.EhValido())
-            {
-                return Result<Guid>.ValidationError(request.ObterErros());
-            }
+            await _ordemServicoRepository.Adicionar(ordemServico, cancellationToken);
 
-            await _ordemServicoRepository.IncluirAsync(ordemServico);
+            var salvo = await _ordemServicoRepository.UnitOfWork.CommitAsync();
+
+            if (!salvo) return Result<Guid>.Unexpected("Não foi possível criar a ordem de serviço. Por favor tente novamente.");
 
             return Result<Guid>.Created(ordemServico.Id);
         }
-
-        
-
-
     }
 }

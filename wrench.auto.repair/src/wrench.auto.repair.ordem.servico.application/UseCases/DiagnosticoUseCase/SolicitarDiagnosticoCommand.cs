@@ -3,7 +3,7 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase
 {
-    public class SolicitarDiagnosticoCommand : Command<Guid>
+    public class SolicitarDiagnosticoCommand : Command
     {
         public Guid OrdemServicoId { get; set; }
 
@@ -25,8 +25,8 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
                 RuleFor(c => c.OrdemServicoId)
                     .NotEmpty()
                     .WithMessage("Ordem de serviço não informada.");
-             
+
             }
         }
     }
-}               
+}

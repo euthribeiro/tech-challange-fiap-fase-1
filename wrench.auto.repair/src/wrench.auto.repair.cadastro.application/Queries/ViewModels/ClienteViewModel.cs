@@ -1,9 +1,12 @@
-﻿namespace wrench.auto.repair.cadastro.application.Queries.ViewModels
+﻿using wrench.auto.repair.core.Security;
+
+namespace wrench.auto.repair.cadastro.application.Queries.ViewModels
 {
     public class ClienteViewModel
     {
         public Guid Id { get; init; }
 
+        [SensitiveData(SensitiveDataType.CpfCnpj)]
         public string Documento { get; init; }
 
         public string Nome { get; init; }

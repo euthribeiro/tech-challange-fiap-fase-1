@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using wrench.auto.repair.estoque.infra.Context;
 
 #nullable disable
@@ -11,14 +12,15 @@ using wrench.auto.repair.estoque.infra.Context;
 namespace wrench.auto.repair.estoque.infra.Migrations
 {
     [DbContext(typeof(PecaDbContext))]
-    [Migration("20260423031610_PecaInitialCreate")]
-    partial class PecaInitialCreate
+    [Migration("20260429040809_NomePecaUnico")]
+    partial class NomePecaUnico
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("peca")
                 .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -29,6 +31,9 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("timestamp with time zone");
@@ -41,12 +46,18 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<double>("Quantidade")
+                        .HasColumnType("double precision");
+
                     b.Property<double>("Valor")
                         .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pecas");
+                    b.HasIndex("Nome")
+                        .IsUnique();
+
+                    b.ToTable("Pecas", "peca");
                 });
 #pragma warning restore 612, 618
         }

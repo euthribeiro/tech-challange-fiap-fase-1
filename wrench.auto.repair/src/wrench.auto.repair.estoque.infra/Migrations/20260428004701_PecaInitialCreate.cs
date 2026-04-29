@@ -11,14 +11,19 @@ namespace wrench.auto.repair.estoque.infra.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "peca");
+
             migrationBuilder.CreateTable(
                 name: "Pecas",
+                schema: "peca",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Nome = table.Column<string>(type: "text", nullable: false),
                     Descricao = table.Column<string>(type: "text", nullable: false),
                     Valor = table.Column<double>(type: "double precision", nullable: false),
+                    Quantidade = table.Column<double>(type: "double precision", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
@@ -31,7 +36,8 @@ namespace wrench.auto.repair.estoque.infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Pecas");
+                name: "Pecas",
+                schema: "peca");
         }
     }
 }

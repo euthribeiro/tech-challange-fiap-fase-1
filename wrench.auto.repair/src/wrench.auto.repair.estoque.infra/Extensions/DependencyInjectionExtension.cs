@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using wrench.auto.repair.estoque.domain.Interfaces.Repositories;
+using wrench.auto.repair.estoque.domain.Data;
 using wrench.auto.repair.estoque.infra.Repositories;
 
 namespace wrench.auto.repair.estoque.infra.Extensions

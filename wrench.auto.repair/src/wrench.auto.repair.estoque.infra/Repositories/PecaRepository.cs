@@ -1,27 +1,14 @@
-﻿using wrench.auto.repair.estoque.domain.Entities;
-using wrench.auto.repair.estoque.domain.Interfaces.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using wrench.auto.repair.estoque.domain.Data;
+using wrench.auto.repair.estoque.domain.Entities;
 using wrench.auto.repair.estoque.infra.Context;
 
 namespace wrench.auto.repair.estoque.infra.Repositories;
 
-public class PecaRepository : IPecaRepository
+public class PecaRepository(PecaDbContext _context) : Repository<Peca>(_context), IPecaRepository
 {
-    private readonly PecaDbContext _context;
-
-    public PecaRepository(PecaDbContext context)
+    public async Task<IEnumerable<Peca>> ConsultaPecaPorNome(string nomePeca)
     {
-        _context = context;
-    }
-    public async Task CriarPeca(Peca peca)
-    {
-        await _context.Pecas.AddAsync(peca);
-        await _context.SaveChangesAsync();
-    }
-
-    public void DeletaPeca(Guid idPeca)
-    {
-        var peca = _context.Pecas.FirstOrDefault(p => p.Id == idPeca);
-        _context.Pecas.Remove(peca);
-        _context.SaveChanges();
+        return await _context.Pecas.Where(p => p.Nome.Contains(nomePeca)).ToListAsync();
     }
 }

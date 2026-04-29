@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using wrench.auto.repair.estoque.infra.Context;
@@ -11,9 +12,11 @@ using wrench.auto.repair.estoque.infra.Context;
 namespace wrench.auto.repair.estoque.infra.Migrations
 {
     [DbContext(typeof(PecaDbContext))]
-    partial class PecaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260428004701_PecaInitialCreate")]
+    partial class PecaInitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,9 +31,6 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("timestamp with time zone");
@@ -50,9 +50,6 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                         .HasColumnType("double precision");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Nome")
-                        .IsUnique();
 
                     b.ToTable("Pecas", "peca");
                 });

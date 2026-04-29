@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wrench.auto.repair.core\wrench.auto.repair.core.csproj" />
+  </ItemGroup>
+
 </Project>

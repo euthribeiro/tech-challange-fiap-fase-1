@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using wrench.auto.repair.core.Errors;
+using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase
@@ -10,7 +11,8 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
         private readonly IDiagnosticoRepository _diagnosticoRepository;
         private readonly IOrdemServicoRepository _ordemServicoRepository;
 
-        public DiagnosticoCommandHandler(IDiagnosticoRepository repository, IOrdemServicoRepository ordemServicoRepository)
+        public DiagnosticoCommandHandler(IDiagnosticoRepository repository, 
+                                        IOrdemServicoRepository ordemServicoRepository)
         {
             _diagnosticoRepository = repository;
             _ordemServicoRepository = ordemServicoRepository;
@@ -49,7 +51,8 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
 
             await _ordemServicoRepository.AtualizarAsync(ordemServico);
 
-            // TODO: Chamar comando de Orçamento (Criar e enviar)
+            var comandoOrcamento = new CriarOrcamentoCommand(request.OrdemServicoId);
+            //await _mediator.Send(comandoOrcamento, cancellationToken);
 
             return Result<Guid>.Created(ordemServico.Diagnostico.Id);
         }

@@ -5,7 +5,7 @@ using wrench.auto.repair.ordem.servico.domain.Entities;
 using wrench.auto.repair.ordem.servico.domain.Enums;
 using wrench.auto.repair.ordem.servico.domain.Interfaces.Repositories;
 
-namespace wrench.auto.repair.ordem.servico.application.UseCases.Os
+namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase
 {
     public class OrdemServicoCommandHandler : IRequestHandler<CriarOrdemServicoCommand, Result<Guid>>
 

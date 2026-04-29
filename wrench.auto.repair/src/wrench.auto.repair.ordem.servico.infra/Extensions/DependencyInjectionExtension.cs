@@ -10,6 +10,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Extensions
         {
             services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
             services.AddScoped<IDiagnosticoRepository, DiagnosticoRepository>();
+            services.AddScoped<IOrcamentoRepository, OrcamentoRepository>();
         }
     }
 }

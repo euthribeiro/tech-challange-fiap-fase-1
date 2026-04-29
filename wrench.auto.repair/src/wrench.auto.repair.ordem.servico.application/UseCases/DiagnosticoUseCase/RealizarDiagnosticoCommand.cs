@@ -5,6 +5,14 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
 {
     public class RealizarDiagnosticoCommand : Command<Guid>
     {
+        public RealizarDiagnosticoCommand(Guid ordemServicoId, Guid mecanicoId, decimal valorEstimado, string solucaoProposta)
+        {
+            OrdemServicoId = ordemServicoId;
+            MecanicoId = mecanicoId;
+            ValorEstimado = valorEstimado;
+            SolucaoProposta = solucaoProposta;
+        }
+
         public Guid OrdemServicoId { get; set; }
         public Guid MecanicoId { get; set; }
         public decimal ValorEstimado { get; set; }
@@ -12,9 +20,8 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
 
         public override bool EhValido()
         {
-            var validator = new RealizarDiagnosticoCommandValidator();
-            var result = validator.Validate(this);
-            return result.IsValid;
+            ValidationResult = new RealizarDiagnosticoCommandValidator().Validate(this);
+            return ValidationResult.IsValid;
         }
 
         public class RealizarDiagnosticoCommandValidator : AbstractValidator<RealizarDiagnosticoCommand>

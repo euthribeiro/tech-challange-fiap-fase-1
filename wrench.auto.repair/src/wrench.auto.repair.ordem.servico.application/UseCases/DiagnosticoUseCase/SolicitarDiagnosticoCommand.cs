@@ -6,12 +6,16 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
     public class SolicitarDiagnosticoCommand : Command<Guid>
     {
         public Guid OrdemServicoId { get; set; }
-        
+
+        public SolicitarDiagnosticoCommand(Guid ordemServicoId)
+        {
+            OrdemServicoId = ordemServicoId;
+        }
+
         public override bool EhValido()
         {
-            var validator = new CriarDiagnosticoCommandValidator();
-            var result = validator.Validate(this);
-            return result.IsValid;
+            ValidationResult = new CriarDiagnosticoCommandValidator().Validate(this);
+            return ValidationResult.IsValid;
         }
 
         public class CriarDiagnosticoCommandValidator : AbstractValidator<SolicitarDiagnosticoCommand>

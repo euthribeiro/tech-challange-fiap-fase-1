@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
-using wrench.auto.repair.ordem.servico.application.UseCases.Os;
+using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.Extensions;
 
 namespace wrench.web.api.Controllers

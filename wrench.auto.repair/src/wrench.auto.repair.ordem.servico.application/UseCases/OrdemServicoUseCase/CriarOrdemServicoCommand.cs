@@ -2,20 +2,27 @@
 using wrench.auto.repair.core.Messages;
 using wrench.auto.repair.ordem.servico.domain.Entities;
 
-namespace wrench.auto.repair.ordem.servico.application.UseCases.Os
+namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase
 {
     public class CriarOrdemServicoCommand : Command<Guid>
     {
-        public Guid ClienteId { get; set; }
-        public Guid VeiculoId { get; set; }
-        public Guid AtendenteId { get; set; }
-        public string Descricao { get; set; }
+        public CriarOrdemServicoCommand(Guid clienteId, Guid veiculoId, Guid atendenteId, string descricao)
+        {
+            ClienteId = clienteId;
+            VeiculoId = veiculoId;
+            AtendenteId = atendenteId;
+            Descricao = descricao;
+        }
+
+        public Guid ClienteId { get; private set; }
+        public Guid VeiculoId { get; private set; }
+        public Guid AtendenteId { get; private set; }
+        public string Descricao { get; private set; }
 
         public override bool EhValido()
         {
-            var validator = new CriarOrdemServicoCommandValidator();
-            var result = validator.Validate(this);
-            return result.IsValid;
+            ValidationResult = new CriarOrdemServicoCommandValidator().Validate(this);
+            return ValidationResult.IsValid;
         }
 
         public static implicit operator OrdemServico(CriarOrdemServicoCommand command)

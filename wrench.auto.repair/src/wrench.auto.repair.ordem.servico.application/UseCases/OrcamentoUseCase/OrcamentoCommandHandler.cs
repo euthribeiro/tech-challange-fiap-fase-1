@@ -18,7 +18,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
 
         public async Task<Result<Guid>> Handle(CriarOrcamentoCommand request, CancellationToken cancellationToken)
         {
-            var ordemServico = _ordemServicoRepository.ObterPorIdAsync(request.OrdemServicoId);
+            var ordemServico = await _ordemServicoRepository.ObterPorIdAsync(request.OrdemServicoId);
 
             if (ordemServico == null)
                 return Result<Guid>.NotFound($"Ordem de serviço com ID {request.OrdemServicoId} não encontrada.");

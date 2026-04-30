@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using wrench.auto.repair.core.Errors;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.estoque.domain.Data;
 using wrench.auto.repair.estoque.domain.Entities;
 
@@ -12,7 +13,8 @@ namespace wrench.auto.repair.estoque.application.Commands
         IRequestHandler<CadastrarPecaCommand, Result<Guid>>,
         IRequestHandler<ReporPecaCommand, Result>,
         IRequestHandler<BaixarPecaCommand, Result>,
-        IRequestHandler<AtualizarPecaCommand, Result>
+        IRequestHandler<AtualizarPecaCommand, Result>,
+        IRequestHandler<PecaExisteQuery, bool>
     {
         public async Task<Result> Handle(AtivarPecaCommand request, CancellationToken cancellationToken)
         {
@@ -150,6 +152,13 @@ namespace wrench.auto.repair.estoque.application.Commands
             if (!salvo) return Result.Unexpected("Não foi possível atualizar a peça. Por favor tente novamente.");
 
             return Result.NoContent();
+        }
+
+        public async Task<bool> Handle(PecaExisteQuery request, CancellationToken cancellationToken)
+        {
+            var peca = await _pecaRepository.ObterPorIdAsync(request.PecaId, cancellationToken);
+
+            return peca != null;
         }
     }
 }

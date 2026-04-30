@@ -3,6 +3,7 @@ using MediatR;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.domain.Data;
 using wrench.auto.repair.core.Errors;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.core.Pagination;
 
 namespace wrench.auto.repair.cadastro.application.Queries
@@ -12,7 +13,8 @@ namespace wrench.auto.repair.cadastro.application.Queries
         IVeiculoRepository _veiculoRepository
     ) : IRequestHandler<ObterTodosVeiculosQuery, Result<ResultadoPaginado<VeiculoViewModel>>>,
         IRequestHandler<ObterVeiculoPorIdQuery, Result<VeiculoViewModel>>,
-        IRequestHandler<ObterVeiculoPorPlacaQuery, Result<VeiculoViewModel>>
+        IRequestHandler<ObterVeiculoPorPlacaQuery, Result<VeiculoViewModel>>,
+        IRequestHandler<VeiculoExisteEPertenteAoClienteQuery, bool>
     {
         public async Task<Result<ResultadoPaginado<VeiculoViewModel>>> Handle(ObterTodosVeiculosQuery request, CancellationToken cancellationToken)
         {
@@ -58,6 +60,12 @@ namespace wrench.auto.repair.cadastro.application.Queries
             var veiculoViewModel = _mapper.Map<VeiculoViewModel>(veiculo);
 
             return Result<VeiculoViewModel>.Ok(veiculoViewModel);
+        }
+
+        public async Task<bool> Handle(VeiculoExisteEPertenteAoClienteQuery request, CancellationToken cancellationToken)
+        {
+            var veiculo = await _veiculoRepository.ObterPorIdAsync(request.VeiculoId, cancellationToken);
+            return veiculo != null && veiculo.ClienteId == request.ClienteId;
         }
     }
 }

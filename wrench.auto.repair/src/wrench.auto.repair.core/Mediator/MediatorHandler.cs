@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Messages;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 
 namespace wrench.auto.repair.core.Mediator
 {
@@ -20,6 +21,11 @@ namespace wrench.auto.repair.core.Mediator
         public async Task PublicarEvento<T>(T evento) where T : Event
         {
             await _mediator.Publish(evento);
+        }
+
+        public async Task<bool> ConsultaIntegrada<T>(T consulta) where T : IntegratedQuery
+        {
+            return await _mediator.Send(consulta);
         }
     }
 }

@@ -52,6 +52,23 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             Status = OrdemServicoStatus.AguardandoAprovacao;
         }
 
+        public void AprovarOrcamento()
+        {
+            if (Status != OrdemServicoStatus.AguardandoAprovacao)
+                throw new DomainException("A ordem de serviço não está em um status que permite aprovação.");
+
+            Orcamento.Aprovar();
+
+            Status = OrdemServicoStatus.EmExecucao;
+        }
+
+        public void FinalizarOrdemServico()
+        {
+            if (Status != OrdemServicoStatus.EmExecucao)
+                throw new DomainException("A ordem de serviço não está em um status que permite finalização.");
+            Status = OrdemServicoStatus.Finalizada;
+        }
+
         private void Validar()
         {
             Validacoes.ValidarSeVazio(ClienteId, "O identificador do cliente não pode ser vazio");

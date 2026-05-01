@@ -4,13 +4,15 @@ using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
+using wrench.auto.repair.ordem.servico.infra.Repositories;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase
 {
     public class OrdemServicoCommandHandler(
         IMediatorHandler _mediatorHandler,
         IOrdemServicoRepository repository
-    ) : IRequestHandler<CriarOrdemServicoCommand, Result<Guid>>
+    ) : IRequestHandler<CriarOrdemServicoCommand, Result<Guid>>,
+        IRequestHandler<FinalizarOrdemServicoCommand, Result<Guid>>
 
     {
         private readonly IOrdemServicoRepository _ordemServicoRepository = repository;
@@ -38,6 +40,26 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
             if (!salvo) return Result<Guid>.Unexpected("Não foi possível criar a ordem de serviço. Por favor tente novamente.");
 
             return Result<Guid>.Created(ordemServico.Id);
+        }
+
+        public async Task<Result<Guid>> Handle(FinalizarOrdemServicoCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result<Guid>.ValidationError(request.ObterErros());
+
+            OrdemServico ordemServico = await _ordemServicoRepository.ObterPorIdAsync(request.OrdemServicoId, cancellationToken);
+
+            if(ordemServico == null)
+                return Result<Guid>.NotFound("Ordem de serviço não encontrada");
+
+            ordemServico.FinalizarOrdemServico();
+
+            await _ordemServicoRepository.Atualizar(ordemServico);
+            var salvo = await _ordemServicoRepository.UnitOfWork.CommitAsync();
+
+            if (!salvo) return Result<Guid>.Unexpected("Não foi possível atualizar a ordem de serviço. Por favor tente novamente.");
+
+            return Result<Guid>.Ok(ordemServico.Id);
         }
     }
 }

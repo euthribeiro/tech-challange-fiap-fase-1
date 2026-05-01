@@ -19,6 +19,11 @@ namespace wrench.auto.repair.ordem.servico.domain.ValueObjects
         public DateTime DataEnvio { get; private set; }
         public DateTime? DataAprovacao { get; private set; }
 
+        public void Aprovar()
+        {
+            DataAprovacao = DateTime.UtcNow;
+        }
+
         private void Validar()
         {
             Validacoes.ValidarSeVazio(OrdemServicoId, "O identificador da ordem de serviço precisa ser informado");

@@ -72,7 +72,6 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             var command = new RealizarDiagnosticoCommand(
                 ordemServicoId,
-                Guid.NewGuid(),
                 200.00m,
                 "Substituir pastilhas de freio"
             );
@@ -102,7 +101,6 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             var command = new RealizarDiagnosticoCommand(
                 ordemServicoId,
-                Guid.NewGuid(),
                 200.00m,
                 "Substituir pastilhas de freio"
             );

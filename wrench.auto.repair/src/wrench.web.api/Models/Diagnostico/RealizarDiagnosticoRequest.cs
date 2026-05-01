@@ -11,7 +11,7 @@ namespace wrench.web.api.Models.Diagnostico
 
         public static explicit operator RealizarDiagnosticoCommand(RealizarDiagnosticoRequest request)
         {
-            return new RealizarDiagnosticoCommand(request.OrdemServicoId, request.MecanicoId, request.ValorEstimado, request.SolucaoProposta);
+            return new RealizarDiagnosticoCommand(request.OrdemServicoId, request.ValorEstimado, request.SolucaoProposta);
         }
     }
 }

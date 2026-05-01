@@ -52,6 +52,9 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
             if(ordemServico == null)
                 return Result<Guid>.NotFound("Ordem de serviço não encontrada");
 
+
+
+
             ordemServico.FinalizarOrdemServico();
 
             await _ordemServicoRepository.Atualizar(ordemServico);

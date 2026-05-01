@@ -6,17 +6,15 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
 {
     public class CriarOrdemServicoCommand : Command<Guid>
     {
-        public CriarOrdemServicoCommand(Guid clienteId, Guid veiculoId, Guid atendenteId, string descricao)
+        public CriarOrdemServicoCommand(Guid clienteId, Guid veiculoId, string descricao)
         {
             ClienteId = clienteId;
             VeiculoId = veiculoId;
-            AtendenteId = atendenteId;
             Descricao = descricao;
         }
 
         public Guid ClienteId { get; private set; }
         public Guid VeiculoId { get; private set; }
-        public Guid AtendenteId { get; private set; }
         public string Descricao { get; private set; }
 
         public override bool EhValido()
@@ -47,10 +45,6 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
                 RuleFor(c => c.VeiculoId)
                  .NotEmpty()
                  .WithMessage("Veículo não informado.");
-
-                RuleFor(c => c.AtendenteId)
-                    .NotEmpty()
-                    .WithMessage("Atendente não informado.");
 
                 RuleFor(c => c.Descricao)
                     .NotEmpty()

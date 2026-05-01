@@ -11,12 +11,8 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "ordem_servico");
-
             migrationBuilder.CreateTable(
                 name: "OrdemServico",
-                schema: "ordem_servico",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -33,7 +29,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
             migrationBuilder.CreateTable(
                 name: "OrdemServicoDiagnostico",
-                schema: "ordem_servico",
                 columns: table => new
                 {
                     OrdemServicoId = table.Column<Guid>(type: "uuid", nullable: false),
@@ -46,7 +41,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                     table.ForeignKey(
                         name: "FK_OrdemServicoDiagnostico_OrdemServico_OrdemServicoId",
                         column: x => x.OrdemServicoId,
-                        principalSchema: "ordem_servico",
                         principalTable: "OrdemServico",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -54,7 +48,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
             migrationBuilder.CreateTable(
                 name: "OrdemServicoOrcamento",
-                schema: "ordem_servico",
                 columns: table => new
                 {
                     OrdemServicoId = table.Column<Guid>(type: "uuid", nullable: false),
@@ -67,7 +60,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                     table.ForeignKey(
                         name: "FK_OrdemServicoOrcamento_OrdemServico_OrdemServicoId",
                         column: x => x.OrdemServicoId,
-                        principalSchema: "ordem_servico",
                         principalTable: "OrdemServico",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -78,16 +70,13 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "OrdemServicoDiagnostico",
-                schema: "ordem_servico");
+                name: "OrdemServicoDiagnostico");
 
             migrationBuilder.DropTable(
-                name: "OrdemServicoOrcamento",
-                schema: "ordem_servico");
+                name: "OrdemServicoOrcamento");
 
             migrationBuilder.DropTable(
-                name: "OrdemServico",
-                schema: "ordem_servico");
+                name: "OrdemServico");
         }
     }
 }

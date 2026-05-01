@@ -26,7 +26,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         public async Task CriarOrdemServico_DeveCriarEAdicionarOrdemServico_QuandoCommandValido()
         {
             // Arrange
-            var command = new CriarOrdemServicoCommand(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), "Cliente falou que o carro tá com barulho na roda.");
+            var command = new CriarOrdemServicoCommand(Guid.NewGuid(), Guid.NewGuid(), "Cliente falou que o carro tá com barulho na roda.");
 
             // Setup de comportamentos do mock (se necessário)
             _mediatorMock.Setup(m => m.ConsultaIntegrada(It.IsAny<VeiculoExisteEPertenteAoClienteQuery>()))
@@ -52,7 +52,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         public async Task CriarOrdemServico_DeveRetornarErro_QuandoDadosForemInvalidos()
         {
             // Arrange
-            var command = new CriarOrdemServicoCommand(default, default, default, String.Empty);
+            var command = new CriarOrdemServicoCommand(default, default, String.Empty);
 
             // Act
             var resultado = await _handler.Handle(command, CancellationToken.None);

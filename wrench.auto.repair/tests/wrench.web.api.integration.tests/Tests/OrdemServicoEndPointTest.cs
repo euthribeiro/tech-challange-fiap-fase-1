@@ -1,6 +1,9 @@
-﻿using FluentAssertions;
-using System.Net.Http.Json;
-using wrench.auto.repair.ordem.servico.application.UseCases.CriarOrdemServico;
+﻿using System.Net.Http.Json;
+using Microsoft.Extensions.DependencyInjection;
+using wrench.auto.repair.autenticacao.domain.Entities;
+using wrench.auto.repair.autenticacao.domain.Security;
+using wrench.auto.repair.core.ValueObjects;
+using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
 
 namespace wrench.web.api.integration.tests.Tests
@@ -15,22 +18,72 @@ namespace wrench.web.api.integration.tests.Tests
         {
             _integrationTestFactory = integrationTestFactory;
             _httpClient = _integrationTestFactory.CreateClient();
+
+            // Configurar autenticação JWT para o HttpClient
+            using var scope = _integrationTestFactory.Services.CreateScope();
+            var jwtGenerator = scope.ServiceProvider.GetRequiredService<IJwtTokenGenerator>();
+
+            // Necessário criar um usuário válido conforme a regra de negócio/domain
+            var email = new Email("teste@teste.com");
+            var perfil = new Perfil("Admin", "Administrador", true, DateTime.UtcNow);
+
+            var usuario = new Usuario(email, perfil.Id, true, DateTime.UtcNow);
+            // Associar perfil manualmente para o token generator conseguir ler as claims de perfil
+            typeof(Usuario).GetProperty("Perfil")?.SetValue(usuario, perfil, null);
+
+            var token = jwtGenerator.GerarToken(usuario);
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
         [Fact]
-        public async Task Should_Create_Ordem_Servico_Witch_Success()
+        public async Task Criar_Ordem_Servico_Com_Sucesso()
         {
             // Arrange
-            var command = new CriarOrdemServicoCommand()
-            {
-                ClienteId = Guid.NewGuid(),
-                VeiculoId = Guid.NewGuid(),
-                Descricao = "Teste de criação de ordem de serviço",
-                DataCriacao = DateTime.UtcNow
-            };
+            using var scope = _integrationTestFactory.Services.CreateScope();
+            var mediatoR = scope.ServiceProvider.GetRequiredService<MediatR.IMediator>();
+
+            var enderecoDto = new wrench.auto.repair.cadastro.application.Commands.Dtos.EnderecoDto(
+                "Rua Teste",
+                "123",
+                "Apto 1",
+                "Bairro Teste",
+                "01234-567",
+                "São Paulo",
+                "SP",
+                "Brasil"
+            );
+
+            var clienteCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarClienteCommand(
+                "44580535820",
+                "Cliente Teste",
+                "11999999999",
+                "cliente@teste.com",
+                enderecoDto
+            );
+
+            var clienteResponse = await mediatoR.Send(clienteCommand);
+            var clienteId = clienteResponse.Id;
+
+            var veiculoCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarVeiculoCommand(
+                clienteId,
+                "Marca Teste",
+                "Modelo Teste",
+                "Cor Teste",
+                2020,
+                2021,
+                "ABC-1234",
+                "Veiculo Teste",
+                DateTime.UtcNow,
+                10000
+            );
+
+            var veiculoResponse = await mediatoR.Send(veiculoCommand);
+            var veiculoId = veiculoResponse.Id;
+
+            var command = new CriarOrdemServicoCommand(clienteId, veiculoId, "Teste de criação de ordem de serviço");
 
             // Act
-            var response = await _httpClient.PostAsJsonAsync("/api/ordem-servico", command);
+            var response = await _httpClient.PostAsJsonAsync("/api/v1/ordem-servico", command);
 
             // Assert
             response.EnsureSuccessStatusCode();

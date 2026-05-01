@@ -20,8 +20,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("ordem_servico");
-
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrdemServicoDbContext).Assembly);
 
             base.OnModelCreating(modelBuilder);

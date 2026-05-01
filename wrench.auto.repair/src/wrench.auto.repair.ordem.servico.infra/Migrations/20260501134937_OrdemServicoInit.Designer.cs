@@ -12,7 +12,7 @@ using wrench.auto.repair.ordem.servico.infra.Context;
 namespace wrench.auto.repair.ordem.servico.infra.Migrations
 {
     [DbContext(typeof(OrdemServicoDbContext))]
-    [Migration("20260501120748_OrdemServicoInit")]
+    [Migration("20260501134937_OrdemServicoInit")]
     partial class OrdemServicoInit
     {
         /// <inheritdoc />
@@ -20,7 +20,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("ordem_servico")
                 .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -50,7 +49,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrdemServico", "ordem_servico");
+                    b.ToTable("OrdemServico");
                 });
 
             modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", b =>
@@ -69,7 +68,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
                             b1.HasKey("OrdemServicoId");
 
-                            b1.ToTable("OrdemServicoDiagnostico", "ordem_servico");
+                            b1.ToTable("OrdemServicoDiagnostico", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrdemServicoId");
@@ -88,7 +87,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
                             b1.HasKey("OrdemServicoId");
 
-                            b1.ToTable("OrdemServicoOrcamento", "ordem_servico");
+                            b1.ToTable("OrdemServicoOrcamento", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrdemServicoId");

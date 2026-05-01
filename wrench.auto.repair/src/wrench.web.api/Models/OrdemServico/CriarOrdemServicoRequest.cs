@@ -11,7 +11,7 @@ namespace wrench.web.api.Models.OrdemServico
 
         public static explicit operator CriarOrdemServicoCommand(CriarOrdemServicoRequest request)
         {
-            return new CriarOrdemServicoCommand(request.ClienteId, request.VeiculoId, request.AtendenteId, request.Descricao);
+            return new CriarOrdemServicoCommand(request.ClienteId, request.VeiculoId, request.Descricao);
         }
     }
 }

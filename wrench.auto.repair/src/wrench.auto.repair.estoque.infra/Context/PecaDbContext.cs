@@ -13,8 +13,6 @@ public class PecaDbContext : DbContext, IUnitOfWork
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasDefaultSchema("peca");
-
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(PecaDbContext).Assembly);
 
         base.OnModelCreating(modelBuilder);

@@ -52,7 +52,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
             if (ordemServico.Status != OrdemServicoStatus.EmDiagnostico)
                 return Result<Guid>.ValidationError("Ordem de serviço não está em diagnóstico. Inicie o diagnóstico primeiro.");
 
-            ordemServico.AdicionarDiagnostico(request.MecanicoId, request.SolucaoProposta, request.ValorEstimado);
+            ordemServico.AdicionarDiagnostico(request.SolucaoProposta, request.ValorEstimado);
 
             await _ordemServicoRepository.Atualizar(ordemServico);
 

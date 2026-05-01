@@ -9,7 +9,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Extensions
         public static void AddOrdemServicoInfra(this IServiceCollection services)
         {
             services.AddScoped<IOrdemServicoRepository, OrdemServicoRepository>();
-            services.AddScoped<IOrcamentoRepository, OrcamentoRepository>();
         }
     }
 }

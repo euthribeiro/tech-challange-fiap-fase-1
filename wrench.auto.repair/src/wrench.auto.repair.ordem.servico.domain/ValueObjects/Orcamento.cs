@@ -1,9 +1,11 @@
 ﻿using wrench.auto.repair.core.DomainObjects;
 
-namespace wrench.auto.repair.ordem.servico.domain.Entities
+namespace wrench.auto.repair.ordem.servico.domain.ValueObjects
 {
-    public class Orcamento : Entity, IAggregateRoot
+    public class Orcamento
     {
+        public Orcamento() { }
+
         public Orcamento(Guid ordemServicoId, DateTime dataEnvio, DateTime? dataAprovacao)
         {
             OrdemServicoId = ordemServicoId;

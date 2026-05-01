@@ -21,6 +21,12 @@ namespace wrench.web.api.Controllers
             _mediatorHandler = mediatorHandler;
         }
 
+
+        /// <summary>
+        /// Solicitar Diagnóstico
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] SolicitarDiagnosticoRequest request)
         {
@@ -32,6 +38,11 @@ namespace wrench.web.api.Controllers
             return result.ToActionResult();
         }
 
+        /// <summary>
+        /// Registrar Diagnóstico
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RealizarDiagnosticoRequest request)
         {

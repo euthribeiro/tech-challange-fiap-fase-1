@@ -24,8 +24,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Context
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrdemServicoDbContext).Assembly);
 
-
-
             base.OnModelCreating(modelBuilder);
         }
 

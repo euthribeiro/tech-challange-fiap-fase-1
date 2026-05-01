@@ -11,13 +11,20 @@ namespace wrench.auto.repair.ordem.servico.infra.Mapping
             builder.OwnsOne(c => c.Diagnostico, d =>
             {
                 d.WithOwner();
-
-                //d.WithOwner().HasForeignKey("OrdemServicoId");
-
                 d.ToTable("OrdemServicoDiagnostico");
             });
 
+            builder.OwnsOne(c => c.Orcamento, d =>
+            {
+                d.WithOwner();
+                d.WithOwner().HasForeignKey("OrdemServicoId");
+                d.ToTable("OrdemServicoOrcamento");
+            });
+
             builder.Navigation(c => c.Diagnostico)
+                .IsRequired(false);
+
+            builder.Navigation(c => c.Orcamento)
                 .IsRequired(false);
         }
     }

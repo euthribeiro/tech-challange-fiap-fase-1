@@ -12,8 +12,8 @@ using wrench.auto.repair.ordem.servico.infra.Context;
 namespace wrench.auto.repair.ordem.servico.infra.Migrations
 {
     [DbContext(typeof(OrdemServicoDbContext))]
-    [Migration("20260429222506_FixWithOwner")]
-    partial class FixWithOwner
+    [Migration("20260501120748_OrdemServicoInit")]
+    partial class OrdemServicoInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,33 +26,10 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.Orcamento", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime?>("DataAprovacao")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("DataEnvio")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("OrdemServicoId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Orcamento", "ordem_servico");
-                });
-
             modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("AtendenteId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("ClienteId")
@@ -86,9 +63,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                             b1.Property<DateTime>("DataDiagnostico")
                                 .HasColumnType("timestamp with time zone");
 
-                            b1.Property<Guid>("MecanicoId")
-                                .HasColumnType("uuid");
-
                             b1.Property<string>("SolucaoProposta")
                                 .IsRequired()
                                 .HasColumnType("text");
@@ -101,7 +75,28 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                                 .HasForeignKey("OrdemServicoId");
                         });
 
+                    b.OwnsOne("wrench.auto.repair.ordem.servico.domain.ValueObjects.Orcamento", "Orcamento", b1 =>
+                        {
+                            b1.Property<Guid>("OrdemServicoId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<DateTime?>("DataAprovacao")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.Property<DateTime>("DataEnvio")
+                                .HasColumnType("timestamp with time zone");
+
+                            b1.HasKey("OrdemServicoId");
+
+                            b1.ToTable("OrdemServicoOrcamento", "ordem_servico");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OrdemServicoId");
+                        });
+
                     b.Navigation("Diagnostico");
+
+                    b.Navigation("Orcamento");
                 });
 #pragma warning restore 612, 618
         }

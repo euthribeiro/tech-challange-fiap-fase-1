@@ -6,28 +6,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wrench.auto.repair.ordem.servico.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class AlteracoesDDD : Migration
+    public partial class OrdemServicoInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Diagnostico",
-                schema: "ordem_servico");
+            migrationBuilder.EnsureSchema(
+                name: "ordem_servico");
 
             migrationBuilder.CreateTable(
-                name: "Orcamento",
+                name: "OrdemServico",
                 schema: "ordem_servico",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    OrdemServicoId = table.Column<Guid>(type: "uuid", nullable: false),
-                    DataEnvio = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    DataAprovacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    ClienteId = table.Column<Guid>(type: "uuid", nullable: false),
+                    VeiculoId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Descricao = table.Column<string>(type: "text", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Status = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orcamento", x => x.Id);
+                    table.PrimaryKey("PK_OrdemServico", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,7 +37,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                 columns: table => new
                 {
                     OrdemServicoId = table.Column<Guid>(type: "uuid", nullable: false),
-                    MecanicoId = table.Column<Guid>(type: "uuid", nullable: false),
                     SolucaoProposta = table.Column<string>(type: "text", nullable: false),
                     DataDiagnostico = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -51,48 +51,43 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-        }
-
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "Orcamento",
-                schema: "ordem_servico");
-
-            migrationBuilder.DropTable(
-                name: "OrdemServicoDiagnostico",
-                schema: "ordem_servico");
 
             migrationBuilder.CreateTable(
-                name: "Diagnostico",
+                name: "OrdemServicoOrcamento",
                 schema: "ordem_servico",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    DataDiagnostico = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    MecanicoId = table.Column<Guid>(type: "uuid", nullable: false),
                     OrdemServicoId = table.Column<Guid>(type: "uuid", nullable: false),
-                    SolucaoProposta = table.Column<string>(type: "text", nullable: false)
+                    DataEnvio = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DataAprovacao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Diagnostico", x => x.Id);
+                    table.PrimaryKey("PK_OrdemServicoOrcamento", x => x.OrdemServicoId);
                     table.ForeignKey(
-                        name: "FK_Diagnostico_OrdemServico_OrdemServicoId",
+                        name: "FK_OrdemServicoOrcamento_OrdemServico_OrdemServicoId",
                         column: x => x.OrdemServicoId,
                         principalSchema: "ordem_servico",
                         principalTable: "OrdemServico",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+        }
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Diagnostico_OrdemServicoId",
-                schema: "ordem_servico",
-                table: "Diagnostico",
-                column: "OrdemServicoId",
-                unique: true);
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "OrdemServicoDiagnostico",
+                schema: "ordem_servico");
+
+            migrationBuilder.DropTable(
+                name: "OrdemServicoOrcamento",
+                schema: "ordem_servico");
+
+            migrationBuilder.DropTable(
+                name: "OrdemServico",
+                schema: "ordem_servico");
         }
     }
 }

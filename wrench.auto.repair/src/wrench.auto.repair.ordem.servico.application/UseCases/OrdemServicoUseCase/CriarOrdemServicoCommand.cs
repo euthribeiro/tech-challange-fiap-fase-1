@@ -30,7 +30,6 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
             return new OrdemServico(
                 command.ClienteId,
                 command.VeiculoId,
-                command.AtendenteId,
                 command.Descricao,
                 domain.Enums.OrdemServicoStatus.Recebida,
                 DateTime.UtcNow

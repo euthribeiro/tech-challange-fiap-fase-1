@@ -24,7 +24,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Arrange
             var ordemServicoId = Guid.NewGuid();
             var command = new SolicitarDiagnosticoCommand(ordemServicoId);
-            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, Guid.NewGuid(), "Barulho na roda", OrdemServicoStatus.Recebida, DateTime.Now);
+            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.Recebida, DateTime.Now);
 
             _ordemServicoRepositoryMock
                 .Setup(repo => repo.ObterPorIdAsync(ordemServicoId, CancellationToken.None))
@@ -48,7 +48,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Arrange
             var ordemServicoId = Guid.NewGuid();
             var command = new SolicitarDiagnosticoCommand(Guid.NewGuid());
-            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, Guid.NewGuid(), "Barulho na roda", OrdemServicoStatus.Recebida, DateTime.Now);
+            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.Recebida, DateTime.Now);
 
             _ordemServicoRepositoryMock
                 .Setup(repo => repo.ObterPorIdAsync(ordemServicoId, CancellationToken.None))
@@ -77,7 +77,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
                 "Substituir pastilhas de freio"
             );
 
-            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, Guid.NewGuid(), "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
+            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
             _ordemServicoRepositoryMock
                 .Setup(repo => repo.ObterPorIdAsync(ordemServicoId, CancellationToken.None))
                 .ReturnsAsync(ordemServicoFake);
@@ -107,7 +107,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
                 "Substituir pastilhas de freio"
             );
 
-            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, Guid.NewGuid(), "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
+            var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
 
             _ordemServicoRepositoryMock
                 .Setup(repo => repo.ObterPorIdAsync(Guid.NewGuid(), CancellationToken.None))

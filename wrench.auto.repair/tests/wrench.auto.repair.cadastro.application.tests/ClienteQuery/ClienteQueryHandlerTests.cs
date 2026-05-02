@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Moq;
 using Moq.AutoMock;
+using System.Linq.Expressions;
+using wrench.auto.repair.cadastro.application.Paginacao;
 using wrench.auto.repair.cadastro.application.Queries;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.application.tests.Fixture;
@@ -18,7 +20,7 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
         public async Task Cliente_ListarTodosClientes_DeveRetornarListaComSucesso()
         {
             // Arrange
-            var paginacao = new RequisicaoPaginada();
+            var paginacao = new ClienteRequisicaoPaginada();
             var resultadoPaginadoCliente =
                 new ResultadoPaginado<Cliente>([], 0, 1, 10);
 
@@ -31,7 +33,7 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
             var clienteQueryHandler = automocker.CreateInstance<ClienteQueryHandler>();
 
             automocker.GetMock<IClienteRepository>()
-                .Setup(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None))
+                .Setup(c => c.BuscaPaginadaAsync(paginacao, It.IsAny<Dictionary<string, Expression<Func<Cliente, object?>>>>(), CancellationToken.None))
                 .Returns(Task.FromResult<ResultadoPaginado<Cliente>>(resultadoPaginadoCliente));
 
             automocker.GetMock<IMapper>()
@@ -45,7 +47,7 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
             Assert.True(result.Sucesso);
 
             automocker.GetMock<IClienteRepository>()
-                .Verify(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None), Times.Once);
+                .Verify(c => c.BuscaPaginadaAsync(paginacao, It.IsAny<Dictionary<string, Expression<Func<Cliente, object?>>>>(), CancellationToken.None), Times.Once);
 
             automocker.GetMock<IMapper>()
                 .Verify(c => c.Map<ResultadoPaginado<ClienteViewModel>>(It.IsAny<ResultadoPaginado<Cliente>>()), Times.Once);
@@ -56,7 +58,7 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
         public async Task Cliente_ListarTodosClientes_FalhaAoConsultar()
         {
             // Arrange
-            var paginacao = new RequisicaoPaginada();
+            var paginacao = new ClienteRequisicaoPaginada();
             var resultadoPaginadoCliente =
                 new ResultadoPaginado<Cliente>([], 0, 1, 10);
 
@@ -69,7 +71,7 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
             var clienteQueryHandler = automocker.CreateInstance<ClienteQueryHandler>();
 
             automocker.GetMock<IClienteRepository>()
-                .Setup(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None))
+                .Setup(c => c.BuscaPaginadaAsync(paginacao, It.IsAny<Dictionary<string, Expression<Func<Cliente, object?>>>>(), CancellationToken.None))
                 .Returns(Task.FromResult<ResultadoPaginado<Cliente>>(null!));
 
             // Act
@@ -79,7 +81,7 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
             Assert.False(result.Sucesso);
 
             automocker.GetMock<IClienteRepository>()
-                .Verify(c => c.BuscaPaginadaAsync(paginacao, CancellationToken.None), Times.Once);
+                .Verify(c => c.BuscaPaginadaAsync(paginacao, It.IsAny<Dictionary<string, Expression<Func<Cliente, object?>>>>(), CancellationToken.None), Times.Once);
 
             automocker.GetMock<IMapper>()
                 .Verify(c => c.Map<ResultadoPaginado<ClienteViewModel>>(It.IsAny<ResultadoPaginado<Cliente>>()), Times.Never);

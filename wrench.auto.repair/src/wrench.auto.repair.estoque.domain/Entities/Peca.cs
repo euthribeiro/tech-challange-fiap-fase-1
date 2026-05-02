@@ -5,22 +5,22 @@ namespace wrench.auto.repair.estoque.domain.Entities;
 
 public class Peca : Entity, IAggregateRoot
 {
-    public Peca(string nome, string descricao, double valor, double quantidade, bool ativo, DateTime dataCadastro)
+    public Peca(string nome, string descricao, double valor, int quantidade, bool ativo, DateTime dataCadastro)
     {
+        Validar(nome, descricao, valor, quantidade);
+
         Nome = nome.Trim().RemoverAcentos().RemoverEspacosDuplicados().ToUpperInvariant();
         Descricao = descricao.Trim().RemoverAcentos().RemoverEspacosDuplicados().ToUpperInvariant();
         Valor = Math.Round(valor, 2);
         Quantidade = quantidade;
         Ativo = ativo;
         DataCadastro = dataCadastro;
-
-        Validar();
     }
 
     public string Nome { get; private set; }
     public string Descricao { get; private set; }
     public double Valor { get; private set; }
-    public double Quantidade { get; private set; }
+    public int Quantidade { get; private set; }
     public bool Ativo { get; private set; }
     public DateTime DataCadastro { get; private set; }
 
@@ -68,11 +68,11 @@ public class Peca : Entity, IAggregateRoot
         Ativo = true;
     }
 
-    private void Validar()
+    private void Validar(string nome, string descricao, double valor, int quantidade)
     {
-        Validacoes.ValidarSeNulo(Nome, "O nome da peça não pode ser vazio");
-        Validacoes.ValidarSeNulo(Descricao, "A descrição da peça não pode ser vazio");
-        Validacoes.ValidarSeMenorQue(Valor, 0, "O valor da peça não pode ser negativo");
-        Validacoes.ValidarSeMenorQue(Quantidade, 0, "A quantidade não pode ser menor que 0");
+        Validacoes.ValidarSeNulo(nome, "O nome da peça não pode ser vazio");
+        Validacoes.ValidarSeNulo(descricao, "A descrição da peça não pode ser vazio");
+        Validacoes.ValidarSeMenorQue(valor, 0, "O valor da peça não pode ser negativo");
+        Validacoes.ValidarSeMenorQue(quantidade, 0, "A quantidade não pode ser menor que 0");
     }
 }

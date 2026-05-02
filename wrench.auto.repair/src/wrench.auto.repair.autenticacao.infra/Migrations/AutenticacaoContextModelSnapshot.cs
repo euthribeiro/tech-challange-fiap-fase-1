@@ -82,7 +82,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTime>("DateCadastro")
+                    b.Property<DateTime>("DataCadastro")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("PerfilId")

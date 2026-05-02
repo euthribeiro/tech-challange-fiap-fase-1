@@ -42,8 +42,8 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double>("Quantidade")
-                        .HasColumnType("double precision");
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("integer");
 
                     b.Property<double>("Valor")
                         .HasColumnType("double precision");

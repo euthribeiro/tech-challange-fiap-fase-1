@@ -4,7 +4,8 @@
         IEnumerable<T> itens,
         int totalRegistros,
         int numeroPagina,
-        int tamanhoPagina
+        int tamanhoPagina,
+        IEnumerable<string>? ordenacoesPermitidas = null
     )
     {
         public IEnumerable<T> Itens { get; } = itens;
@@ -13,5 +14,6 @@
         public int TamanhoPagina { get; } = tamanhoPagina;
 
         public int TotalPaginas => (int)Math.Ceiling((double)TotalRegistros / TamanhoPagina);
+        public IEnumerable<string>? OrdenacoesPermitidas { get; } = ordenacoesPermitidas;
     }
 }

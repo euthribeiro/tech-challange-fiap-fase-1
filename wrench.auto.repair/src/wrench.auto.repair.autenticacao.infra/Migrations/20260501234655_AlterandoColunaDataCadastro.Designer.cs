@@ -12,8 +12,8 @@ using wrench.auto.repair.autenticacao.infra;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     [DbContext(typeof(AutenticacaoContext))]
-    [Migration("20260428041453_SenhaNulaParaUsuario")]
-    partial class SenhaNulaParaUsuario
+    [Migration("20260501234655_AlterandoColunaDataCadastro")]
+    partial class AlterandoColunaDataCadastro
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,7 +85,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTime>("DateCadastro")
+                    b.Property<DateTime>("DataCadastro")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("PerfilId")

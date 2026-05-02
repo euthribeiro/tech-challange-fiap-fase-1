@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.cadastro.application.Commands;
 using wrench.auto.repair.cadastro.application.Commands.Dtos;
 using wrench.auto.repair.cadastro.application.Commands.ViewModels;
+using wrench.auto.repair.cadastro.application.Paginacao;
 using wrench.auto.repair.cadastro.application.Queries;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.core.Mediator;
@@ -30,7 +31,7 @@ namespace wrench.web.api.Controllers
         /// <param name="requisicao"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] RequisicaoPaginada requisicao)
+        public async Task<IActionResult> GetAll([FromQuery] ClienteRequisicaoPaginada requisicao)
         {
             var obterTodosClientesQuery = new ObterTodosClientesQuery(requisicao);
 

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Moq;
 using Moq.AutoMock;
+using System.Linq.Expressions;
+using wrench.auto.repair.cadastro.application.Paginacao;
 using wrench.auto.repair.cadastro.application.Queries;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.application.tests.Fixture;
@@ -25,11 +27,11 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoQuery
                 .Map<ResultadoPaginado<VeiculoViewModel>>(resultadoPaginadoVeiculo);
 
             var obterTodosVeiculosQuery =
-                new ObterTodosVeiculosQuery(new RequisicaoPaginada());
+                new ObterTodosVeiculosQuery(new VeiculoRequisicaoPaginada());
             var automocker = new AutoMocker();
 
             automocker.GetMock<IVeiculoRepository>()
-                .Setup(v => v.BuscaPaginadaAsync(It.IsAny<RequisicaoPaginada>(), It.IsAny<CancellationToken>()))
+                .Setup(v => v.BuscaPaginadaAsync(It.IsAny<VeiculoRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Veiculo, object?>>>>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult<ResultadoPaginado<Veiculo>>(resultadoPaginadoVeiculo));
 
             automocker.GetMock<IMapper>()
@@ -47,7 +49,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoQuery
             Assert.True(resultado.Sucesso);
 
             automocker.GetMock<IVeiculoRepository>()
-            .Verify(v => v.BuscaPaginadaAsync(It.IsAny<RequisicaoPaginada>(), It.IsAny<CancellationToken>()), Times.Once);
+            .Verify(v => v.BuscaPaginadaAsync(It.IsAny<VeiculoRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Veiculo, object?>>>>(), It.IsAny<CancellationToken>()), Times.Once);
 
             automocker.GetMock<IMapper>()
                 .Verify(m => m.Map<ResultadoPaginado<VeiculoViewModel>>(It.IsAny<ResultadoPaginado<Veiculo>>()), Times.Once);

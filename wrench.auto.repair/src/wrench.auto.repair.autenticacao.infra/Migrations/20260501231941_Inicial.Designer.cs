@@ -12,8 +12,8 @@ using wrench.auto.repair.autenticacao.infra;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     [DbContext(typeof(AutenticacaoContext))]
-    [Migration("20260428034029_Initial")]
-    partial class Initial
+    [Migration("20260501231941_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -92,7 +92,6 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Senha")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

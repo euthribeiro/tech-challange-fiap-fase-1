@@ -30,7 +30,7 @@ namespace wrench.auto.repair.cadastro.application.Commands
             var novoVeiculo = new Veiculo(cliente.Id, request.Marca, request.Modelo,
                                           request.Cor, request.AnoFabricacao, request.AnoModelo,
                                           request.PlacaDoVeiculo, request.Descricao, request.UltimaRevisao,
-                                          request.QuilometragemAtual);
+                                          request.QuilometragemAtual, DateTime.UtcNow);
 
             await _veiculoRepository.Adicionar(novoVeiculo, cancellationToken);
 

@@ -9,7 +9,7 @@ using wrench.web.api.Models.OrdemServico;
 namespace wrench.web.api.Controllers
 {
     /// <summary>
-    /// Serviço para o contexto de oçamento
+    /// Serviço para aprovar e listar orçamentos
     /// </summary>
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -25,8 +25,10 @@ namespace wrench.web.api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AprovarOrcamentoRequest request)
         {
+            var aprovarOrcamentoCommand = new AprovaOrcamentoCommand(request.OrdemServicoId);
+
             var result = await _mediatorHandler
-                .EnviarComando<AprovaOrcamentoCommand, bool>(request);
+                .EnviarComando<AprovaOrcamentoCommand, bool>(aprovarOrcamentoCommand);
 
             return result.ToActionResult();
         }

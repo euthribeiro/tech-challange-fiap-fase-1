@@ -37,7 +37,8 @@ namespace wrench.web.api.integration.tests.Tests
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Realizar Diagnóstico Com Sucesso")]
+        [Trait("Integration", "WebApi")]
         public async Task Realizar_Diagnostico_Com_Sucesso()
         {
             // Arrange

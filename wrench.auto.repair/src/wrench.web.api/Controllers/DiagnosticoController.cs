@@ -8,6 +8,9 @@ using wrench.web.api.Models.Diagnostico;
 
 namespace wrench.web.api.Controllers
 {
+    /// <summary>
+    /// Serviço para solicitar, registrar e listar diagnósticos
+    /// </summary>
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]

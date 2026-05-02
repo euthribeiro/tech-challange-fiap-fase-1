@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.autenticacao.application.Commands;
 using wrench.auto.repair.autenticacao.application.Commands.ViewModels;
+using wrench.auto.repair.autenticacao.application.Paginacao;
 using wrench.auto.repair.autenticacao.application.Queries;
 using wrench.auto.repair.autenticacao.application.Queries.ViewModels;
 using wrench.auto.repair.core.Mediator;
@@ -12,7 +13,7 @@ using wrench.web.api.Extensions;
 namespace wrench.web.api.Controllers
 {
     /// <summary>
-    /// Serviço para criação de usuários
+    /// Serviço para Cadastrar, Atualizar, (In)ativar e Listar Usuários
     /// </summary>
     /// <param name="_mediatorHandler"></param>
     [ApiVersion(1.0)]
@@ -41,7 +42,7 @@ namespace wrench.web.api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] RequisicaoPaginada request)
+        public async Task<IActionResult> Get([FromQuery] UsuarioRequisicaoPaginada request)
         {
             var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery(request);
 
@@ -67,7 +68,23 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Endpoint para inativar um usuário
+        /// Ativar o acesso do usuário
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/ativar")]
+        public async Task<IActionResult> AtivarUsuarioAsync([FromRoute] Guid id)
+        {
+            var ativarUsuarioCommand = new AtivarUsuarioCommand(id);
+
+            var resultado = await _mediatorHandler
+               .EnviarComando<AtivarUsuarioCommand>(ativarUsuarioCommand);
+
+            return resultado.ToActionResult();
+        }
+
+        /// <summary>
+        /// Inativar um usuário
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -83,8 +100,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Realizar o primeiro acesso do usuário sem senha cadastrada.
-        /// Obs: endpoint criado para simular o primeiro acesso pelo cliente (web, app, etc)
+        /// Realizar primeiro acesso
         /// </summary>
         /// <param name="requisicao"></param>
         /// <returns></returns>
@@ -113,17 +129,6 @@ namespace wrench.web.api.Controllers
 
             var resultado = await _mediatorHandler
                .EnviarComando<ResetarSenhaUsuarioCommand>(alterarSenhaUsuarioCommand);
-
-            return resultado.ToActionResult();
-        }
-
-        [HttpPut("{id:guid}/ativar")]
-        public async Task<IActionResult> AtivarUsuarioAsync([FromRoute] Guid id)
-        {
-            var ativarUsuarioCommand = new AtivarUsuarioCommand(id);
-
-            var resultado = await _mediatorHandler
-               .EnviarComando<AtivarUsuarioCommand>(ativarUsuarioCommand);
 
             return resultado.ToActionResult();
         }

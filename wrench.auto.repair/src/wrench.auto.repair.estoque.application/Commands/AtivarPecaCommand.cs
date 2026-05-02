@@ -22,7 +22,7 @@ namespace wrench.auto.repair.estoque.application.Commands
         public AtivarPecaCommandValidator()
         {
             RuleFor(c => c.PecaId)
-                .NotNull()
+                .NotEmpty()
                 .WithMessage(PecaIdVazioError);
         }
     }

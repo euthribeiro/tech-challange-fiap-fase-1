@@ -36,7 +36,7 @@ namespace wrench.auto.repair.estoque.application.Queries
             if (!request.EhValido())
                 return Result<IEnumerable<PecaViewModel>>.ValidationError(request.ObterErros());
 
-            var pecas = _pecaRepository.ConsultaPecaPorNome(request.Nome);
+            var pecas = await _pecaRepository.ObterPorNomeAsync(request.Nome, cancellationToken);
 
             if (pecas == null)
                 return Result<IEnumerable<PecaViewModel>>.NotFound("Peça não encontrada");

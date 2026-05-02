@@ -51,7 +51,7 @@ namespace wrench.auto.repair.estoque.infra.Repositories
 
         public async Task<ResultadoPaginado<TEntity>> BuscaPaginadaAsync(
             RequisicaoPaginada request,
-            Dictionary<string, Expression<Func<TEntity, object>>> sortMap,
+            Dictionary<string, Expression<Func<TEntity, object?>>> sortMap,
             CancellationToken cancellationToken)
         {
             var query = _context.Set<TEntity>().AsQueryable();
@@ -130,7 +130,7 @@ namespace wrench.auto.repair.estoque.infra.Repositories
 
         private static void ValidarOrdenacao<TEntity>(
             RequisicaoPaginada request,
-            Dictionary<string, Expression<Func<TEntity, object>>> sortMap)
+            Dictionary<string, Expression<Func<TEntity, object?>>> sortMap)
         {
             if (string.IsNullOrWhiteSpace(request.OrdenarPor))
                 return;

@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fixtures\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\wrench.auto.repair.estoque.domain\wrench.auto.repair.estoque.domain.csproj" />
   </ItemGroup>
 

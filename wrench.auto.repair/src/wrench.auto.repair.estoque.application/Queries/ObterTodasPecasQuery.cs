@@ -1,13 +1,14 @@
 ﻿using FluentValidation;
 using wrench.auto.repair.core.Messages;
 using wrench.auto.repair.core.Pagination;
+using wrench.auto.repair.estoque.application.Paginacao;
 using wrench.auto.repair.estoque.application.Queries.ViewModels;
 
 namespace wrench.auto.repair.estoque.application.Queries
 {
-    public class ObterTodasPecasQuery(RequisicaoPaginada paginacao) : Command<ResultadoPaginado<PecaViewModel>>
+    public class ObterTodasPecasQuery(PecaRequisicaoPaginada paginacao) : Command<ResultadoPaginado<PecaViewModel>>
     {
-        public RequisicaoPaginada Paginacao { get; private set; } = paginacao;
+        public PecaRequisicaoPaginada Paginacao { get; private set; } = paginacao;
 
         public override bool EhValido()
         {
@@ -20,7 +21,8 @@ namespace wrench.auto.repair.estoque.application.Queries
     {
         public ObterTodasPecasQueryValidator()
         {
-
+            RuleFor(c => c.Paginacao)
+                .SetValidator(new PecaRequisicaoPaginadaValidator());
         }
     }
 }

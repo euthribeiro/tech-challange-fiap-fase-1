@@ -1,5 +1,5 @@
-﻿using wrench.auto.repair.cadastro.application.Queries;
-using wrench.auto.repair.core.Pagination;
+﻿using wrench.auto.repair.cadastro.application.Paginacao;
+using wrench.auto.repair.cadastro.application.Queries;
 
 namespace wrench.auto.repair.cadastro.application.tests.VeiculoQuery
 {
@@ -11,7 +11,7 @@ namespace wrench.auto.repair.cadastro.application.tests.VeiculoQuery
         {
             // Arrange
             var obterTodosVeiculosQuery =
-                new ObterTodosVeiculosQuery(new RequisicaoPaginada());
+                new ObterTodosVeiculosQuery(new VeiculoRequisicaoPaginada());
 
             // Act
             var valido = obterTodosVeiculosQuery.EhValido();

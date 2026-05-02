@@ -55,6 +55,9 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Descricao")
                         .HasColumnType("text");
 
@@ -106,7 +109,6 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                                 .HasColumnType("text");
 
                             b1.Property<string>("Complemento")
-                                .IsRequired()
                                 .HasColumnType("text");
 
                             b1.Property<string>("Logradouro")

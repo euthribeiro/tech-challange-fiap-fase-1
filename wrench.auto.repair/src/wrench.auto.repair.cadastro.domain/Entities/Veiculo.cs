@@ -1,4 +1,5 @@
 ﻿using wrench.auto.repair.core.DomainObjects;
+using wrench.auto.repair.core.Extensions;
 
 namespace wrench.auto.repair.cadastro.domain.Entities
 {
@@ -7,22 +8,21 @@ namespace wrench.auto.repair.cadastro.domain.Entities
 
         protected Veiculo() { } // EF Core
 
-        public Veiculo(Guid clienteId, string marca, string modelo, string cor, int anoFabricacao, int anoModelo, string placaDoVeiculo, string? descricao, DateTime? ultimaRevisao, int quilometragemAtual)
+        public Veiculo(Guid clienteId, string marca, string modelo, string cor, int anoFabricacao, int anoModelo, string placaDoVeiculo, string? descricao, DateTime? ultimaRevisao, int quilometragemAtual, DateTime dataCadastro)
         {
+            Validar(clienteId, marca, modelo, cor, anoFabricacao, anoModelo, placaDoVeiculo, quilometragemAtual);
+
             ClienteId = clienteId;
-            Marca = marca;
-            Modelo = modelo;
-            Cor = cor;
+            Marca = marca.RemoverEspacosDuplicados().RemoverAcentos().ToUpperInvariant();
+            Modelo = modelo.RemoverEspacosDuplicados().RemoverAcentos().ToUpperInvariant();
+            Cor = cor.RemoverEspacosDuplicados().RemoverAcentos().ToUpperInvariant();
             AnoFabricacao = anoFabricacao;
             AnoModelo = anoModelo;
-            PlacaDoVeiculo = placaDoVeiculo;
-            Descricao = descricao;
+            PlacaDoVeiculo = placaDoVeiculo.RemoverEspacosDuplicados().RemoverAcentos().RemoverCaracteresNaoAlfaNumericos().ToUpperInvariant();
+            Descricao = descricao?.RemoverEspacosDuplicados().RemoverAcentos().ToUpperInvariant();
             UltimaRevisao = ultimaRevisao;
             QuilometragemAtual = quilometragemAtual;
-
-            Validar();
-
-            PlacaDoVeiculo = placaDoVeiculo.Replace("-", "");
+            DataCadastro = dataCadastro;
         }
 
         public Guid ClienteId { get; private set; }
@@ -33,8 +33,9 @@ namespace wrench.auto.repair.cadastro.domain.Entities
         public int AnoModelo { get; private set; }
         public string PlacaDoVeiculo { get; private set; }
         public string? Descricao { get; private set; }
-        public DateTime? UltimaRevisao { get; set; }
-        public int QuilometragemAtual { get; set; }
+        public DateTime? UltimaRevisao { get; private set; }
+        public int QuilometragemAtual { get; private set; }
+        public DateTime DataCadastro { get; private set; }
         public Cliente Cliente { get; private set; }
 
         public void AlterarCliente(Cliente cliente)
@@ -122,20 +123,20 @@ namespace wrench.auto.repair.cadastro.domain.Entities
             PlacaDoVeiculo = placaDoVeiculo.Replace("-", "");
         }
 
-        private void Validar()
+        private static void Validar(Guid clienteId, string marca, string modelo, string cor, int anoFabricacao, int anoModelo, string placaVeiculo, int quilometragemAtual)
         {
             var anoAtual = DateTime.UtcNow.Year;
             var proximoAno = DateTime.UtcNow.AddYears(1).Year;
 
-            Validacoes.ValidarSeVazio(ClienteId, "O ID do cliente não pode ser vazio");
-            Validacoes.ValidarSeVazio(Marca, "A marca do veículo não pode ser vazio");
-            Validacoes.ValidarSeVazio(Modelo, "O modelo do veículo não pode ser vazio");
-            Validacoes.ValidarSeVazio(Cor, "A cor do veículo não pode ser vazio");
-            Validacoes.ValidarMinimoMaximo(AnoFabricacao, 1886, proximoAno, $"Ano de fabricação deve estar entre 1886 e {anoAtual}.");
-            Validacoes.ValidarMinimoMaximo(AnoModelo, 1886, proximoAno, $"Ano do modelo deve estar entre 1886 e {proximoAno}.");
-            Validacoes.ValidarSeVazio(PlacaDoVeiculo, "A placa do veículo não pode ser vazio");
-            Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(PlacaDoVeiculo, "^[A-Z]{3}-?[0-9][0-9A-Z][0-9]{2}$", "A placa do veículo informada não é válida");
-            Validacoes.ValidarSeMenorQue(QuilometragemAtual, 0, "A quilometragem atual não pode ser negativa");
+            Validacoes.ValidarSeVazio(clienteId, "O ID do cliente não pode ser vazio");
+            Validacoes.ValidarSeVazio(marca, "A marca do veículo não pode ser vazio");
+            Validacoes.ValidarSeVazio(modelo, "O modelo do veículo não pode ser vazio");
+            Validacoes.ValidarSeVazio(cor, "A cor do veículo não pode ser vazio");
+            Validacoes.ValidarMinimoMaximo(anoFabricacao, 1886, proximoAno, $"Ano de fabricação deve estar entre 1886 e {anoAtual}.");
+            Validacoes.ValidarMinimoMaximo(anoModelo, 1886, proximoAno, $"Ano do modelo deve estar entre 1886 e {proximoAno}.");
+            Validacoes.ValidarSeVazio(placaVeiculo, "A placa do veículo não pode ser vazio");
+            Validacoes.ValidarSeNaoCorrespondeAExpressaoRegular(placaVeiculo, "^[A-Z]{3}-?[0-9][0-9A-Z][0-9]{2}$", "A placa do veículo informada não é válida");
+            Validacoes.ValidarSeMenorQue(quilometragemAtual, 0, "A quilometragem atual não pode ser negativa");
         }
     }
 }

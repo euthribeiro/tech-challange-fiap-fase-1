@@ -2,6 +2,8 @@
 using MediatR;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.domain.Data;
+using wrench.auto.repair.cadastro.domain.Entities;
+using wrench.auto.repair.core.Data;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.core.Pagination;
@@ -10,6 +12,7 @@ namespace wrench.auto.repair.cadastro.application.Queries
 {
     public class VeiculoQueryHandler(
         IMapper _mapper,
+        ISortMap<Veiculo> _veiculoSortMap,
         IVeiculoRepository _veiculoRepository
     ) : IRequestHandler<ObterTodosVeiculosQuery, Result<ResultadoPaginado<VeiculoViewModel>>>,
         IRequestHandler<ObterVeiculoPorIdQuery, Result<VeiculoViewModel>>,
@@ -22,7 +25,7 @@ namespace wrench.auto.repair.cadastro.application.Queries
                 return Result<ResultadoPaginado<VeiculoViewModel>>.UnprocessableEntity(request.ObterErros());
 
             var veiculos = await _veiculoRepository
-                .BuscaPaginadaAsync(request.Paginacao, cancellationToken);
+                .BuscaPaginadaAsync(request.Paginacao, _veiculoSortMap.Map, cancellationToken);
 
             if (veiculos == null)
                 return Result<ResultadoPaginado<VeiculoViewModel>>.NotFound("Nenhum veículo cadastrado.");

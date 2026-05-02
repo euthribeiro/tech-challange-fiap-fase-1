@@ -40,7 +40,8 @@ namespace wrench.auto.repair.cadastro.domain.tests.Fixtures
                     placa,
                     null,
                     ultimaRevisao,
-                    zeroKm ? 0 : (km ?? fk.Random.Number(0, 200000))
+                    zeroKm ? 0 : (km ?? fk.Random.Number(0, 200000)),
+                    DateTime.UtcNow
                 ));
         }
 

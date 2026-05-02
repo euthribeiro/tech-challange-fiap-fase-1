@@ -7,12 +7,12 @@ namespace wrench.auto.repair.autenticacao.domain.Entities
     {
         private Usuario() { } // EF Core
 
-        public Usuario(Email email, Guid perfilId, bool ativo, DateTime dateCadastro)
+        public Usuario(Email email, Guid perfilId, bool ativo, DateTime dataCadastro)
         {
             Email = email;
             PerfilId = perfilId;
             Ativo = ativo;
-            DateCadastro = dateCadastro;
+            DataCadastro = dataCadastro;
 
             Validar();
         }
@@ -21,7 +21,7 @@ namespace wrench.auto.repair.autenticacao.domain.Entities
         public string? Senha { get; private set; }
         public Guid PerfilId { get; private set; }
         public bool Ativo { get; private set; }
-        public DateTime DateCadastro { get; private set; }
+        public DateTime DataCadastro { get; private set; }
         public Perfil Perfil { get; private set; }
 
         private void Validar()

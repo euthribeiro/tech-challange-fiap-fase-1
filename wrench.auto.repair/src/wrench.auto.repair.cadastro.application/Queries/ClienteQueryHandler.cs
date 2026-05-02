@@ -2,6 +2,8 @@
 using MediatR;
 using wrench.auto.repair.cadastro.application.Queries.ViewModels;
 using wrench.auto.repair.cadastro.domain.Data;
+using wrench.auto.repair.cadastro.domain.Entities;
+using wrench.auto.repair.core.Data;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Pagination;
 
@@ -9,6 +11,7 @@ namespace wrench.auto.repair.cadastro.application.Queries
 {
     public class ClienteQueryHandler(
         IMapper _mapper,
+        ISortMap<Cliente> _clienteSortMap,
         IClienteRepository _clienteRepository
     ) : IRequestHandler<ObterTodosClientesQuery, Result<ResultadoPaginado<ClienteViewModel>>>,
         IRequestHandler<ObterClientePorIdQuery, Result<ClienteViewModel>>,
@@ -20,7 +23,7 @@ namespace wrench.auto.repair.cadastro.application.Queries
                 return Result<ResultadoPaginado<ClienteViewModel>>.UnprocessableEntity(request.ObterErros());
 
             var clientes = await _clienteRepository
-                .BuscaPaginadaAsync(request.Paginacao, cancellationToken);
+                .BuscaPaginadaAsync(request.Paginacao, _clienteSortMap.Map, cancellationToken);
 
             if (clientes == null)
                 return Result<ResultadoPaginado<ClienteViewModel>>.NotFound("Nenhum cliente cadastrado.");

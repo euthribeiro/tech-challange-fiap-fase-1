@@ -9,9 +9,7 @@ using wrench.web.api.Models.OrdemServico;
 namespace wrench.web.api.Controllers
 {
     /// <summary>
-    /// Serviço para o contexto de ordem de serviço, 
-    /// responsável por expor os endpoints relacionados a criação, consulta, 
-    /// atualização e exclusão de ordens de serviço.
+    /// Serviço para criar, atualizar e listar ordem de serviço
     /// </summary>
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wrench.auto.repair.cadastro.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,7 +33,7 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     ClienteId = table.Column<Guid>(type: "uuid", nullable: false),
                     Logradouro = table.Column<string>(type: "text", nullable: false),
                     Numero = table.Column<string>(type: "text", nullable: false),
-                    Complemento = table.Column<string>(type: "text", nullable: false),
+                    Complemento = table.Column<string>(type: "text", nullable: true),
                     Bairro = table.Column<string>(type: "text", nullable: false),
                     Cep = table.Column<string>(type: "text", nullable: false),
                     Cidade = table.Column<string>(type: "text", nullable: false),
@@ -85,7 +85,8 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                     PlacaDoVeiculo = table.Column<string>(type: "text", nullable: false),
                     Descricao = table.Column<string>(type: "text", nullable: true),
                     UltimaRevisao = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    QuilometragemAtual = table.Column<int>(type: "integer", nullable: false)
+                    QuilometragemAtual = table.Column<int>(type: "integer", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,6 +103,12 @@ namespace wrench.auto.repair.cadastro.infra.Migrations
                 name: "IX_Clientes_Documento",
                 table: "Clientes",
                 column: "Documento",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clientes_Email",
+                table: "Clientes",
+                column: "Email",
                 unique: true);
 
             migrationBuilder.CreateIndex(

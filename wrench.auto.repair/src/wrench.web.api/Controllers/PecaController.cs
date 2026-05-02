@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Pagination;
 using wrench.auto.repair.estoque.application.Commands;
+using wrench.auto.repair.estoque.application.Paginacao;
 using wrench.auto.repair.estoque.application.Queries;
 using wrench.auto.repair.estoque.application.Queries.ViewModels;
 using wrench.web.api.Extensions;
@@ -12,9 +13,7 @@ using wrench.web.api.Models.Requests;
 namespace wrench.web.api.Controllers
 {
     /// <summary>
-    /// Serviço para o contexto de estoque, 
-    /// responsável por expor os endpoints relacionados a criação, consulta, 
-    /// atualização e exclusão peças.
+    /// Serviço para criar, atualizar e listar peças
     /// </summary>
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -44,7 +43,7 @@ namespace wrench.web.api.Controllers
         /// <param name="requisicao"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] RequisicaoPaginada requisicao)
+        public async Task<IActionResult> GetAll([FromQuery] PecaRequisicaoPaginada requisicao)
         {
             var obterTodasPecasQuery = new ObterTodasPecasQuery(requisicao);
 

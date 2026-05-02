@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wrench.auto.repair.autenticacao.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,7 +34,7 @@ namespace wrench.auto.repair.autenticacao.infra.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
-                    Senha = table.Column<string>(type: "text", nullable: false),
+                    Senha = table.Column<string>(type: "text", nullable: true),
                     PerfilId = table.Column<Guid>(type: "uuid", nullable: false),
                     Ativo = table.Column<bool>(type: "boolean", nullable: false),
                     DateCadastro = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)

@@ -9,7 +9,7 @@ using wrench.web.api.Extensions;
 namespace wrench.web.api.Controllers
 {
     /// <summary>
-    /// Serviço para listagem de Perfis
+    /// Serviço para Listar Perfis
     /// </summary>
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -18,7 +18,7 @@ namespace wrench.web.api.Controllers
     public class PerfilController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
-        /// Obter todos os usuário
+        /// Listar todos os perfis
         /// </summary>
         /// <returns></returns>
         [HttpGet]

@@ -3,6 +3,7 @@ using MediatR;
 using wrench.auto.repair.autenticacao.application.Queries.ViewModels;
 using wrench.auto.repair.autenticacao.domain.Data;
 using wrench.auto.repair.autenticacao.domain.Entities;
+using wrench.auto.repair.core.Data;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Pagination;
 
@@ -10,6 +11,7 @@ namespace wrench.auto.repair.autenticacao.application.Queries
 {
     public class UsuarioQueryHandler(
         IMapper _mapper,
+        ISortMap<Usuario> _usuarioSortMap,
         IUsuarioRepository _usuarioRepository
     ) : IRequestHandler<ObterTodosPerfisQuery, Result<IEnumerable<PerfilViewModel>>>,
         IRequestHandler<ObterTodosUsuariosQuery, Result<ResultadoPaginado<UsuarioViewModel>>>,
@@ -35,7 +37,7 @@ namespace wrench.auto.repair.autenticacao.application.Queries
                 return Result<ResultadoPaginado<UsuarioViewModel>>.UnprocessableEntity(request.ObterErros());
 
             var usuarios = await _usuarioRepository
-                .BuscaPaginadaAsync(request.Paginacao, cancellationToken);
+                .BuscaPaginadaAsync(request.Paginacao, _usuarioSortMap.Map, cancellationToken);
 
             if (usuarios == null)
                 return Result<ResultadoPaginado<UsuarioViewModel>>.NotFound("Nenhum usuário cadastrado.");

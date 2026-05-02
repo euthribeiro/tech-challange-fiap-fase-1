@@ -1,5 +1,5 @@
-﻿using System.Net.Http.Json;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http.Json;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
@@ -35,7 +35,8 @@ namespace wrench.web.api.integration.tests.Tests
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Criar Ordem de Serviço Com Sucesso")]
+        [Trait("Integration", "WebApi")]
         public async Task Criar_Ordem_Servico_Com_Sucesso()
         {
             // Arrange
@@ -88,8 +89,9 @@ namespace wrench.web.api.integration.tests.Tests
             // Assert
             response.EnsureSuccessStatusCode();
         }
-    
-        [Fact]
+
+        [Fact(DisplayName = "Finalizar Ordem de Serviço Com Sucesso")]
+        [Trait("Integration", "WebApi")]
         public async Task Finalizar_Ordem_Servico_Com_Sucesso()
         {
             // Arrange

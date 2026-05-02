@@ -1,5 +1,7 @@
 ﻿using Moq;
 using Moq.AutoMock;
+using System.Linq.Expressions;
+using wrench.auto.repair.autenticacao.application.Paginacao;
 using wrench.auto.repair.autenticacao.application.Queries;
 using wrench.auto.repair.autenticacao.application.tests.Fixtures;
 using wrench.auto.repair.autenticacao.domain.Data;
@@ -39,11 +41,12 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioQuery
         {
             // Arrange
             var resultadoPaginadoUsuario = new ResultadoPaginado<Usuario>([], 0, 1, 10);
-            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery(new RequisicaoPaginada());
+            var obterTodosUsuariosQuery = new ObterTodosUsuariosQuery(new UsuarioRequisicaoPaginada());
             var autoMocker = new AutoMocker();
             var usuarioQueryHandler = autoMocker.CreateInstance<UsuarioQueryHandler>();
+
             autoMocker.GetMock<IUsuarioRepository>().
-                Setup(u => u.BuscaPaginadaAsync(It.IsAny<RequisicaoPaginada>(), It.IsAny<CancellationToken>()))
+                Setup(u => u.BuscaPaginadaAsync(It.IsAny<UsuarioRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Usuario, object?>>>>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult<ResultadoPaginado<Usuario>>(resultadoPaginadoUsuario));
 
             // Act
@@ -52,7 +55,7 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioQuery
             // Assert
             Assert.True(result.Sucesso);
             autoMocker.GetMock<IUsuarioRepository>()
-                .Verify(u => u.BuscaPaginadaAsync(It.IsAny<RequisicaoPaginada>(), It.IsAny<CancellationToken>()), Times.Once);
+                .Verify(u => u.BuscaPaginadaAsync(It.IsAny<UsuarioRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Usuario, object?>>>>(), It.IsAny<CancellationToken>()), Times.Once);
         }
 
 

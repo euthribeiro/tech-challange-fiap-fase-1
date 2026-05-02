@@ -1,19 +1,22 @@
 ﻿namespace wrench.auto.repair.core.Pagination
 {
-    public class RequisicaoPaginada
+    public abstract class RequisicaoPaginada
     {
         private const int TamanhoMinimoPagina = 1;
         private const int TamanhoMaximoPagina = 100;
+        public readonly IEnumerable<string> _podeOrdenarPor;
 
-        public RequisicaoPaginada()
+        public RequisicaoPaginada(IEnumerable<string> podeOrdernarPor)
         {
             NumeroPagina = 1;
             TamanhoPagina = 10;
             OrdenarPor = null;
             Decrescente = false;
+            _podeOrdenarPor = podeOrdernarPor;
         }
 
         public RequisicaoPaginada(
+            IEnumerable<string> podeOrdernarPor,
             int numeroPagina = 1,
             int tamanhoPagina = 10,
             string? ordenarPor = null,
@@ -24,6 +27,7 @@
             TamanhoPagina = tamanhoPagina;
             OrdenarPor = ordenarPor;
             Decrescente = decrescente;
+            _podeOrdenarPor = podeOrdernarPor;
         }
 
         private int _numeroPagina = 1;

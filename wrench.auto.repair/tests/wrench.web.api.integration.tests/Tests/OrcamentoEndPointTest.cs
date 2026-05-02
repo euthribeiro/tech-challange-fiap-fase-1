@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.Text;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
@@ -36,8 +34,9 @@ namespace wrench.web.api.integration.tests.Tests
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
-        [Fact]
-        public async Task Realizar_Diagnostico_Com_Sucesso()
+        [Fact(DisplayName = "Realizar Orçamento Com Sucesso")]
+        [Trait("Integration", "WebApi")]
+        public async Task Realizar_Orcamento_Com_Sucesso()
         {
             // Arrange
             using var scope = _integrationTestFactory.Services.CreateScope();

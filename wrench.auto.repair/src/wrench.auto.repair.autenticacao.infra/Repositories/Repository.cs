@@ -7,7 +7,7 @@ using wrench.auto.repair.core.Pagination;
 namespace wrench.auto.repair.autenticacao.infra.Repositories
 {
     public class Repository<TEntity>(AutenticacaoContext _context) : IRepository<TEntity>
-        where TEntity : Entity, IAggregateRoot
+       where TEntity : Entity, IAggregateRoot
     {
         protected readonly DbSet<TEntity> DbSet = _context.Set<TEntity>();
 
@@ -48,15 +48,21 @@ namespace wrench.auto.repair.autenticacao.infra.Repositories
             _context?.Dispose();
         }
 
-        public async Task<ResultadoPaginado<TEntity>> BuscaPaginadaAsync(RequisicaoPaginada request, CancellationToken cancellationToken)
+        public async Task<ResultadoPaginado<TEntity>> BuscaPaginadaAsync(
+            RequisicaoPaginada request,
+            Dictionary<string, Expression<Func<TEntity, object>>> sortMap,
+            CancellationToken cancellationToken)
         {
             var query = _context.Set<TEntity>().AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(request.OrdenarPor))
+            ValidarOrdenacao(request, sortMap);
+
+            if (!string.IsNullOrWhiteSpace(request.OrdenarPor)
+                && sortMap.TryGetValue(request.OrdenarPor, out var orderExpression))
             {
                 query = request.Decrescente
-                    ? query.OrderByDescending(e => EF.Property<object>(e, request.OrdenarPor))
-                    : query.OrderBy(e => EF.Property<object>(e, request.OrdenarPor));
+                    ? query.OrderByDescending(orderExpression)
+                    : query.OrderBy(orderExpression);
             }
 
             var totalCount = await query.CountAsync(cancellationToken);
@@ -66,7 +72,75 @@ namespace wrench.auto.repair.autenticacao.infra.Repositories
                 .Take(request.TamanhoPagina)
                 .ToListAsync(cancellationToken);
 
-            return new ResultadoPaginado<TEntity>(items, totalCount, request.NumeroPagina, request.TamanhoPagina);
+            return new ResultadoPaginado<TEntity>(
+                items,
+                totalCount,
+                request.NumeroPagina,
+                request.TamanhoPagina,
+                sortMap.Keys);
+        }
+
+        private static Expression<Func<TEntity, object>> BuildOrderExpression<TEntity>(string propertyPath)
+        {
+            var parameter = Expression.Parameter(typeof(TEntity), "e");
+
+            Expression body = parameter;
+            Type currentType = typeof(TEntity);
+
+            foreach (var member in propertyPath.Split('.'))
+            {
+                var property = currentType.GetProperty(member);
+
+                if (property == null)
+                    throw new InvalidOperationException($"Propriedade '{member}' não encontrada em '{currentType.Name}'");
+
+                body = Expression.Property(body, property);
+                currentType = property.PropertyType;
+            }
+
+            if (!IsScalar(currentType))
+            {
+                var scalarProperty = currentType
+                    .GetProperties()
+                    .FirstOrDefault(p => IsScalar(p.PropertyType));
+
+                if (scalarProperty == null)
+                    throw new InvalidOperationException($"Nenhuma propriedade escalar encontrada em '{currentType.Name}'");
+
+                body = Expression.Property(body, scalarProperty);
+            }
+
+            var converted = Expression.Convert(body, typeof(object));
+
+            return Expression.Lambda<Func<TEntity, object>>(converted, parameter);
+        }
+
+        private static bool IsScalar(Type type)
+        {
+            type = Nullable.GetUnderlyingType(type) ?? type;
+
+            return type.IsPrimitive
+                || type.IsEnum
+                || type == typeof(string)
+                || type == typeof(decimal)
+                || type == typeof(DateTime)
+                || type == typeof(Guid);
+        }
+
+        private static void ValidarOrdenacao<TEntity>(
+            RequisicaoPaginada request,
+            Dictionary<string, Expression<Func<TEntity, object>>> sortMap)
+        {
+            if (string.IsNullOrWhiteSpace(request.OrdenarPor))
+                return;
+
+            if (!sortMap.ContainsKey(request.OrdenarPor))
+            {
+                var campos = string.Join(", ", sortMap.Keys);
+
+                throw new ArgumentException(
+                    $"A ordenação só é permitida para os campos: {campos}");
+            }
         }
     }
 }

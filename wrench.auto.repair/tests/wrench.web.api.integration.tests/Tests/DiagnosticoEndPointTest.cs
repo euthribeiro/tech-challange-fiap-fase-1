@@ -1,15 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
-using Xunit;
 
 namespace wrench.web.api.integration.tests.Tests
 {
@@ -40,7 +35,8 @@ namespace wrench.web.api.integration.tests.Tests
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Realizar Diagnóstico Com Sucesso")]
+        [Trait("Integration", "WebApi")]
         public async Task Realizar_Diagnostico_Com_Sucesso()
         {
             // Arrange
@@ -93,7 +89,7 @@ namespace wrench.web.api.integration.tests.Tests
             var request = new
             {
                 OrdemServicoId = ordemServicoId,
-               
+
             };
 
             var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");

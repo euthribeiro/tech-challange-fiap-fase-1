@@ -47,7 +47,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         {
             if (Status != OrdemServicoStatus.EmDiagnostico)
                 throw new DomainException("A ordem de serviço não está em um status que permite orçamento.");
-            
+
             Orcamento = new Orcamento(Id, dataCriacao, null);
             Status = OrdemServicoStatus.AguardandoAprovacao;
         }

@@ -8,22 +8,24 @@ namespace wrench.web.api.Models.Requests
     public class CriarPecaRequest
     {
         /// <summary>
-        /// Descrição da ordem de serviço
+        /// Nome da peça
         /// </summary>
         public string Nome { get; set; }
 
         /// <summary>
-        /// Descrição da ordem de serviço
+        /// Descrição da peça
         /// </summary>
         public string Descricao { get; set; }
+
         /// <summary>
-        /// Descrição da ordem de serviço
+        /// Valor da peça
         /// </summary>
         public double Valor { get; set; }
+
         /// <summary>
-        /// Descrição da ordem de serviço
+        /// Quantidade da Peça
         /// </summary>
-        public double Quantidade { get; set; }
+        public int Quantidade { get; set; }
 
         /// <summary>
         /// Estado da peça no sistema

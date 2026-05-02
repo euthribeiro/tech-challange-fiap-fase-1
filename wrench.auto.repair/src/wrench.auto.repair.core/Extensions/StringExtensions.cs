@@ -28,5 +28,15 @@ namespace wrench.auto.repair.core.Extensions
         {
             return Regex.Replace(text, @"\s+", " ");
         }
+
+        public static string RemoverCaracteresNaoNumericos(this string text)
+        {
+            return Regex.Replace(text, @"\D", "");
+        }
+
+        public static string RemoverCaracteresNaoAlfaNumericos(this string text)
+        {
+            return Regex.Replace(text, @"\W", "");
+        }
     }
 }

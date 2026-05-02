@@ -6,6 +6,6 @@
         public string Email { get; init; }
         public PerfilViewModel Perfil { get; init; }
         public bool Ativo { get; init; }
-        public DateTime DateCadastro { get; init; }
+        public DateTime DataCadastro { get; init; }
     }
 }

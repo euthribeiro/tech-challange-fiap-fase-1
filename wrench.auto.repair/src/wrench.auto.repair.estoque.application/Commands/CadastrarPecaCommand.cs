@@ -3,12 +3,12 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.estoque.application.Commands
 {
-    public class CadastrarPecaCommand(string nome, string descricao, double valor, double quantidade, bool ativo) : Command<Guid>
+    public class CadastrarPecaCommand(string nome, string descricao, double valor, int quantidade, bool ativo) : Command<Guid>
     {
         public string Nome { get; private set; } = nome;
         public string Descricao { get; private set; } = descricao;
         public double Valor { get; private set; } = valor;
-        public double Quantidade { get; private set; } = quantidade;
+        public int Quantidade { get; private set; } = quantidade;
         public bool Ativo { get; private set; } = ativo;
 
         public override bool EhValido()

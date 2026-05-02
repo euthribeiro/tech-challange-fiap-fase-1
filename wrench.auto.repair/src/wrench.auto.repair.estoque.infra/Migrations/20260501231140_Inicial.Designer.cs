@@ -12,15 +12,14 @@ using wrench.auto.repair.estoque.infra.Context;
 namespace wrench.auto.repair.estoque.infra.Migrations
 {
     [DbContext(typeof(PecaDbContext))]
-    [Migration("20260429040809_NomePecaUnico")]
-    partial class NomePecaUnico
+    [Migration("20260501231140_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("peca")
                 .HasAnnotation("ProductVersion", "10.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -46,8 +45,8 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double>("Quantidade")
-                        .HasColumnType("double precision");
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("integer");
 
                     b.Property<double>("Valor")
                         .HasColumnType("double precision");
@@ -57,7 +56,7 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                     b.HasIndex("Nome")
                         .IsUnique();
 
-                    b.ToTable("Pecas", "peca");
+                    b.ToTable("Pecas");
                 });
 #pragma warning restore 612, 618
         }

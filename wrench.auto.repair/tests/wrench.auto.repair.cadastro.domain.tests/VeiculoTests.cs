@@ -17,37 +17,37 @@ namespace wrench.auto.repair.cadastro.domain.tests
             // Act & Assert
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.Empty, "Fiat", "Toro", "Preto", 2018, 2019, placa, null, null, 0);
+                new Veiculo(Guid.Empty, "Fiat", "Toro", "Preto", 2018, 2019, placa, null, null, 0, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.NewGuid(), "", "Toro", "Preto", 2018, 2019, placa, null, null, 0);
+                new Veiculo(Guid.NewGuid(), "", "Toro", "Preto", 2018, 2019, placa, null, null, 0, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.NewGuid(), "Fiat", "", "Preto", 2018, 2019, placa, null, null, 0);
+                new Veiculo(Guid.NewGuid(), "Fiat", "", "Preto", 2018, 2019, placa, null, null, 0, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "", 0, 2019, placa, null, null, 0);
+                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "", 0, 2019, placa, null, null, 0, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 0, 2019, placa, null, null, 0);
+                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 0, 2019, placa, null, null, 0, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 0, "", null, null, 0);
+                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 0, "", null, null, 0, DateTime.UtcNow);
             });
 
             Assert.Throws<DomainException>(() =>
             {
-                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 0, "GGG", null, null, 0);
+                new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 0, "GGG", null, null, 0, DateTime.UtcNow);
             });
         }
 
@@ -60,7 +60,7 @@ namespace wrench.auto.repair.cadastro.domain.tests
             var placa = _veiculoFixture.GerarPlacaVeiculo();
 
             // Act
-            var veiculo = new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 2019, placa, null, DateTime.UtcNow, 100000);
+            var veiculo = new Veiculo(Guid.NewGuid(), "Fiat", "Toro", "Preto", 2018, 2019, placa, null, DateTime.UtcNow, 100000, DateTime.UtcNow);
 
             // Assert
             Assert.NotNull(veiculo);

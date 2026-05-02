@@ -1,15 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
+using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
-using Xunit;
+using wrench.web.api.Models.Diagnostico;
 
 namespace wrench.web.api.integration.tests.Tests
 {
@@ -59,15 +56,15 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var clienteCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarClienteCommand(
-                "44580535820",
+                "92761932005",
                 "Cliente Teste",
                 "11999999999",
-                "cliente@teste.com",
+                "cliente@teste1.com",
                 enderecoDto
             );
 
             var clienteResponse = await mediatoR.Send(clienteCommand);
-            var clienteId = clienteResponse.Id;
+            var clienteId = clienteResponse.Valor;
 
             var veiculoCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarVeiculoCommand(
                 clienteId,
@@ -76,34 +73,39 @@ namespace wrench.web.api.integration.tests.Tests
                 "Cor Teste",
                 2020,
                 2021,
-                "ABC-1234",
+                "ABC-1235",
                 "Veiculo Teste",
                 DateTime.UtcNow,
                 10000
             );
 
             var veiculoResponse = await mediatoR.Send(veiculoCommand);
-            var veiculoId = veiculoResponse.Id;
+            var veiculoId = veiculoResponse.Valor;
 
             var ordemServicoCommand = new CriarOrdemServicoCommand(clienteId, veiculoId, "Problema no sistema de freios");
 
             var ordemServicoResponse = await mediatoR.Send(ordemServicoCommand);
-            var ordemServicoId = ordemServicoResponse.Id;
+            var ordemServicoId = ordemServicoResponse.Valor;
 
-            var request = new
+            var solicitaDiagnostico = new SolicitarDiagnosticoCommand(ordemServicoId);
+            var diagnosticoResponse = await mediatoR.Send(solicitaDiagnostico);
+
+            var request = new RealizarDiagnosticoRequest
             {
                 OrdemServicoId = ordemServicoId,
-               
+                SolucaoProposta = "Substituição das pastilhas de freio",
+                ValorEstimado = 500.00m
             };
 
             var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _httpClient.PostAsync("/api/diagnostico", content);
+            var response = await _httpClient.PostAsync("/api/v1/diagnostico", content);
 
+            var resultString = await response.Content.ReadAsStringAsync();
             // Assert
             response.EnsureSuccessStatusCode();
-            Assert.Equal(System.Net.HttpStatusCode.Created, response.StatusCode);
+            Assert.Equal(System.Net.HttpStatusCode.NoContent, response.StatusCode);
         }
     }
 }

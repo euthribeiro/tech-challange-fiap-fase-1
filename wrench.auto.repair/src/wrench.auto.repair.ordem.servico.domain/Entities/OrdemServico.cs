@@ -32,6 +32,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
 
             Diagnostico = new Diagnostico(solucao, valorEstimado);
 
+            Orcamento = new Orcamento(Id, DateTime.UtcNow, null);
             Status = OrdemServicoStatus.AguardandoAprovacao;
         }
 
@@ -41,15 +42,6 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
                 throw new DomainException("A ordem de serviço não está em um status que permite solicitar diagnóstico.");
 
             Status = OrdemServicoStatus.EmDiagnostico;
-        }
-
-        public void AdicionarOrcamento(DateTime dataCriacao)
-        {
-            if (Status != OrdemServicoStatus.EmDiagnostico)
-                throw new DomainException("A ordem de serviço não está em um status que permite orçamento.");
-            
-            Orcamento = new Orcamento(Id, dataCriacao, null);
-            Status = OrdemServicoStatus.AguardandoAprovacao;
         }
 
         public void AprovarOrcamento()

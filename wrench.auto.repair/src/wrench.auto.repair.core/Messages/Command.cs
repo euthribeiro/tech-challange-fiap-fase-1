@@ -7,6 +7,7 @@ namespace wrench.auto.repair.core.Messages
     public abstract class Command : Message, IRequest<Result>
     {
         public DateTime Timestamp { get; private set; }
+        [System.Text.Json.Serialization.JsonIgnore]
         public ValidationResult ValidationResult { get; set; }
 
         protected Command()

@@ -32,16 +32,13 @@ namespace wrench.web.api.integration.tests.Base
             await ordemContext.Database.EnsureCreatedAsync();
 
             var cadastroContext = scope.ServiceProvider.GetRequiredService<CadastroContext>();
-            var dbCreatorCadastro = cadastroContext.Database.GetService<Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseCreator>();
-            await dbCreatorCadastro.CreateTablesAsync();
+            await cadastroContext.Database.EnsureCreatedAsync();
 
             var authContext = scope.ServiceProvider.GetRequiredService<AutenticacaoContext>();
-            var dbCreatorAuth = authContext.Database.GetService<Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseCreator>();
-            await dbCreatorAuth.CreateTablesAsync();
+            await authContext.Database.EnsureCreatedAsync();
 
             var estoqueContext = scope.ServiceProvider.GetRequiredService<PecaDbContext>();
-            var dbCreatorEstoque = estoqueContext.Database.GetService<Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseCreator>();
-            await dbCreatorEstoque.CreateTablesAsync();
+            await estoqueContext.Database.EnsureCreatedAsync();
 
         }
 

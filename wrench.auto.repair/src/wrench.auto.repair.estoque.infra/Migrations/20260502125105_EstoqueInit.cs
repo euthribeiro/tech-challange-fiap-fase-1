@@ -6,17 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wrench.auto.repair.estoque.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class PecaInitialCreate : Migration
+    public partial class EstoqueInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "peca");
-
             migrationBuilder.CreateTable(
                 name: "Pecas",
-                schema: "peca",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -24,20 +20,26 @@ namespace wrench.auto.repair.estoque.infra.Migrations
                     Descricao = table.Column<string>(type: "text", nullable: false),
                     Valor = table.Column<double>(type: "double precision", nullable: false),
                     Quantidade = table.Column<double>(type: "double precision", nullable: false),
+                    Ativo = table.Column<bool>(type: "boolean", nullable: false),
                     DataCadastro = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pecas", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pecas_Nome",
+                table: "Pecas",
+                column: "Nome",
+                unique: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Pecas",
-                schema: "peca");
+                name: "Pecas");
         }
     }
 }

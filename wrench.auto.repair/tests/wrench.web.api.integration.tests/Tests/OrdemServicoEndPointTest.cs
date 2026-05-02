@@ -1,10 +1,11 @@
-﻿using System.Net.Http.Json;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http.Json;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
+using wrench.web.api.Models.OrdemServico;
 
 namespace wrench.web.api.integration.tests.Tests
 {
@@ -54,7 +55,7 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var clienteCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarClienteCommand(
-                "44580535820",
+                "07940660039",
                 "Cliente Teste",
                 "11999999999",
                 "cliente@teste.com",
@@ -62,7 +63,7 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var clienteResponse = await mediatoR.Send(clienteCommand);
-            var clienteId = clienteResponse.Id;
+            var clienteId = clienteResponse.Valor;
 
             var veiculoCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarVeiculoCommand(
                 clienteId,
@@ -78,7 +79,7 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var veiculoResponse = await mediatoR.Send(veiculoCommand);
-            var veiculoId = veiculoResponse.Id;
+            var veiculoId = veiculoResponse.Valor;
 
             var command = new CriarOrdemServicoCommand(clienteId, veiculoId, "Teste de criação de ordem de serviço");
 
@@ -108,7 +109,7 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var clienteCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarClienteCommand(
-                "44580535820",
+                "01905075006",
                 "Cliente Teste Finalizar",
                 "11999999999",
                 "cliente.finalizar@teste.com",
@@ -116,7 +117,7 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var clienteResponse = await mediatoR.Send(clienteCommand);
-            var clienteId = clienteResponse.Id;
+            var clienteId = clienteResponse.Valor;
 
             var veiculoCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarVeiculoCommand(
                 clienteId,
@@ -132,11 +133,11 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var veiculoResponse = await mediatoR.Send(veiculoCommand);
-            var veiculoId = veiculoResponse.Id;
+            var veiculoId = veiculoResponse.Valor;
 
             var criarCommand = new CriarOrdemServicoCommand(clienteId, veiculoId, "Teste de finalização de ordem de serviço");
             var ordemServicoResponse = await mediatoR.Send(criarCommand);
-            var ordemServicoId = ordemServicoResponse.Id;
+            var ordemServicoId = ordemServicoResponse.Valor;
 
             // Passar a ordem de serviço pelos fluxos necessários
             var solicitarDiagnosticoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.SolicitarDiagnosticoCommand(ordemServicoId);
@@ -145,16 +146,13 @@ namespace wrench.web.api.integration.tests.Tests
             var realizarDiagnosticoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.RealizarDiagnosticoCommand(ordemServicoId, 199.99m, "Solução proposta");
             await mediatoR.Send(realizarDiagnosticoCommand);
 
-            var criarOrcamentoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.CriarOrcamentoCommand(ordemServicoId);
-            await mediatoR.Send(criarOrcamentoCommand);
-
             var aprovaOrcamentoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.AprovaOrcamentoCommand(ordemServicoId);
             await mediatoR.Send(aprovaOrcamentoCommand);
 
-            var finalizarCommand = new FinalizarOrdemServicoCommand(ordemServicoId);
+            var request = new AtualizarOrdemServicoRequest(ordemServicoId);
 
             // Act
-            var response = await _httpClient.PutAsJsonAsync($"/api/v1/diagnostico", finalizarCommand);
+            var response = await _httpClient.PutAsJsonAsync($"/api/v1/ordem-servico", request);
 
             // Assert
             response.EnsureSuccessStatusCode();

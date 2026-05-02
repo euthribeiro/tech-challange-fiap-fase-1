@@ -11,6 +11,26 @@ namespace wrench.web.api.Contexts
 {
     public static class DatabaseContextConfigure
     {
+        public static async Task ApplyMigrationsAsync(this WebApplication app)
+        {
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                var autenticacaoContext = services.GetRequiredService<AutenticacaoContext>();
+                await autenticacaoContext.Database.MigrateAsync();
+
+                var ordemServicoContext = services.GetRequiredService<OrdemServicoDbContext>();
+                await ordemServicoContext.Database.MigrateAsync();
+
+                var cadastroContext = services.GetRequiredService<CadastroContext>();
+                await cadastroContext.Database.MigrateAsync();
+
+                var estoqueContext = services.GetRequiredService<PecaDbContext>();
+                await estoqueContext.Database.MigrateAsync();
+            }
+        }
+
         public static async Task UseSeeds(this WebApplication app)
         {
             using (var scope = app.Services.CreateScope())

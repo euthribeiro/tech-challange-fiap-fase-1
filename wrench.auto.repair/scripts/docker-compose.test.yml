@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db-test:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db_wrench_test
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"  # Using 5433 to not conflict with main db
+    volumes:
+      - pgdata-test:/var/lib/postgresql/data
+
+  test-runner:
+    build:
+      context: ..
+      dockerfile: scripts/Dockerfile.test
+    environment:
+      - ConnectionStrings__Database=Host=db-test;Port=5432;Database=db_wrench_test;Username=postgres;Password=postgres
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - db-test
+
+volumes:
+  pgdata-test:

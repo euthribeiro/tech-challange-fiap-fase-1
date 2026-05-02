@@ -32,7 +32,7 @@ public class Peca : Entity, IAggregateRoot
 
     public void AlterarDescricao(string descricao)
     {
-        Validacoes.ValidarSeNulo(descricao, "A descrição da peça não pode ser vazio");
+        Validacoes.ValidarSeVazio(descricao, "A descrição da peça não pode ser vazio");
         Descricao = descricao.Trim().RemoverAcentos().ToUpperInvariant();
     }
 
@@ -70,8 +70,8 @@ public class Peca : Entity, IAggregateRoot
 
     private void Validar(string nome, string descricao, double valor, int quantidade)
     {
-        Validacoes.ValidarSeNulo(nome, "O nome da peça não pode ser vazio");
-        Validacoes.ValidarSeNulo(descricao, "A descrição da peça não pode ser vazio");
+        Validacoes.ValidarSeVazio(nome, "O nome da peça não pode ser vazio");
+        Validacoes.ValidarSeVazio(descricao, "A descrição da peça não pode ser vazio");
         Validacoes.ValidarSeMenorQue(valor, 0, "O valor da peça não pode ser negativo");
         Validacoes.ValidarSeMenorQue(quantidade, 0, "A quantidade não pode ser menor que 0");
     }

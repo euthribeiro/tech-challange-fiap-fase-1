@@ -14,7 +14,6 @@ namespace wrench.auto.repair.estoque.application.Queries
         ISortMap<Peca> _pecaSortMap,
         IPecaRepository _pecaRepository
     ) : IRequestHandler<ConsultarPecaPorIdQuery, Result<PecaViewModel>>,
-        IRequestHandler<ConsultaPecaPorNomeQuery, Result<IEnumerable<PecaViewModel>>>,
         IRequestHandler<ObterTodasPecasQuery, Result<ResultadoPaginado<PecaViewModel>>>
     {
         public async Task<Result<PecaViewModel>> Handle(ConsultarPecaPorIdQuery request, CancellationToken cancellationToken)
@@ -29,21 +28,6 @@ namespace wrench.auto.repair.estoque.application.Queries
             var pecaViewModel = _mapper.Map<PecaViewModel>(peca);
 
             return Result<PecaViewModel>.Ok(pecaViewModel);
-        }
-
-        public async Task<Result<IEnumerable<PecaViewModel>>> Handle(ConsultaPecaPorNomeQuery request, CancellationToken cancellationToken)
-        {
-            if (!request.EhValido())
-                return Result<IEnumerable<PecaViewModel>>.ValidationError(request.ObterErros());
-
-            var pecas = _pecaRepository.ConsultaPecaPorNome(request.Nome);
-
-            if (pecas == null)
-                return Result<IEnumerable<PecaViewModel>>.NotFound("Peça não encontrada");
-
-            var pecaViewModels = _mapper.Map<IEnumerable<PecaViewModel>>(pecas);
-
-            return Result<IEnumerable<PecaViewModel>>.Ok(pecaViewModels);
         }
 
         public async Task<Result<ResultadoPaginado<PecaViewModel>>> Handle(ObterTodasPecasQuery request, CancellationToken cancellationToken)

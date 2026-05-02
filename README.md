@@ -15,36 +15,26 @@
 
 <img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="350">
 
-## Docker
+## 🚀 Como Executar o Projeto
 
 Os scripts de execução ficam em [`wrench.auto.repair/scripts`](wrench.auto.repair/scripts).
 
 ### Subir a aplicação
 
+Ao subir a aplicação, será iniciado um container docker da aplicação e do postgres, estão sendo usada as portas **5432** (database) e **8080** para API, certifique-se se essas duas portas estão disponíveis.
+
 ```powershell
-cd wrench.auto.repair
-.\scripts\run-app.ps1
+docker-compose up
 ```
 
-### Executar testes unitários
+### Executar todos os testes (unitários e de integraação)
+
+Serão executado primeiramente todos testes unitários e após serão executados os de integração, ao final da execução de cada projeto de teste é exibida uma estatística de quantidade (testes totais, total de sucesso e total de falhas)
 
 ```powershell
-cd wrench.auto.repair
-.\scripts\run-unit-tests.ps1
-```
 
-### Executar testes de integração
+docker-compose -f docker-compose.test.yml up --abort-on-container-exit 
 
-```powershell
-cd wrench.auto.repair
-.\scripts\run-integration-tests.ps1
-```
-
-### Executar todos os testes
-
-```powershell
-cd wrench.auto.repair
-.\scripts\run-all-tests.ps1
 ```
 
 ## A História

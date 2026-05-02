@@ -5,5 +5,7 @@ namespace wrench.auto.repair.estoque.domain.Data;
 
 public interface IPecaRepository : IRepository<Peca>
 {
-    Task<IEnumerable<Peca>> ConsultaPecaPorNome(string nomePeca);
+    Task<Peca?> ObterPorNomeAsync(string nomePeca, CancellationToken cancellationToken);
+
+    Task<IEnumerable<Peca>> ConsultaPorNomeAsync(string nomePeca, CancellationToken cancellationToken);
 }

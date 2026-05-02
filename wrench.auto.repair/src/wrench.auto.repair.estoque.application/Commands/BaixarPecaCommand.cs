@@ -20,10 +20,10 @@ namespace wrench.auto.repair.estoque.application.Commands
     {
         private static readonly int QUANTIDADE_MINIMA = 1;
 
-        private static string PecaIdVazioError =>
+        public static string PecaIdVazioError =>
             "O identificador da peça precisa ser informado";
 
-        private static string QuantidadeMinimaError =>
+        public static string QuantidadeMinimaError =>
             $"A quantidade mínima de peças deve ser {QUANTIDADE_MINIMA}";
 
         public BaixarPecaCommandValidator()

@@ -26,7 +26,6 @@ namespace wrench.auto.repair.estoque.application.Commands
         public static string NomeVazioError => "O nome não pode ser vazio";
         public static string DescricaoVazioError => "A descrição não pode ser vazia";
         public static string ValorMinimoError => $"O valor deve ser maior que {VALOR_MINIMO}";
-        public static string QuantidadeMinimaError => $"A quantidade deve ser maior que {VALOR_MINIMO}";
 
         public AtualizarPecaCommandValidator()
         {

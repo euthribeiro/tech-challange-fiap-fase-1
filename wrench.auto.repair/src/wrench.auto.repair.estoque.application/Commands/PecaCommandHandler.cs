@@ -72,6 +72,12 @@ namespace wrench.auto.repair.estoque.application.Commands
             var peca = new Peca(request.Nome, request.Descricao, request.Valor,
                                 request.Quantidade, request.Ativo, DateTime.UtcNow);
 
+            var pecaExistente = await _pecaRepository
+                .ObterPorNomeAsync(peca.Nome, cancellationToken);
+
+            if (pecaExistente != null)
+                return Result<Guid>.Conflicted("A peça informada já está cadastrada");
+
             await _pecaRepository.Adicionar(peca, cancellationToken);
 
             var pecaSalva = await _pecaRepository.UnitOfWork.CommitAsync();
@@ -137,12 +143,21 @@ namespace wrench.auto.repair.estoque.application.Commands
             if (peca == null)
                 return Result.NotFound("Peça não encontrada");
 
-            peca.AlterarNome(request.Nome);
+            if (!peca.Nome.Equals(request.Nome, StringComparison.InvariantCultureIgnoreCase))
+            {
+                var pecaExistente = await _pecaRepository
+                    .ObterPorNomeAsync(peca.Nome, cancellationToken);
+
+                if (pecaExistente != null)
+                    return Result.Conflicted("O nome da peça já está sendo utilizado por outro registro.");
+
+                peca.AlterarNome(request.Nome);
+            }
+
             peca.AlterarDescricao(request.Nome);
             peca.AlterarValor(request.Valor);
 
-            if (request.Ativo)
-                peca.Ativar();
+            if (request.Ativo) peca.Ativar();
             else peca.Inativar();
 
             await _pecaRepository.Atualizar(peca);

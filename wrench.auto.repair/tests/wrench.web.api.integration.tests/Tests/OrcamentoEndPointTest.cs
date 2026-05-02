@@ -1,16 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.Net.Http.Json;
 using System.Text;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
 using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
-using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
-using wrench.web.api.Models.Diagnostico;
 using wrench.web.api.Models.OrdemServico;
 
 namespace wrench.web.api.integration.tests.Tests
@@ -42,7 +38,8 @@ namespace wrench.web.api.integration.tests.Tests
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Aprovar orçamento com sucesso")]
+        [Trait("Integration", "WebApi")]
         public async Task Aprovar_Orcamento_Com_Sucesso()
         {
             // Arrange
@@ -90,7 +87,7 @@ namespace wrench.web.api.integration.tests.Tests
             var ordemServicoCommand = new CriarOrdemServicoCommand(clienteId, veiculoId, "Problema no sistema de freios");
 
             var ordemServicoResponse = await mediatoR.Send(ordemServicoCommand);
-            var ordemServicoId = ordemServicoResponse.Valor;            
+            var ordemServicoId = ordemServicoResponse.Valor;
 
             var solicitaDiagnostico = new SolicitarDiagnosticoCommand(ordemServicoId);
             var diagnosticoResponse = await mediatoR.Send(solicitaDiagnostico);

@@ -1,27 +1,30 @@
-version: '3.8'
-
 services:
-  db-test:
-    image: postgres:latest
+  postgres-test:
+    image: postgres:16-alpine
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: db_wrench_test
-      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: ${POSTGRES_DB:-wrench_db_test}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
-      - "5433:5432"  # Using 5433 to not conflict with main db
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-wrench_db_test}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  dotnet-tests:
+    image: mcr.microsoft.com/dotnet/sdk:10.0
+    working_dir: /src
+    # Mapeia a pasta pai (raiz do repositório) para o diretório /src dentro do contêiner
     volumes:
-      - pgdata-test:/var/lib/postgresql/data
-
-  test-runner:
-    build:
-      context: ..
-      dockerfile: scripts/Dockerfile.test
+      - ../:/src
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - ConnectionStrings__Database=Host=db-test;Port=5432;Database=db_wrench_test;Username=postgres;Password=postgres
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres-test;Port=5432;Database=${POSTGRES_DB:-wrench_db_test};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres}
+      - TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal
+    
+    command: dotnet test wrench.auto.repair.sln --logger "console;verbosity=detailed"
     depends_on:
-      - db-test
-
-volumes:
-  pgdata-test:
+      postgres-test:
+        condition: service_healthy

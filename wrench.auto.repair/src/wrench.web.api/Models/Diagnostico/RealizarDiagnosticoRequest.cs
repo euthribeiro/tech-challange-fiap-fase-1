@@ -4,8 +4,7 @@ namespace wrench.web.api.Models.Diagnostico
 {
     public class RealizarDiagnosticoRequest
     {
-        public Guid OrdemServicoId { get; init; }
-        public Guid MecanicoId { get; init; }
+        public Guid OrdemServicoId { get; init; }       
         public decimal ValorEstimado { get; init; }
         public string SolucaoProposta { get; init; }
 

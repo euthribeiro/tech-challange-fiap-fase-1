@@ -15,6 +15,38 @@
 
 <img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="350">
 
+## Docker
+
+Os scripts de execução ficam em [`wrench.auto.repair/scripts`](wrench.auto.repair/scripts).
+
+### Subir a aplicação
+
+```powershell
+cd wrench.auto.repair
+.\scripts\run-app.ps1
+```
+
+### Executar testes unitários
+
+```powershell
+cd wrench.auto.repair
+.\scripts\run-unit-tests.ps1
+```
+
+### Executar testes de integração
+
+```powershell
+cd wrench.auto.repair
+.\scripts\run-integration-tests.ps1
+```
+
+### Executar todos os testes
+
+```powershell
+cd wrench.auto.repair
+.\scripts\run-all-tests.ps1
+```
+
 ## A História
 
 ### As Origens

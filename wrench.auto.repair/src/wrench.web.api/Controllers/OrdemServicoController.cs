@@ -30,5 +30,19 @@ namespace wrench.web.api.Controllers
 
             return result.ToActionResult();
         }
+
+        /// <summary>
+        /// Cria ordem de serviço
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] AtualizarOrdemServicoRequest request)
+        {
+            var result = await _mediatorHandler
+                .EnviarComando<FinalizarOrdemServicoCommand, Guid>((FinalizarOrdemServicoCommand)request);
+
+            return result.ToActionResult();
+        }
     }
 }

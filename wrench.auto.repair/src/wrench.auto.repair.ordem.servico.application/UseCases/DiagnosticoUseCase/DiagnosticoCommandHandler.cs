@@ -56,9 +56,6 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
 
             await _ordemServicoRepository.Atualizar(ordemServico);
 
-            //var comandoOrcamento = new CriarOrcamentoCommand(request.OrdemServicoId);
-            //await _mediator.Send(comandoOrcamento, cancellationToken);
-
             var salvo = await _ordemServicoRepository.UnitOfWork.CommitAsync();
 
             if (!salvo) return Result<Guid>.Unexpected("Não foi possível realizar o diagnóstico. Por favor tente novamente.");

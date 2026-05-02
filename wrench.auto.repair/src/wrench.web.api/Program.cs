@@ -60,6 +60,7 @@ builder.Services.AddApiVersioning(setupAction =>
 
 var app = builder.Build();
 
+await app.ApplyMigrationsAsync();
 await app.UseSeeds();
 
 if (app.Environment.IsDevelopment())

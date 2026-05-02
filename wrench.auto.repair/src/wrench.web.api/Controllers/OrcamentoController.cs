@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.web.api.Extensions;
-using wrench.web.api.Models.Orcamento;
+using wrench.web.api.Models.OrdemServico;
 
 namespace wrench.web.api.Controllers
 {
@@ -23,7 +23,7 @@ namespace wrench.web.api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] AprovaOrcamentoRequest request)
+        public async Task<IActionResult> Post([FromBody] AprovarOrcamentoRequest request)
         {
             var aprovarOrcamentoCommand = new AprovaOrcamentoCommand(request.OrdemServicoId);
 

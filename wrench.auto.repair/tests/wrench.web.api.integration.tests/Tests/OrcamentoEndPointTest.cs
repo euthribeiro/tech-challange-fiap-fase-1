@@ -1,13 +1,21 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Net.Http.Json;
 using System.Text;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
+using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
+using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
+using wrench.web.api.Models.Diagnostico;
+using wrench.web.api.Models.OrdemServico;
 
 namespace wrench.web.api.integration.tests.Tests
 {
+    [Collection("SharedContainer")]
     public class OrcamentoEndPointTest
     {
         private readonly HttpClient _httpClient;
@@ -34,9 +42,8 @@ namespace wrench.web.api.integration.tests.Tests
             _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token.Token);
         }
 
-        [Fact(DisplayName = "Realizar Orçamento Com Sucesso")]
-        [Trait("Integration", "WebApi")]
-        public async Task Realizar_Orcamento_Com_Sucesso()
+        [Fact]
+        public async Task Aprovar_Orcamento_Com_Sucesso()
         {
             // Arrange
             using var scope = _integrationTestFactory.Services.CreateScope();
@@ -54,15 +61,15 @@ namespace wrench.web.api.integration.tests.Tests
             );
 
             var clienteCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarClienteCommand(
-                "44580535820",
+                "83318154083",
                 "Cliente Teste",
-                "11999999999",
-                "cliente@teste.com",
+                "11999999998",
+                "clienteTeste@teste2.com",
                 enderecoDto
             );
 
             var clienteResponse = await mediatoR.Send(clienteCommand);
-            var clienteId = clienteResponse.Id;
+            var clienteId = clienteResponse.Valor;
 
             var veiculoCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarVeiculoCommand(
                 clienteId,
@@ -71,35 +78,38 @@ namespace wrench.web.api.integration.tests.Tests
                 "Cor Teste",
                 2020,
                 2021,
-                "ABC-1234",
+                "ABC-1237",
                 "Veiculo Teste",
                 DateTime.UtcNow,
                 10000
             );
 
             var veiculoResponse = await mediatoR.Send(veiculoCommand);
-            var veiculoId = veiculoResponse.Id;
+            var veiculoId = veiculoResponse.Valor;
 
             var ordemServicoCommand = new CriarOrdemServicoCommand(clienteId, veiculoId, "Problema no sistema de freios");
 
             var ordemServicoResponse = await mediatoR.Send(ordemServicoCommand);
-            var ordemServicoId = ordemServicoResponse.Id;
+            var ordemServicoId = ordemServicoResponse.Valor;            
 
+            var solicitaDiagnostico = new SolicitarDiagnosticoCommand(ordemServicoId);
+            var diagnosticoResponse = await mediatoR.Send(solicitaDiagnostico);
 
+            var registrarDiagnostico = new RealizarDiagnosticoCommand(ordemServicoId, 500.00m, "Problema identificado");
+            var registrarDiagnosticoResponse = await mediatoR.Send(registrarDiagnostico);
 
-            var request = new
-            {
-                OrdemServicoId = ordemServicoId
-            };
+            var request = new AprovarOrcamentoRequest(ordemServicoId);
 
             var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _httpClient.PostAsync("/api/v1/orcamento", content);
+            var response = await _httpClient.PostAsJsonAsync("/api/v1/orcamento", request);
+
+            var t = await response.Content.ReadAsStringAsync();
 
             // Assert
             response.EnsureSuccessStatusCode();
-            Assert.Equal(System.Net.HttpStatusCode.Created, response.StatusCode);
+            Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
     }
 }

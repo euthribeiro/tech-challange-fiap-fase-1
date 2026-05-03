@@ -87,7 +87,6 @@ namespace wrench.web.api.integration.tests.Tests
             {
                 ClienteId = clienteId,
                 VeiculoId = veiculoId,
-                AtendenteId = clienteId,
                 Descricao = "Teste de criação de ordem de serviço"
             };
 

@@ -36,7 +36,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             SolucaoProposta = string.Empty;
             MotivoRecusa = string.Empty;
             ValorServico = 0;
-            StatusAprovacao = StatusAprovacao.Indefinido;
+            StatusAprovacao = StatusAprovacaoEnum.Indefinido;
             DataDiagnostico = dataCriacao;
         }
 

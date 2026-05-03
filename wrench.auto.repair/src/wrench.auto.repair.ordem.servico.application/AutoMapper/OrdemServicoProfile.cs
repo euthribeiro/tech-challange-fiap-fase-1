@@ -13,7 +13,7 @@ namespace wrench.auto.repair.ordem.servico.application.AutoMapper
         {
             CreateMap<OrdemServico, OrdemServicoViewModel>()
                 .ForMember(o => o.Status, opt => opt.MapFrom(src => src.Status.GetAttribute<DescriptionAttribute>().Description))
-                .ForMember(o => o.StatusAprovacao, opt => opt.MapFrom(src => src.StatusAprovacao.GetAttribute<DescriptionAttribute>().Description))
+                .ForMember(o => o.StatusAprovacao, opt => opt.MapFrom(src => src.StatusAprovacao.HasValue ? src.StatusAprovacao.GetAttribute<DescriptionAttribute>().Description : null))
                 .ForMember(o => o.ValorTotal, opt => opt.MapFrom(src => src.CalcularValorTotal()));
 
             CreateMap<ItemOrdemServico, ItemOrdemServicoViewModel>();

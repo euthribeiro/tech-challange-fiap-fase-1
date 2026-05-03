@@ -32,6 +32,12 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             Descricao = descricao.RemoverAcentos().RemoverEspacosDuplicados().ToUpperInvariant();
             DataCriacao = dataCriacao;
             Status = status;
+
+            SolucaoProposta = string.Empty;
+            MotivoRecusa = string.Empty;
+            ValorServico = 0;
+            StatusAprovacao = StatusAprovacao.Indefinido;
+            DataDiagnostico = dataCriacao;
         }
 
         public void AdicionarDiagnostico(string solucao, decimal valorServico)

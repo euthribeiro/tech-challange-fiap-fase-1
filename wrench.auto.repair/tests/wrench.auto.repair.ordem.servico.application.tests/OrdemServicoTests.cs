@@ -4,6 +4,7 @@ using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.ordem.servico.application.Queries;
+using wrench.auto.repair.ordem.servico.application.Queries.ViewModels;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.auto.repair.ordem.servico.domain.Data;
@@ -25,6 +26,23 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             _repositoryMock = new Mock<IOrdemServicoRepository>();
             _mediatorMock = new Mock<IMediatorHandler>();
             var mapper = new Mock<IMapper>();
+            mapper.Setup(m => m.Map<OrdemServicoViewModel>(It.IsAny<OrdemServico>()))
+                .Returns((OrdemServico o) => new OrdemServicoViewModel
+                {
+                    Id = o.Id,
+                    ClienteId = o.ClienteId,
+                    VeiculoId = o.VeiculoId,
+                    Descricao = o.Descricao,
+                    DataCriacao = o.DataCriacao,
+                    Status = o.Status.ToString(),
+                    ValorServico = o.ValorServico,
+                    SolucaoProposta = o.SolucaoProposta ?? string.Empty,
+                    DataDiagnostico = o.DataDiagnostico,
+                    DataEnvio = o.DataEnvio,
+                    StatusAprovacao = o.StatusAprovacao.ToString(),
+                    DataAprovacaoRecusa = o.DataAprovacaoRecusa,
+                    ValorTotal = o.CalcularValorTotal()
+                });
 
             _commandHandler = new OrdemServicoCommandHandler(_mediatorMock.Object, _repositoryMock.Object);
             _orcamentoHandler = new OrcamentoCommandHandler(_repositoryMock.Object);

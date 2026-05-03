@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http.Json;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
+using wrench.auto.repair.estoque.application.Commands;
 using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
@@ -28,7 +30,7 @@ namespace wrench.web.api.integration.tests.Tests
 
             // Necessário criar um usuário válido conforme a regra de negócio/domain
             var email = new Email("teste@teste.com");
-            var perfil = new Perfil("Admin", "Administrador", true, DateTime.UtcNow);
+            var perfil = new Perfil("Cliente", "Cliente do sistema", true, DateTime.UtcNow);
 
             var usuario = new Usuario(email, perfil.Id, true, DateTime.UtcNow);
             // Associar perfil manualmente para o token generator conseguir ler as claims de perfil
@@ -89,25 +91,30 @@ namespace wrench.web.api.integration.tests.Tests
             var ordemServicoResponse = await mediatoR.Send(ordemServicoCommand);
             var ordemServicoId = ordemServicoResponse.Valor;
 
+            var nomePecaUnico = $"PASTILHA FREIO ORC INT {Guid.NewGuid():N}";
+            var cadastrarPeca = new CadastrarPecaCommand(
+                nomePecaUnico,
+                "Pastilha para sistema de freios — teste integração orçamento",
+                149.90,
+                20,
+                true);
+            var pecaResponse = await mediatoR.Send(cadastrarPeca);
+            var pecaId = pecaResponse.Valor;
+
             var solicitaDiagnostico = new SolicitarDiagnosticoCommand(ordemServicoId);
             var diagnosticoResponse = await mediatoR.Send(solicitaDiagnostico);
 
-            // Incluir peças
-            var registrarDiagnostico = new RealizarDiagnosticoCommand(ordemServicoId, 500.00m, "Problema identificado", []);
+            var pecasIds = new HashSet<Guid> { pecaId };
+            var registrarDiagnostico = new RealizarDiagnosticoCommand(ordemServicoId, 500.00m, "Problema identificado", pecasIds);
             var registrarDiagnosticoResponse = await mediatoR.Send(registrarDiagnostico);
 
-            var request = new AprovarOrcamentoRequest(ordemServicoId);
-
-            var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
-
-            // Act
-            var response = await _httpClient.PostAsJsonAsync("/api/v1/orcamento", request);
-
-            var t = await response.Content.ReadAsStringAsync();
+            var response = await _httpClient.PutAsync(
+                $"/api/v1/orcamento/{ordemServicoId}/aprovar",
+                new StringContent(string.Empty, Encoding.UTF8, "application/json"));
 
             // Assert
             response.EnsureSuccessStatusCode();
-            Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
         }
     }
 }

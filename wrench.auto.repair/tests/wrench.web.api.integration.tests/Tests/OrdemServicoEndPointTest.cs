@@ -83,10 +83,16 @@ namespace wrench.web.api.integration.tests.Tests
             var veiculoResponse = await mediatoR.Send(veiculoCommand);
             var veiculoId = veiculoResponse.Valor;
 
-            var command = new CriarOrdemServicoCommand(clienteId, veiculoId, "Teste de criação de ordem de serviço");
+            var createRequest = new CriarOrdemServicoRequest
+            {
+                ClienteId = clienteId,
+                VeiculoId = veiculoId,
+                AtendenteId = clienteId,
+                Descricao = "Teste de criação de ordem de serviço"
+            };
 
             // Act
-            var response = await _httpClient.PostAsJsonAsync("/api/v1/ordem-servico", command);
+            var response = await _httpClient.PostAsJsonAsync("/api/v1/ordem-servico", createRequest);
 
             // Assert
             response.EnsureSuccessStatusCode();

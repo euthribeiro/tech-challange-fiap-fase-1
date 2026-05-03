@@ -15,6 +15,6 @@ public class PecaRepository(PecaDbContext _context) : Repository<Peca>(_context)
     public async Task<Peca?> ObterPorNomeAsync(string nomePeca, CancellationToken cancellationToken)
     {
         return await _context.Pecas
-            .FirstOrDefaultAsync(p => p.Nome.Equals(nomePeca, StringComparison.InvariantCultureIgnoreCase), cancellationToken);
+            .FirstOrDefaultAsync(p => EF.Functions.ILike(p.Nome, nomePeca), cancellationToken);
     }
 }

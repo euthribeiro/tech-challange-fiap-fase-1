@@ -26,6 +26,8 @@ services:
       - ConnectionStrings__Database=Host=db;Port=5432;Database=db_wrench;Username=postgres;Password=postgres
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8080
+      - ADMIN_EMAIL=admin@wrench.com.br
+      - ADMIN_PASSWORD=?X7I3n~(694*7kGjy9'Zf%tN
     depends_on:
       db:
         condition: service_healthy

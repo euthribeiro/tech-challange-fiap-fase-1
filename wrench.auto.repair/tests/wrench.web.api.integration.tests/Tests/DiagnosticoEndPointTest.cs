@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System.Text;
+using System.Net.Http.Json;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
@@ -95,15 +95,13 @@ namespace wrench.web.api.integration.tests.Tests
             {
                 OrdemServicoId = ordemServicoId,
                 SolucaoProposta = "Substituição das pastilhas de freio",
-                ValorEstimado = 500.00m
+                ValorEstimado = 500.00m,
+                Pecas = []
             };
 
-            var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
-
             // Act
-            var response = await _httpClient.PostAsync("/api/v1/diagnostico", content);
+            var response = await _httpClient.PostAsJsonAsync("/api/v1/diagnostico", request);
 
-            var resultString = await response.Content.ReadAsStringAsync();
             // Assert
             response.EnsureSuccessStatusCode();
             Assert.Equal(System.Net.HttpStatusCode.NoContent, response.StatusCode);

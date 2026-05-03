@@ -1,5 +1,9 @@
 ﻿using Moq;
+using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.Dtos;
+using wrench.auto.repair.ordem.servico.application.Events;
 using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
@@ -10,13 +14,17 @@ namespace wrench.auto.repair.ordem.servico.application.tests
     public class DiagnosticoTests
     {
         private readonly Mock<IOrdemServicoRepository> _ordemServicoRepositoryMock;
+        private readonly Mock<IMediatorHandler> _mediatorHandlerMock;
         private readonly DiagnosticoCommandHandler _handler;
 
         public DiagnosticoTests()
         {
             _ordemServicoRepositoryMock = new Mock<IOrdemServicoRepository>();
-            var mediatorHandler = new Mock<IMediatorHandler>();
-            _handler = new DiagnosticoCommandHandler(mediatorHandler.Object, _ordemServicoRepositoryMock.Object);
+            _mediatorHandlerMock = new Mock<IMediatorHandler>();
+            _mediatorHandlerMock
+                .Setup(m => m.PublicarEvento(It.IsAny<OrdemServicoAguardandoAprovacaoEvent>()))
+                .Returns(Task.CompletedTask);
+            _handler = new DiagnosticoCommandHandler(_mediatorHandlerMock.Object, _ordemServicoRepositoryMock.Object);
         }
 
         [Fact(DisplayName = "Realizar diagnóstico command deve ser inválido para dados incorretos")]
@@ -84,18 +92,37 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         {
             // Arrange
             var ordemServicoId = Guid.NewGuid();
+            var pecaId = Guid.NewGuid();
+            var pecasIds = new HashSet<Guid> { pecaId };
 
             var command = new RealizarDiagnosticoCommand(
                 ordemServicoId,
                 200.00m,
                 "Substituir pastilhas de freio",
-                []
+                pecasIds
             );
+
+            var pecasRetorno = new List<PecaDto>
+            {
+                new()
+                {
+                    PecaId = pecaId,
+                    Nome = "Pastilha de freio dianteira",
+                    ValorUnitario = 89.90m,
+                    Quantidade = 2
+                }
+            };
+
+            _mediatorHandlerMock
+                .Setup(m => m.ConsultaIntegrada<ObterPecasPorIdsCommand, IEnumerable<PecaDto>>(It.IsAny<ObterPecasPorIdsCommand>()))
+                .ReturnsAsync(Result<IEnumerable<PecaDto>>.Ok(pecasRetorno));
 
             var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
             _ordemServicoRepositoryMock
                 .Setup(repo => repo.ObterPorIdAsync(ordemServicoId, CancellationToken.None))
                 .ReturnsAsync(ordemServicoFake);
+            _ordemServicoRepositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
 
             _ordemServicoRepositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
                   .Returns(Task.FromResult(true));
@@ -106,6 +133,15 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Assert
             Assert.True(result.Sucesso);
             _ordemServicoRepositoryMock.Verify(repo => repo.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+            _mediatorHandlerMock.Verify(
+                m => m.ConsultaIntegrada<ObterPecasPorIdsCommand, IEnumerable<PecaDto>>(
+                    It.Is<ObterPecasPorIdsCommand>(q => q.PecaIds.Contains(pecaId))),
+                Times.Once);
+            var item = Assert.Single(ordemServicoFake.Pecas);
+            Assert.Equal(pecaId, item.PecaId);
+            Assert.Equal("Pastilha de freio dianteira", item.Nome);
+            Assert.Equal(89.90m, item.ValorUnitario);
+            Assert.Equal(2, item.Quantidade);
         }
 
         [Fact(DisplayName = "Realizar Diagnóstico Ordem Serviço Inexistente")]

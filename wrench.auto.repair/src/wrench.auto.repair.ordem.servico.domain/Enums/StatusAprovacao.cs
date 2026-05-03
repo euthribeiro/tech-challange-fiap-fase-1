@@ -4,6 +4,9 @@ namespace wrench.auto.repair.ordem.servico.domain.Enums
 {
     public enum StatusAprovacao
     {
+        [Description("Indefinido")]
+        Indefinido = 0,
+
         [Description("Em análise")]
         EmAnalise = 1,
 

@@ -14,6 +14,7 @@
         public DateTime? DataEnvio { get; init; }
         public string? StatusAprovacao { get; init; }
         public DateTime? DataAprovacaoRecusa { get; init; }
+        public DateTime? DataEntrega { get; init; }
         private List<ItemOrdemServicoViewModel> Pecas { get; set; }
         public decimal ValorTotal { get; init; }
     }

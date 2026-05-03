@@ -3,7 +3,7 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase
 {
-    public class FinalizarOrdemServicoCommand : Command<Guid>
+    public class FinalizarOrdemServicoCommand : Command
     {
         public FinalizarOrdemServicoCommand(Guid ordemServicoId)
         {

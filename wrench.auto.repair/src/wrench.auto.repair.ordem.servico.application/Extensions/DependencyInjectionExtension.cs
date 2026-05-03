@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using wrench.auto.repair.core.Data;
+using wrench.auto.repair.ordem.servico.application.SortMaps;
+using wrench.auto.repair.ordem.servico.domain.Entities;
 
 namespace wrench.auto.repair.ordem.servico.application.Extensions
 {
@@ -8,6 +11,7 @@ namespace wrench.auto.repair.ordem.servico.application.Extensions
         {
             services.ConfigureMediator();
             services.ConfigureAutoMapper();
+            services.ConfigureSortMaps();
 
             return services;
         }
@@ -27,6 +31,11 @@ namespace wrench.auto.repair.ordem.servico.application.Extensions
             {
                 configAction.AddMaps(typeof(DependencyInjectionExtension).Assembly);
             });
+        }
+
+        private static void ConfigureSortMaps(this IServiceCollection services)
+        {
+            services.AddScoped<ISortMap<OrdemServico>, OrdemServicoSortMap>();
         }
     }
 }

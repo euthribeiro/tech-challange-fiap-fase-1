@@ -19,6 +19,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public DateTime? DataDiagnostico { get; private set; }
         public DateTime? DataEnvio { get; private set; }
         public DateTime? DataAprovacaoRecusa { get; private set; }
+        public DateTime? DataEntrega { get; private set; }
 
         private List<ItemOrdemServico> _pecas = [];
         public IReadOnlyCollection<ItemOrdemServico> Pecas => _pecas.AsReadOnly();
@@ -60,6 +61,9 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
 
         public void AprovarOrcamento()
         {
+            if (Status != OrdemServicoStatus.AguardandoAprovacao)
+                throw new DomainException("A ordem de serviço não está em um status que permite aprovar ordem de serviço.");
+
             StatusAprovacao = StatusAprovacaoEnum.Aprovada;
             Status = OrdemServicoStatus.EmExecucao;
             DataAprovacaoRecusa = DateTime.UtcNow;
@@ -67,6 +71,9 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
 
         public void RecusarOrcamento(string motivo)
         {
+            if (Status != OrdemServicoStatus.AguardandoAprovacao)
+                throw new DomainException("A ordem de serviço não está em um status que permite recusar ordem de serviço.");
+
             Validacoes.ValidarSeVazio(motivo, "O motivo da recusa deve ser informado");
 
             StatusAprovacao = StatusAprovacaoEnum.Recusada;
@@ -80,6 +87,15 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             if (Status != OrdemServicoStatus.EmExecucao)
                 throw new DomainException("A ordem de serviço não está em um status que permite finalização.");
             Status = OrdemServicoStatus.Finalizada;
+        }
+
+        public void EntregarServico()
+        {
+            if (Status != OrdemServicoStatus.Finalizada)
+                throw new DomainException("A ordem de serviço não está em um status que permite finalização.");
+
+            DataEntrega = DateTime.UtcNow;
+            Status = OrdemServicoStatus.Entregue;
         }
 
         public void AdicionarPeca(ItemOrdemServico item)

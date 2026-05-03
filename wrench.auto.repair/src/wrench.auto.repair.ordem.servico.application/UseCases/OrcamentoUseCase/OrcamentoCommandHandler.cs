@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.ordem.servico.domain.Data;
+using wrench.auto.repair.ordem.servico.domain.Enums;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
 {
@@ -17,6 +18,9 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
 
             if (ordemServico == null)
                 return Result.NotFound($"Ordem de serviço com ID {request.OrdemServicoId} não encontrada.");
+
+            if (ordemServico.Status != OrdemServicoStatus.AguardandoAprovacao)
+                return Result.Forbidden("Status da ordem de serviço não permite aprovação");
 
             ordemServico.AprovarOrcamento();
 
@@ -35,6 +39,9 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
 
             if (ordemServico == null)
                 return Result.NotFound($"Ordem de serviço com identificado {request.OrdemServicoId} não encontrada.");
+
+            if (ordemServico.Status != OrdemServicoStatus.AguardandoAprovacao)
+                return Result.Forbidden("Status da ordem de serviço não permite recusa");
 
             ordemServico.RecusarOrcamento(request.MotivoRecusa);
 

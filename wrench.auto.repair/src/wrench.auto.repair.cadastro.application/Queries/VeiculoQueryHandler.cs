@@ -71,7 +71,7 @@ namespace wrench.auto.repair.cadastro.application.Queries
 
             if (veiculo == null) return Result.NotFound("Veículo não encontrado");
 
-            if (veiculo.ClienteId == request.ClienteId) return Result.NotFound("Veículo não pertence ao cliente");
+            if (veiculo.ClienteId != request.ClienteId) return Result.NotFound("Veículo não pertence ao cliente");
 
             return Result.Ok();
         }

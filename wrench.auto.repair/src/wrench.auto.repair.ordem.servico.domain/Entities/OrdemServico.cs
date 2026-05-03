@@ -13,10 +13,10 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public DateTime DataCriacao { get; private set; }
         public OrdemServicoStatus Status { get; private set; }
         public decimal ValorServico { get; private set; }
-        public string SolucaoProposta { get; private set; }
-        public StatusAprovacao StatusAprovacao { get; private set; }
-        public string MotivoRecusa { get; private set; }
-        public DateTime DataDiagnostico { get; private set; }
+        public string? SolucaoProposta { get; private set; }
+        public StatusAprovacaoEnum? StatusAprovacao { get; private set; }
+        public string? MotivoRecusa { get; private set; }
+        public DateTime? DataDiagnostico { get; private set; }
         public DateTime? DataEnvio { get; private set; }
         public DateTime? DataAprovacaoRecusa { get; private set; }
 
@@ -46,7 +46,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             SolucaoProposta = solucao;
             DataDiagnostico = DateTime.UtcNow;
             DataEnvio = DateTime.UtcNow;
-            StatusAprovacao = StatusAprovacao.EmAnalise;
+            StatusAprovacao = StatusAprovacaoEnum.EmAnalise;
             Status = OrdemServicoStatus.AguardandoAprovacao;
         }
 
@@ -60,7 +60,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
 
         public void AprovarOrcamento()
         {
-            StatusAprovacao = StatusAprovacao.Aprovada;
+            StatusAprovacao = StatusAprovacaoEnum.Aprovada;
             Status = OrdemServicoStatus.EmExecucao;
             DataAprovacaoRecusa = DateTime.UtcNow;
         }
@@ -69,7 +69,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         {
             Validacoes.ValidarSeVazio(motivo, "O motivo da recusa deve ser informado");
 
-            StatusAprovacao = StatusAprovacao.Recusada;
+            StatusAprovacao = StatusAprovacaoEnum.Recusada;
             Status = OrdemServicoStatus.Finalizada;
             DataAprovacaoRecusa = DateTime.UtcNow;
             MotivoRecusa = motivo;

@@ -6,7 +6,6 @@ namespace wrench.web.api.Models.OrdemServico
     {
         public Guid ClienteId { get; init; }
         public Guid VeiculoId { get; init; }
-        public Guid AtendenteId { get; init; }
         public string Descricao { get; init; }
 
         public static explicit operator CriarOrdemServicoCommand(CriarOrdemServicoRequest request)

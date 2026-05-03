@@ -81,7 +81,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Repositories
                 sortMap.Keys);
         }
 
-        private static Expression<Func<TEntity, object>> BuildOrderExpression<TEntity>(string propertyPath)
+        protected static Expression<Func<TEntity, object>> BuildOrderExpression<TEntity>(string propertyPath)
         {
             var parameter = Expression.Parameter(typeof(TEntity), "e");
 
@@ -116,7 +116,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Repositories
             return Expression.Lambda<Func<TEntity, object>>(converted, parameter);
         }
 
-        private static bool IsScalar(Type type)
+        protected static bool IsScalar(Type type)
         {
             type = Nullable.GetUnderlyingType(type) ?? type;
 
@@ -128,7 +128,7 @@ namespace wrench.auto.repair.ordem.servico.infra.Repositories
                 || type == typeof(Guid);
         }
 
-        private static void ValidarOrdenacao<TEntity>(
+        protected static void ValidarOrdenacao<TEntity>(
             RequisicaoPaginada request,
             Dictionary<string, Expression<Func<TEntity, object>>> sortMap)
         {

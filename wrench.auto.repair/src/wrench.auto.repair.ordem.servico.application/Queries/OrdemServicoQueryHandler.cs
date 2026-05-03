@@ -14,7 +14,8 @@ namespace wrench.auto.repair.ordem.servico.application.Queries
         ISortMap<OrdemServico> _ordemServicoSortMap,
         IOrdemServicoRepository _ordemServicoRepository
     ) : IRequestHandler<ObterOrdemServicoIdQuery, Result<OrdemServicoViewModel>>,
-        IRequestHandler<ObterTodasOrdemServicoQuery, Result<ResultadoPaginado<OrdemServicoViewModel>>>
+        IRequestHandler<ObterTodasOrdemServicoQuery, Result<ResultadoPaginado<OrdemServicoViewModel>>>,
+        IRequestHandler<ObterTodasOrdemServicoPorClienteQuery, Result<ResultadoPaginado<OrdemServicoViewModel>>>
     {
         public async Task<Result<OrdemServicoViewModel>> Handle(ObterOrdemServicoIdQuery request, CancellationToken cancellationToken)
         {
@@ -38,6 +39,22 @@ namespace wrench.auto.repair.ordem.servico.application.Queries
 
             var ordemServicos = await _ordemServicoRepository
                 .BuscaPaginadaAsync(request.Paginacao, _ordemServicoSortMap.Map, cancellationToken);
+
+            if (ordemServicos == null)
+                return Result<ResultadoPaginado<OrdemServicoViewModel>>.NotFound("Ordem de serviço não encontradas");
+
+            var ordemServicoViewModels = _mapper.Map<ResultadoPaginado<OrdemServicoViewModel>>(ordemServicos);
+
+            return Result<ResultadoPaginado<OrdemServicoViewModel>>.Ok(ordemServicoViewModels);
+        }
+
+        public async Task<Result<ResultadoPaginado<OrdemServicoViewModel>>> Handle(ObterTodasOrdemServicoPorClienteQuery request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result<ResultadoPaginado<OrdemServicoViewModel>>.ValidationError(request.ObterErros());
+
+            var ordemServicos = await _ordemServicoRepository
+                .BuscaPaginadaAsync(request.ClienteId, request.VeiculoId, request.Paginacao, _ordemServicoSortMap.Map, cancellationToken);
 
             if (ordemServicos == null)
                 return Result<ResultadoPaginado<OrdemServicoViewModel>>.NotFound("Ordem de serviço não encontradas");

@@ -96,5 +96,24 @@ namespace wrench.web.api.Controllers
 
             return result.ToActionResult();
         }
+
+        /// <summary>
+        /// Listar todas as ordens de um cliente
+        /// </summary>
+        /// <param name="clienteId"></param>
+        /// <param name="veiculoId"></param>
+        /// <param name="requisicao"></param>
+        /// <returns></returns>
+        [HttpGet("cliente")]
+        [Authorize(Roles = "Admin,Funcionario,Cliente")]
+        public async Task<IActionResult> GetAllByClienteId([FromQuery] Guid clienteId, [FromQuery] Guid? veiculoId, [FromQuery] OrdemServicoRequisicaoPaginada requisicao)
+        {
+            var obterTodasOrdemServicoPorClienteQuery = new ObterTodasOrdemServicoPorClienteQuery(clienteId, veiculoId, requisicao);
+
+            var result = await _mediatorHandler
+                .EnviarComando<ObterTodasOrdemServicoPorClienteQuery, ResultadoPaginado<OrdemServicoViewModel>>(obterTodasOrdemServicoPorClienteQuery);
+
+            return result.ToActionResult();
+        }
     }
 }

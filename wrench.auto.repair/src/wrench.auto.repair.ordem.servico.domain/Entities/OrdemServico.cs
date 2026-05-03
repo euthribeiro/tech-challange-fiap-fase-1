@@ -68,5 +68,6 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             Validacoes.ValidarSeVazio(Descricao, "A descrição não pode ser vazia");
             Validacoes.ValidarSeMenorQue((int)Status, 1, "O status precisa ser informado");
         }
+    
     }
 }

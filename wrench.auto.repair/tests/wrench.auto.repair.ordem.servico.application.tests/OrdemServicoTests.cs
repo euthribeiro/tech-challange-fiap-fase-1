@@ -1,9 +1,11 @@
 ﻿using Moq;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
+using wrench.auto.repair.ordem.servico.application.Queries;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
+using wrench.auto.repair.ordem.servico.domain.Enums;
 
 namespace wrench.auto.repair.ordem.servico.application.tests
 {
@@ -11,14 +13,17 @@ namespace wrench.auto.repair.ordem.servico.application.tests
     {
         private readonly Mock<IOrdemServicoRepository> _repositoryMock;
         private readonly Mock<IMediatorHandler> _mediatorMock;
-        private readonly OrdemServicoCommandHandler _handler;
+        private readonly OrdemServicoCommandHandler _commandHandler;
+        private readonly OrdemServicoQueryHandler _queryHandler;
 
         public OrdemServicoTests()
         {
             _repositoryMock = new Mock<IOrdemServicoRepository>();
             _mediatorMock = new Mock<IMediatorHandler>();
 
-            _handler = new OrdemServicoCommandHandler(_mediatorMock.Object, _repositoryMock.Object);
+            _commandHandler = new OrdemServicoCommandHandler(_mediatorMock.Object, _repositoryMock.Object);
+
+            _queryHandler = new OrdemServicoQueryHandler(_repositoryMock.Object);
         }
 
         [Fact(DisplayName = "Criar Ordem Serviço Com Sucesso")]
@@ -39,7 +44,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
                          .Returns(Task.FromResult(true));
 
             // Act
-            var resultado = await _handler.Handle(command, CancellationToken.None);
+            var resultado = await _commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             Assert.NotNull(resultado);
@@ -55,10 +60,51 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var command = new CriarOrdemServicoCommand(default, default, String.Empty);
 
             // Act
-            var resultado = await _handler.Handle(command, CancellationToken.None);
+            var resultado = await _commandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             Assert.False(resultado.Sucesso);
+        }
+
+        [Fact(DisplayName = "Consultar Ordem Serviço Com Sucesso")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task OrdemServico_DeveConsultarPorId_QuandoQueryValido()
+        {
+            // Arrange
+            var id = Guid.NewGuid();
+            var query = new ObterOrdemServicoIdQuery(id);
+            var ordemServico = new OrdemServico(id, Guid.NewGuid(), "Veículo Teste", OrdemServicoStatus.Recebida , DateTime.UtcNow);
+            ordemServico.Id = id;
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(id, CancellationToken.None))
+                .ReturnsAsync(ordemServico);
+
+            // Act
+            var result = await _queryHandler.Handle(query, CancellationToken.None);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal(id, result.Valor.OrdemServicoId);
+            _repositoryMock.Verify(r => r.ObterPorIdAsync(id, CancellationToken.None), Times.Once);
+        }
+
+        [Fact(DisplayName = "Consultar Ordem Serviço Com Falha - Não Encontrado")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task OrdemServico_DeveRetornarNulo_QuandoOrdemServicoNaoExistir()
+        {
+            // Arrange
+            var id = Guid.NewGuid();
+            var query = new ObterOrdemServicoIdQuery(id);
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(id, CancellationToken.None))
+                .ReturnsAsync((OrdemServico)null);
+
+            // Act
+            var result = await _queryHandler.Handle(query, CancellationToken.None);
+
+            // Assert
+            Assert.False(result.Sucesso);
+            _repositoryMock.Verify(r => r.ObterPorIdAsync(id, CancellationToken.None), Times.Once);
         }
     }
 }

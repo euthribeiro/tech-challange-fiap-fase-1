@@ -159,5 +159,76 @@ namespace wrench.web.api.integration.tests.Tests
             // Assert
             response.EnsureSuccessStatusCode();
         }
+    
+        [Fact(DisplayName = "Obter Ordem de Serviço Com Sucesso")]
+        [Trait("Integration", "WebApi")]
+        public async Task Obter_Ordem_Servico_Com_Sucesso()
+        {
+            // Arrange
+            using var scope = _integrationTestFactory.Services.CreateScope();
+            var mediatoR = scope.ServiceProvider.GetRequiredService<MediatR.IMediator>();
+
+            var enderecoDto = new wrench.auto.repair.cadastro.application.Commands.Dtos.EnderecoDto(
+                "Rua Teste Consulta",
+                "123",
+                "Apto 1",
+                "Bairro Teste",
+                "01234-567",
+                "São Paulo",
+                "SP",
+                "Brasil"
+            );
+
+            var clienteCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarClienteCommand(
+                "08173460078",
+                "Cliente Teste Consulta",
+                "11999999999",
+                "cliente.consulta@teste.com",
+                enderecoDto
+            );
+
+            var clienteResponse = await mediatoR.Send(clienteCommand);
+            var clienteId = clienteResponse.Valor;
+
+            var veiculoCommand = new wrench.auto.repair.cadastro.application.Commands.CadastrarVeiculoCommand(
+                clienteId,
+                "Marca Teste",
+                "Modelo Teste",
+                "Cor Teste",
+                2020,
+                2021,
+                "QWE-1234",
+                "Veiculo Teste Consulta",
+                DateTime.UtcNow,
+                10000
+            );
+
+            var veiculoResponse = await mediatoR.Send(veiculoCommand);
+            var veiculoId = veiculoResponse.Valor;
+
+            var criarCommand = new CriarOrdemServicoCommand(clienteId, veiculoId, "Teste de consulta de ordem de serviço");
+            var ordemServicoResponse = await mediatoR.Send(criarCommand);
+            var ordemServicoId = ordemServicoResponse.Valor;
+
+            // Act
+            var response = await _httpClient.GetAsync($"/api/v1/ordem-servico?id={ordemServicoId}");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+        }
+
+        [Fact(DisplayName = "Obter Ordem de Serviço Com Falha Quando Não Existir")]
+        [Trait("Integration", "WebApi")]
+        public async Task Obter_Ordem_Servico_Com_Falha_Quando_Nao_Existir()
+        {
+            // Arrange
+            var ordemServicoId = Guid.NewGuid();
+
+            // Act
+            var response = await _httpClient.GetAsync($"/api/v1/ordem-servico/{ordemServicoId}");
+
+            // Assert
+            Assert.False(response.IsSuccessStatusCode);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Net;
 using System.Net.Http.Json;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
@@ -232,10 +233,37 @@ namespace wrench.web.api.integration.tests.Tests
             var ordemServicoId = Guid.NewGuid();
 
             // Act
-            var response = await _httpClient.GetAsync($"/api/v1/ordem-servico/{ordemServicoId}");
+            var response = await _httpClient.GetAsync($"/api/v1/ordem-servico?id={ordemServicoId}");
 
             // Assert
-            Assert.False(response.IsSuccessStatusCode);
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact(DisplayName = "Criar Ordem de Serviço Com Falha Quando Cliente ou Veículo Não Existir")]
+        [Trait("Integration", "WebApi")]
+        public async Task Criar_Ordem_Servico_Com_Falha_Quando_Cliente_Veiculo_Invalidos()
+        {
+            var request = new CriarOrdemServicoRequest
+            {
+                ClienteId = Guid.NewGuid(),
+                VeiculoId = Guid.NewGuid(),
+                Descricao = "Ordem inválida"
+            };
+
+            var response = await _httpClient.PostAsJsonAsync("/api/v1/ordem-servico", request);
+
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [Fact(DisplayName = "Finalizar Ordem de Serviço Com Falha Quando Ordem Não Existir")]
+        [Trait("Integration", "WebApi")]
+        public async Task Finalizar_Ordem_Servico_Com_Falha_Quando_Nao_Existir()
+        {
+            var request = new AtualizarOrdemServicoRequest(Guid.NewGuid());
+
+            var response = await _httpClient.PutAsJsonAsync("/api/v1/ordem-servico", request);
+
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }

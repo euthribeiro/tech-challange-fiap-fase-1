@@ -7,12 +7,12 @@
         public Guid VeiculoId { get; set; }
         public string Descricao { get; init; }
         public DateTime DataCriacao { get; init; }
-        public string Status { get; init; }
+        public string? Status { get; init; }
         public decimal ValorServico { get; init; }
-        public string SolucaoProposta { get; init; }
-        public DateTime DataDiagnostico { get; init; }
+        public string? SolucaoProposta { get; init; }
+        public DateTime? DataDiagnostico { get; init; }
         public DateTime? DataEnvio { get; init; }
-        public string StatusAprovacao { get; init; }
+        public string? StatusAprovacao { get; init; }
         public DateTime? DataAprovacaoRecusa { get; init; }
         private List<ItemOrdemServicoViewModel> Pecas { get; set; }
         public decimal ValorTotal { get; init; }

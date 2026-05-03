@@ -2,7 +2,7 @@
 
 namespace wrench.auto.repair.ordem.servico.domain.Enums
 {
-    public enum StatusAprovacao
+    public enum StatusAprovacaoEnum
     {
         [Description("Indefinido")]
         Indefinido = 0,

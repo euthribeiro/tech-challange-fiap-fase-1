@@ -37,6 +37,7 @@ namespace wrench.auto.repair.autenticacao.infra.Security
         {
             return new ClaimsIdentity(
             [
+                new(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
                 new(ClaimTypes.Name, usuario.Email.Endereco.ToString()),
                 new(ClaimTypes.Role, usuario.Perfil.Nome.ToString()),
             ]);

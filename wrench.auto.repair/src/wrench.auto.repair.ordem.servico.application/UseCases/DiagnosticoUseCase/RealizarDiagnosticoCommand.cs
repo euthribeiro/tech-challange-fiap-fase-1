@@ -18,6 +18,12 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
 
         public class RealizarDiagnosticoCommandValidator : AbstractValidator<RealizarDiagnosticoCommand>
         {
+            public static string PecaIdVazio =>
+                "Um dos identificador das peças informadas não é válido";
+
+            public static string MaximoPecasPermitadas =>
+                "O número máximo de peças permitidas é 100";
+
             public RealizarDiagnosticoCommandValidator()
             {
                 RuleFor(c => c.OrdemServicoId)
@@ -31,6 +37,17 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
                 RuleFor(c => c.ValorEstimado)
                     .GreaterThan(0)
                     .WithMessage("Valor estimado deve ser positivo.");
+
+                When(x => x.PecasId != null && x.PecasId.Count > 0, () =>
+                {
+                    RuleFor(x => x.PecasId)
+                      .Must(x => x.Count <= 100)
+                      .WithMessage(MaximoPecasPermitadas);
+
+                    RuleForEach(x => x.PecasId)
+                        .NotEmpty()
+                        .WithMessage(PecaIdVazio);
+                });
             }
         }
     }

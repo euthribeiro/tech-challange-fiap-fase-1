@@ -67,6 +67,9 @@ namespace wrench.auto.repair.cadastro.application.Queries
 
         public async Task<Result> Handle(VeiculoExisteEPertenteAoClienteQuery request, CancellationToken cancellationToken)
         {
+            if (!request.EhValido())
+                return Result.ValidationError(request.ObterErros());
+
             var veiculo = await _veiculoRepository.ObterPorIdAsync(request.VeiculoId, cancellationToken);
 
             if (veiculo == null) return Result.NotFound("Veículo não encontrado");

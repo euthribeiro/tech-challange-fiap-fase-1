@@ -67,7 +67,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCa
 
                 foreach (var peca in resultadoPecas.Valor!)
                 {
-                    var item = new ItemOrdemServico(peca.PecaId, peca.Nome, peca.ValorUnitario, peca.Quantidade);
+                    var item = new ItemOrdemServico(peca.Id, peca.Nome, peca.Valor, peca.Quantidade);
                     ordemServico.AdicionarPeca(item);
                 }
             }

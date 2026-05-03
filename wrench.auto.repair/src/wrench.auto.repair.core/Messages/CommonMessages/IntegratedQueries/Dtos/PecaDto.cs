@@ -2,9 +2,9 @@
 {
     public class PecaDto
     {
-        public Guid PecaId { get; init; }
+        public Guid Id { get; init; }
         public string Nome { get; init; }
-        public decimal ValorUnitario { get; init; }
+        public decimal Valor { get; init; }
         public int Quantidade { get; init; }
     }
 }

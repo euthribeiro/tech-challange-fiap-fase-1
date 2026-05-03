@@ -15,7 +15,7 @@
         public string? StatusAprovacao { get; init; }
         public DateTime? DataAprovacaoRecusa { get; init; }
         public DateTime? DataEntrega { get; init; }
-        private List<ItemOrdemServicoViewModel> Pecas { get; set; }
+        public List<ItemOrdemServicoViewModel> Pecas { get; init; }
         public decimal ValorTotal { get; init; }
     }
 }

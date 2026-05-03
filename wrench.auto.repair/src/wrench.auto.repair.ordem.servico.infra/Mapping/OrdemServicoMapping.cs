@@ -19,6 +19,9 @@ namespace wrench.auto.repair.ordem.servico.infra.Mapping
                 p.Property(x => x.Quantidade).IsRequired();
                 p.Property(x => x.ValorUnitario).HasColumnType("decimal(18,2)");
             });
+
+            builder.Navigation(x => x.Pecas)
+                .UsePropertyAccessMode(PropertyAccessMode.Field);
         }
     }
 }

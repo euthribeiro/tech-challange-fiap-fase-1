@@ -318,5 +318,61 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             Assert.False(valido);
         }
+
+        [Fact(DisplayName = "Recusar orçamento deve concluir com sucesso")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task RecusarOrcamento_DeveRecusar_QuandoOrdemExistir()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Ar condicionado", OrdemServicoStatus.EmDiagnostico, DateTime.UtcNow);
+            ordem.AdicionarDiagnostico("Recarga de gás", 400m);
+            var command = new RecusarOrcamentoCommand(ordem.Id, "Cliente desistiu do serviço");
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+            _repositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
+            _repositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                .ReturnsAsync(true);
+
+            var result = await _orcamentoHandler.Handle(command, CancellationToken.None);
+
+            Assert.True(result.Sucesso);
+            Assert.Equal(OrdemServicoStatus.Finalizada, ordem.Status);
+        }
+
+        [Fact(DisplayName = "Recusar orçamento deve retornar not found quando ordem não existir")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task RecusarOrcamento_DeveRetornarNotFound_QuandoOrdemNaoExistir()
+        {
+            var ordemId = Guid.NewGuid();
+            var command = new RecusarOrcamentoCommand(ordemId, "Motivo");
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordemId, It.IsAny<CancellationToken>()))
+                .ReturnsAsync((OrdemServico?)null);
+
+            var result = await _orcamentoHandler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Recusar orçamento deve retornar erro inesperado quando commit falhar")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task RecusarOrcamento_DeveRetornarUnexpected_QuandoCommitFalhar()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Embreagem", OrdemServicoStatus.EmDiagnostico, DateTime.UtcNow);
+            ordem.AdicionarDiagnostico("Troca de kit", 2100m);
+            var command = new RecusarOrcamentoCommand(ordem.Id, "Orçamento acima do esperado");
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+            _repositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
+            _repositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                .ReturnsAsync(false);
+
+            var result = await _orcamentoHandler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
     }
 }

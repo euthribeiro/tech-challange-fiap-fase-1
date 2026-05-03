@@ -5,7 +5,7 @@ namespace wrench.auto.repair.autenticacao.application.Validators
     public class PasswordValidator : AbstractValidator<string>
     {
         private static readonly int MinimumPasswordLength = 12;
-        private static readonly int MediumPasswordLengthThreshold = 12;
+        private static readonly int MediumPasswordLengthThreshold = 13;
         private static readonly int MinimumCharacterTypesForShortPassword = 3;
         private static readonly int MinimumCharacterTypesForLongPassword = 2;
 

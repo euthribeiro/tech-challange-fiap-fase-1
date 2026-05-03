@@ -126,5 +126,53 @@ namespace wrench.auto.repair.estoque.application.tests.PecaQuery
             automocker.GetMock<IMapper>()
                 .Verify(m => m.Map<ResultadoPaginado<PecaViewModel>>(It.IsAny<ResultadoPaginado<Peca>>()), Times.Once);
         }
+
+        [Fact(DisplayName = "Consulta peça por id vazio deve falhar na validação")]
+        [Trait("Estoque", "Application")]
+        public async Task ConsultaPecaPorId_IdVazio_DeveRetornarValidacao()
+        {
+            var query = new ConsultarPecaPorIdQuery(Guid.Empty);
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<PecaQueryHandler>();
+
+            var resultado = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(resultado.Sucesso);
+            automocker.GetMock<IPecaRepository>()
+                .Verify(p => p.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Obter todas peças com ordenação inválida deve falhar na validação")]
+        [Trait("Estoque", "Application")]
+        public async Task ObterTodasPecas_OrdenacaoInvalida_DeveRetornarValidacao()
+        {
+            var pag = new PecaRequisicaoPaginada { OrdenarPor = "CampoInexistente" };
+            var query = new ObterTodasPecasQuery(pag);
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<PecaQueryHandler>();
+
+            var resultado = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(resultado.Sucesso);
+            automocker.GetMock<IPecaRepository>()
+                .Verify(p => p.BuscaPaginadaAsync(It.IsAny<PecaRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Peca, object?>>>>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Obter todas peças quando repositório retornar nulo deve falhar")]
+        [Trait("Estoque", "Application")]
+        public async Task ObterTodasPecas_RepositorioNulo_DeveRetornarNaoEncontrado()
+        {
+            var query = new ObterTodasPecasQuery(new PecaRequisicaoPaginada { OrdenarPor = "Nome" });
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<PecaQueryHandler>();
+
+            automocker.GetMock<IPecaRepository>()
+                .Setup(p => p.BuscaPaginadaAsync(It.IsAny<PecaRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Peca, object?>>>>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<ResultadoPaginado<Peca>>(null!));
+
+            var resultado = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(resultado.Sucesso);
+        }
     }
 }

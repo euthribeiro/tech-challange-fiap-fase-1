@@ -255,5 +255,26 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             Assert.False(result.Sucesso);
         }
+
+        [Fact(DisplayName = "Realizar diagnóstico deve retornar erro quando consulta de peças falhar")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task RealizarDiagnostico_DeveRetornarErro_QuandoConsultaPecasFalhar()
+        {
+            var pecaId = Guid.NewGuid();
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Elétrica", OrdemServicoStatus.EmDiagnostico, DateTime.UtcNow);
+            var command = new RealizarDiagnosticoCommand(ordem.Id, 90m, "Reparo chicote", [pecaId]);
+
+            _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+
+            _mediatorHandlerMock
+                .Setup(m => m.ConsultaIntegrada<ObterPecasPorIdsCommand, IEnumerable<PecaDto>>(It.IsAny<ObterPecasPorIdsCommand>()))
+                .ReturnsAsync(Result<IEnumerable<PecaDto>>.NotFound("Peças não encontradas"));
+
+            var result = await _handler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            _ordemServicoRepositoryMock.Verify(r => r.UnitOfWork.CommitAsync(), Times.Never);
+        }
     }
 }

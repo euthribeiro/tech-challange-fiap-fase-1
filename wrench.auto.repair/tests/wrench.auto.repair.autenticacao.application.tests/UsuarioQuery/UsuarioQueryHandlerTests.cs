@@ -103,5 +103,70 @@ namespace wrench.auto.repair.autenticacao.application.tests.UsuarioQuery
             autoMocker.GetMock<IUsuarioRepository>()
                 .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
         }
+
+        [Fact(DisplayName = "Listar perfis deve retornar não encontrado quando repositório retornar nulo")]
+        [Trait("Autenticacao", "Application")]
+        public async Task Perfil_ListarTodosPerfis_DeveRetornarNotFound_QuandoRepositorioRetornarNulo()
+        {
+            var query = new ObterTodosPerfisQuery();
+            var autoMocker = new AutoMocker();
+            var handler = autoMocker.CreateInstance<UsuarioQueryHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.ObterTodosPerfisAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<IEnumerable<Perfil>>(null!));
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Listar usuários deve retornar não encontrado quando paginação retornar nulo")]
+        [Trait("Autenticacao", "Application")]
+        public async Task Usuarios_ObterTodos_DeveRetornarNotFound_QuandoRepositorioRetornarNulo()
+        {
+            var query = new ObterTodosUsuariosQuery(new UsuarioRequisicaoPaginada());
+            var autoMocker = new AutoMocker();
+            var handler = autoMocker.CreateInstance<UsuarioQueryHandler>();
+
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Setup(u => u.BuscaPaginadaAsync(It.IsAny<UsuarioRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Usuario, object?>>>>(), It.IsAny<CancellationToken>()))
+                .Returns(Task.FromResult<ResultadoPaginado<Usuario>>(null!));
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Listar usuários deve retornar erro de validação quando ordenação for inválida")]
+        [Trait("Autenticacao", "Application")]
+        public async Task Usuarios_ObterTodos_DeveRetornarUnprocessableEntity_QuandoOrdenacaoInvalida()
+        {
+            var paginacao = new UsuarioRequisicaoPaginada { OrdenarPor = "CampoInexistente" };
+            var query = new ObterTodosUsuariosQuery(paginacao);
+            var autoMocker = new AutoMocker();
+            var handler = autoMocker.CreateInstance<UsuarioQueryHandler>();
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.BuscaPaginadaAsync(It.IsAny<UsuarioRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Usuario, object?>>>>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Obter usuário por id deve retornar validação quando id for vazio")]
+        [Trait("Autenticacao", "Application")]
+        public async Task Usuario_ObterPorId_DeveRetornarErro_QuandoIdInvalido()
+        {
+            var query = new ObterUsuarioPorIdQuery(Guid.Empty);
+            var autoMocker = new AutoMocker();
+            var handler = autoMocker.CreateInstance<UsuarioQueryHandler>();
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            autoMocker.GetMock<IUsuarioRepository>()
+                .Verify(u => u.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
     }
 }

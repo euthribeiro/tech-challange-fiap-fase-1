@@ -152,5 +152,86 @@ namespace wrench.auto.repair.cadastro.application.tests.ClienteQuery
             automocker.GetMock<IMapper>()
                 .Verify(c => c.Map<ClienteViewModel>(It.IsAny<Cliente>()), Times.Once);
         }
+
+        [Fact(DisplayName = "Listar clientes deve retornar erro quando ordenação for inválida")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_ListarTodosClientes_DeveRetornarErro_QuandoOrdenacaoInvalida()
+        {
+            var paginacao = new ClienteRequisicaoPaginada { OrdenarPor = "CampoInvalido" };
+            var query = new ObterTodosClientesQuery(paginacao);
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.BuscaPaginadaAsync(It.IsAny<ClienteRequisicaoPaginada>(), It.IsAny<Dictionary<string, Expression<Func<Cliente, object?>>>>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Buscar cliente por id deve retornar não encontrado quando não existir")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_BuscarClientePorId_DeveRetornarNotFound_QuandoNaoExistir()
+        {
+            var query = new ObterClientePorIdQuery(Guid.NewGuid());
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            automocker.GetMock<IClienteRepository>()
+                .Setup(c => c.ObterPorIdAsync(query.ClienteId, CancellationToken.None))
+                .Returns(Task.FromResult<Cliente?>(null));
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Buscar cliente por id deve retornar validação quando id for vazio")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_BuscarClientePorId_DeveRetornarErro_QuandoIdInvalido()
+        {
+            var query = new ObterClientePorIdQuery(Guid.Empty);
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Buscar cliente por documento deve retornar não encontrado quando não existir")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_BuscarClientePorDocumento_DeveRetornarNotFound_QuandoNaoExistir()
+        {
+            var doc = _fixture.GerarDocumentoValido();
+            var query = new ObterClientePorDocumentoQuery(doc);
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            automocker.GetMock<IClienteRepository>()
+                .Setup(c => c.ObterPorDocumentAsync(doc, CancellationToken.None))
+                .Returns(Task.FromResult<Cliente?>(null));
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Buscar cliente por documento deve retornar validação quando documento for inválido")]
+        [Trait("Cadastro", "Application")]
+        public async Task Cliente_BuscarClientePorDocumento_DeveRetornarErro_QuandoDocumentoInvalido()
+        {
+            var query = new ObterClientePorDocumentoQuery("123");
+            var automocker = new AutoMocker();
+            var handler = automocker.CreateInstance<ClienteQueryHandler>();
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            automocker.GetMock<IClienteRepository>()
+                .Verify(c => c.ObterPorDocumentAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
     }
 }

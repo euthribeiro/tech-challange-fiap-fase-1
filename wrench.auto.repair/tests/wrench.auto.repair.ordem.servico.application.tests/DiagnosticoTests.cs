@@ -17,6 +17,17 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             _handler = new DiagnosticoCommandHandler(_ordemServicoRepositoryMock.Object);
         }
 
+        [Fact(DisplayName = "Realizar diagnóstico command deve ser inválido para dados incorretos")]
+        [Trait("Ordem Serviço", "Application")]
+        public void RealizarDiagnosticoCommand_DeveSerInvalido_QuandoDadosIncorretos()
+        {
+            var command = new RealizarDiagnosticoCommand(Guid.Empty, 0m, string.Empty);
+
+            var valido = command.EhValido();
+
+            Assert.False(valido);
+        }
+
         [Fact(DisplayName = "Solicitar Diagnóstico Com Sucesso")]
         [Trait("Ordem Serviço", "Application")]
         public async Task SolicitarDiagnostico_OrdemServico_Valida_Com_Sucesso()
@@ -117,6 +128,86 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Assert
             Assert.False(result.Sucesso);
             _ordemServicoRepositoryMock.Verify(repo => repo.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        [Fact(DisplayName = "Solicitar diagnóstico deve retornar validação quando comando for inválido")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task SolicitarDiagnostico_DeveRetornarValidationError_QuandoCommandInvalido()
+        {
+            var command = new SolicitarDiagnosticoCommand(Guid.Empty);
+
+            var result = await _handler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            _ordemServicoRepositoryMock.Verify(r => r.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Solicitar diagnóstico deve retornar erro quando status for inválido")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task SolicitarDiagnostico_DeveRetornarValidationError_QuandoStatusInvalido()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Suspensão", OrdemServicoStatus.EmExecucao, DateTime.UtcNow);
+            var command = new SolicitarDiagnosticoCommand(ordem.Id);
+
+            _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+
+            var result = await _handler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Solicitar diagnóstico deve retornar erro inesperado quando commit falhar")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task SolicitarDiagnostico_DeveRetornarUnexpected_QuandoCommitFalhar()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Injeção", OrdemServicoStatus.Recebida, DateTime.UtcNow);
+            var command = new SolicitarDiagnosticoCommand(ordem.Id);
+
+            _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+            _ordemServicoRepositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
+            _ordemServicoRepositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                .ReturnsAsync(false);
+
+            var result = await _handler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Realizar diagnóstico deve retornar validação quando ordem estiver em status inválido")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task RealizarDiagnostico_DeveRetornarValidationError_QuandoStatusInvalido()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Direção", OrdemServicoStatus.Recebida, DateTime.UtcNow);
+            var command = new RealizarDiagnosticoCommand(ordem.Id, 120m, "Ajustar caixa de direção");
+
+            _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+
+            var result = await _handler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Realizar diagnóstico deve retornar erro inesperado quando commit falhar")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task RealizarDiagnostico_DeveRetornarUnexpected_QuandoCommitFalhar()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Bateria", OrdemServicoStatus.EmDiagnostico, DateTime.UtcNow);
+            var command = new RealizarDiagnosticoCommand(ordem.Id, 350m, "Troca de bateria");
+
+            _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+            _ordemServicoRepositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
+            _ordemServicoRepositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                .ReturnsAsync(false);
+
+            var result = await _handler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
         }
     }
 }

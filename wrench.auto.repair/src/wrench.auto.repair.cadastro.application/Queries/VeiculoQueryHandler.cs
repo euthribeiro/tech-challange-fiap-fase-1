@@ -17,7 +17,7 @@ namespace wrench.auto.repair.cadastro.application.Queries
     ) : IRequestHandler<ObterTodosVeiculosQuery, Result<ResultadoPaginado<VeiculoViewModel>>>,
         IRequestHandler<ObterVeiculoPorIdQuery, Result<VeiculoViewModel>>,
         IRequestHandler<ObterVeiculoPorPlacaQuery, Result<VeiculoViewModel>>,
-        IRequestHandler<VeiculoExisteEPertenteAoClienteQuery, bool>
+        IRequestHandler<VeiculoExisteEPertenteAoClienteQuery, Result>
     {
         public async Task<Result<ResultadoPaginado<VeiculoViewModel>>> Handle(ObterTodosVeiculosQuery request, CancellationToken cancellationToken)
         {
@@ -65,10 +65,15 @@ namespace wrench.auto.repair.cadastro.application.Queries
             return Result<VeiculoViewModel>.Ok(veiculoViewModel);
         }
 
-        public async Task<bool> Handle(VeiculoExisteEPertenteAoClienteQuery request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(VeiculoExisteEPertenteAoClienteQuery request, CancellationToken cancellationToken)
         {
             var veiculo = await _veiculoRepository.ObterPorIdAsync(request.VeiculoId, cancellationToken);
-            return veiculo != null && veiculo.ClienteId == request.ClienteId;
+
+            if (veiculo == null) return Result.NotFound("Veículo não encontrado");
+
+            if (veiculo.ClienteId == request.ClienteId) return Result.NotFound("Veículo não pertence ao cliente");
+
+            return Result.Ok();
         }
     }
 }

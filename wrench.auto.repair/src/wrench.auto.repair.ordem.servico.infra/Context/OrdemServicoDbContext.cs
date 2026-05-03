@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using wrench.auto.repair.core.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
-using wrench.auto.repair.ordem.servico.domain.ValueObjects;
 
 namespace wrench.auto.repair.ordem.servico.infra.Context
 {
@@ -10,8 +9,6 @@ namespace wrench.auto.repair.ordem.servico.infra.Context
     public class OrdemServicoDbContext : DbContext, IUnitOfWork
     {
         public DbSet<OrdemServico> OrdemServico { get; set; }
-        public DbSet<Diagnostico> Diagnostico { get; set; }
-        public DbSet<Orcamento> Orcamento { get; set; }
 
         public OrdemServicoDbContext(DbContextOptions<OrdemServicoDbContext> options) : base(options)
         {

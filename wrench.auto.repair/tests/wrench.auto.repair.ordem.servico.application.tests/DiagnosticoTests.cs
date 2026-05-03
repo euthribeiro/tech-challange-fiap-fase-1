@@ -1,4 +1,5 @@
 ﻿using Moq;
+using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
@@ -14,14 +15,17 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         public DiagnosticoTests()
         {
             _ordemServicoRepositoryMock = new Mock<IOrdemServicoRepository>();
-            _handler = new DiagnosticoCommandHandler(_ordemServicoRepositoryMock.Object);
+            var mediatorHandler = new Mock<IMediatorHandler>();
+            _handler = new DiagnosticoCommandHandler(mediatorHandler.Object, _ordemServicoRepositoryMock.Object);
         }
 
         [Fact(DisplayName = "Realizar diagnóstico command deve ser inválido para dados incorretos")]
         [Trait("Ordem Serviço", "Application")]
         public void RealizarDiagnosticoCommand_DeveSerInvalido_QuandoDadosIncorretos()
         {
-            var command = new RealizarDiagnosticoCommand(Guid.Empty, 0m, string.Empty);
+            // Validar Peças
+
+            var command = new RealizarDiagnosticoCommand(Guid.Empty, 0m, string.Empty, []);
 
             var valido = command.EhValido();
 
@@ -84,7 +88,8 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var command = new RealizarDiagnosticoCommand(
                 ordemServicoId,
                 200.00m,
-                "Substituir pastilhas de freio"
+                "Substituir pastilhas de freio",
+                []
             );
 
             var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
@@ -113,7 +118,8 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var command = new RealizarDiagnosticoCommand(
                 ordemServicoId,
                 200.00m,
-                "Substituir pastilhas de freio"
+                "Substituir pastilhas de freio",
+                []
             );
 
             var ordemServicoFake = new OrdemServico(Guid.NewGuid(), ordemServicoId, "Barulho na roda", OrdemServicoStatus.EmDiagnostico, DateTime.Now);
@@ -180,8 +186,10 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         [Trait("Ordem Serviço", "Application")]
         public async Task RealizarDiagnostico_DeveRetornarValidationError_QuandoStatusInvalido()
         {
+            // Validar Peças
+
             var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Direção", OrdemServicoStatus.Recebida, DateTime.UtcNow);
-            var command = new RealizarDiagnosticoCommand(ordem.Id, 120m, "Ajustar caixa de direção");
+            var command = new RealizarDiagnosticoCommand(ordem.Id, 120m, "Ajustar caixa de direção", []);
 
             _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(ordem);
@@ -195,8 +203,10 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         [Trait("Ordem Serviço", "Application")]
         public async Task RealizarDiagnostico_DeveRetornarUnexpected_QuandoCommitFalhar()
         {
+            // Validar Peças
+
             var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Bateria", OrdemServicoStatus.EmDiagnostico, DateTime.UtcNow);
-            var command = new RealizarDiagnosticoCommand(ordem.Id, 350m, "Troca de bateria");
+            var command = new RealizarDiagnosticoCommand(ordem.Id, 350m, "Troca de bateria", []);
 
             _ordemServicoRepositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(ordem);

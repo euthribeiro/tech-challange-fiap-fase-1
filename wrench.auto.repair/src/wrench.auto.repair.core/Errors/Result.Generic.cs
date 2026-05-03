@@ -61,6 +61,8 @@
 
         public static Result<T> Forbidden(params string[] errors) =>
             new(TipoErroEnum.PROIBIDO, [.. errors]);
+        public static Result<T> Custom(TipoErroEnum tipoErro, params string[] errors) =>
+            new(tipoErro, [.. errors]);
 
         public static Result<T> NotFound(IEnumerable<string> errors) =>
             new(TipoErroEnum.NAO_ENCONTRADO, [.. errors]);
@@ -82,5 +84,8 @@
 
         public static Result<T> Forbidden(IEnumerable<string> errors) =>
             new(TipoErroEnum.PROIBIDO, [.. errors]);
+
+        public static Result<T> Custom(TipoErroEnum tipoErro, IEnumerable<string> errors) =>
+            new(tipoErro, [.. errors]);
     }
 }

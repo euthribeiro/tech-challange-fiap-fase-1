@@ -4,7 +4,6 @@ using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
-using wrench.auto.repair.ordem.servico.infra.Repositories;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase
 {
@@ -28,7 +27,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
             var veiculoExisteEPertenceAoCliente = await _mediatorHandler
                 .ConsultaIntegrada(veiculoExisteEPertenceAoClienteQuery);
 
-            if (!veiculoExisteEPertenceAoCliente)
+            if (!veiculoExisteEPertenceAoCliente.Sucesso)
                 return Result<Guid>.NotFound("Cliente/Veículo não encontrado");
 
             OrdemServico ordemServico = request;
@@ -47,13 +46,10 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
             if (!request.EhValido())
                 return Result<Guid>.ValidationError(request.ObterErros());
 
-            OrdemServico ordemServico = await _ordemServicoRepository.ObterPorIdAsync(request.OrdemServicoId, cancellationToken);
+            var ordemServico = await _ordemServicoRepository.ObterPorIdAsync(request.OrdemServicoId, cancellationToken);
 
-            if(ordemServico == null)
+            if (ordemServico == null)
                 return Result<Guid>.NotFound("Ordem de serviço não encontrada");
-
-
-
 
             ordemServico.FinalizarOrdemServico();
 

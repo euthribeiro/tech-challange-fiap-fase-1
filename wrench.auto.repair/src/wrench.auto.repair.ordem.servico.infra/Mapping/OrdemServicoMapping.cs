@@ -8,24 +8,17 @@ namespace wrench.auto.repair.ordem.servico.infra.Mapping
     {
         public void Configure(EntityTypeBuilder<OrdemServico> builder)
         {
-            builder.OwnsOne(c => c.Diagnostico, d =>
+            builder.OwnsMany(x => x.Pecas, p =>
             {
-                d.WithOwner();
-                d.ToTable("OrdemServicoDiagnostico");
+                p.ToTable("OrdemServicoItem");
+
+                p.WithOwner().HasForeignKey("OrdemServicoId");
+
+                p.Property(x => x.PecaId).IsRequired();
+                p.Property(x => x.Nome).IsRequired();
+                p.Property(x => x.Quantidade).IsRequired();
+                p.Property(x => x.ValorUnitario).HasColumnType("decimal(18,2)");
             });
-
-            builder.OwnsOne(c => c.Orcamento, d =>
-            {
-                d.WithOwner();
-                d.WithOwner().HasForeignKey("OrdemServicoId");
-                d.ToTable("OrdemServicoOrcamento");
-            });
-
-            builder.Navigation(c => c.Diagnostico)
-                .IsRequired(false);
-
-            builder.Navigation(c => c.Orcamento)
-                .IsRequired(false);
         }
     }
 }

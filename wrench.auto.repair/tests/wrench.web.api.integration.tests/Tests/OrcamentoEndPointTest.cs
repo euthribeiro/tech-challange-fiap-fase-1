@@ -92,7 +92,8 @@ namespace wrench.web.api.integration.tests.Tests
             var solicitaDiagnostico = new SolicitarDiagnosticoCommand(ordemServicoId);
             var diagnosticoResponse = await mediatoR.Send(solicitaDiagnostico);
 
-            var registrarDiagnostico = new RealizarDiagnosticoCommand(ordemServicoId, 500.00m, "Problema identificado");
+            // Incluir peças
+            var registrarDiagnostico = new RealizarDiagnosticoCommand(ordemServicoId, 500.00m, "Problema identificado", []);
             var registrarDiagnosticoResponse = await mediatoR.Send(registrarDiagnostico);
 
             var request = new AprovarOrcamentoRequest(ordemServicoId);

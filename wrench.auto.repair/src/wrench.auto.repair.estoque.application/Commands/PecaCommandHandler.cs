@@ -1,12 +1,15 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
+using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.Dtos;
 using wrench.auto.repair.estoque.domain.Data;
 using wrench.auto.repair.estoque.domain.Entities;
 
 namespace wrench.auto.repair.estoque.application.Commands
 {
     public class PecaCommandHandler(
+        IMapper _mapper,
         IPecaRepository _pecaRepository
     ) : IRequestHandler<AtivarPecaCommand, Result>,
         IRequestHandler<InativarPecaCommand, Result>,
@@ -14,7 +17,8 @@ namespace wrench.auto.repair.estoque.application.Commands
         IRequestHandler<ReporPecaCommand, Result>,
         IRequestHandler<BaixarPecaCommand, Result>,
         IRequestHandler<AtualizarPecaCommand, Result>,
-        IRequestHandler<PecaExisteQuery, bool>
+        IRequestHandler<PecaExisteQuery, Result>,
+        IRequestHandler<ObterPecasPorIdsCommand, Result<IEnumerable<PecaDto>>>
     {
         public async Task<Result> Handle(AtivarPecaCommand request, CancellationToken cancellationToken)
         {
@@ -169,11 +173,30 @@ namespace wrench.auto.repair.estoque.application.Commands
             return Result.NoContent();
         }
 
-        public async Task<bool> Handle(PecaExisteQuery request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(PecaExisteQuery request, CancellationToken cancellationToken)
         {
             var peca = await _pecaRepository.ObterPorIdAsync(request.PecaId, cancellationToken);
 
-            return peca != null;
+            if (peca == null) Result.NotFound("Peça não encontrada");
+
+            return Result.NoContent();
+        }
+
+        public async Task<Result<IEnumerable<PecaDto>>> Handle(ObterPecasPorIdsCommand request, CancellationToken cancellationToken)
+        {
+            if (!request.EhValido())
+                return Result<IEnumerable<PecaDto>>.ValidationError(request.ObterErros());
+
+            var pecas = await _pecaRepository.Buscar(p => request.PecaIds.Contains(p.Id), cancellationToken);
+
+            if (pecas == null) return Result<IEnumerable<PecaDto>>.NotFound("As peças solicitadas não foram encontradas.");
+
+            if (pecas.Count() != request.PecaIds.Count())
+                return Result<IEnumerable<PecaDto>>.NotFound("Algumas das peças informadas não foram encontradas");
+
+            var pecasDto = _mapper.Map<IEnumerable<PecaDto>>(pecas);
+
+            return Result<IEnumerable<PecaDto>>.Ok(pecasDto);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Net.Http.Json;
 using wrench.auto.repair.autenticacao.domain.Entities;
 using wrench.auto.repair.autenticacao.domain.Security;
 using wrench.auto.repair.core.ValueObjects;
+using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.web.api.integration.tests.Base;
 using wrench.web.api.Models.OrdemServico;
@@ -142,10 +143,11 @@ namespace wrench.web.api.integration.tests.Tests
             var ordemServicoId = ordemServicoResponse.Valor;
 
             // Passar a ordem de serviço pelos fluxos necessários
-            var solicitarDiagnosticoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.SolicitarDiagnosticoCommand(ordemServicoId);
+            var solicitarDiagnosticoCommand = new SolicitarDiagnosticoCommand(ordemServicoId);
             await mediatoR.Send(solicitarDiagnosticoCommand);
 
-            var realizarDiagnosticoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.RealizarDiagnosticoCommand(ordemServicoId, 199.99m, "Solução proposta");
+            // Incluir peças
+            var realizarDiagnosticoCommand = new RealizarDiagnosticoCommand(ordemServicoId, 199.99m, "Solução proposta", []);
             await mediatoR.Send(realizarDiagnosticoCommand);
 
             var aprovaOrcamentoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.AprovaOrcamentoCommand(ordemServicoId);
@@ -159,7 +161,7 @@ namespace wrench.web.api.integration.tests.Tests
             // Assert
             response.EnsureSuccessStatusCode();
         }
-    
+
         [Fact(DisplayName = "Obter Ordem de Serviço Com Sucesso")]
         [Trait("Integration", "WebApi")]
         public async Task Obter_Ordem_Servico_Com_Sucesso()

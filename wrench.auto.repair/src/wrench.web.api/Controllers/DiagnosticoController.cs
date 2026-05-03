@@ -15,15 +15,9 @@ namespace wrench.web.api.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin,Funcionario")]
-    public class DiagnosticoController : ControllerBase
+    public class DiagnosticoController(IMediatorHandler mediatorHandler) : ControllerBase
     {
-        private readonly IMediatorHandler _mediatorHandler;
-
-        public DiagnosticoController(IMediatorHandler mediatorHandler)
-        {
-            _mediatorHandler = mediatorHandler;
-        }
-
+        private readonly IMediatorHandler _mediatorHandler = mediatorHandler;
 
         /// <summary>
         /// Solicitar Diagnóstico

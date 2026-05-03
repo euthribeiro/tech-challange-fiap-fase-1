@@ -5,7 +5,6 @@ using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.Queries;
 using wrench.auto.repair.ordem.servico.application.Queries.ViewModels;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
-using wrench.auto.repair.ordem.servico.domain.Entities;
 using wrench.web.api.Extensions;
 using wrench.web.api.Models.OrdemServico;
 
@@ -35,7 +34,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Cria ordem de serviço
+        /// Finaliza ordem de serviço
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>

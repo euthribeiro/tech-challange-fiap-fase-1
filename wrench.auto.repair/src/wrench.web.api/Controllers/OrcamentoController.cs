@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.web.api.Extensions;
-using wrench.web.api.Models.OrdemServico;
+using wrench.web.api.Models.Orcamento;
 
 namespace wrench.web.api.Controllers
 {
@@ -14,7 +14,7 @@ namespace wrench.web.api.Controllers
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin,Funcionario")]
+    [Authorize(Roles = "Cliente")]
     public class OrcamentoController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
@@ -22,13 +22,29 @@ namespace wrench.web.api.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] AprovarOrcamentoRequest request)
+        [HttpPut("{id:guid}/aprovar")]
+        public async Task<IActionResult> AprovarOrcamento([FromRoute] Guid id)
         {
-            var aprovarOrcamentoCommand = new AprovaOrcamentoCommand(request.OrdemServicoId);
+            var aprovarOrcamentoCommand = new AprovaOrcamentoCommand(id);
 
             var result = await _mediatorHandler
-                .EnviarComando<AprovaOrcamentoCommand, bool>(aprovarOrcamentoCommand);
+                .EnviarComando<AprovaOrcamentoCommand>(aprovarOrcamentoCommand);
+
+            return result.ToActionResult();
+        }
+
+        /// <summary>
+        /// Recusar orçamento
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPut("{id:guid}/recusar")]
+        public async Task<IActionResult> RecusarOrcamento([FromRoute] Guid id, [FromBody] RecusarOrcamentoRequest request)
+        {
+            var recusarOrcamento = new RecusarOrcamentoCommand(id, request.MotivoRecusa);
+
+            var result = await _mediatorHandler
+                .EnviarComando<RecusarOrcamentoCommand>(recusarOrcamento);
 
             return result.ToActionResult();
         }

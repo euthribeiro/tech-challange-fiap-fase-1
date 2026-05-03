@@ -1,0 +1,22 @@
+﻿using AutoMapper;
+using System.ComponentModel;
+using wrench.auto.repair.core.Extensions;
+using wrench.auto.repair.ordem.servico.application.Queries.ViewModels;
+using wrench.auto.repair.ordem.servico.domain.Entities;
+using wrench.auto.repair.ordem.servico.domain.ValueObjects;
+
+namespace wrench.auto.repair.ordem.servico.application.AutoMapper
+{
+    public class OrdemServicoProfile : Profile
+    {
+        public OrdemServicoProfile()
+        {
+            CreateMap<OrdemServico, OrdemServicoViewModel>()
+                .ForMember(o => o.Status, opt => opt.MapFrom(src => src.Status.GetAttribute<DescriptionAttribute>().Description))
+                .ForMember(o => o.StatusAprovacao, opt => opt.MapFrom(src => src.StatusAprovacao.GetAttribute<DescriptionAttribute>().Description))
+                .ForMember(o => o.ValorTotal, opt => opt.MapFrom(src => src.CalcularValorTotal()));
+
+            CreateMap<ItemOrdemServico, ItemOrdemServicoViewModel>();
+        }
+    }
+}

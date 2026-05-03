@@ -3,18 +3,12 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase
 {
-    public class RealizarDiagnosticoCommand : Command<Guid>
+    public class RealizarDiagnosticoCommand(Guid ordemServicoId, decimal valorEstimado, string solucaoProposta, HashSet<Guid> pecasId) : Command<Guid>
     {
-        public RealizarDiagnosticoCommand(Guid ordemServicoId, decimal valorEstimado, string solucaoProposta)
-        {
-            OrdemServicoId = ordemServicoId;
-            ValorEstimado = valorEstimado;
-            SolucaoProposta = solucaoProposta;
-        }
-
-        public Guid OrdemServicoId { get; set; }
-        public decimal ValorEstimado { get; set; }
-        public string SolucaoProposta { get; set; }
+        public Guid OrdemServicoId { get; private set; } = ordemServicoId;
+        public decimal ValorEstimado { get; private set; } = valorEstimado;
+        public string SolucaoProposta { get; private set; } = solucaoProposta;
+        public HashSet<Guid> PecasId { get; private set; } = pecasId;
 
         public override bool EhValido()
         {

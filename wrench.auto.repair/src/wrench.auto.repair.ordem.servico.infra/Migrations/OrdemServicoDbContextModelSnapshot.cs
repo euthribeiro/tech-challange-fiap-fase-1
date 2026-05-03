@@ -31,15 +31,38 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
                     b.Property<Guid>("ClienteId")
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime?>("DataAprovacaoRecusa")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DataDiagnostico")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DataEnvio")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("MotivoRecusa")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SolucaoProposta")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("Status")
                         .HasColumnType("integer");
+
+                    b.Property<int>("StatusAprovacao")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("ValorServico")
+                        .HasColumnType("numeric");
 
                     b.Property<Guid>("VeiculoId")
                         .HasColumnType("uuid");
@@ -51,48 +74,39 @@ namespace wrench.auto.repair.ordem.servico.infra.Migrations
 
             modelBuilder.Entity("wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", b =>
                 {
-                    b.OwnsOne("wrench.auto.repair.ordem.servico.domain.ValueObjects.Diagnostico", "Diagnostico", b1 =>
+                    b.OwnsMany("wrench.auto.repair.ordem.servico.domain.ValueObjects.ItemOrdemServico", "Pecas", b1 =>
                         {
                             b1.Property<Guid>("OrdemServicoId")
                                 .HasColumnType("uuid");
 
-                            b1.Property<DateTime>("DataDiagnostico")
-                                .HasColumnType("timestamp with time zone");
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
 
-                            b1.Property<string>("SolucaoProposta")
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<string>("Nome")
                                 .IsRequired()
                                 .HasColumnType("text");
 
-                            b1.HasKey("OrdemServicoId");
-
-                            b1.ToTable("OrdemServicoDiagnostico", (string)null);
-
-                            b1.WithOwner()
-                                .HasForeignKey("OrdemServicoId");
-                        });
-
-                    b.OwnsOne("wrench.auto.repair.ordem.servico.domain.ValueObjects.Orcamento", "Orcamento", b1 =>
-                        {
-                            b1.Property<Guid>("OrdemServicoId")
+                            b1.Property<Guid>("PecaId")
                                 .HasColumnType("uuid");
 
-                            b1.Property<DateTime?>("DataAprovacao")
-                                .HasColumnType("timestamp with time zone");
+                            b1.Property<int>("Quantidade")
+                                .HasColumnType("integer");
 
-                            b1.Property<DateTime>("DataEnvio")
-                                .HasColumnType("timestamp with time zone");
+                            b1.Property<decimal>("ValorUnitario")
+                                .HasColumnType("decimal(18,2)");
 
-                            b1.HasKey("OrdemServicoId");
+                            b1.HasKey("OrdemServicoId", "Id");
 
-                            b1.ToTable("OrdemServicoOrcamento", (string)null);
+                            b1.ToTable("OrdemServicoItem", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OrdemServicoId");
                         });
 
-                    b.Navigation("Diagnostico");
-
-                    b.Navigation("Orcamento");
+                    b.Navigation("Pecas");
                 });
 #pragma warning restore 612, 618
         }

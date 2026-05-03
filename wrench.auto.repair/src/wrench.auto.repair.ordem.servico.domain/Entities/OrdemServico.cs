@@ -1,4 +1,5 @@
 ﻿using wrench.auto.repair.core.DomainObjects;
+using wrench.auto.repair.core.Extensions;
 using wrench.auto.repair.ordem.servico.domain.Enums;
 using wrench.auto.repair.ordem.servico.domain.ValueObjects;
 
@@ -11,28 +12,41 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public string Descricao { get; private set; }
         public DateTime DataCriacao { get; private set; }
         public OrdemServicoStatus Status { get; private set; }
-        public Diagnostico Diagnostico { get; private set; }
-        public Orcamento Orcamento { get; private set; }
+        public decimal ValorServico { get; private set; }
+        public string SolucaoProposta { get; private set; }
+        public StatusAprovacao StatusAprovacao { get; private set; }
+        public string MotivoRecusa { get; private set; }
+        public DateTime DataDiagnostico { get; private set; }
+        public DateTime? DataEnvio { get; private set; }
+        public DateTime? DataAprovacaoRecusa { get; private set; }
+
+        private List<ItemOrdemServico> _pecas = [];
+        public IReadOnlyCollection<ItemOrdemServico> Pecas => _pecas.AsReadOnly();
 
         public OrdemServico(Guid clienteId, Guid veiculoId, string descricao, OrdemServicoStatus status, DateTime dataCriacao)
         {
+            Validar(clienteId, veiculoId, descricao, status);
+
             ClienteId = clienteId;
             VeiculoId = veiculoId;
-            Descricao = descricao;
+            Descricao = descricao.RemoverAcentos().RemoverEspacosDuplicados().ToUpperInvariant();
             DataCriacao = dataCriacao;
             Status = status;
-
-            Validar();
         }
 
-        public void AdicionarDiagnostico(string solucao, decimal valorEstimado)
+        public void AdicionarDiagnostico(string solucao, decimal valorServico)
         {
             if (Status != OrdemServicoStatus.EmDiagnostico)
                 throw new DomainException("A ordem de serviço não está em um status que permite diagnóstico.");
 
-            Diagnostico = new Diagnostico(solucao, valorEstimado);
+            Validacoes.ValidarSeMenorQue(valorServico, 0, "O valor do serviço deve ser maior ou igual a zero");
+            Validacoes.ValidarSeVazio(solucao, "A solução proposta não pode ser vazia");
 
-            Orcamento = new Orcamento(Id, DateTime.UtcNow, null);
+            ValorServico = valorServico;
+            SolucaoProposta = solucao;
+            DataDiagnostico = DateTime.UtcNow;
+            DataEnvio = DateTime.UtcNow;
+            StatusAprovacao = StatusAprovacao.EmAnalise;
             Status = OrdemServicoStatus.AguardandoAprovacao;
         }
 
@@ -46,12 +60,19 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
 
         public void AprovarOrcamento()
         {
-            if (Status != OrdemServicoStatus.AguardandoAprovacao)
-                throw new DomainException("A ordem de serviço não está em um status que permite aprovação.");
-
-            Orcamento.Aprovar();
-
+            StatusAprovacao = StatusAprovacao.Aprovada;
             Status = OrdemServicoStatus.EmExecucao;
+            DataAprovacaoRecusa = DateTime.UtcNow;
+        }
+
+        public void RecusarOrcamento(string motivo)
+        {
+            Validacoes.ValidarSeVazio(motivo, "O motivo da recusa deve ser informado");
+
+            StatusAprovacao = StatusAprovacao.Recusada;
+            Status = OrdemServicoStatus.Finalizada;
+            DataAprovacaoRecusa = DateTime.UtcNow;
+            MotivoRecusa = motivo;
         }
 
         public void FinalizarOrdemServico()
@@ -61,13 +82,33 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
             Status = OrdemServicoStatus.Finalizada;
         }
 
-        private void Validar()
+        public void AdicionarPeca(ItemOrdemServico item)
         {
-            Validacoes.ValidarSeVazio(ClienteId, "O identificador do cliente não pode ser vazio");
-            Validacoes.ValidarSeVazio(VeiculoId, "O identificador do veículo não pode ser vazio");
-            Validacoes.ValidarSeVazio(Descricao, "A descrição não pode ser vazia");
-            Validacoes.ValidarSeMenorQue((int)Status, 1, "O status precisa ser informado");
+            var itemExistente = _pecas.FirstOrDefault(i => i.PecaId == item.PecaId);
+
+            if (itemExistente != null)
+            {
+                _pecas.Remove(item);
+                itemExistente.AdicionarUnidades(item.Quantidade);
+                _pecas.Add(itemExistente);
+            }
+            else
+            {
+                _pecas.Add(item);
+            }
         }
-    
+
+        public decimal CalcularValorTotal()
+        {
+            return ValorServico + Pecas.Sum(p => p.CalcularValorTotalPeca());
+        }
+
+        private static void Validar(Guid clienteId, Guid veiculoId, string descricao, OrdemServicoStatus status)
+        {
+            Validacoes.ValidarSeVazio(clienteId, "O identificador do cliente não pode ser vazio");
+            Validacoes.ValidarSeVazio(veiculoId, "O identificador do veículo não pode ser vazio");
+            Validacoes.ValidarSeVazio(descricao, "A descrição não pode ser vazia");
+            Validacoes.ValidarSeMenorQue((int)status, 1, "O status precisa ser informado");
+        }
     }
 }

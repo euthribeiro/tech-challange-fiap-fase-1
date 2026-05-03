@@ -3,14 +3,9 @@ using wrench.auto.repair.core.Messages;
 
 namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
 {
-    public class AprovaOrcamentoCommand : Command<bool>
+    public class AprovaOrcamentoCommand(Guid ordemServicoId) : Command
     {
-        public Guid OrdemServicoId { get; set; }
-
-        public AprovaOrcamentoCommand(Guid ordemServicoId)
-        {
-            OrdemServicoId = ordemServicoId;
-        }
+        public Guid OrdemServicoId { get; set; } = ordemServicoId;
 
         public override bool EhValido()
         {
@@ -25,7 +20,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
                 RuleFor(c => c.OrdemServicoId)
                     .NotEmpty()
                     .WithMessage("Ordem de serviço não informada.");
-           
+
             }
         }
     }

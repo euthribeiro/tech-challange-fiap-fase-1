@@ -1,8 +1,9 @@
-﻿using Moq;
+﻿using AutoMapper;
+using Moq;
+using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
 using wrench.auto.repair.ordem.servico.application.Queries;
-using wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase;
 using wrench.auto.repair.ordem.servico.domain.Data;
@@ -23,10 +24,11 @@ namespace wrench.auto.repair.ordem.servico.application.tests
         {
             _repositoryMock = new Mock<IOrdemServicoRepository>();
             _mediatorMock = new Mock<IMediatorHandler>();
+            var mapper = new Mock<IMapper>();
 
             _commandHandler = new OrdemServicoCommandHandler(_mediatorMock.Object, _repositoryMock.Object);
             _orcamentoHandler = new OrcamentoCommandHandler(_repositoryMock.Object);
-            _queryHandler = new OrdemServicoQueryHandler(_repositoryMock.Object);
+            _queryHandler = new OrdemServicoQueryHandler(mapper.Object, _repositoryMock.Object);
         }
 
         [Fact(DisplayName = "Criar Ordem Serviço Com Sucesso")]
@@ -38,7 +40,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             // Setup de comportamentos do mock (se necessário)
             _mediatorMock.Setup(m => m.ConsultaIntegrada(It.IsAny<VeiculoExisteEPertenteAoClienteQuery>()))
-                         .ReturnsAsync(true);
+                         .ReturnsAsync(Result.Ok());
 
             _repositoryMock.Setup(r => r.Adicionar(It.IsAny<OrdemServico>(), It.IsAny<CancellationToken>()))
                            .Returns(Task.CompletedTask);
@@ -76,7 +78,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             // Arrange
             var id = Guid.NewGuid();
             var query = new ObterOrdemServicoIdQuery(id);
-            var ordemServico = new OrdemServico(id, Guid.NewGuid(), "Veículo Teste", OrdemServicoStatus.Recebida , DateTime.UtcNow);
+            var ordemServico = new OrdemServico(id, Guid.NewGuid(), "Veículo Teste", OrdemServicoStatus.Recebida, DateTime.UtcNow);
             ordemServico.Id = id;
 
             _repositoryMock.Setup(r => r.ObterPorIdAsync(id, CancellationToken.None))
@@ -87,7 +89,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal(id, result.Valor.OrdemServicoId);
+            Assert.Equal(id, result.Valor!.Id);
             _repositoryMock.Verify(r => r.ObterPorIdAsync(id, CancellationToken.None), Times.Once);
         }
 
@@ -109,8 +111,8 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             Assert.False(result.Sucesso);
             _repositoryMock.Verify(r => r.ObterPorIdAsync(id, CancellationToken.None), Times.Once);
         }
-    
-    
+
+
         [Fact(DisplayName = "Finalizar ordem deve retornar erro quando comando for inválido")]
         [Trait("Ordem Serviço", "Application")]
         public async Task FinalizarOrdemServico_DeveRetornarValidationError_QuandoCommandInvalido()
@@ -240,7 +242,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var command = new CriarOrdemServicoCommand(Guid.NewGuid(), Guid.NewGuid(), "Ruído no motor");
 
             _mediatorMock.Setup(m => m.ConsultaIntegrada(It.IsAny<VeiculoExisteEPertenteAoClienteQuery>()))
-                .ReturnsAsync(false);
+                .ReturnsAsync(Result.NotFound());
 
             var result = await _commandHandler.Handle(command, CancellationToken.None);
 
@@ -254,7 +256,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var command = new CriarOrdemServicoCommand(Guid.NewGuid(), Guid.NewGuid(), "Ruído no câmbio");
 
             _mediatorMock.Setup(m => m.ConsultaIntegrada(It.IsAny<VeiculoExisteEPertenteAoClienteQuery>()))
-                .ReturnsAsync(true);
+                .ReturnsAsync(Result.Ok());
             _repositoryMock.Setup(r => r.Adicionar(It.IsAny<OrdemServico>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
             _repositoryMock.Setup(r => r.UnitOfWork.CommitAsync())

@@ -23,7 +23,12 @@ namespace wrench.auto.repair.core.Mediator
             await _mediator.Publish(evento);
         }
 
-        public async Task<bool> ConsultaIntegrada<T>(T consulta) where T : IntegratedQuery
+        public async Task<Result> ConsultaIntegrada<T>(T consulta) where T : IntegratedQuery
+        {
+            return await _mediator.Send(consulta);
+        }
+
+        public async Task<Result<TOut>> ConsultaIntegrada<T, TOut>(T consulta) where T : IntegratedQuery<TOut>
         {
             return await _mediator.Send(consulta);
         }

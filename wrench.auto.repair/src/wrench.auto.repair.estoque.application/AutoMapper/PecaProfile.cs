@@ -11,8 +11,8 @@ namespace wrench.auto.repair.estoque.application.AutoMapper
         {
             CreateMap<Peca, PecaViewModel>();
             CreateMap<Peca, PecaDto>()
-                .ForMember(d => d.PecaId, o => o.MapFrom(s => s.Id))
-                .ForMember(d => d.ValorUnitario, o => o.MapFrom(s => (decimal)s.Valor));
+                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                .ForMember(d => d.Valor, o => o.MapFrom(s => (decimal)s.Valor));
         }
     }
 }

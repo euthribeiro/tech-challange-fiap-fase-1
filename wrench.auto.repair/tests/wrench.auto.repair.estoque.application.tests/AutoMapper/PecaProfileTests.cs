@@ -19,8 +19,8 @@ namespace wrench.auto.repair.estoque.application.tests.AutoMapper
 
             var dto = mapper.Map<PecaDto>(peca);
 
-            Assert.Equal(peca.Id, dto.PecaId);
-            Assert.Equal((decimal)peca.Valor, dto.ValorUnitario);
+            Assert.Equal(peca.Id, dto.Id);
+            Assert.Equal((decimal)peca.Valor, dto.Valor);
             Assert.Equal(peca.Nome, dto.Nome);
             Assert.Equal(peca.Quantidade, dto.Quantidade);
         }

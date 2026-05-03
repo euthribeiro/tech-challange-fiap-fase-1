@@ -106,9 +106,9 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             {
                 new()
                 {
-                    PecaId = pecaId,
+                    Id = pecaId,
                     Nome = "Pastilha de freio dianteira",
-                    ValorUnitario = 89.90m,
+                    Valor = 89.90m,
                     Quantidade = 2
                 }
             };
@@ -135,7 +135,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             _ordemServicoRepositoryMock.Verify(repo => repo.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Once);
             _mediatorHandlerMock.Verify(
                 m => m.ConsultaIntegrada<ObterPecasPorIdsCommand, IEnumerable<PecaDto>>(
-                    It.Is<ObterPecasPorIdsCommand>(q => q.PecaIds.Contains(pecaId))),
+                    It.Is<ObterPecasPorIdsCommand>(q => q.PecasIds.Contains(pecaId))),
                 Times.Once);
             var item = Assert.Single(ordemServicoFake.Pecas);
             Assert.Equal(pecaId, item.PecaId);

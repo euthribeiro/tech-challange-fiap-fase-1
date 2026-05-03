@@ -175,6 +175,9 @@ namespace wrench.auto.repair.estoque.application.Commands
 
         public async Task<Result> Handle(PecaExisteQuery request, CancellationToken cancellationToken)
         {
+            if (!request.EhValido())
+                return Result.ValidationError(request.ObterErros());
+
             var peca = await _pecaRepository.ObterPorIdAsync(request.PecaId, cancellationToken);
 
             if (peca == null) Result.NotFound("Peça não encontrada");
@@ -187,11 +190,11 @@ namespace wrench.auto.repair.estoque.application.Commands
             if (!request.EhValido())
                 return Result<IEnumerable<PecaDto>>.ValidationError(request.ObterErros());
 
-            var pecas = await _pecaRepository.Buscar(p => request.PecaIds.Contains(p.Id), cancellationToken);
+            var pecas = await _pecaRepository.Buscar(p => request.PecasIds.Contains(p.Id), cancellationToken);
 
             if (pecas == null) return Result<IEnumerable<PecaDto>>.NotFound("As peças solicitadas não foram encontradas.");
 
-            if (pecas.Count() != request.PecaIds.Count())
+            if (pecas.Count() != request.PecasIds.Count())
                 return Result<IEnumerable<PecaDto>>.NotFound("Algumas das peças informadas não foram encontradas");
 
             var pecasDto = _mapper.Map<IEnumerable<PecaDto>>(pecas);

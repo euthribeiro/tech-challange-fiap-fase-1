@@ -21,8 +21,22 @@ namespace wrench.auto.repair.ordem.servico.application.Queries
 
     public class ObterTodasOrdemServicoPorClienteQueryValidator : AbstractValidator<ObterTodasOrdemServicoPorClienteQuery>
     {
+        public static string ClienteIdVazio => "O identificador do cliente precisa ser informado";
+        public static string VeiculoIdVazio => "O identificador do veículo não é válido";
+
         public ObterTodasOrdemServicoPorClienteQueryValidator()
         {
+            RuleFor(c => c.ClienteId)
+                .NotEmpty()
+                .WithMessage(ClienteIdVazio);
+
+            When(c => c.VeiculoId != null, () =>
+            {
+                RuleFor(c => c.VeiculoId)
+                 .NotEmpty()
+                 .WithMessage(VeiculoIdVazio);
+            });
+
             RuleFor(c => c.Paginacao)
                 .SetValidator(new OrdemServicoRequisicaoPaginadaValidator());
         }

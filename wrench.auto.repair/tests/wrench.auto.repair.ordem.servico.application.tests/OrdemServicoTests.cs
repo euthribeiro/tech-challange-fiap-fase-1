@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Moq;
+using wrench.auto.repair.core.Data;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
@@ -26,6 +27,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             _repositoryMock = new Mock<IOrdemServicoRepository>();
             _mediatorMock = new Mock<IMediatorHandler>();
             var mapper = new Mock<IMapper>();
+            var ordemServicoSortMap = new Mock<ISortMap<OrdemServico>>();
             mapper.Setup(m => m.Map<OrdemServicoViewModel>(It.IsAny<OrdemServico>()))
                 .Returns((OrdemServico o) => new OrdemServicoViewModel
                 {
@@ -46,7 +48,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
 
             _commandHandler = new OrdemServicoCommandHandler(_mediatorMock.Object, _repositoryMock.Object);
             _orcamentoHandler = new OrcamentoCommandHandler(_repositoryMock.Object);
-            _queryHandler = new OrdemServicoQueryHandler(mapper.Object, _repositoryMock.Object);
+            _queryHandler = new OrdemServicoQueryHandler(mapper.Object, ordemServicoSortMap.Object, _repositoryMock.Object);
         }
 
         [Fact(DisplayName = "Criar Ordem Serviço Com Sucesso")]

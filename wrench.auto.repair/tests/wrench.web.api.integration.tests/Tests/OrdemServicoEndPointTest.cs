@@ -159,10 +159,8 @@ namespace wrench.web.api.integration.tests.Tests
             var aprovaOrcamentoCommand = new wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.AprovaOrcamentoCommand(ordemServicoId);
             await mediatoR.Send(aprovaOrcamentoCommand);
 
-            var request = new AtualizarOrdemServicoRequest(ordemServicoId);
-
             // Act
-            var response = await _httpClient.PutAsJsonAsync($"/api/v1/ordem-servico", request);
+            var response = await _httpClient.PutAsync($"/api/v1/ordem-servico/{ordemServicoId}/finalizar", null);
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -233,7 +231,7 @@ namespace wrench.web.api.integration.tests.Tests
             var ordemServicoId = Guid.NewGuid();
 
             // Act
-            var response = await _httpClient.GetAsync($"/api/v1/ordem-servico?id={ordemServicoId}");
+            var response = await _httpClient.GetAsync($"/api/v1/ordem-servico/{ordemServicoId}");
 
             // Assert
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -259,9 +257,9 @@ namespace wrench.web.api.integration.tests.Tests
         [Trait("Integration", "WebApi")]
         public async Task Finalizar_Ordem_Servico_Com_Falha_Quando_Nao_Existir()
         {
-            var request = new AtualizarOrdemServicoRequest(Guid.NewGuid());
+            var id = Guid.NewGuid();
 
-            var response = await _httpClient.PutAsJsonAsync("/api/v1/ordem-servico", request);
+            var response = await _httpClient.PutAsync($"/api/v1/ordem-servico/{id}/finalizar", null);
 
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }

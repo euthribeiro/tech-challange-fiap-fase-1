@@ -105,7 +105,6 @@ No link do Miro abaixo, está toda a documentação relacionada:
 
 ---
 
-## Notas Adicionais
+# Relatório OWASP Dependency Check
 
-* A estratégia inicial será utilizar migrations via Entity Framework Core
-* Caso surjam necessidades específicas (ex: busca textual avançada ou cache), outros componentes poderão ser adicionados (ex: Redis, Elastic)
+- [Relatório (05/05/2026)](./docs/owasp/dependency-check-report.html)

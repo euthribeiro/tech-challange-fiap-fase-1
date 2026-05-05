@@ -164,13 +164,13 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 
 ---
 
-# ADR 001 - Escolha do Banco de Dados
+## ADR 001 - Escolha do Banco de Dados
 
 [ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
 
 ---
 
-# Relatórios SonarQube
+## Relatórios SonarQube
 - [Relatório — Inicial (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-inicial.pdf)
 - [Relatório — Confiabildiade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade-exemplo.pdf)
 - [Relatório — Confiabildiade Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade.pdf)
@@ -183,6 +183,6 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 
 ---
 
-# Relatório OWASP Dependency Check
+## Relatório OWASP Dependency Check
 
 - [Relatório (05/05/2026)](./docs/owasp/dependency-check-report.html)

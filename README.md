@@ -13,7 +13,7 @@
 
 ## Wrench Auto Repair
 
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="100">
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/logos/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="120">
 
 ## 🚀 Como Executar o Projeto
 
@@ -81,7 +81,7 @@ No link do Miro abaixo, está toda a documentação relacionada:
 
 # ADR 001 - Escolha do Banco de Dados
 
-[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
+[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/adrs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
 
 ---
 

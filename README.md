@@ -15,6 +15,75 @@
 
 <img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/logos/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="150">
 
+## 🏗️ Arquitetura do Projeto
+
+### Visão Geral
+
+O sistema foi projetado utilizando uma **arquitetura monolítica modular**, priorizando simplicidade operacional sem abrir mão de organização interna e separação de responsabilidades. Embora seja implantado como uma única aplicação, o código é estruturado de forma lógica em **contextos bem definidos**, o que facilita manutenção, evolução e possível extração futura para microsserviços, caso necessário.
+
+---
+
+### 📦 Contextos do Domínio
+
+A aplicação está dividida em quatro principais **bounded contexts**, cada um responsável por um conjunto específico de regras de negócio:
+
+* **Autenticação**
+  Responsável por controle de acesso, login, gestão de usuários e permissões.
+
+* **Cadastro**
+  Gerencia entidades centrais do sistema, como clientes, veículos e demais informações cadastrais.
+
+* **Estoque**
+  Controla peças, insumos e movimentações de inventário.
+
+* **Ordem de Serviço**
+  Núcleo operacional do sistema, responsável pela criação, acompanhamento e finalização das ordens de serviço.
+
+Cada contexto possui suas próprias entidades, regras e casos de uso, reduzindo acoplamento e evitando que regras de negócio se misturem indevidamente.
+
+---
+
+### 🔄 Padrão CQRS com Mediator
+
+O projeto adota o padrão **CQRS (Command Query Responsibility Segregation)** em conjunto com um **mediator** para orquestração das operações.
+
+#### Separação de responsabilidades
+
+* **Commands**: Representam operações de escrita (criação, atualização, remoção).
+* **Queries**: Responsáveis por operações de leitura.
+
+Essa separação traz benefícios como:
+
+* Maior clareza na intenção do código
+* Facilidade de manutenção
+* Possibilidade de otimizações específicas para leitura e escrita
+
+#### Uso de Mediator
+
+Todas as interações entre camadas são mediadas por um componente central (mediator), que:
+
+* Desacopla controllers dos handlers de negócio
+* Centraliza o fluxo de execução
+* Facilita a implementação de pipelines (ex: validação, logging, transações)
+
+Fluxo típico:
+
+```
+Controller → Command/Query → Mediator → Handler → Domínio/Infraestrutura
+```
+
+---
+
+### 🎯 Benefícios da Abordagem
+
+* **Organização modular dentro de um monólito**
+* **Baixo acoplamento entre contextos**
+* **Alta coesão dentro de cada domínio**
+* **Facilidade para testes unitários e evolução incremental**
+* **Preparação para escalabilidade futura (ex: microsserviços)**
+
+---
+
 ## 🚀 Como Executar o Projeto
 
 Os scripts de execução ficam em [`wrench.auto.repair/scripts`](wrench.auto.repair/scripts) execute os comandos dentro desse diretório.

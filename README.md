@@ -52,6 +52,8 @@ Com o apoio de uma equipe de desenvolvedores, o projeto foi batizado internament
 
 O sistema foi projetado utilizando uma **arquitetura monolítica modular**, priorizando simplicidade operacional sem abrir mão de organização interna e separação de responsabilidades. Embora seja implantado como uma única aplicação, o código é estruturado de forma lógica em **contextos bem definidos**, o que facilita manutenção, evolução e possível extração futura para microsserviços, caso necessário.
 
+<img src="./docs/diagramas/visao-container-c4.png" width="100%">
+
 ---
 
 ### 📦 Contextos do Domínio
@@ -102,6 +104,8 @@ Fluxo típico:
 ```
 Controller → Command/Query → Mediator → Handler → Domínio/Infraestrutura
 ```
+
+<img src="./docs/diagramas/fluxograma-cqrs-mediator.png" width="100%">
 
 ---
 

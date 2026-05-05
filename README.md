@@ -17,7 +17,7 @@
 
 ## 🚀 Como Executar o Projeto
 
-Os scripts de execução ficam em [`wrench.auto.repair/scripts`](wrench.auto.repair/scripts).
+Os scripts de execução ficam em [`wrench.auto.repair/scripts`](wrench.auto.repair/scripts) execute os comandos dentro desse diretório.
 
 ### Subir a aplicação
 
@@ -27,7 +27,7 @@ Ao subir a aplicação, será iniciado um container docker da aplicação e do p
 docker-compose up
 ```
 
-Aguarde a execução até qie exiba *Now listening on: http://[::]:8080* , nesse processo está sendo gerado o build da aplicação, executando o PostgreSQL e as migrations da estrutura do banco de dados.
+Aguarde a execução até que exiba *Now listening on: http://[::]:8080* , nesse processo está sendo gerado o build da aplicação, executando o PostgreSQL e as migrations da estrutura do banco de dados.
 
 - Acesse agora a url http://localhost:8080/docs-ui
 - A api está versionada pela URL, então para cada endpoint que for chamar, na UI da documentação na seção "Variables", haverá um parâmetro *version*, ele é obrigatório e deve ser usado o valor *1*

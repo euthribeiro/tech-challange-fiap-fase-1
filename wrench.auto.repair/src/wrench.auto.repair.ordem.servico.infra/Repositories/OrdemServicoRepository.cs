@@ -3,7 +3,9 @@ using System.Linq.Expressions;
 using wrench.auto.repair.core.Pagination;
 using wrench.auto.repair.ordem.servico.domain.Data;
 using wrench.auto.repair.ordem.servico.domain.Entities;
+using wrench.auto.repair.ordem.servico.domain.Enums;
 using wrench.auto.repair.ordem.servico.infra.Context;
+using wrench.auto.repair.ordem.servico.infra.Extensions;
 
 namespace wrench.auto.repair.ordem.servico.infra.Repositories
 {
@@ -40,6 +42,24 @@ namespace wrench.auto.repair.ordem.servico.infra.Repositories
                 request.NumeroPagina,
                 request.TamanhoPagina,
                 sortMap.Keys);
+        }
+
+        public async Task<double> ObterTempoMedioExecucaoTodasOrdemServico()
+        {
+            var result = await _context.OrdemServico
+                .Where(o =>
+                    (o.DataAprovacaoRecusa.HasValue) &&
+                    (o.DataFinalizacao.HasValue || o.DataEntrega.HasValue) &&
+                    (o.Status == OrdemServicoStatus.Finalizada ||
+                     o.Status == OrdemServicoStatus.Entregue))
+                .AverageAsync(o =>
+                    (double?)PostgresDbFunctions.DateDiffMilliseconds(
+                        o.DataAprovacaoRecusa!.Value,
+                        (o.DataFinalizacao ?? o.DataEntrega!.Value)
+                    )
+                );
+
+            return result ?? 0;
         }
     }
 }

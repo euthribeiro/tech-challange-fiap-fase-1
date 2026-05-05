@@ -5,6 +5,7 @@ using wrench.auto.repair.autenticacao.infra.Seeds;
 using wrench.auto.repair.cadastro.infra;
 using wrench.auto.repair.estoque.infra.Context;
 using wrench.auto.repair.ordem.servico.infra.Context;
+using wrench.auto.repair.ordem.servico.infra.Seeds;
 using wrench.web.api.Options;
 
 namespace wrench.web.api.Contexts
@@ -33,14 +34,13 @@ namespace wrench.web.api.Contexts
 
         public static async Task UseSeeds(this WebApplication app)
         {
-            using (var scope = app.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
+            using var scope = app.Services.CreateScope();
+            var services = scope.ServiceProvider;
 
-                var context = services.GetRequiredService<AutenticacaoContext>();
+            var context = services.GetRequiredService<AutenticacaoContext>();
 
-                await DbSeeder.SeedAdminAsync(services);
-            }
+            await DbSeeder.SeedAdminAsync(services);
+            await OrdemServicoFunctionSeed.CriarFuncaoDateDiffMillisecondsAsync(services);
         }
 
         public static void AddDbContexts(this IServiceCollection services)

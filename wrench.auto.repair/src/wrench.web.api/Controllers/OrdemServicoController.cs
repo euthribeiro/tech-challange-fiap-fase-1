@@ -105,13 +105,25 @@ namespace wrench.web.api.Controllers
         /// <param name="requisicao"></param>
         /// <returns></returns>
         [HttpGet("cliente")]
-        [Authorize(Roles = "Admin,Funcionario,Cliente")]
+        [Authorize(Roles = "Admin,Funcionario")]
         public async Task<IActionResult> GetAllByClienteId([FromQuery] Guid clienteId, [FromQuery] Guid? veiculoId, [FromQuery] OrdemServicoRequisicaoPaginada requisicao)
         {
             var obterTodasOrdemServicoPorClienteQuery = new ObterTodasOrdemServicoPorClienteQuery(clienteId, veiculoId, requisicao);
 
             var result = await _mediatorHandler
                 .EnviarComando<ObterTodasOrdemServicoPorClienteQuery, ResultadoPaginado<OrdemServicoViewModel>>(obterTodasOrdemServicoPorClienteQuery);
+
+            return result.ToActionResult();
+        }
+
+        [HttpGet("monitoramento")]
+        [Authorize(Roles = "Admin,Funcionario")]
+        public async Task<IActionResult> ObterTempoMedioExecucaoOrdemServico()
+        {
+            var obterTempoMedioExecucaoOrdemServicoQuery = new ObterTempoMedioExecucaoOrdemServicoQuery();
+
+            var result = await _mediatorHandler
+                .EnviarComando<ObterTempoMedioExecucaoOrdemServicoQuery, MonitoramentoViewModel>(obterTempoMedioExecucaoOrdemServicoQuery);
 
             return result.ToActionResult();
         }

@@ -53,7 +53,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
                 return Result.NotFound("Ordem de serviço não encontrada");
 
             if (ordemServico.Status != OrdemServicoStatus.EmExecucao)
-                return Result.Forbidden("Status da ordem de serviço não permite finalização");
+                return Result.Conflicted("Status da ordem de serviço não permite finalização");
 
             ordemServico.FinalizarOrdemServico();
 
@@ -76,7 +76,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseC
                 return Result.NotFound("Ordem de serviço não encontrada");
 
             if (ordemServico.Status != OrdemServicoStatus.Finalizada)
-                return Result.Forbidden("Finalize a ordem de serviço antes de entregá-la");
+                return Result.Conflicted("Finalize a ordem de serviço antes de entregá-la");
 
             ordemServico.EntregarServico();
 

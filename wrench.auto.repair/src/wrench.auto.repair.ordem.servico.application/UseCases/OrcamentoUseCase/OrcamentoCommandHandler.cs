@@ -20,7 +20,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
                 return Result.NotFound($"Ordem de serviço com ID {request.OrdemServicoId} não encontrada.");
 
             if (ordemServico.Status != OrdemServicoStatus.AguardandoAprovacao)
-                return Result.Forbidden("Status da ordem de serviço não permite aprovação");
+                return Result.Conflicted("Status da ordem de serviço não permite aprovação");
 
             ordemServico.AprovarOrcamento();
 
@@ -41,7 +41,7 @@ namespace wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase
                 return Result.NotFound($"Ordem de serviço com identificado {request.OrdemServicoId} não encontrada.");
 
             if (ordemServico.Status != OrdemServicoStatus.AguardandoAprovacao)
-                return Result.Forbidden("Status da ordem de serviço não permite recusa");
+                return Result.Conflicted("Status da ordem de serviço não permite recusa");
 
             ordemServico.RecusarOrcamento(request.MotivoRecusa);
 

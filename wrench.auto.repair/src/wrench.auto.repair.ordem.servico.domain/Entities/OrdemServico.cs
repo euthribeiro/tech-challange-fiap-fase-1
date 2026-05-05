@@ -19,6 +19,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public DateTime? DataDiagnostico { get; private set; }
         public DateTime? DataEnvio { get; private set; }
         public DateTime? DataAprovacaoRecusa { get; private set; }
+        public DateTime? DataFinalizacao { get; private set; }
         public DateTime? DataEntrega { get; private set; }
 
         private List<ItemOrdemServico> _pecas = [];
@@ -92,6 +93,7 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         {
             if (Status != OrdemServicoStatus.EmExecucao)
                 throw new DomainException("A ordem de serviço não está em um status que permite finalização.");
+            DataFinalizacao = DateTime.UtcNow;
             Status = OrdemServicoStatus.Finalizada;
         }
 
@@ -123,6 +125,15 @@ namespace wrench.auto.repair.ordem.servico.domain.Entities
         public decimal CalcularValorTotal()
         {
             return ValorServico + Pecas.Sum(p => p.CalcularValorTotalPeca());
+        }
+
+        public double? CalculaTempoExecucaoOrdem()
+        {
+            if (!DataFinalizacao.HasValue) return null;
+
+            var diff = DataCriacao - DataFinalizacao.Value;
+
+            return diff.TotalMilliseconds;
         }
 
         private static void Validar(Guid clienteId, Guid veiculoId, string descricao, OrdemServicoStatus status)

@@ -61,6 +61,7 @@
 
         public static Result<T> Forbidden(params string[] errors) =>
             new(TipoErroEnum.PROIBIDO, [.. errors]);
+
         public static Result<T> Custom(TipoErroEnum tipoErro, params string[] errors) =>
             new(tipoErro, [.. errors]);
 

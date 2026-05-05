@@ -88,7 +88,7 @@ namespace wrench.auto.repair.autenticacao.application.Commands
                 return Result.NoContent();
 
             if (usuario.Perfil.Nome == "Admin")
-                return Result.Forbidden("Usuário adminstrador não pode ser inativado");
+                return Result.Conflicted("Usuário adminstrador não pode ser inativado");
 
             usuario.Inativar();
 
@@ -116,7 +116,7 @@ namespace wrench.auto.repair.autenticacao.application.Commands
                 return Result.Forbidden("Não permitido.");
 
             if (usuario.Perfil.Nome == "Admin")
-                return Result.Forbidden("Senha do usuário adminstrador não pode ser alterado por esse serviço.");
+                return Result.Conflicted("Senha do usuário adminstrador não pode ser alterado por esse serviço.");
 
             var passwordHash = _passwordHasher.GerarHash(request.Senha);
 
@@ -146,7 +146,7 @@ namespace wrench.auto.repair.autenticacao.application.Commands
                 return Result.NoContent();
 
             if (usuario.Perfil.Nome == "Admin")
-                return Result.Forbidden("Senha do usuário adminstrador não pode ser resetada.");
+                return Result.Conflicted("Senha do usuário adminstrador não pode ser resetada.");
 
             usuario.ResetarSenha();
 

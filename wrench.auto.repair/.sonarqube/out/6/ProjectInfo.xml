@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>wrench.auto.repair.ordem.servico.infra</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>1833332f-3211-b89c-07df-347a7e5aada3</ProjectGuid>
+  <FullPath>C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\wrench.auto.repair.ordem.servico.infra.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResultFiles>
+    <AnalysisResultFile Id="FilesToAnalyze" Location="C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\.sonarqube\conf\6\FilesToAnalyze.txt" />
+  </AnalysisResultFiles>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\.sonarqube\out\6\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\.sonarqube\out\6</Property>
+    <Property Name="sonar.cs.scanner.telemetry">C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\.sonarqube\out\6\Telemetry.json</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net10.0</TargetFramework>
+</ProjectInfo>

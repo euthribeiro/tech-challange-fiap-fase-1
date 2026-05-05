@@ -1,0 +1,12 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\ClienteTests.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\EnderecoTests.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\Fixtures\ClienteFixture.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\Fixtures\VeiculoFixture.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\VeiculoTests.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\TestResults\362a5b43-0fb0-4ef3-9da6-f105adf1b515\coverage.cobertura.xml
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.cadastro.domain.tests\TestResults\4d324ff6-51a2-4a0c-adc5-829ebf7c8b7f\coverage.cobertura.xml

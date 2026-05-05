@@ -1,0 +1,13 @@
+Ω
+
+zC:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.estoque.domain.tests\PecaTests.cs'wrench.auto.repair.estoque.domain.testsd
+1wrench.auto.repair.estoque.domain.tests.PecaTests/CriarPecas_DadosInvalidos_DeveRetornarExceptionk
+1wrench.auto.repair.estoque.domain.tests.PecaTests6CriarPecas_DadosValido_NehumaExceptionDeveSerRetornadao
+1wrench.auto.repair.estoque.domain.tests.PecaTests:CriarPecas_AlterarDescricaoParaVazio_DeveRetornarExceptionv
+1wrench.auto.repair.estoque.domain.tests.PecaTestsACriarPecas_AlterarDescricaoValida_NehumaExceptionDeveSerRetornadaj
+1wrench.auto.repair.estoque.domain.tests.PecaTests5CriarPecas_AlterarValorInvalido_DeveRetornarExceptionr
+1wrench.auto.repair.estoque.domain.tests.PecaTests=CriarPecas_AlterarValorValido_NehumaExceptionDeveSerRetornadaw
+1wrench.auto.repair.estoque.domain.tests.PecaTestsBCriarPecas_ReporEstoqueComQuantidadeInvalida_DeveRetornarExceptionÅ
+1wrench.auto.repair.estoque.domain.tests.PecaTestsLCriarPecas_ReporEstoqueComQuantidadeInvalida_NehumaExceptionDeveSerRetornadax
+1wrench.auto.repair.estoque.domain.tests.PecaTestsCCriarPecas_BaixarEstoqueComQuantidadeInvalida_DeveRetornarExceptionÇ
+1wrench.auto.repair.estoque.domain.tests.PecaTestsMCriarPecas_BaixarEstoqueComQuantidadeInvalida_NehumaExceptionDeveSerRetornada

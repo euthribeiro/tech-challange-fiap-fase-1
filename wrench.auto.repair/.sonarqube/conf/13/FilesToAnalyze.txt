@@ -1,0 +1,10 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\CadastroContext.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Extensions\DependencyInjectionExtension.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Mappings\ClienteMapping.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Mappings\VeiculoMapping.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Migrations\20260501232008_Inicial.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Migrations\20260501232008_Inicial.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Migrations\CadastroContextModelSnapshot.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Repositories\ClienteRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Repositories\Repository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.infra\Repositories\VeiculoRepository.cs

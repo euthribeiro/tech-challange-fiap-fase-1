@@ -1,0 +1,17 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Base\IntegrationTestFactory.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Base\SharedTestCollection.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Base\TestAuthHandler.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\AutenticacaoEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\ClienteEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\DiagnosticoEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\OrcamentoEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\OrdemServicoEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\PecaEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\UsuarioPerfilEndPointTest.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\Tests\VeiculoEndPointTest.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.web.api.integration.tests\TestResults\10051a86-e843-4681-99c4-1f298baeab14\coverage.cobertura.xml

@@ -1,0 +1,5 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.domain\Data\IClienteRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.domain\Data\IVeiculoRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.domain\Entities\Cliente.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.domain\Entities\Veiculo.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.cadastro.domain\ValueObjects\Endereco.cs

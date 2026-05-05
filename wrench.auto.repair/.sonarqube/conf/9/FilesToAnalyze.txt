@@ -1,0 +1,8 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Context\PecaDbContext.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Extensions\DependencyInjectionExtension.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Mapping\PecaMapping.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Migrations\20260503185541_Inicial.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Migrations\20260503185541_Inicial.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Migrations\PecaDbContextModelSnapshot.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Repositories\PecaRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.estoque.infra\Repositories\Repository.cs

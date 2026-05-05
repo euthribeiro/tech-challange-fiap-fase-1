@@ -1,0 +1,5 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.domain\Data\IOrdemServicoRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.domain\Entities\OrdemServico.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.domain\Enums\OrdemServicoStatus.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.domain\Enums\StatusAprovacaoEnum.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.domain\ValueObjects\ItemOrdemServico.cs

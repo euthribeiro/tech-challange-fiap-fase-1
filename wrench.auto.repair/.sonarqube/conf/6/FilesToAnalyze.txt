@@ -1,0 +1,12 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Context\OrdemServicoDbContext.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Extensions\DependencyInjectionExtension.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Mapping\OrdemServicoMapping.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\20260503181904_Inicial.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\20260503181904_Inicial.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\20260503190647_CamposNulos.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\20260503190647_CamposNulos.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\20260503194500_DataEntrega.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\20260503194500_DataEntrega.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Migrations\OrdemServicoDbContextModelSnapshot.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Repositories\OrdemServicoRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.ordem.servico.infra\Repositories\Repository.cs

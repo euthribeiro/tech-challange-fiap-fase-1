@@ -1,0 +1,2466 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador do Microsoft (R) Visual C#",
+        "version": "5.3.0.0",
+        "fileVersion": "5.3.0-2.26219.105 (c23858a6d860abe3ca94f9ac630c3e61b2625664)",
+        "semanticVersion": "5.3.0",
+        "language": "pt-BR"
+      },
+      "results": [
+        {
+          "ruleId": "CS0660",
+          "level": "warning",
+          "message": "\"CpfCnpj\" define o operador = = ou operador !=, mas não substitui Object.Equals(object o)",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "CS0628",
+          "level": "warning",
+          "message": "'NomeRazaoSocial.NomeRazaoSocial()': novo membro protegido declarado no tipo selado",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/NomeRazaoSocial.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 19,
+                  "endLine": 14,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 4
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'DDI' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 23,
+                  "endLine": 61,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'DDD' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 23,
+                  "endLine": 62,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Numero' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 19,
+                  "endLine": 10,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 23,
+                  "endLine": 63,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Nome' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/NomeRazaoSocial.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 19,
+                  "endLine": 14,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/NomeRazaoSocial.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'ValidationResult' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Messages/Command.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 19,
+                  "endLine": 12,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Messages/Command.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 33,
+                  "endLine": 10,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Numeracao' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 19,
+                  "endLine": 9,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 23,
+                  "endLine": 11,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Nome' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Messages/CommonMessages/IntegratedQueries/Dtos/PecaDto.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 23,
+                  "endLine": 6,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Messages/CommonMessages/IntegratedQueries/Dtos/PecaDto.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 23,
+                  "endLine": 6,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Endereco' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 19,
+                  "endLine": 13,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Dominio' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 19,
+                  "endLine": 13,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'ValidationResult' precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Messages/Command.Generic.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 19,
+                  "endLine": 12,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Messages/Command.Generic.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 33,
+                  "endLine": 10,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possível retorno de referência nula.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/EnumExtensions.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 24,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8604",
+          "level": "warning",
+          "message": "Possível argumento de referência nula para o parâmetro 'element' em 'TAttribute? CustomAttributeExtensions.GetCustomAttribute<TAttribute>(MemberInfo element)'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/EnumExtensions.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 20,
+                  "endLine": 17,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8603",
+          "level": "warning",
+          "message": "Possível retorno de referência nula.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/EnumExtensions.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 20,
+                  "endLine": 17,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/DomainObjects/Validacoes.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 18,
+                  "endLine": 5,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2344",
+          "level": "warning",
+          "message": "Rename this enumeration to remove the 'Enum' suffix.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/ResultadoStatusEnum.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 17,
+                  "endLine": 3,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2344",
+          "level": "warning",
+          "message": "Rename this enumeration to remove the 'Enum' suffix.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/TipoErroEnum.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 17,
+                  "endLine": 3,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3604",
+          "level": "warning",
+          "message": "Remove the member initializer, all constructors set an initial value for the member.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 64,
+                  "endLine": 8,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'NotFound' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 30,
+                  "endLine": 41,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 30,
+                  "endLine": 62,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Unauthorized' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 30,
+                  "endLine": 44,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 30,
+                  "endLine": 65,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Unexpected' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 30,
+                  "endLine": 47,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 30,
+                  "endLine": 68,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Conflicted' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 30,
+                  "endLine": 50,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 30,
+                  "endLine": 71,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'ValidationError' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 30,
+                  "endLine": 53,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 30,
+                  "endLine": 74,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'UnprocessableEntity' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 30,
+                  "endLine": 56,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 30,
+                  "endLine": 77,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Forbidden' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 30,
+                  "endLine": 59,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.cs",
+                "region": {
+                  "startLine": 80,
+                  "startColumn": 30,
+                  "endLine": 80,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S3604",
+          "level": "warning",
+          "message": "Remove the member initializer, all constructors set an initial value for the member.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 64,
+                  "endLine": 9,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'NotFound' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 33,
+                  "endLine": 44,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 33,
+                  "endLine": 67,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Unauthorized' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 33,
+                  "endLine": 47,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 33,
+                  "endLine": 70,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Unexpected' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 33,
+                  "endLine": 50,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 33,
+                  "endLine": 73,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Conflicted' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 33,
+                  "endLine": 53,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 33,
+                  "endLine": 76,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'ValidationError' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 33,
+                  "endLine": 56,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 33,
+                  "endLine": 79,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'UnprocessableEntity' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 33,
+                  "endLine": 59,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 33,
+                  "endLine": 82,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Forbidden' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 33,
+                  "endLine": 62,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 33,
+                  "endLine": 85,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S4136",
+          "level": "warning",
+          "message": "All 'Custom' method overloads should be adjacent.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 33,
+                  "endLine": 64,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Errors/Result.Generic.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 33,
+                  "endLine": 88,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Non-adjacent overload"
+            }
+          }
+        },
+        {
+          "ruleId": "S3897",
+          "level": "warning",
+          "message": "Implement 'IEquatable<CpfCnpj>'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4035",
+          "level": "warning",
+          "message": "Seal class 'CpfCnpj' or implement 'IEqualityComparer<T>' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4050",
+          "level": "warning",
+          "message": "Provide an implementation for: 'Object.Equals'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1206",
+          "level": "warning",
+          "message": "This class overrides 'GetHashCode' and should therefore also override 'Equals'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 18,
+                  "endLine": 7,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2344",
+          "level": "warning",
+          "message": "Rename this enumeration to remove the 'Enum' suffix.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/TipoDocumentoEnum.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 17,
+                  "endLine": 3,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3897",
+          "level": "warning",
+          "message": "Implement 'IEquatable<Telefone>'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3897",
+          "level": "warning",
+          "message": "Implement 'IEquatable<NomeRazaoSocial>'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/NomeRazaoSocial.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 33,
+                  "endLine": 7,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4035",
+          "level": "warning",
+          "message": "Seal class 'Telefone' or implement 'IEqualityComparer<T>' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 25,
+                  "endLine": 16,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3897",
+          "level": "warning",
+          "message": "Implement 'IEquatable<Email>'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 26,
+                  "endLine": 8,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4035",
+          "level": "warning",
+          "message": "Seal class 'Email' or implement 'IEqualityComparer<T>' instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 26,
+                  "endLine": 8,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/DomainObjects/Validacoes.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 25,
+                  "endLine": 25,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3249",
+          "level": "warning",
+          "message": "Remove this 'base' call to 'object.Equals', which is directly based on the object reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 20,
+                  "endLine": 74,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3875",
+          "level": "warning",
+          "message": "Remove this overload of 'operator =='.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Telefone.cs",
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 37,
+                  "endLine": 83,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3875",
+          "level": "warning",
+          "message": "Remove this overload of 'operator =='.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/DomainObjects/Entity.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 33,
+                  "endLine": 22,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3442",
+          "level": "warning",
+          "message": "Change the visibility of this constructor to 'protected'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Pagination/RequisicaoPaginada.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 9,
+                  "endLine": 9,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3427",
+          "level": "warning",
+          "message": "This method signature overlaps the one defined on line 9, the default parameter value can only be used with named arguments.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Pagination/RequisicaoPaginada.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 13,
+                  "endLine": 20,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3442",
+          "level": "warning",
+          "message": "Change the visibility of this constructor to 'protected'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Pagination/RequisicaoPaginada.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 9,
+                  "endLine": 18,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6562",
+          "level": "warning",
+          "message": "Provide the \"DateTimeKind\" when creating this object.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/DataNascimento.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 26,
+                  "endLine": 23,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/StringExtensions.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 20,
+                  "endLine": 29,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/StringExtensions.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 20,
+                  "endLine": 34,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/StringExtensions.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 20,
+                  "endLine": 29,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/StringExtensions.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 20,
+                  "endLine": 34,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6562",
+          "level": "warning",
+          "message": "Provide the \"DateTimeKind\" when creating this object.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/DataNascimento.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 24,
+                  "endLine": 37,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3875",
+          "level": "warning",
+          "message": "Remove this overload of 'operator =='.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/NomeRazaoSocial.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 37,
+                  "endLine": 53,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3249",
+          "level": "warning",
+          "message": "Remove this 'base' call to 'object.Equals', which is directly based on the object reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/NomeRazaoSocial.cs",
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 13,
+                  "endLine": 48,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/StringExtensions.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 20,
+                  "endLine": 39,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Extensions/StringExtensions.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 20,
+                  "endLine": 39,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/DomainObjects/Validacoes.cs",
+                "region": {
+                  "startLine": 166,
+                  "startColumn": 17,
+                  "endLine": 166,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3875",
+          "level": "warning",
+          "message": "Remove this overload of 'operator =='.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/Email.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 37,
+                  "endLine": 47,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 20,
+                  "endLine": 62,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 20,
+                  "endLine": 62,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Validar' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/DataNascimento.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 22,
+                  "endLine": 26,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/DomainObjects/Validacoes.cs",
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 18,
+                  "endLine": 172,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3875",
+          "level": "warning",
+          "message": "Remove this overload of 'operator =='.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 37,
+                  "endLine": 100,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'ObterTipoDocumento' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 35,
+                  "endLine": 55,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2325",
+          "level": "warning",
+          "message": "Make 'Mask' a static method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Security/SensitiveDataConverter.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 24,
+                  "endLine": 52,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 23,
+                  "endLine": 70,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 20,
+                  "endLine": 75,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 23,
+                  "endLine": 70,
+                  "endColumn": 58
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 20,
+                  "endLine": 75,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 24,
+                  "endLine": 84,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6444",
+          "level": "warning",
+          "message": "Pass a timeout to limit the execution time.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 20,
+                  "endLine": 89,
+                  "endColumn": 97
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 24,
+                  "endLine": 84,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 20,
+                  "endLine": 89,
+                  "endColumn": 97
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'ObterTipoDocumento' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/CpfCnpj.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 35,
+                  "endLine": 55,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'Validar' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/ValueObjects/DataNascimento.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 22,
+                  "endLine": 26,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'Mask' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/src/wrench.auto.repair.core/Security/SensitiveDataConverter.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 24,
+                  "endLine": 52,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Marcar membros como estáticos",
+          "fullDescription": "Os membros que não acessam os dados da instância nem chamam os métodos da instância podem ser marcados como estáticos. Depois que você marcar os métodos como estáticos, o compilador emitirá os sites de chamada não virtuais para esses membros. Isso pode oferecer um ganho de desempenho mensurável para códigos sensíveis ao desempenho.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS0628": {
+          "id": "CS0628",
+          "shortDescription": "Novo membro protegido declarado no tipo selado",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0628)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS0660": {
+          "id": "CS0660",
+          "shortDescription": "O tipo define os operadores == ou !=, mas não substitui o Object.Equals(object o)",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0660)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8603": {
+          "id": "CS8603",
+          "shortDescription": "Possível retorno de referência nula.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8603)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8604": {
+          "id": "CS8604",
+          "shortDescription": "Possível argumento de referência nula.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8604)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "O campo não anulável precisa conter um valor não nulo ao sair do construtor. Considere adicionar o modificador \"obrigatório\" ou declarar como anulável.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1118": {
+          "id": "S1118",
+          "shortDescription": "Utility classes should not have public constructors",
+          "fullDescription": "Whenever there are portions of code that are duplicated and do not depend on the state of their container class, they can be centralized inside a \"utility class\". A utility class is a class that only has static members, hence it should not be instantiated.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1206": {
+          "id": "S1206",
+          "shortDescription": "\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs",
+          "fullDescription": "Suppose you override Object.Equals in a type, you must also override Object.GetHashCode. If two objects are equal according to the Equals method, then calling GetHashCode on each of them must yield the same integer. If this is not the case, many collections, such as a Hashtable or a Dictionary won’t handle class instances correctly.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Minor Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2325": {
+          "id": "S2325",
+          "shortDescription": "Methods and properties that don't access instance data should be static",
+          "fullDescription": "Methods and properties that don’t access instance data should be marked as static for the following reasons:",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2344": {
+          "id": "S2344",
+          "shortDescription": "Enumeration type names should not have \"Flags\" or \"Enum\" suffixes",
+          "fullDescription": "The information that an enumeration type is actually an enumeration or a set of flags should not be duplicated in its name.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3249": {
+          "id": "S3249",
+          "shortDescription": "Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"",
+          "fullDescription": "Making a base call when overriding a method is generally a good idea, but not in the case of GetHashCode and Equals for classes that directly extend Object. These methods are based on the object’s reference, meaning that no two objects that use those base methods can be equal or have the same hash.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3427": {
+          "id": "S3427",
+          "shortDescription": "Method overloads with default parameter values should not overlap",
+          "fullDescription": "The rules for method resolution can be complex and may not be fully understood by all developers. The situation becomes even more challenging when dealing with method overloads that have optional parameter values.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Blocker Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3442": {
+          "id": "S3442",
+          "shortDescription": "\"abstract\" classes should not have \"public\" constructors",
+          "fullDescription": "The abstract modifier in a class declaration is used to indicate that a class is intended only to be a base class of other classes, not instantiated on its own.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3604": {
+          "id": "S3604",
+          "shortDescription": "Member initializer values should not be redundant",
+          "fullDescription": "Fields, properties and events can be initialized either inline or in the constructor. Initializing them inline and in the constructor at the same time is redundant; the inline initialization will be overridden.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3875": {
+          "id": "S3875",
+          "shortDescription": "\"operator==\" should not be overloaded on reference types",
+          "fullDescription": "The use of == to compare two objects is expected to do a reference comparison. That is, it is expected to return true if and only if they are the same object instance. Overloading the operator to do anything else will inevitably lead to the introduction of bugs by callers.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Blocker Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3897": {
+          "id": "S3897",
+          "shortDescription": "Classes that provide \"Equals(<T>)\" should implement \"IEquatable<T>\"",
+          "fullDescription": "The IEquatable<T> interface has only one method in it: Equals(<T>). If you’ve already written Equals(T), there’s no reason not to explicitly implement IEquatable<T>. Doing so expands the utility of your class by allowing it to be used where an IEquatable is called for.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S4035": {
+          "id": "S4035",
+          "shortDescription": "Classes implementing \"IEquatable<T>\" should be sealed",
+          "fullDescription": "When a class implements the IEquatable<T> interface, it enters a contract that, in effect, states \"I know how to compare two instances of type T or any type derived from T for equality.\". However if that class is derived, it is very unlikely that the base class will know how to make a meaningful comparison. Therefore that implicit contract is now broken.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S4050": {
+          "id": "S4050",
+          "shortDescription": "Operators should be overloaded consistently",
+          "fullDescription": "When overloading some arithmetic operator overloads, it is very important to make sure that all related operators and methods are consistent in their implementation.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S4136": {
+          "id": "S4136",
+          "shortDescription": "Method overloads should be grouped together",
+          "fullDescription": "For clarity, all overloads of the same method should be grouped together. That lets both users and maintainers quickly understand all the current available options.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6444": {
+          "id": "S6444",
+          "shortDescription": "Not specifying a timeout for regular expressions is security-sensitive",
+          "fullDescription": "Not specifying a timeout for regular expressions can lead to a Denial-of-Service attack. Pass a timeout when using System.Text.RegularExpressions to process untrusted input because a malicious user might craft a value for which the evaluation lasts excessively long.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6562": {
+          "id": "S6562",
+          "shortDescription": "Always set the \"DateTimeKind\" when creating new \"DateTime\" instances",
+          "fullDescription": "Not knowing the Kind of the DateTime object that an application is using can lead to misunderstandings when displaying or comparing them. Explicitly setting the Kind property helps the application to stay consistent, and its maintainers understand what kind of date is being managed. To achieve this, when instantiating a new DateTime object you should always use a constructor overload that allows you to define the Kind property.",
+          "defaultLevel": "warning",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "SYSLIB1045": {
+          "id": "SYSLIB1045",
+          "shortDescription": "Converter em 'GeneratedRegexAttribute'.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/syslib-diagnostics/syslib1045",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}

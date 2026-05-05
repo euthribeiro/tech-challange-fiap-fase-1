@@ -1,0 +1,1020 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.2.1"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1777941334000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair"
+    },
+    {
+      "key": "sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\class.js,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\index.htm,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\index.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\main.js,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\report.css,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_AtivarUsuarioCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_AtivarUsuarioCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_AutenticarUsuarioCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_AutenticarUsuarioCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_AutenticarUsuarioViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ClienteCadastradoEventHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_CriarUsuarioCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_CriarUsuarioCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_CriarUsuarioViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_InativarUsuarioCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_InativarUsuarioCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ObterTodosPerfisQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ObterTodosUsuariosQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ObterTodosUsuariosQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ObterUsuarioPorIdQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ObterUsuarioPorIdQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_PasswordValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_PerfilProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_PerfilViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_PrimeirAcessoUsuarioViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_PrimeiroAcessoUsuarioCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_PrimeiroAcessoUsuarioCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ResetarSenhaUsuarioCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_ResetarSenhaUsuarioCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_TokenAcessoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioQueryHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioRequisicaoPaginada.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioRequisicaoPaginadaValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioSortMap.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.application_UsuarioViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.domain_Perfil.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.domain_TokenAcesso.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.domain_Usuario.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_AlterandoColunaDataCadastro.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_AutenticacaoContext.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_AutenticacaoContextModelSnapshot.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_DbSeeder.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_Inicial.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_JwtOptions.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_JwtTokenGenerator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_PasswordHasher.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_PerfilMapping.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_Repository_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_UsuarioMapping.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.autenticacao.infra_UsuarioRepository.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_AtualizarClienteCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_AtualizarClienteCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_AtualizarClienteViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_AtualizarVeiculoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_AtualizarVeiculoCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_AtualizarVeiculoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CadastrarClienteCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CadastrarClienteCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CadastrarClienteViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CadastrarVeiculoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CadastrarVeiculoCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CadastrarVeiculoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteQueryHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteRequisicaoPaginada.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteRequisicaoPaginadaValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteSortMap.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ClienteViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_CriarEditarEnderecoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_EnderecoDto.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_EnderecoDtoValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_EnderecoProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_EnderecoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_Generated.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterClientePorDocumentoQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterClientePorDocumentoQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterClientePorIdQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterClientePorIdQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterTodosClientesQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterTodosClientesQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterTodosVeiculosQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterTodosVeiculosQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterVeiculoPorIdQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterVeiculoPorIdQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterVeiculoPorPlacaQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_ObterVeiculoPorPlacaQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoQueryHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoRequisicaoPaginada.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoRequisicaoPaginadaValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoSortMap.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application_VeiculoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application__RegexGene30F08A3D1622__RemoverNaoNumericosRegex_4.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application__RegexGene330F08A3D1622__PlacaVeiculoValidoRegex_3.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application__RegexGene330F08A3D1622__TelefoneBrasileiroRegex_2.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application__RegexGeneA63330F08A3D1622__EspacosEmBrancoRegex_0.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.application__RegexGeneE3A5A0E154A63330F08A3D1622__EmailRegex_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.domain_Cliente.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.domain_Endereco.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.domain_Veiculo.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_CadastroContext.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_CadastroContextModelSnapshot.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_ClienteMapping.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_ClienteRepository.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_Inicial.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_Repository_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_VeiculoMapping.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.cadastro.infra_VeiculoRepository.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_ClienteCadastradoEvent.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Command.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Command_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_CpfCnpj.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_DataNascimento.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_DomainException.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Email.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Entity.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_EnumExtensions.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Event.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Generated.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_MediatorHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Message.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_NomeRazaoSocial.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_ObterPecasPorIdsCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_ObterPecasPorIdsQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_PecaDto.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_PecaExisteQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_RequisicaoPaginada.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Result.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_ResultadoPaginadoConverter_2.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_ResultadoPaginadoProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_ResultadoPaginado_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Result_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_SensitiveDataAttribute.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_SensitiveDataConverter.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_StringExtensions.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Telefone.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_Validacoes.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core_VeiculoExisteEPertenteAoClienteQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core__RegexGenerator_g_F675842A3BBF46FD27F53F__EspacosDuplicadosRegex_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.core__RegexGenerator_g_F675842AA1DEE040A9F83BBF46FD27F53F__EmailRegex_0.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_AtivarPecaCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_AtivarPecaCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_AtualizarPecaCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_AtualizarPecaCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_BaixarPecaCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_BaixarPecaCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_CadastrarPecaCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_CadastrarPecaCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_ConsultarPecaPorIdQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_ConsultarPecaPorIdQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_InativarPecaCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_InativarPecaCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_ObterTodasPecasQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_ObterTodasPecasQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaQueryHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaRequisicaoPaginada.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaRequisicaoPaginadaValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaSortMap.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_PecaViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_ReporPecaCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.application_ReporPecaCommandValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.domain_Peca.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_Inicial.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_PecaDbContext.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_PecaDbContextModelSnapshot.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_PecaMapping.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_PecaRepository.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.estoque.infra_Repository_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_AprovaOrcamentoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_CriarOrdemServicoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_DiagnosticoCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_FinalizarOrdemServicoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_ItemOrdemServicoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_ObterOrdemServicoIdQuery.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_ObterOrdemServicoIdQueryValidator.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrcamentoCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrdemServicoAguardandoAprovacaoEvent.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrdemServicoAguardandoAprovacaoEventHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrdemServicoCommandHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrdemServicoProfile.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrdemServicoQueryHandler.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_OrdemServicoViewModel.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_RealizarDiagnosticoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_RecusarOrcamentoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.application_SolicitarDiagnosticoCommand.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.domain_ItemOrdemServico.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.domain_OrdemServico.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_CamposNulos.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_DependencyInjectionExtension.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_Inicial.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_OrdemServicoDbContext.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_OrdemServicoDbContextModelSnapshot.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_OrdemServicoMapping.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_OrdemServicoRepository.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.auto.repair.ordem.servico.infra_Repository_1.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_AprovaOrcamentoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_AprovarOrcamentoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_AtualizarOrdemServicoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_AtualizarPecaRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_AutenticacaoController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_AuthenticationConfiguration.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_ClienteController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_CompilerServices.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_CriarOrdemServicoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_CriarPecaRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_DatabaseContextConfigure.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_DatabaseOptions.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_DatabaseOptionsSetup.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_DiagnosticoController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_ExceptionHandlerExtensions.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_Generated.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_JwtOptionsSetup.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_OpenApiConfiguration.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_OrcamentoController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_OrdemServicoController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_PecaController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_PerfilController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_Program.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_RealizarDiagnosticoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_RecusarOrcamentoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_ResultExtensions.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_SlugifyParameterTransformer.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_SolicitarDiagnosticoRequest.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_UsuarioController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\coverage-report\\wrench.web.api_VeiculoController.html,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\scripts\\docker-compose.ci.yml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\scripts\\docker-compose.test.yml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\scripts\\docker-compose.yml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\scripts\\Dockerfile,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.vs\\wrench.auto.repair\\config\\applicationhost.config,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.vs\\wrench.auto.repair\\v17\\DocumentLayout.backup.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.vs\\wrench.auto.repair\\v17\\DocumentLayout.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.vs\\wrench.auto.repair\\v18\\DocumentLayout.backup.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.vs\\wrench.auto.repair\\v18\\DocumentLayout.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.test\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.test\\obj\\wrench.auto.repair.cadastro.application.test.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.test\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.test\\obj\\wrench.auto.repair.cadastro.domain.test.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.infra.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.infra.tests\\obj\\wrench.auto.repair.cadastro.infra.tests.csproj.nuget.dgspec.json"
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4,A867483D-4266-4830-85E7-858ED772BE43,9BDE3809-425C-45BF-834A-3A26E71FE3D5,16D81E17-80A0-4A61-B822-7021701BC1DB,276C95F5-0DAA-480F-8201-B3649BF1AE6A,3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA,84335162-5037-4A66-84D9-891601675896,5E336119-8243-774F-B284-862D9C85BCBB,567BC47A-6E88-E128-435C-E8A83795C08A,42836D60-E9B7-A1C3-D162-ECBDD6AA4410,692F98D5-3BA1-4064-9FEC-F658684CE96B,5712D35E-10AA-4F54-AFC7-18C6781C415F,9B3C4B4A-44FD-40F6-8376-7B84091CC174,0E45FCBF-E7CC-CD84-546A-21199B231B09,7B4A954E-9644-4259-89CC-4DDFEDCA814F,DD66452C-DB7A-49E8-835A-37368885C88A,88016B16-2BAF-158C-F888-1946F3BF68E4,3D9D9A87-F5F5-4779-B557-52E0249FC20D,37591B86-3A17-4B90-A56A-2C0F6AA1B01E,54C6362C-DEA3-2347-BE5E-A6DD2D098A27,1833332F-3211-B89C-07DF-347A7E5AADA3,40A6153A-9034-4509-BB56-A4B3D7FF133A,2F452ADC-B9BB-44DC-96DC-D2CA944F1637,BB696098-A98A-41C9-B954-AFD20B77A19B"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.projectName",
+      "value": "wrench.auto.repair.core"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\AutoMapper\\ResultadoPaginadoProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Data\\IRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Data\\ISortMap.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Data\\IUnitOfWork.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\DomainObjects\\DomainException.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\DomainObjects\\Entity.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\DomainObjects\\IAggregateRoot.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\DomainObjects\\Validacoes.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Errors\\Result.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Errors\\Result.Generic.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Errors\\ResultadoStatusEnum.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Errors\\TipoErroEnum.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Extensions\\EnumExtensions.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Extensions\\StringExtensions.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Mediator\\IMediatorHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Mediator\\MediatorHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\Command.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\Command.Generic.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegratedQueries\\Dtos\\PecaDto.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegratedQueries\\IntegratedQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegratedQueries\\IntegratedQuery.Generic.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegratedQueries\\ObterPecasPorIdsCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegratedQueries\\PecaExisteQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegratedQueries\\VeiculoExisteEPertenteAoClienteQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegrationEvents\\ClienteCadastradoEvent.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\CommonMessages\\IntegrationEvents\\IntegrationEvent.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\Event.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Messages\\Message.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Pagination\\RequisicaoPaginada.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Pagination\\ResultadoPaginado.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Security\\SensitiveDataAttribute.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Security\\SensitiveDataConverter.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\Security\\SensitiveDataType.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\ValueObjects\\CpfCnpj.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\ValueObjects\\DataNascimento.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\ValueObjects\\Email.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\ValueObjects\\NomeRazaoSocial.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\ValueObjects\\Telefone.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\ValueObjects\\TipoDocumentoEnum.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\obj\\wrench.auto.repair.core.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\bin\\Debug\\net10.0\\wrench.auto.repair.core.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.core\\obj\\Debug\\net10.0\\wrench.auto.repair.core.sourcelink.json"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "B3EC27D3-D2EE-44DF-AB39-EF7CE7B280D4.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:A867483D-4266-4830-85E7-858ED772BE43"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.projectName",
+      "value": "wrench.auto.repair.autenticacao.domain"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod1"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\obj\\wrench.auto.repair.autenticacao.domain.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\obj\\Debug\\net10.0\\wrench.auto.repair.autenticacao.domain.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\Data\\IUsuarioRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\Entities\\Perfil.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\Entities\\Usuario.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\Models\\TokenAcesso.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.domain\\Security\\IJwtTokenGenerator.cs"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\1"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\1\\Issues.json"
+    },
+    {
+      "key": "A867483D-4266-4830-85E7-858ED772BE43.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\1\\Telemetry.json"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:9BDE3809-425C-45BF-834A-3A26E71FE3D5"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.projectName",
+      "value": "wrench.auto.repair.estoque.domain.tests"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod2"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\obj\\wrench.auto.repair.estoque.domain.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.domain.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.domain.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.estoque.domain.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\PecaTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\TestResults\\077f06c7-6169-4431-b0c0-5e56a35fa42d\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.domain.tests\\TestResults\\a1b5faa8-54d0-44ee-8797-24793e4b8b84\\thiago.santos_RPOTI0114_2026-05-04.01_04_34.coverage"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\10"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\10\\Issues.json"
+    },
+    {
+      "key": "9BDE3809-425C-45BF-834A-3A26E71FE3D5.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\10\\Telemetry.json"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:16D81E17-80A0-4A61-B822-7021701BC1DB"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.projectName",
+      "value": "wrench.auto.repair.cadastro.domain.tests"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod3"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\obj\\wrench.auto.repair.cadastro.domain.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.domain.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.domain.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.cadastro.domain.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\ClienteTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\EnderecoTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\Fixtures\\ClienteFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\Fixtures\\VeiculoFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\VeiculoTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\TestResults\\362a5b43-0fb0-4ef3-9da6-f105adf1b515\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.domain.tests\\TestResults\\4d324ff6-51a2-4a0c-adc5-829ebf7c8b7f\\coverage.cobertura.xml"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\11"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\11\\Issues.json"
+    },
+    {
+      "key": "16D81E17-80A0-4A61-B822-7021701BC1DB.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\11\\Telemetry.json"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:276C95F5-0DAA-480F-8201-B3649BF1AE6A"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.projectName",
+      "value": "wrench.auto.repair.cadastro.application"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod4"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\obj\\wrench.auto.repair.cadastro.application.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\obj\\Debug\\net10.0\\wrench.auto.repair.cadastro.application.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\AutoMapper\\ClienteProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\AutoMapper\\EnderecoProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\AutoMapper\\VeiculoProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\AtualizarClienteCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\AtualizarVeiculoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\CadastrarClienteCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\CadastrarVeiculoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\ClienteCommandHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\Dtos\\EnderecoDto.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\VeiculoCommandHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\ViewModels\\AtualizarClienteViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\ViewModels\\AtualizarVeiculoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\ViewModels\\CadastrarClienteViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\ViewModels\\CadastrarVeiculoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Commands\\ViewModels\\CriarEditarEnderecoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Paginacao\\ClienteRequisicaoPaginada.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Paginacao\\VeiculoRequisicaoPaginada.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ClienteQueryHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ObterClientePorDocumentoQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ObterClientePorIdQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ObterTodosClientesQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ObterTodosVeiculosQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ObterVeiculoPorIdQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ObterVeiculoPorPlacaQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\VeiculoQueryHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ViewModels\\ClienteViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ViewModels\\EnderecoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\Queries\\ViewModels\\VeiculoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\SortMaps\\ClienteSortMap.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.application\\SortMaps\\VeiculoSortMap.cs"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\12"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\12\\Issues.json"
+    },
+    {
+      "key": "276C95F5-0DAA-480F-8201-B3649BF1AE6A.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\12\\Telemetry.json"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.projectName",
+      "value": "wrench.auto.repair.cadastro.infra"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod5"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\obj\\wrench.auto.repair.cadastro.infra.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.infra.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\obj\\Debug\\net10.0\\wrench.auto.repair.cadastro.infra.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\CadastroContext.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Mappings\\ClienteMapping.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Mappings\\VeiculoMapping.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Migrations\\20260501232008_Inicial.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Migrations\\20260501232008_Inicial.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Migrations\\CadastroContextModelSnapshot.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Repositories\\ClienteRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Repositories\\Repository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.infra\\Repositories\\VeiculoRepository.cs"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\13"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\13\\Issues.json"
+    },
+    {
+      "key": "3CB8EE69-ECB6-4BCC-9211-A01DCCE6FAAA.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\13\\Telemetry.json"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:84335162-5037-4A66-84D9-891601675896"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.projectName",
+      "value": "wrench.auto.repair.estoque.application.tests"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod6"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\obj\\wrench.auto.repair.estoque.application.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.application.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.application.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.estoque.application.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\AutoMapper\\PecaProfileTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\Extensions\\DependencyInjectionExtensionTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\Fixtures\\PecaFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\AtivarPecaCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\AtualizarPecaCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\BaixarPecaCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\CadastrarPecaCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\InativarPecaCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\PecaCommandHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaCommand\\ReporPecaCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaQuery\\ConsultarPecaPorIdQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaQuery\\ObterTodasPecasQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\PecaQuery\\PecaQueryHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\SortMaps\\PecaSortMapTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\coverage.runsettings,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\TestResults\\93db6062-1c83-46a6-aee0-07d9375f9d5b\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.estoque.application.tests\\TestResults\\d1350561-639d-40bb-84f6-e24a8b566f8e\\coverage.cobertura.xml"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\14"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\14\\Issues.json"
+    },
+    {
+      "key": "84335162-5037-4A66-84D9-891601675896.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\14\\Telemetry.json"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:5E336119-8243-774F-B284-862D9C85BCBB"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.projectName",
+      "value": "wrench.auto.repair.ordem.servico.domain.tests"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod7"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests\\obj\\wrench.auto.repair.ordem.servico.domain.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.domain.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.domain.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.domain.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.domain.tests\\TestResults\\ca5abe89-4ed6-4087-8be6-4c8e7f4e9137\\coverage.cobertura.xml"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\15"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\15\\Issues.json"
+    },
+    {
+      "key": "5E336119-8243-774F-B284-862D9C85BCBB.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\15\\Telemetry.json"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:567BC47A-6E88-E128-435C-E8A83795C08A"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.projectName",
+      "value": "wrench.auto.repair.autenticacao.application"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod8"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\obj\\wrench.auto.repair.autenticacao.application.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\obj\\Debug\\net10.0\\wrench.auto.repair.autenticacao.application.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\AutoMapper\\PerfilProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\AutoMapper\\UsuarioProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\AtivarUsuarioCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\AutenticarUsuarioCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\CriarUsuarioCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\InativarUsuarioCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\PrimeiroAcessoUsuarioCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\ResetarSenhaUsuarioCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\UsuarioCommandHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\ViewModels\\AutenticarUsuarioViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\ViewModels\\CriarUsuarioViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\ViewModels\\PrimeirAcessoUsuarioViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Commands\\ViewModels\\TokenAcessoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Events\\ClienteCadastradoEventHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Paginacao\\UsuarioRequisicaoPaginada.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Queries\\ObterTodosPerfisQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Queries\\ObterTodosUsuariosQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Queries\\ObterUsuarioPorIdQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Queries\\UsuarioQueryHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Queries\\ViewModels\\PerfilViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Queries\\ViewModels\\UsuarioViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\SortMap\\UsuarioSortMap.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.application\\Validators\\PasswordValidator.cs"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\16"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\16\\Issues.json"
+    },
+    {
+      "key": "567BC47A-6E88-E128-435C-E8A83795C08A.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\16\\Telemetry.json"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:42836D60-E9B7-A1C3-D162-ECBDD6AA4410"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.projectName",
+      "value": "wrench.auto.repair.autenticacao.domain.tests"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod9"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\obj\\wrench.auto.repair.autenticacao.domain.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.domain.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.domain.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.autenticacao.domain.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\Fixture\\UsuarioFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\UsuarioTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\TestResults\\19ba77ab-ee0d-4715-9c85-5c7d9a059df6\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.domain.tests\\TestResults\\42231cf8-db90-46a0-a457-6d61f7fe570b\\coverage.cobertura.xml"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\17"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\17\\Issues.json"
+    },
+    {
+      "key": "42836D60-E9B7-A1C3-D162-ECBDD6AA4410.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\17\\Telemetry.json"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:692F98D5-3BA1-4064-9FEC-F658684CE96B"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.projectName",
+      "value": "wrench.auto.repair.cadastro.application.tests"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod10"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\obj\\wrench.auto.repair.cadastro.application.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.application.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.application.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.cadastro.application.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteCommand\\AtualizarClienteCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteCommand\\CadastrarClienteCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteCommand\\ClienteCommandHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteQuery\\ClienteQueryHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteQuery\\ObterClientePorDocumentoQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteQuery\\ObterClientePorIdQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\ClienteQuery\\ObterTodosClientesQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\Commands\\ViewModels\\CommandViewModelsSmokeTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\Extensions\\DependencyInjectionExtensionTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\Fixture\\ClienteFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\Fixture\\VeiculoFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\SortMaps\\ClienteSortMapTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\SortMaps\\VeiculoSortMapTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoCommand\\AtualizarVeiculoCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoCommand\\CadastrarVeiculoCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoCommand\\VeiculoCommandHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoQuery\\ObterTodosVeiculosQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoQuery\\ObterVeiculoPorIdQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoQuery\\ObterVeiculoPorPlacaQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\VeiculoQuery\\VeiculoQueryHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\coverage.runsettings,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\TestResults\\2a8f1948-f155-4169-b518-2d0209d3cb8d\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\TestResults\\c6bb0e9b-f973-4c5e-b51f-c87bfe907171\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.cadastro.application.tests\\TestResults\\d0496e21-a1de-4fe8-9e72-78d9d6750e03\\coverage.cobertura.xml"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\18"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\18\\Issues.json"
+    },
+    {
+      "key": "692F98D5-3BA1-4064-9FEC-F658684CE96B.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\18\\Telemetry.json"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:5712D35E-10AA-4F54-AFC7-18C6781C415F"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.projectName",
+      "value": "wrench.auto.repair.ordem.servico.application"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod11"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\obj\\wrench.auto.repair.ordem.servico.application.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\obj\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.application.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\AutoMapper\\OrdemServicoProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Events\\OrdemServicoAguardandoAprovacaoEvent.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Events\\OrdemServicoAguardandoAprovacaoEventHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Paginacao\\OrdemServicoRequisicaoPaginada.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Queries\\ObterOrdemServicoIdQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Queries\\ObterTodasOrdemServicoPorClienteQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Queries\\ObterTodasOrdemServicoQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Queries\\OrdemServicoQueryHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Queries\\ViewModels\\ItemOrdemServicoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\Queries\\ViewModels\\OrdemServicoViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\SortMaps\\OrdemServicoSortMap.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\DiagnosticoUseCase\\DiagnosticoCommandHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\DiagnosticoUseCase\\RealizarDiagnosticoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\DiagnosticoUseCase\\SolicitarDiagnosticoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrcamentoUseCase\\AprovaOrcamentoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrcamentoUseCase\\OrcamentoCommandHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrcamentoUseCase\\RecusarOrcamentoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrdemServicoUseCase\\CriarOrdemServicoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrdemServicoUseCase\\EntregarServicoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrdemServicoUseCase\\FinalizarOrdemServicoCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.application\\UseCases\\OrdemServicoUseCase\\OrdemServicoCommandHandler.cs"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\19"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\19\\Issues.json"
+    },
+    {
+      "key": "5712D35E-10AA-4F54-AFC7-18C6781C415F.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\19\\Telemetry.json"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:9B3C4B4A-44FD-40F6-8376-7B84091CC174"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.projectName",
+      "value": "wrench.auto.repair.cadastro.domain"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod12"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\obj\\wrench.auto.repair.cadastro.domain.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\obj\\Debug\\net10.0\\wrench.auto.repair.cadastro.domain.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\Data\\IClienteRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\Data\\IVeiculoRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\Entities\\Cliente.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\Entities\\Veiculo.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.cadastro.domain\\ValueObjects\\Endereco.cs"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\2"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\2\\Issues.json"
+    },
+    {
+      "key": "9B3C4B4A-44FD-40F6-8376-7B84091CC174.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\2\\Telemetry.json"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:0E45FCBF-E7CC-CD84-546A-21199B231B09"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.projectName",
+      "value": "wrench.auto.repair.autenticacao.application.tests"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod13"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\obj\\wrench.auto.repair.autenticacao.application.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.application.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.application.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.autenticacao.application.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\AutoMapper\\UsuarioPerfilProfileTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\Commands\\ViewModels\\CommandViewModelsTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\Events\\ClienteCadastradoEventHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\Extensions\\DependencyInjectionExtensionTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\Fixtures\\UsuarioFixture.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\SortMap\\UsuarioSortMapTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\AtivarUsuarioCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\AutenticarUsuarioCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\CriarUsuarioCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\InativarUsuarioCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\PrimeiroAcessoUsuarioCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\ResetarSenhaUsuarioCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioCommand\\UsuarioCommandHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioQuery\\ObterUsuarioPorIdQueryTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\UsuarioQuery\\UsuarioQueryHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\Validators\\PasswordValidatorTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\coverage.runsettings,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\TestResults\\5cb9ecf7-d53d-49c5-9b4e-dc25ad398307\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\TestResults\\9739e3f8-b0d5-4396-9262-4273aec1c050\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.autenticacao.application.tests\\TestResults\\d2ea331b-9e51-4e8e-9e9a-f549cde63bf0\\coverage.cobertura.xml"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\20"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\20\\Issues.json"
+    },
+    {
+      "key": "0E45FCBF-E7CC-CD84-546A-21199B231B09.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\20\\Telemetry.json"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:7B4A954E-9644-4259-89CC-4DDFEDCA814F"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.projectName",
+      "value": "wrench.auto.repair.ordem.servico.application.tests"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod14"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\obj\\wrench.auto.repair.ordem.servico.application.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.application.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.application.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.application.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\AutoMapper\\OrdemServicoProfileTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\DiagnosticoTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\Events\\OrdemServicoAguardandoAprovacaoEventHandlerTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\Extensions\\DependencyInjectionExtensionTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\OrdemServicoTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\UseCases\\RecusarOrcamentoCommandTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\coverage.runsettings,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\TestResults\\ae7a1770-5303-4529-a1c2-7838392289ad\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.ordem.servico.application.tests\\TestResults\\fabee060-60b1-47e5-b369-9452cd40941c\\coverage.cobertura.xml"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\21"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\21\\Issues.json"
+    },
+    {
+      "key": "7B4A954E-9644-4259-89CC-4DDFEDCA814F.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\21\\Telemetry.json"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:DD66452C-DB7A-49E8-835A-37368885C88A"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.projectName",
+      "value": "wrench.web.api"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod15"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\appsettings.Development.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\appsettings.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\wrench.web.api.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Properties\\launchSettings.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\appsettings.Development.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\appsettings.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\wrench.web.api.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\wrench.web.api.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\wrench.web.api.staticwebassets.endpoints.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\ApiEndpoints.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\rjsmcshtml.dswa.cache.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\rjsmrazor.dswa.cache.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\rpswa.dswa.cache.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\staticwebassets.build.endpoints.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\staticwebassets.build.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\wrench.web.api.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\BuildHost-net472\\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\BuildHost-netcore\\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\bin\\Debug\\net10.0\\BuildHost-netcore\\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\EndpointInfo\\wrench.web.api.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Configuration\\AuthenticationConfiguration.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Contexts\\DatabaseContextConfigure.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\AutenticacaoController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\ClienteController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\DiagnosticoController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\OrcamentoController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\OrdemServicoController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\PecaController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\PerfilController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\UsuarioController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Controllers\\VeiculoController.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Docs\\OpenApiConfiguration.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Extensions\\ResultExtensions.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Middlewares\\ExceptionHandlerExtensions.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\Diagnostico\\RealizarDiagnosticoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\Diagnostico\\SolicitarDiagnosticoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\Orcamento\\AprovaOrcamentoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\Orcamento\\RecusarOrcamentoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\OrdemServico\\AprovarOrcamentoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\OrdemServico\\AtualizarOrdemServicoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\OrdemServico\\CriarOrdemServicoRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\Requests\\AtualizarPecaRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Models\\Requests\\CriarPecaRequest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Options\\DatabaseOptions.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Options\\DatabaseOptionsSetup.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Options\\JwtOptionsSetup.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Program.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\Transformers\\SlugifyParameterTransformer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\wrench.web.api.GlobalUsings.g.cs,\"C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\",C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\wrench.web.api.AssemblyInfo.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.web.api\\obj\\Debug\\net10.0\\wrench.web.api.MvcApplicationPartsAssemblyInfo.cs"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\22"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\22\\Issues.json"
+    },
+    {
+      "key": "DD66452C-DB7A-49E8-835A-37368885C88A.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\22\\Telemetry.json"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:88016B16-2BAF-158C-F888-1946F3BF68E4"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.projectName",
+      "value": "wrench.web.api.integration.tests"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod16"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\obj\\wrench.web.api.integration.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\appsettings.Development.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\appsettings.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\MvcTestingAppManifest.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.cadastro.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.core.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.web.api.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.web.api.integration.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.web.api.integration.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.web.api.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\bin\\Debug\\net10.0\\wrench.web.api.staticwebassets.endpoints.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\obj\\Debug\\net10.0\\MvcTestingAppManifest.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\obj\\Debug\\net10.0\\wrench.web.api.integration.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Base\\IntegrationTestFactory.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Base\\SharedTestCollection.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Base\\TestAuthHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\AutenticacaoEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\ClienteEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\DiagnosticoEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\OrcamentoEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\OrdemServicoEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\PecaEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\UsuarioPerfilEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\Tests\\VeiculoEndPointTest.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.web.api.integration.tests\\TestResults\\10051a86-e843-4681-99c4-1f298baeab14\\coverage.cobertura.xml"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\23"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\23\\Issues.json"
+    },
+    {
+      "key": "88016B16-2BAF-158C-F888-1946F3BF68E4.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\23\\Telemetry.json"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:3D9D9A87-F5F5-4779-B557-52E0249FC20D"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.projectName",
+      "value": "wrench.auto.repair.estoque.domain"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod17"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain\\obj\\wrench.auto.repair.estoque.domain.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain\\obj\\Debug\\net10.0\\wrench.auto.repair.estoque.domain.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain\\Data\\IPecaRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.domain\\Entities\\Peca.cs"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\3"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\3\\Issues.json"
+    },
+    {
+      "key": "3D9D9A87-F5F5-4779-B557-52E0249FC20D.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\3\\Telemetry.json"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:37591B86-3A17-4B90-A56A-2C0F6AA1B01E"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.projectName",
+      "value": "wrench.auto.repair.core.tests"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod18"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.tests",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\obj\\wrench.auto.repair.core.tests.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.core.tests.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\bin\\Debug\\net10.0\\wrench.auto.repair.core.tests.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\obj\\Debug\\net10.0\\wrench.auto.repair.core.tests.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\ValueObjects\\CpfCnpjTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\ValueObjects\\DataNascimentoTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\ValueObjects\\EmailTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\ValueObjects\\NomeCompletoTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\ValueObjects\\TelefoneTests.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\TestResults\\6028c6cc-cc58-46d6-8b1e-670914c9a9b7\\coverage.cobertura.xml,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\tests\\wrench.auto.repair.core.tests\\TestResults\\a1c7eb4e-929c-48cc-95b7-1e7745a77723\\coverage.cobertura.xml"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\4"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\4\\Issues.json"
+    },
+    {
+      "key": "37591B86-3A17-4B90-A56A-2C0F6AA1B01E.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\4\\Telemetry.json"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:54C6362C-DEA3-2347-BE5E-A6DD2D098A27"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.projectName",
+      "value": "wrench.auto.repair.ordem.servico.domain"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod19"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\obj\\wrench.auto.repair.ordem.servico.domain.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.domain.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\obj\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.domain.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\Data\\IOrdemServicoRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\Entities\\OrdemServico.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\Enums\\OrdemServicoStatus.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\Enums\\StatusAprovacaoEnum.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.domain\\ValueObjects\\ItemOrdemServico.cs"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\5"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\5\\Issues.json"
+    },
+    {
+      "key": "54C6362C-DEA3-2347-BE5E-A6DD2D098A27.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\5\\Telemetry.json"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:1833332F-3211-B89C-07DF-347A7E5AADA3"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.projectName",
+      "value": "wrench.auto.repair.ordem.servico.infra"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod20"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\obj\\wrench.auto.repair.ordem.servico.infra.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.infra.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\obj\\Debug\\net10.0\\wrench.auto.repair.ordem.servico.infra.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Context\\OrdemServicoDbContext.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Mapping\\OrdemServicoMapping.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\20260503181904_Inicial.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\20260503181904_Inicial.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\20260503190647_CamposNulos.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\20260503190647_CamposNulos.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\20260503194500_DataEntrega.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\20260503194500_DataEntrega.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Migrations\\OrdemServicoDbContextModelSnapshot.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Repositories\\OrdemServicoRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.ordem.servico.infra\\Repositories\\Repository.cs"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\6"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\6\\Issues.json"
+    },
+    {
+      "key": "1833332F-3211-B89C-07DF-347A7E5AADA3.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\6\\Telemetry.json"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:40A6153A-9034-4509-BB56-A4B3D7FF133A"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.projectName",
+      "value": "wrench.auto.repair.estoque.application"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod21"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\obj\\wrench.auto.repair.estoque.application.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.application.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\obj\\Debug\\net10.0\\wrench.auto.repair.estoque.application.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\AutoMapper\\PecaProfile.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\AtivarPecaCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\AtualizarPecaCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\BaixarPecaCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\CadastrarPecaCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\InativarPecaCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\PecaCommandHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Commands\\ReporPecaCommand.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Paginacao\\PecaRequisicaoPaginada.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Queries\\ConsultarPecaPorIdQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Queries\\ObterTodasPecasQuery.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Queries\\PecaQueryHandler.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\Queries\\ViewModels\\PecaViewModel.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.application\\SortMaps\\PecaSortMap.cs"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\7"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\7\\Issues.json"
+    },
+    {
+      "key": "40A6153A-9034-4509-BB56-A4B3D7FF133A.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\7\\Telemetry.json"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:2F452ADC-B9BB-44DC-96DC-D2CA944F1637"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.projectName",
+      "value": "wrench.auto.repair.autenticacao.infra"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod22"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\obj\\wrench.auto.repair.autenticacao.infra.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.autenticacao.infra.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\obj\\Debug\\net10.0\\wrench.auto.repair.autenticacao.infra.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\bin\\Debug\\net10.0\\BuildHost-net472\\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\bin\\Debug\\net10.0\\BuildHost-netcore\\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\bin\\Debug\\net10.0\\BuildHost-netcore\\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\AutenticacaoContext.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Mappings\\PerfilMapping.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Mappings\\UsuarioMapping.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Migrations\\20260501231941_Inicial.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Migrations\\20260501231941_Inicial.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Migrations\\20260501234655_AlterandoColunaDataCadastro.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Migrations\\20260501234655_AlterandoColunaDataCadastro.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Migrations\\AutenticacaoContextModelSnapshot.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Repositories\\Repository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Repositories\\UsuarioRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Security\\IPasswordHasher.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Security\\JwtOptions.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Security\\JwtTokenGenerator.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Security\\PasswordHasher.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.autenticacao.infra\\Seeds\\DbSeeder.cs"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\8"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\8\\Issues.json"
+    },
+    {
+      "key": "2F452ADC-B9BB-44DC-96DC-D2CA944F1637.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\8\\Telemetry.json"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.projectKey",
+      "value": "Wrench-Auto-Repair-API:BB696098-A98A-41C9-B954-AFD20B77A19B"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.projectName",
+      "value": "wrench.auto.repair.estoque.infra"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.projectBaseDir",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.working.directory",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\.sonar\\mod23"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.sources",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\obj\\project.assets.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\obj\\wrench.auto.repair.estoque.infra.csproj.nuget.dgspec.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\bin\\Debug\\net10.0\\wrench.auto.repair.estoque.infra.deps.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\obj\\Debug\\net10.0\\wrench.auto.repair.estoque.infra.sourcelink.json,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Context\\PecaDbContext.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Extensions\\DependencyInjectionExtension.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Mapping\\PecaMapping.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Migrations\\20260503185541_Inicial.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Migrations\\20260503185541_Inicial.Designer.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Migrations\\PecaDbContextModelSnapshot.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Repositories\\PecaRepository.cs,C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\src\\wrench.auto.repair.estoque.infra\\Repositories\\Repository.cs"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\9"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\9\\Issues.json"
+    },
+    {
+      "key": "BB696098-A98A-41C9-B954-AFD20B77A19B.sonar.cs.scanner.telemetry",
+      "value": "C:\\Workspace\\FIAP\\tech-challange-fiap-fase-1\\wrench.auto.repair\\.sonarqube\\out\\9\\Telemetry.json"
+    },
+    {
+      "key": "sonar.token",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://localhost:9000"
+    },
+    {
+      "key": "sonar.exclusions",
+      "value": "**/coverage-report/**"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}

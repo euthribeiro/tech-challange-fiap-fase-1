@@ -1,0 +1,6 @@
+﻿C:\Users\thiago.santos\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.ordem.servico.domain.tests\TestResults\ca5abe89-4ed6-4087-8be6-4c8e7f4e9137\coverage.cobertura.xml

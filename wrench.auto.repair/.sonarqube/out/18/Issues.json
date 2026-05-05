@@ -1,0 +1,472 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador do Microsoft (R) Visual C#",
+        "version": "5.3.0.0",
+        "fileVersion": "5.3.0-2.26219.105 (c23858a6d860abe3ca94f9ac630c3e61b2625664)",
+        "semanticVersion": "5.3.0",
+        "language": "pt-BR"
+      },
+      "results": [
+        {
+          "ruleId": "CS9113",
+          "level": "warning",
+          "message": "O parâmetro \"_fixture\" não está lido.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/ClienteQuery/ObterClientePorIdQueryTests.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 61,
+                  "endLine": 7,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Não é possível converter um literal nulo em um tipo de referência não anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/ClienteCommand/CadastrarClienteCommandTests.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 88,
+                  "endLine": 38,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarPlacaVeiculoValida' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/VeiculoFixture.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'ConfigurarMapeamentoEGerarMapper' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/VeiculoFixture.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 24,
+                  "endLine": 26,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarCorAleatoria' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/VeiculoFixture.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 23,
+                  "endLine": 61,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarCpfValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 24,
+                  "endLine": 41,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarCnpjValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 24,
+                  "endLine": 47,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarNomeQualquerValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 23,
+                  "endLine": 53,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarNomeValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 32,
+                  "endLine": 58,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarDocumentoValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 23,
+                  "endLine": 34,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarNumeroTelefoneValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 23,
+                  "endLine": 70,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarDataNascimentoValida' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 31,
+                  "endLine": 64,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarEnderecoEmailValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 23,
+                  "endLine": 81,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarTelefoneValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 25,
+                  "endLine": 75,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarEmailValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 22,
+                  "endLine": 86,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "SYSLIB1045",
+          "level": "note",
+          "message": "Use 'GeneratedRegexAttribute' para gerar a implementação de expressão regular em tempo de compilação.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 21,
+                  "endLine": 111,
+                  "endColumn": 66
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarEnderecoValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 103,
+                  "startColumn": 25,
+                  "endLine": 103,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'GerarEnderecoDtoValido' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 28,
+                  "endLine": 118,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "O membro 'ConfigurarMapeamentoEGerarMapper' não acessa os dados da instância e pode ser marcado como estático",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Workspace/FIAP/tech-challange-fiap-fase-1/wrench.auto.repair/tests/wrench.auto.repair.cadastro.application.tests/Fixture/ClienteFixture.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 24,
+                  "endLine": 20,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Marcar membros como estáticos",
+          "fullDescription": "Os membros que não acessam os dados da instância nem chamam os métodos da instância podem ser marcados como estáticos. Depois que você marcar os métodos como estáticos, o compilador emitirá os sites de chamada não virtuais para esses membros. Isso pode oferecer um ganho de desempenho mensurável para códigos sensíveis ao desempenho.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS8625": {
+          "id": "CS8625",
+          "shortDescription": "Não é possível converter um literal nulo em um tipo de referência não anulável.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8625)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS9113": {
+          "id": "CS9113",
+          "shortDescription": "O parâmetro não está lido.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS9113)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "SYSLIB1045": {
+          "id": "SYSLIB1045",
+          "shortDescription": "Converter em 'GeneratedRegexAttribute'.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/syslib-diagnostics/syslib1045",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.autenticacao.domain.tests\Fixture\UsuarioFixture.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.autenticacao.domain.tests\UsuarioTests.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.autenticacao.domain.tests\TestResults\19ba77ab-ee0d-4715-9c85-5c7d9a059df6\coverage.cobertura.xml
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.autenticacao.domain.tests\TestResults\42231cf8-db90-46a0-a457-6d61f7fe570b\coverage.cobertura.xml

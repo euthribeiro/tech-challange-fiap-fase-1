@@ -1,0 +1,16 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\AutenticacaoContext.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Extensions\DependencyInjectionExtension.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Mappings\PerfilMapping.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Mappings\UsuarioMapping.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Migrations\20260501231941_Inicial.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Migrations\20260501231941_Inicial.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Migrations\20260501234655_AlterandoColunaDataCadastro.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Migrations\20260501234655_AlterandoColunaDataCadastro.Designer.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Migrations\AutenticacaoContextModelSnapshot.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Repositories\Repository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Repositories\UsuarioRepository.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Security\IPasswordHasher.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Security\JwtOptions.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Security\JwtTokenGenerator.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Security\PasswordHasher.cs
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\src\wrench.auto.repair.autenticacao.infra\Seeds\DbSeeder.cs

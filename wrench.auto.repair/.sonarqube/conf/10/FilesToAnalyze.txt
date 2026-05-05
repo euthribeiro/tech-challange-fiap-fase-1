@@ -1,0 +1,8 @@
+﻿C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.estoque.domain.tests\PecaTests.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\thiago.santos\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\thiago.santos\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.estoque.domain.tests\TestResults\077f06c7-6169-4431-b0c0-5e56a35fa42d\coverage.cobertura.xml
+C:\Workspace\FIAP\tech-challange-fiap-fase-1\wrench.auto.repair\tests\wrench.auto.repair.estoque.domain.tests\TestResults\a1b5faa8-54d0-44ee-8797-24793e4b8b84\thiago.santos_RPOTI0114_2026-05-04.01_04_34.coverage

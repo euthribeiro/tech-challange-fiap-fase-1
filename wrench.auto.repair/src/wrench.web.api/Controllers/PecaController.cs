@@ -13,7 +13,7 @@ using wrench.web.api.Models.Requests;
 namespace wrench.web.api.Controllers
 {
     /// <summary>
-    /// Serviço para criar, atualizar e listar peças
+    /// Serviço para criar, atualizar e listar peças e insumos
     /// </summary>
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -22,7 +22,7 @@ namespace wrench.web.api.Controllers
     public class PecaController(IMediatorHandler _mediatorHandler) : ControllerBase
     {
         /// <summary>
-        /// Busca peça por Id
+        /// Busca peças e insumos por Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns name="peca"></returns>
@@ -38,7 +38,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Lista todas as peças de forma paginada
+        /// Lista todas as peças e insumos de forma paginada
         /// </summary>
         /// <param name="requisicao"></param>
         /// <returns></returns>
@@ -54,7 +54,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Cria peça
+        /// Cria peças e insumos
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -70,7 +70,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Atualiza informações da peça
+        /// Atualiza informações da peça/insumo
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -86,7 +86,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Repor peças no estoque
+        /// Repor peça/insumo no estoque
         /// </summary>
         /// <param name="id"></param>
         /// <param name="quantidade"></param>
@@ -103,7 +103,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Baixar peça no estoque
+        /// Baixar peça/insumo no estoque
         /// </summary>
         /// <param name="id"></param>
         /// <param name="quantidade"></param>
@@ -120,7 +120,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Reativar peça
+        /// Reativar peça/insumo
         /// </summary>
         /// <param name="id"></param>
         /// <param name="quantidade"></param>
@@ -137,7 +137,7 @@ namespace wrench.web.api.Controllers
         }
 
         /// <summary>
-        /// Desativar peça
+        /// Desativar peça/insumo
         /// </summary>
         /// <param name="id"></param>
         /// <param name="quantidade"></param>

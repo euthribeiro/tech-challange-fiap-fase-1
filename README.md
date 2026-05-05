@@ -86,7 +86,7 @@ No link do Miro abaixo, está toda a documentação relacionada:
 
 [![Miro Board](https://img.shields.io/badge/Miro-Board-yellow?style=flat&logo=miro)](https://miro.com/app/board/uXjVGuaIszk=/?share_link_id=188169996234)
 
-Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubiqua)
+Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubiqua/linguage-ubiqua.md)
 
 ---
 

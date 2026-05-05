@@ -64,27 +64,18 @@ Roberto começou a chegar mais cedo e sair mais tarde, apagando incêndios que p
 Foi a filha de Roberto, Camila Mendes, recém-formada em Sistemas de Informação, quem trouxe a resposta. Ela convenceu o pai de que a oficina precisava de mais do que planilhas improvisadas — precisava de um sistema integrado, robusto e feito sob medida para a realidade da Wrench.
 Com o apoio de uma equipe de desenvolvedores, o projeto foi batizado internamente de "Projeto Chave Inglesa" — uma brincadeira com o nome da oficina — e o desenvolvimento do back-end do sistema começou. A proposta era clara: digitalizar cada etapa do atendimento, desde o momento em que o cliente chega com o carro até a entrega das chaves com o serviço concluído.
 
-## Linguagem Pictográfica
 
-### Jornada AS-IS
+## Documentação DDD
 
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/wrench-auto-repair-pictographic-language-as-is.svg" width="100%">
+No link do Miro abaixo, está toda a documentação relacionada:
+- Linguagem Pictográfica
+- Jornada AS-IS
+- Jornada TO BE (Ordem de Serviço)
+- Jornada TO BE (Estoque)
+- Contextos Delimitados
+- Event Storming
 
-### Jornada TO BE (Ordem de Serviço)
-
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/wrench-auto-repair-pictographic-language-to-be-service-order.svg" width="100%">
-
-### Jornada TO BE (Estoque)
-
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/wrench-auto-repair-pictographic-language-to-be-stock.svg" width="100%">
-
-## Contextos Delimitados
-
-**TODO**
-
-## Event Storming
-
-**TODO**
+[![Miro Board](https://img.shields.io/badge/Miro-Board-yellow?style=flat&logo=miro)](https://miro.com/app/board/uXjVGuaIszk=/?share_link_id=188169996234)
 
 ---
 

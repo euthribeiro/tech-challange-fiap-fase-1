@@ -1,9 +1,12 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
 using Moq;
 using wrench.auto.repair.core.Data;
 using wrench.auto.repair.core.Errors;
 using wrench.auto.repair.core.Mediator;
 using wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries;
+using wrench.auto.repair.core.Pagination;
+using wrench.auto.repair.ordem.servico.application.Paginacao;
 using wrench.auto.repair.ordem.servico.application.Queries;
 using wrench.auto.repair.ordem.servico.application.Queries.ViewModels;
 using wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase;
@@ -44,6 +47,30 @@ namespace wrench.auto.repair.ordem.servico.application.tests
                     StatusAprovacao = o.StatusAprovacao.ToString(),
                     DataAprovacaoRecusa = o.DataAprovacaoRecusa,
                     ValorTotal = o.CalcularValorTotal()
+                });
+
+            mapper.Setup(m => m.Map<ResultadoPaginado<OrdemServicoViewModel>>(It.IsAny<ResultadoPaginado<OrdemServico>>()))
+                .Returns((ResultadoPaginado<OrdemServico> src) =>
+                {
+                    var vms = src.Itens.Select(o => new OrdemServicoViewModel
+                    {
+                        Id = o.Id,
+                        ClienteId = o.ClienteId,
+                        VeiculoId = o.VeiculoId,
+                        Descricao = o.Descricao,
+                        DataCriacao = o.DataCriacao,
+                        Status = o.Status.ToString(),
+                        ValorServico = o.ValorServico,
+                        SolucaoProposta = o.SolucaoProposta ?? string.Empty,
+                        DataDiagnostico = o.DataDiagnostico,
+                        DataEnvio = o.DataEnvio,
+                        StatusAprovacao = o.StatusAprovacao.ToString(),
+                        DataAprovacaoRecusa = o.DataAprovacaoRecusa,
+                        DataEntrega = o.DataEntrega,
+                        Pecas = [],
+                        ValorTotal = o.CalcularValorTotal()
+                    }).ToList();
+                    return new ResultadoPaginado<OrdemServicoViewModel>(vms, src.TotalRegistros, src.NumeroPagina, src.TamanhoPagina, src.OrdenacoesPermitidas);
                 });
 
             _commandHandler = new OrdemServicoCommandHandler(_mediatorMock.Object, _repositoryMock.Object);
@@ -122,7 +149,7 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var query = new ObterOrdemServicoIdQuery(id);
 
             _repositoryMock.Setup(r => r.ObterPorIdAsync(id, CancellationToken.None))
-                .ReturnsAsync((OrdemServico)null);
+                .ReturnsAsync((OrdemServico?)null);
 
             // Act
             var result = await _queryHandler.Handle(query, CancellationToken.None);
@@ -375,6 +402,174 @@ namespace wrench.auto.repair.ordem.servico.application.tests
             var result = await _orcamentoHandler.Handle(command, CancellationToken.None);
 
             Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Entregar serviço deve retornar erro de validação quando id for vazio")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task EntregarServico_DeveRetornarValidationError_QuandoIdInvalido()
+        {
+            var command = new EntregarServicoCommand(Guid.Empty);
+
+            var result = await _commandHandler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            _repositoryMock.Verify(r => r.ObterPorIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Entregar serviço deve retornar not found quando ordem não existir")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task EntregarServico_DeveRetornarNotFound_QuandoOrdemNaoExistir()
+        {
+            var ordemId = Guid.NewGuid();
+            var command = new EntregarServicoCommand(ordemId);
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordemId, It.IsAny<CancellationToken>()))
+                .ReturnsAsync((OrdemServico?)null);
+
+            var result = await _commandHandler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Entregar serviço deve retornar forbidden quando ordem não estiver finalizada")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task EntregarServico_DeveRetornarForbidden_QuandoStatusNaoFinalizada()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Serviço", OrdemServicoStatus.EmExecucao, DateTime.UtcNow);
+            var command = new EntregarServicoCommand(ordem.Id);
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+
+            var result = await _commandHandler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            _repositoryMock.Verify(r => r.Atualizar(It.IsAny<OrdemServico>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Entregar serviço deve retornar erro inesperado quando commit falhar")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task EntregarServico_DeveRetornarUnexpected_QuandoCommitFalhar()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Serviço", OrdemServicoStatus.Finalizada, DateTime.UtcNow);
+            var command = new EntregarServicoCommand(ordem.Id);
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+            _repositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
+            _repositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                .ReturnsAsync(false);
+
+            var result = await _commandHandler.Handle(command, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Entregar serviço deve concluir quando ordem estiver finalizada")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task EntregarServico_DeveEntregar_QuandoFinalizada()
+        {
+            var ordem = new OrdemServico(Guid.NewGuid(), Guid.NewGuid(), "Serviço", OrdemServicoStatus.Finalizada, DateTime.UtcNow);
+            var command = new EntregarServicoCommand(ordem.Id);
+
+            _repositoryMock.Setup(r => r.ObterPorIdAsync(ordem.Id, It.IsAny<CancellationToken>()))
+                .ReturnsAsync(ordem);
+            _repositoryMock.Setup(r => r.Atualizar(It.IsAny<OrdemServico>()))
+                .Returns(Task.CompletedTask);
+            _repositoryMock.Setup(r => r.UnitOfWork.CommitAsync())
+                .ReturnsAsync(true);
+
+            var result = await _commandHandler.Handle(command, CancellationToken.None);
+
+            Assert.True(result.Sucesso);
+            Assert.Equal(OrdemServicoStatus.Entregue, ordem.Status);
+            Assert.NotNull(ordem.DataEntrega);
+        }
+
+        [Fact(DisplayName = "Obter ordens por cliente deve retornar erro quando clienteId for vazio")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task ObterTodasOrdemServicoPorCliente_DeveRetornarValidationError_QuandoClienteInvalido()
+        {
+            var paginacao = new OrdemServicoRequisicaoPaginada();
+            var query = new ObterTodasOrdemServicoPorClienteQuery(Guid.Empty, null, paginacao);
+
+            var result = await _queryHandler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            _repositoryMock.Verify(r => r.BuscaPaginadaAsync(
+                It.IsAny<Guid>(),
+                It.IsAny<Guid?>(),
+                It.IsAny<OrdemServicoRequisicaoPaginada>(),
+                It.IsAny<Dictionary<string, Expression<Func<OrdemServico, object?>>>>(),
+                It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Obter ordens por cliente deve retornar erro quando ordenação for inválida")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task ObterTodasOrdemServicoPorCliente_DeveRetornarValidationError_QuandoOrdenacaoInvalida()
+        {
+            var paginacao = new OrdemServicoRequisicaoPaginada { OrdenarPor = "ColunaNaoPermitida" };
+            var query = new ObterTodasOrdemServicoPorClienteQuery(Guid.NewGuid(), null, paginacao);
+
+            var result = await _queryHandler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+            _repositoryMock.Verify(r => r.BuscaPaginadaAsync(
+                It.IsAny<Guid>(),
+                It.IsAny<Guid?>(),
+                It.IsAny<OrdemServicoRequisicaoPaginada>(),
+                It.IsAny<Dictionary<string, Expression<Func<OrdemServico, object?>>>>(),
+                It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [Fact(DisplayName = "Obter ordens por cliente deve retornar not found quando repositório não retornar dados")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task ObterTodasOrdemServicoPorCliente_DeveRetornarNotFound_QuandoRepositorioNulo()
+        {
+            var clienteId = Guid.NewGuid();
+            var paginacao = new OrdemServicoRequisicaoPaginada();
+            var query = new ObterTodasOrdemServicoPorClienteQuery(clienteId, null, paginacao);
+
+            _repositoryMock.Setup(r => r.BuscaPaginadaAsync(
+                    clienteId,
+                    null,
+                    paginacao,
+                    It.IsAny<Dictionary<string, Expression<Func<OrdemServico, object?>>>>(),
+                    It.IsAny<CancellationToken>()))
+                .ReturnsAsync((ResultadoPaginado<OrdemServico>)null!);
+
+            var result = await _queryHandler.Handle(query, CancellationToken.None);
+
+            Assert.False(result.Sucesso);
+        }
+
+        [Fact(DisplayName = "Obter ordens por cliente deve retornar lista paginada")]
+        [Trait("Ordem Serviço", "Application")]
+        public async Task ObterTodasOrdemServicoPorCliente_DeveRetornarOk_QuandoExistiremOrdens()
+        {
+            var clienteId = Guid.NewGuid();
+            var veiculoId = Guid.NewGuid();
+            var paginacao = new OrdemServicoRequisicaoPaginada();
+            var ordem = new OrdemServico(clienteId, veiculoId, "Teste", OrdemServicoStatus.Recebida, DateTime.UtcNow);
+            var resultadoPaginado = new ResultadoPaginado<OrdemServico>([ordem], 1, 1, 10);
+
+            var query = new ObterTodasOrdemServicoPorClienteQuery(clienteId, veiculoId, paginacao);
+
+            _repositoryMock.Setup(r => r.BuscaPaginadaAsync(
+                    clienteId,
+                    veiculoId,
+                    paginacao,
+                    It.IsAny<Dictionary<string, Expression<Func<OrdemServico, object?>>>>(),
+                    It.IsAny<CancellationToken>()))
+                .ReturnsAsync(resultadoPaginado);
+
+            var result = await _queryHandler.Handle(query, CancellationToken.None);
+
+            Assert.True(result.Sucesso);
+            Assert.NotNull(result.Valor);
+            Assert.Single(result.Valor!.Itens);
+            Assert.Equal(ordem.Id, result.Valor.Itens.First().Id);
         }
     }
 }

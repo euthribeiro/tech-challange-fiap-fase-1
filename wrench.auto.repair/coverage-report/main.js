@@ -344,7 +344,7 @@ var assemblies = [
       { "name": "wrench.auto.repair.autenticacao.infra.Repositories.Repository\u003CT\u003E", "rp": "wrench.auto.repair.autenticacao.infra_Repository_1.html", "cl": 33, "ucl": 55, "cal": 88, "tl": 146, "cb": 5, "tb": 34, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.autenticacao.infra.Repositories.UsuarioRepository", "rp": "wrench.auto.repair.autenticacao.infra_UsuarioRepository.html", "cl": 17, "ucl": 3, "cal": 20, "tl": 43, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.autenticacao.infra.Security.JwtOptions", "rp": "wrench.auto.repair.autenticacao.infra_JwtOptions.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.autenticacao.infra.Security.JwtTokenGenerator", "rp": "wrench.auto.repair.autenticacao.infra_JwtTokenGenerator.html", "cl": 26, "ucl": 0, "cal": 26, "tl": 45, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.autenticacao.infra.Security.JwtTokenGenerator", "rp": "wrench.auto.repair.autenticacao.infra_JwtTokenGenerator.html", "cl": 27, "ucl": 0, "cal": 27, "tl": 46, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.autenticacao.infra.Security.PasswordHasher", "rp": "wrench.auto.repair.autenticacao.infra_PasswordHasher.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 15, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.autenticacao.infra.Seeds.DbSeeder", "rp": "wrench.auto.repair.autenticacao.infra_DbSeeder.html", "cl": 9, "ucl": 10, "cal": 19, "tl": 44, "cb": 2, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
@@ -395,7 +395,7 @@ var assemblies = [
       { "name": "wrench.auto.repair.cadastro.application.Queries.ObterVeiculoPorIdQueryValidator", "rp": "wrench.auto.repair.cadastro.application_ObterVeiculoPorIdQueryValidator.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 30, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.cadastro.application.Queries.ObterVeiculoPorPlacaQuery", "rp": "wrench.auto.repair.cadastro.application_ObterVeiculoPorPlacaQuery.html", "cl": 9, "ucl": 0, "cal": 9, "tl": 40, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.cadastro.application.Queries.ObterVeiculoPorPlacaQueryValidator", "rp": "wrench.auto.repair.cadastro.application_ObterVeiculoPorPlacaQueryValidator.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 40, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.cadastro.application.Queries.VeiculoQueryHandler", "rp": "wrench.auto.repair.cadastro.application_VeiculoQueryHandler.html", "cl": 39, "ucl": 0, "cal": 39, "tl": 79, "cb": 16, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.cadastro.application.Queries.VeiculoQueryHandler", "rp": "wrench.auto.repair.cadastro.application_VeiculoQueryHandler.html", "cl": 40, "ucl": 1, "cal": 41, "tl": 82, "cb": 17, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.cadastro.application.Queries.ViewModels.ClienteViewModel", "rp": "wrench.auto.repair.cadastro.application_ClienteViewModel.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 22, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.cadastro.application.Queries.ViewModels.EnderecoViewModel", "rp": "wrench.auto.repair.cadastro.application_EnderecoViewModel.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.cadastro.application.Queries.ViewModels.VeiculoViewModel", "rp": "wrench.auto.repair.cadastro.application_VeiculoViewModel.html", "cl": 11, "ucl": 0, "cal": 11, "tl": 17, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -432,7 +432,7 @@ var assemblies = [
       { "name": "wrench.auto.repair.core.AutoMapper.ResultadoPaginadoProfile", "rp": "wrench.auto.repair.core_ResultadoPaginadoProfile.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 33, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.DomainObjects.DomainException", "rp": "wrench.auto.repair.core_DomainException.html", "cl": 3, "ucl": 6, "cal": 9, "tl": 22, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.DomainObjects.Entity", "rp": "wrench.auto.repair.core_Entity.html", "cl": 14, "ucl": 15, "cal": 29, "tl": 52, "cb": 6, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.core.DomainObjects.Validacoes", "rp": "wrench.auto.repair.core_Validacoes.html", "cl": 56, "ucl": 54, "cal": 110, "tl": 182, "cb": 26, "tb": 58, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.DomainObjects.Validacoes", "rp": "wrench.auto.repair.core_Validacoes.html", "cl": 58, "ucl": 52, "cal": 110, "tl": 182, "cb": 27, "tb": 58, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Errors.Result", "rp": "wrench.auto.repair.core_Result.html", "cl": 28, "ucl": 13, "cal": 41, "tl": 83, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Errors.Result\u003CT\u003E", "rp": "wrench.auto.repair.core_Result_1.html", "cl": 35, "ucl": 11, "cal": 46, "tl": 91, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Extensions.DependencyInjectionExtension", "rp": "wrench.auto.repair.core_DependencyInjectionExtension.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -442,10 +442,12 @@ var assemblies = [
       { "name": "wrench.auto.repair.core.Messages.Command", "rp": "wrench.auto.repair.core_Command.html", "cl": 9, "ucl": 2, "cal": 11, "tl": 27, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Messages.Command\u003CT\u003E", "rp": "wrench.auto.repair.core_Command_1.html", "cl": 9, "ucl": 2, "cal": 11, "tl": 27, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.Dtos.PecaDto", "rp": "wrench.auto.repair.core_PecaDto.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.ObterPecasPorIdsCommand", "rp": "wrench.auto.repair.core_ObterPecasPorIdsCommand.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 24, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.ObterPecasPorIdsQueryValidator", "rp": "wrench.auto.repair.core_ObterPecasPorIdsQueryValidator.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 24, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.PecaExisteQuery", "rp": "wrench.auto.repair.core_PecaExisteQuery.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 7, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.VeiculoExisteEPertenteAoClienteQuery", "rp": "wrench.auto.repair.core_VeiculoExisteEPertenteAoClienteQuery.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.ObterPecasPorIdsCommand", "rp": "wrench.auto.repair.core_ObterPecasPorIdsCommand.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 48, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.ObterPecasPorIdsQueryValidator", "rp": "wrench.auto.repair.core_ObterPecasPorIdsQueryValidator.html", "cl": 18, "ucl": 0, "cal": 18, "tl": 48, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.PecaExisteQuery", "rp": "wrench.auto.repair.core_PecaExisteQuery.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.PecaExisteQueryValidator", "rp": "wrench.auto.repair.core_PecaExisteQueryValidator.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.VeiculoExisteEPertenteAoClienteQuery", "rp": "wrench.auto.repair.core_VeiculoExisteEPertenteAoClienteQuery.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 36, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegratedQueries.VeiculoExisteEPertenteAoClienteQueryValidator", "rp": "wrench.auto.repair.core_VeiculoExisteEPertenteAoClienteQueryValidator.html", "cl": 11, "ucl": 0, "cal": 11, "tl": 36, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Messages.CommonMessages.IntegrationEvents.ClienteCadastradoEvent", "rp": "wrench.auto.repair.core_ClienteCadastradoEvent.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Messages.Event", "rp": "wrench.auto.repair.core_Event.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.core.Messages.Message", "rp": "wrench.auto.repair.core_Message.html", "cl": 5, "ucl": 1, "cal": 6, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -473,7 +475,7 @@ var assemblies = [
       { "name": "wrench.auto.repair.estoque.application.Commands.CadastrarPecaCommandValidator", "rp": "wrench.auto.repair.estoque.application_CadastrarPecaCommandValidator.html", "cl": 19, "ucl": 0, "cal": 19, "tl": 49, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.estoque.application.Commands.InativarPecaCommand", "rp": "wrench.auto.repair.estoque.application_InativarPecaCommand.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 29, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.estoque.application.Commands.InativarPecaCommandValidator", "rp": "wrench.auto.repair.estoque.application_InativarPecaCommandValidator.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 29, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.estoque.application.Commands.PecaCommandHandler", "rp": "wrench.auto.repair.estoque.application_PecaCommandHandler.html", "cl": 105, "ucl": 6, "cal": 111, "tl": 202, "cb": 48, "tb": 54, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.estoque.application.Commands.PecaCommandHandler", "rp": "wrench.auto.repair.estoque.application_PecaCommandHandler.html", "cl": 106, "ucl": 7, "cal": 113, "tl": 205, "cb": 49, "tb": 56, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.estoque.application.Commands.ReporPecaCommand", "rp": "wrench.auto.repair.estoque.application_ReporPecaCommand.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 39, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.estoque.application.Commands.ReporPecaCommandValidator", "rp": "wrench.auto.repair.estoque.application_ReporPecaCommandValidator.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 39, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.estoque.application.Extensions.DependencyInjectionExtension", "rp": "wrench.auto.repair.estoque.application_DependencyInjectionExtension.html", "cl": 18, "ucl": 0, "cal": 18, "tl": 37, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -506,47 +508,56 @@ var assemblies = [
   {
     "name": "wrench.auto.repair.ordem.servico.application",
     "classes": [
-      { "name": "wrench.auto.repair.ordem.servico.application.AutoMapper.OrdemServicoProfile", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoProfile.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 22, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.AutoMapper.OrdemServicoProfile", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoProfile.html", "cl": 9, "ucl": 0, "cal": 9, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.Events.OrdemServicoAguardandoAprovacaoEvent", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoAguardandoAprovacaoEvent.html", "cl": 2, "ucl": 0, "cal": 2, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.Events.OrdemServicoAguardandoAprovacaoEventHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoAguardandoAprovacaoEventHandler.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 21, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.application.Extensions.DependencyInjectionExtension", "rp": "wrench.auto.repair.ordem.servico.application_DependencyInjectionExtension.html", "cl": 17, "ucl": 0, "cal": 17, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Extensions.DependencyInjectionExtension", "rp": "wrench.auto.repair.ordem.servico.application_DependencyInjectionExtension.html", "cl": 21, "ucl": 0, "cal": 21, "tl": 41, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Paginacao.OrdemServicoRequisicaoPaginada", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoRequisicaoPaginada.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 35, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Paginacao.OrdemServicoRequisicaoPaginadaValidator", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoRequisicaoPaginadaValidator.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 35, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.Queries.ObterOrdemServicoIdQuery", "rp": "wrench.auto.repair.ordem.servico.application_ObterOrdemServicoIdQuery.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 26, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.Queries.ObterOrdemServicoIdQueryValidator", "rp": "wrench.auto.repair.ordem.servico.application_ObterOrdemServicoIdQueryValidator.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 26, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.application.Queries.OrdemServicoQueryHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoQueryHandler.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 29, "cb": 4, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Queries.ObterTodasOrdemServicoPorClienteQuery", "rp": "wrench.auto.repair.ordem.servico.application_ObterTodasOrdemServicoPorClienteQuery.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 44, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Queries.ObterTodasOrdemServicoPorClienteQueryValidator", "rp": "wrench.auto.repair.ordem.servico.application_ObterTodasOrdemServicoPorClienteQueryValidator.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 44, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Queries.ObterTodasOrdemServicoQuery", "rp": "wrench.auto.repair.ordem.servico.application_ObterTodasOrdemServicoQuery.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Queries.ObterTodasOrdemServicoQueryValidator", "rp": "wrench.auto.repair.ordem.servico.application_ObterTodasOrdemServicoQueryValidator.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Queries.OrdemServicoQueryHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoQueryHandler.html", "cl": 32, "ucl": 2, "cal": 34, "tl": 67, "cb": 10, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.Queries.ViewModels.ItemOrdemServicoViewModel", "rp": "wrench.auto.repair.ordem.servico.application_ItemOrdemServicoViewModel.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.application.Queries.ViewModels.OrdemServicoViewModel", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoViewModel.html", "cl": 13, "ucl": 1, "cal": 14, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.Queries.ViewModels.OrdemServicoViewModel", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoViewModel.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.SortMaps.OrdemServicoSortMap", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoSortMap.html", "cl": 11, "ucl": 0, "cal": 11, "tl": 21, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.DiagnosticoCommandHandler", "rp": "wrench.auto.repair.ordem.servico.application_DiagnosticoCommandHandler.html", "cl": 48, "ucl": 0, "cal": 48, "tl": 89, "cb": 20, "tb": 20, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.RealizarDiagnosticoCommand", "rp": "wrench.auto.repair.ordem.servico.application_RealizarDiagnosticoCommand.html", "cl": 21, "ucl": 0, "cal": 21, "tl": 37, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.RealizarDiagnosticoCommand", "rp": "wrench.auto.repair.ordem.servico.application_RealizarDiagnosticoCommand.html", "cl": 32, "ucl": 1, "cal": 33, "tl": 54, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.UseCases.DiagnosticoUseCase.SolicitarDiagnosticoCommand", "rp": "wrench.auto.repair.ordem.servico.application_SolicitarDiagnosticoCommand.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.AprovaOrcamentoCommand", "rp": "wrench.auto.repair.ordem.servico.application_AprovaOrcamentoCommand.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 27, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.OrcamentoCommandHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrcamentoCommandHandler.html", "cl": 26, "ucl": 0, "cal": 26, "tl": 50, "cb": 8, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.OrcamentoCommandHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrcamentoCommandHandler.html", "cl": 28, "ucl": 2, "cal": 30, "tl": 57, "cb": 10, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrcamentoUseCase.RecusarOrcamentoCommand", "rp": "wrench.auto.repair.ordem.servico.application_RecusarOrcamentoCommand.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 31, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase.CriarOrdemServicoCommand", "rp": "wrench.auto.repair.ordem.servico.application_CriarOrdemServicoCommand.html", "cl": 34, "ucl": 0, "cal": 34, "tl": 55, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase.EntregarServicoCommand", "rp": "wrench.auto.repair.ordem.servico.application_EntregarServicoCommand.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 27, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase.FinalizarOrdemServicoCommand", "rp": "wrench.auto.repair.ordem.servico.application_FinalizarOrdemServicoCommand.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase.OrdemServicoCommandHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoCommandHandler.html", "cl": 32, "ucl": 0, "cal": 32, "tl": 64, "cb": 12, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.application.UseCases.OrdemServicoUseCase.OrdemServicoCommandHandler", "rp": "wrench.auto.repair.ordem.servico.application_OrdemServicoCommandHandler.html", "cl": 47, "ucl": 1, "cal": 48, "tl": 91, "cb": 21, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "wrench.auto.repair.ordem.servico.domain",
     "classes": [
-      { "name": "wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", "rp": "wrench.auto.repair.ordem.servico.domain_OrdemServico.html", "cl": 75, "ucl": 8, "cal": 83, "tl": 120, "cb": 4, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.domain.ValueObjects.ItemOrdemServico", "rp": "wrench.auto.repair.ordem.servico.domain_ItemOrdemServico.html", "cl": 18, "ucl": 7, "cal": 25, "tl": 42, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.domain.Entities.OrdemServico", "rp": "wrench.auto.repair.ordem.servico.domain_OrdemServico.html", "cl": 88, "ucl": 6, "cal": 94, "tl": 136, "cb": 12, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.domain.ValueObjects.ItemOrdemServico", "rp": "wrench.auto.repair.ordem.servico.domain_ItemOrdemServico.html", "cl": 25, "ucl": 0, "cal": 25, "tl": 42, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "wrench.auto.repair.ordem.servico.infra",
     "classes": [
       { "name": "wrench.auto.repair.ordem.servico.infra.Context.OrdemServicoDbContext", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoDbContext.html", "cl": 11, "ucl": 0, "cal": 11, "tl": 30, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.infra.Extensions.DependencyInjectionExtension", "rp": "wrench.auto.repair.ordem.servico.infra_DependencyInjectionExtension.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.infra.Mapping.OrdemServicoMapping", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoMapping.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 24, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.infra.Mapping.OrdemServicoMapping", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoMapping.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 27, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.infra.Migrations.CamposNulos", "rp": "wrench.auto.repair.ordem.servico.infra_CamposNulos.html", "cl": 119, "ucl": 38, "cal": 157, "tl": 206, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.infra.Migrations.DataEntrega", "rp": "wrench.auto.repair.ordem.servico.infra_DataEntrega.html", "cl": 99, "ucl": 5, "cal": 104, "tl": 147, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.auto.repair.ordem.servico.infra.Migrations.Inicial", "rp": "wrench.auto.repair.ordem.servico.infra_Inicial.html", "cl": 137, "ucl": 6, "cal": 143, "tl": 189, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.infra.Migrations.OrdemServicoDbContextModelSnapshot", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoDbContextModelSnapshot.html", "cl": 89, "ucl": 0, "cal": 89, "tl": 112, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.infra.Repositories.OrdemServicoRepository", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoRepository.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 18, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.auto.repair.ordem.servico.infra.Repositories.Repository\u003CT\u003E", "rp": "wrench.auto.repair.ordem.servico.infra_Repository_1.html", "cl": 15, "ucl": 73, "cal": 88, "tl": 147, "cb": 1, "tb": 34, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.infra.Migrations.OrdemServicoDbContextModelSnapshot", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoDbContextModelSnapshot.html", "cl": 92, "ucl": 0, "cal": 92, "tl": 115, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.infra.Repositories.OrdemServicoRepository", "rp": "wrench.auto.repair.ordem.servico.infra_OrdemServicoRepository.html", "cl": 1, "ucl": 25, "cal": 26, "tl": 46, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.auto.repair.ordem.servico.infra.Repositories.Repository\u003CT\u003E", "rp": "wrench.auto.repair.ordem.servico.infra_Repository_1.html", "cl": 36, "ucl": 52, "cal": 88, "tl": 147, "cb": 5, "tb": 34, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "wrench.web.api",
     "classes": [
-      { "name": "Microsoft.AspNetCore.OpenApi.Generated", "rp": "wrench.web.api_Generated.html", "cl": 4, "ucl": 427, "cal": 431, "tl": 656, "cb": 0, "tb": 206, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Microsoft.AspNetCore.OpenApi.Generated", "rp": "wrench.web.api_Generated.html", "cl": 4, "ucl": 430, "cal": 434, "tl": 659, "cb": 0, "tb": 206, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "Program", "rp": "wrench.web.api_Program.html", "cl": 46, "ucl": 5, "cal": 51, "tl": 87, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "System.Runtime.CompilerServices", "rp": "wrench.web.api_CompilerServices.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 23, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Configuration.AuthenticationConfiguration", "rp": "wrench.web.api_AuthenticationConfiguration.html", "cl": 33, "ucl": 1, "cal": 34, "tl": 52, "cb": 3, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -555,20 +566,20 @@ var assemblies = [
       { "name": "wrench.web.api.Controllers.ClienteController", "rp": "wrench.web.api_ClienteController.html", "cl": 60, "ucl": 0, "cal": 60, "tl": 138, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Controllers.DiagnosticoController", "rp": "wrench.web.api_DiagnosticoController.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 52, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Controllers.OrcamentoController", "rp": "wrench.web.api_OrcamentoController.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 52, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.web.api.Controllers.OrdemServicoController", "rp": "wrench.web.api_OrdemServicoController.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 64, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.web.api.Controllers.OrdemServicoController", "rp": "wrench.web.api_OrdemServicoController.html", "cl": 23, "ucl": 12, "cal": 35, "tl": 119, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Controllers.PecaController", "rp": "wrench.web.api_PecaController.html", "cl": 49, "ucl": 0, "cal": 49, "tl": 156, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Controllers.PerfilController", "rp": "wrench.web.api_PerfilController.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 35, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Controllers.UsuarioController", "rp": "wrench.web.api_UsuarioController.html", "cl": 43, "ucl": 0, "cal": 43, "tl": 136, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Controllers.VeiculoController", "rp": "wrench.web.api_VeiculoController.html", "cl": 46, "ucl": 0, "cal": 46, "tl": 121, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Docs.OpenApiConfiguration", "rp": "wrench.web.api_OpenApiConfiguration.html", "cl": 5, "ucl": 43, "cal": 48, "tl": 57, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.web.api.Extensions.ResultExtensions", "rp": "wrench.web.api_ResultExtensions.html", "cl": 39, "ucl": 15, "cal": 54, "tl": 70, "cb": 20, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.web.api.Extensions.ResultExtensions", "rp": "wrench.web.api_ResultExtensions.html", "cl": 40, "ucl": 14, "cal": 54, "tl": 70, "cb": 21, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Middlewares.ExceptionHandlerExtensions", "rp": "wrench.web.api_ExceptionHandlerExtensions.html", "cl": 0, "ucl": 36, "cal": 36, "tl": 54, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.Diagnostico.RealizarDiagnosticoRequest", "rp": "wrench.web.api_RealizarDiagnosticoRequest.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 17, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.Diagnostico.SolicitarDiagnosticoRequest", "rp": "wrench.web.api_SolicitarDiagnosticoRequest.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 7, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.Orcamento.AprovaOrcamentoRequest", "rp": "wrench.web.api_AprovaOrcamentoRequest.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 7, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.Orcamento.RecusarOrcamentoRequest", "rp": "wrench.web.api_RecusarOrcamentoRequest.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 7, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.OrdemServico.AprovarOrcamentoRequest", "rp": "wrench.web.api_AprovarOrcamentoRequest.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 19, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "wrench.web.api.Models.OrdemServico.AtualizarOrdemServicoRequest", "rp": "wrench.web.api_AtualizarOrdemServicoRequest.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 19, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "wrench.web.api.Models.OrdemServico.AtualizarOrdemServicoRequest", "rp": "wrench.web.api_AtualizarOrdemServicoRequest.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 19, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.OrdemServico.CriarOrdemServicoRequest", "rp": "wrench.web.api_CriarOrdemServicoRequest.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.Requests.AtualizarPecaRequest", "rp": "wrench.web.api_AtualizarPecaRequest.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "wrench.web.api.Models.Requests.CriarPecaRequest", "rp": "wrench.web.api_CriarPecaRequest.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 40, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
@@ -590,19 +601,19 @@ var riskHotspotMetrics = [
 
 var riskHotspots = [
   {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "TransformAsync(Microsoft.OpenApi.OpenApiOperation,Microsoft.AspNetCore.OpenApi.OpenApiOperationTransformerContext,System.Threading.CancellationToken)", "methodShortName": "TransformAsync(...)", "fileIndex": 0, "line": 394,
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "TransformAsync(Microsoft.OpenApi.OpenApiOperation,Microsoft.AspNetCore.OpenApi.OpenApiOperationTransformerContext,System.Threading.CancellationToken)", "methodShortName": "TransformAsync(...)", "fileIndex": 0, "line": 397,
     "metrics": [
       { "value": 8930, "exceeded": true },
       { "value": 94, "exceeded": true },
     ]},
   {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "TransformAsync(Microsoft.OpenApi.OpenApiSchema,Microsoft.AspNetCore.OpenApi.OpenApiSchemaTransformerContext,System.Threading.CancellationToken)", "methodShortName": "TransformAsync(...)", "fileIndex": 0, "line": 560,
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "TransformAsync(Microsoft.OpenApi.OpenApiSchema,Microsoft.AspNetCore.OpenApi.OpenApiSchemaTransformerContext,System.Threading.CancellationToken)", "methodShortName": "TransformAsync(...)", "fileIndex": 0, "line": 563,
     "metrics": [
       { "value": 1190, "exceeded": true },
       { "value": 34, "exceeded": true },
     ]},
   {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "GetTypeDocId(System.Type,System.Boolean,System.Boolean)", "methodShortName": "GetTypeDocId(...)", "fileIndex": 0, "line": 287,
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "GetTypeDocId(System.Type,System.Boolean,System.Boolean)", "methodShortName": "GetTypeDocId(...)", "fileIndex": 0, "line": 290,
     "metrics": [
       { "value": 812, "exceeded": true },
       { "value": 28, "exceeded": true },
@@ -620,7 +631,7 @@ var riskHotspots = [
       { "value": 82, "exceeded": true },
     ]},
   {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "CreateDocumentationId(System.Reflection.MethodInfo)", "methodShortName": "CreateDocumentationId(...)", "fileIndex": 0, "line": 217,
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "CreateDocumentationId(System.Reflection.MethodInfo)", "methodShortName": "CreateDocumentationId(...)", "fileIndex": 0, "line": 220,
     "metrics": [
       { "value": 342, "exceeded": true },
       { "value": 18, "exceeded": true },
@@ -639,6 +650,12 @@ var riskHotspots = [
     ]},
   {
     "assembly": "wrench.auto.repair.estoque.infra", "class": "wrench.auto.repair.estoque.infra.Repositories.Repository\u003CT\u003E", "reportPath": "wrench.auto.repair.estoque.infra_Repository_1.html", "methodName": "IsScalar(System.Type)", "methodShortName": "IsScalar(...)", "fileIndex": 0, "line": 120,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "wrench.auto.repair.ordem.servico.infra", "class": "wrench.auto.repair.ordem.servico.infra.Repositories.OrdemServicoRepository", "reportPath": "wrench.auto.repair.ordem.servico.infra_OrdemServicoRepository.html", "methodName": "BuscaPaginadaAsync()", "methodShortName": "BuscaPaginadaAsync()", "fileIndex": 0, "line": 13,
     "metrics": [
       { "value": 156, "exceeded": true },
       { "value": 12, "exceeded": false },
@@ -674,7 +691,7 @@ var riskHotspots = [
       { "value": 10, "exceeded": false },
     ]},
   {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "CreateDocumentationId(System.Reflection.PropertyInfo)", "methodShortName": "CreateDocumentationId(...)", "fileIndex": 0, "line": 149,
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "CreateDocumentationId(System.Reflection.PropertyInfo)", "methodShortName": "CreateDocumentationId(...)", "fileIndex": 0, "line": 152,
     "metrics": [
       { "value": 110, "exceeded": true },
       { "value": 10, "exceeded": false },
@@ -710,28 +727,22 @@ var riskHotspots = [
       { "value": 8, "exceeded": false },
     ]},
   {
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "NormalizeDocId(System.String)", "methodShortName": "NormalizeDocId(...)", "fileIndex": 0, "line": 372,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "UnwrapOpenApiParameter(Microsoft.OpenApi.IOpenApiParameter)", "methodShortName": "UnwrapOpenApiParameter(...)", "fileIndex": 0, "line": 536,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
     "assembly": "wrench.web.api", "class": "wrench.web.api.Extensions.ResultExtensions", "reportPath": "wrench.web.api_ResultExtensions.html", "methodName": "ToActionResult(wrench.auto.repair.core.Errors.Result,System.Func\u00601\u003CSystem.String\u003E)", "methodShortName": "ToActionResult(...)", "fileIndex": 0, "line": 40,
     "metrics": [
-      { "value": 47, "exceeded": true },
+      { "value": 40, "exceeded": true },
       { "value": 20, "exceeded": true },
-    ]},
-  {
-    "assembly": "wrench.auto.repair.ordem.servico.infra", "class": "wrench.auto.repair.ordem.servico.infra.Repositories.Repository\u003CT\u003E", "reportPath": "wrench.auto.repair.ordem.servico.infra_Repository_1.html", "methodName": "BuscaPaginadaAsync()", "methodShortName": "BuscaPaginadaAsync()", "fileIndex": 0, "line": 56,
-    "metrics": [
-      { "value": 42, "exceeded": true },
-      { "value": 6, "exceeded": false },
-    ]},
-  {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "NormalizeDocId(System.String)", "methodShortName": "NormalizeDocId(...)", "fileIndex": 0, "line": 369,
-    "metrics": [
-      { "value": 42, "exceeded": true },
-      { "value": 6, "exceeded": false },
-    ]},
-  {
-    "assembly": "wrench.web.api", "class": "Microsoft.AspNetCore.OpenApi.Generated", "reportPath": "wrench.web.api_Generated.html", "methodName": "UnwrapOpenApiParameter(Microsoft.OpenApi.IOpenApiParameter)", "methodShortName": "UnwrapOpenApiParameter(...)", "fileIndex": 0, "line": 533,
-    "metrics": [
-      { "value": 42, "exceeded": true },
-      { "value": 6, "exceeded": false },
     ]},
   {
     "assembly": "wrench.auto.repair.cadastro.application", "class": "System.Text.RegularExpressions.Generated", "reportPath": "wrench.auto.repair.cadastro.application_Generated.html", "methodName": "TryMatchAtCurrentPosition(System.ReadOnlySpan\u00601\u003CSystem.Char\u003E)", "methodShortName": "TryMatchAtCurrentPosition(...)", "fileIndex": 0, "line": 939,

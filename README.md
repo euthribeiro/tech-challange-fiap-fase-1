@@ -79,11 +79,14 @@ No link do Miro abaixo, está toda a documentação relacionada:
 - Jornada AS-IS
 - Jornada TO BE (Ordem de Serviço)
 - Jornada TO BE (Estoque)
+- Linguagem Ubíqua
 - Contextos Delimitados
 - Event Storming
 - Mapa de Contexto
 
 [![Miro Board](https://img.shields.io/badge/Miro-Board-yellow?style=flat&logo=miro)](https://miro.com/app/board/uXjVGuaIszk=/?share_link_id=188169996234)
+
+Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubiqua)
 
 ---
 

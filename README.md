@@ -13,7 +13,7 @@
 
 ## Wrench Auto Repair
 
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="100">
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/logos/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="100">
 
 ## 🚀 Como Executar o Projeto
 

@@ -27,6 +27,13 @@ Ao subir a aplicação, será iniciado um container docker da aplicação e do p
 docker-compose up
 ```
 
+Aguarde a execução até qie exiba *Now listening on: http://[::]:8080* , nesse processo está sendo gerado o build da aplicação, executando o PostgreSQL e as migrations da estrutura do banco de dados.
+
+- Acesse agora a url http://localhost:8080/docs-ui
+- A api está versionada pela URL, então para cada endpoint que for chamar, na UI da documentação na seção "Variables", haverá um parâmetro *version*, ele é obrigatório e deve ser usado o valor *1*
+  
+- A execução da aplicação já crie um usuário Admin: __Usuário:__ admin@wrench.com.br | __Senha:__ ?X7I3n~(694*7kGjy9'Zf%tN
+
 ### Executar todos os testes (unitários e de integraação)
 
 Serão executado primeiramente todos testes unitários e após serão executados os de integração, ao final da execução de cada projeto de teste é exibida uma estatística de quantidade (testes totais, total de sucesso e total de falhas)

@@ -81,6 +81,7 @@ No link do Miro abaixo, está toda a documentação relacionada:
 - Jornada TO BE (Estoque)
 - Contextos Delimitados
 - Event Storming
+- Mapa de Contexto
 
 [![Miro Board](https://img.shields.io/badge/Miro-Board-yellow?style=flat&logo=miro)](https://miro.com/app/board/uXjVGuaIszk=/?share_link_id=188169996234)
 

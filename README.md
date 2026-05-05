@@ -13,7 +13,7 @@
 
 ## Wrench Auto Repair
 
-<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/logos/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="150">
+<img src="https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/LOGO%20-%20Wrench%20Auto%20Repair.svg" width="100">
 
 ## 🚀 Como Executar o Projeto
 
@@ -81,7 +81,20 @@ No link do Miro abaixo, está toda a documentação relacionada:
 
 # ADR 001 - Escolha do Banco de Dados
 
-[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/adrs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
+[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
+
+---
+
+# Relatórios SonarQube
+- [Relatório — Inicial (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-inicial.pdf)
+- [Relatório — Confiabildiade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade-exemplo.pdf)
+- [Relatório — Confiabildiade Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade.pdf)
+- [Relatório — Manutenabilidade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-manutenabilidade-exemplo.pdf)
+- [Relatório — Manutenabilidade Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-manutenabilidade.pdf)
+- [Relatório — Segurança Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-seguranca-exempo.pdf)
+- [Relatório — Segurança Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-seguranca.pdf)
+- [Relatório — Issues (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues.pdf)
+- [Relatório — Projetos (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-projetos.pdf)
 
 ---
 

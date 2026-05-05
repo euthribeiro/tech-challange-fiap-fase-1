@@ -170,7 +170,7 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 
 ## ADR 001 - Escolha do Banco de Dados
 
-[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
+[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/adrs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
 
 ---
 

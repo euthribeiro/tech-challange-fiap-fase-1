@@ -317,20 +317,13 @@ Recusa orçamento
 
 ---
 
-## 6. Passo-a-passo de uso (Fluxo Completo)
-
-Justo — o seu texto estava mais **narrativo e orientado ao fluxo de negócio**, enquanto o meu ficou mais “técnico por endpoint”.
-Vou corrigir isso mantendo **o seu estilo**, mas adicionando precisão, estados, decisões e dependências reais da API.
-
----
-
-# 4. Passo-a-passo (Fluxo Completo e Detalhado)
+## 6. Passo-a-passo
 
 A utilização da API segue um fluxo **sequencial e dependente de estado**, onde cada etapa habilita a próxima.
 
 ---
 
-## 🔹 1. Inicialização do sistema
+### 🔹 6.1. Inicialização do sistema
 
 * Chamar o endpoint de autenticação com o usuário administrador (e-mail e senha fornecidos no GitHub).
 
@@ -338,7 +331,7 @@ Esse usuário já vem previamente configurado via variável de ambiente do Docke
 
 ---
 
-## 🔹 2. Preparação de usuários
+### 🔹 6.2. Preparação de usuários
 
 * Listar todos os perfis disponíveis para criação de usuário:
 
@@ -364,7 +357,7 @@ Esse usuário já vem previamente configurado via variável de ambiente do Docke
 
 ---
 
-## 🔹 3. Primeiro acesso (se necessário)
+### 🔹 6.3. Primeiro acesso (se necessário)
 
 * Caso o usuário tenha sido criado sem senha:
 
@@ -376,7 +369,7 @@ Após essa etapa, o usuário estará apto a autenticar normalmente.
 
 ---
 
-## 🔹 4. Autenticação operacional
+### 🔹 6.4. Autenticação operacional
 
 * Autenticar com o novo usuário criado **ou continuar com o administrador**.
 
@@ -384,7 +377,7 @@ A partir daqui, todas as operações exigem envio do **Bearer Token**.
 
 ---
 
-## 🔹 5. Preparação do ambiente (estoque)
+### 🔹 6.5. Preparação do ambiente (estoque)
 
 Antes de iniciar ordens de serviço, é necessário garantir que existam peças cadastradas:
 
@@ -398,7 +391,7 @@ Essas peças serão utilizadas posteriormente no diagnóstico e execução da or
 
 ---
 
-## 🔹 6. Cadastro do cliente
+### 🔹 6.6. Cadastro do cliente
 
 * Cadastrar um novo cliente:
 
@@ -413,7 +406,7 @@ Essas peças serão utilizadas posteriormente no diagnóstico e execução da or
 
 ---
 
-## 🔹 7. Cadastro do veículo
+### 🔹 6.7. Cadastro do veículo
 
 * Cadastrar veículo vinculado ao cliente:
 
@@ -430,7 +423,7 @@ Informando:
 
 ---
 
-## 🔹 8. Criação da Ordem de Serviço
+### 🔹 6.8. Criação da Ordem de Serviço
 
 * Criar uma nova ordem de serviço:
 
@@ -445,7 +438,7 @@ Informando:
 
 ---
 
-## 🔹 9. Solicitação de diagnóstico
+### 🔹 6.9. Solicitação de diagnóstico
 
 * Solicitar diagnóstico para a ordem:
 
@@ -458,7 +451,7 @@ Informando:
 
 ---
 
-## 🔹 10. Registro do diagnóstico
+### 🔹 6.10. Registro do diagnóstico
 
 * Registrar o diagnóstico realizado pelo mecânico:
 
@@ -477,7 +470,7 @@ Informando:
 
 ---
 
-## 🔹 11. Fluxo do cliente
+### 🔹 6.11. Fluxo do cliente
 
 Após o diagnóstico:
 
@@ -490,11 +483,11 @@ Caso seja o primeiro acesso:
 
 ---
 
-## 🔹 12. Ação do cliente (decisão)
+### 🔹 6.12. Ação do cliente (decisão)
 
 Após autenticação, o cliente poderá:
 
-### ✔ Aprovar o orçamento
+#### ✔ Aprovar o orçamento
 
 ```
 PUT /api/v1/orcamento/{id}/aprovar
@@ -505,7 +498,7 @@ PUT /api/v1/orcamento/{id}/aprovar
 
 ---
 
-### ❌ Recusar o orçamento
+#### ❌ Recusar o orçamento
 
 ```
 PUT /api/v1/orcamento/{id}/recusar
@@ -516,9 +509,9 @@ PUT /api/v1/orcamento/{id}/recusar
 
 ---
 
-## 🔹 13. Fluxo após decisão
+### 🔹 6.13. Fluxo após decisão
 
-### ❌ Se recusado
+#### ❌ Se recusado
 
 * Registrar entrega do veículo:
 
@@ -531,13 +524,13 @@ PUT /api/v1/orcamento/{id}/recusar
 
 ---
 
-### ✔ Se aprovado
+#### ✔ Se aprovado
 
 A ordem segue para execução do serviço.
 
 ---
 
-## 🔹 14. Execução do serviço
+### 🔹 6.14. Execução do serviço
 
 Durante a execução:
 
@@ -554,7 +547,7 @@ Durante a execução:
 
 ---
 
-## 🔹 15. Finalização da ordem
+### 🔹 6.15. Finalização da ordem
 
 Após conclusão do serviço:
 
@@ -569,7 +562,7 @@ O sistema pode simular notificação ao cliente.
 
 ---
 
-## 🔹 16. Entrega do veículo
+### 🔹 6.16. Entrega do veículo
 
 Após retirada:
 
@@ -582,7 +575,7 @@ PUT /api/v1/ordem-servico/{id}/entregar
 
 ---
 
-## 🔁 Resumo do fluxo
+#### 🔁 Resumo do fluxo
 
 ```
 Criação da OS

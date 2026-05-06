@@ -202,4 +202,4 @@ abaixo com os detalher dos testes.
 
 ## 📑 Roteiro da API
 
-- [Roteiro de Ajuda](./docs/como-utilizar.md)
+- [Roteiro de apoio](./docs/como-utilizar.md)

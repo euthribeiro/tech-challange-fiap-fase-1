@@ -146,7 +146,7 @@ Aguarde a execução até que exiba *Now listening on: http://[::]:8080* , nesse
 
 ### Executar todos os testes (unitários e de integração)
 
-Serão executado primeiramente todos testes unitários e após serão executados os de integração, ao final da execução de cada projeto de teste é exibida uma estatística de quantidade (testes totais, total de sucesso e total de falhas)
+Serão executado primeiramente todos testes unitários e após serão executados os de integração, ao final da execução de cada projeto de teste é exibida uma estatística de quantidade (testes totais, total de sucesso e total de falhas). Além disso, é gerado um arquivo dentro de cada projeto de teste com informações sobre a cobertura dos testes dentro da pasta TestResults.
 
 ```powershell
 

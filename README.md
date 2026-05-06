@@ -200,6 +200,6 @@ abaixo com os detalher dos testes.
 
 ---
 
-## Roteiro da API
+## 📑 Roteiro da API
 
 - [Roteiro de Ajuda](./docs/como-utilizar.md)

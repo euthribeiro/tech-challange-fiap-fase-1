@@ -13,7 +13,7 @@
 
 ---
 
-## Vídeo de Apresentação (assista!)
+## Vídeo de demonstração (assista!)
 
 [![Demo](./docs/videos/Thumbnail.png)](https://www.youtube.com/watch?v=gTRRVQVVjiE)
 

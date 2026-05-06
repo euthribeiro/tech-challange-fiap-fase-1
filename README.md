@@ -176,7 +176,7 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 
 ## 📝 ADR 001 - Escolha do Banco de Dados
 
-[ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/adrs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
+- [ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/adrs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
 
 ---
 
@@ -185,7 +185,7 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 Para geração dos testes foi usado o XUnit, tanto para testes unitário e de integração, usando um plugin para gerar o arquivo
 abaixo com os detalher dos testes.
 
-[Cobertura](https://euthribeiro.github.io/tech-challange-fiap-fase-1/wrench.auto.repair/coverage-report/index.html)
+- [Cobertura](https://euthribeiro.github.io/tech-challange-fiap-fase-1/wrench.auto.repair/coverage-report/index.html)
 
 ---
 
@@ -197,3 +197,9 @@ abaixo com os detalher dos testes.
 ## 📋 Relatório OWASP Dependency Check
 
 - [Relatório (05/05/2026)](https://euthribeiro.github.io/tech-challange-fiap-fase-1/docs/owasp/dependency-check-report.html)
+
+---
+
+## Roteiro da API
+
+- [Roteiro de Ajuda](./docs/como-utilizar.md)

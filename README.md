@@ -190,15 +190,7 @@ abaixo com os detalher dos testes.
 ---
 
 ## 📋 Relatórios SonarQube
-- [Relatório — Inicial (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-inicial.pdf)
-- [Relatório — Confiabildiade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade-exemplo.pdf)
-- [Relatório — Confiabildiade Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade.pdf)
-- [Relatório — Manutenabilidade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-manutenabilidade-exemplo.pdf)
-- [Relatório — Manutenabilidade Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-manutenabilidade.pdf)
-- [Relatório — Segurança Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-seguranca-exempo.pdf)
-- [Relatório — Segurança Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-seguranca.pdf)
-- [Relatório — Issues (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues.pdf)
-- [Relatório — Projetos (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-projetos.pdf)
+- [Relatório (04/05/2026)](./docs/sonar/relatorio-sonar-qube-wrench-auto-repair-api.pdf)
 
 ---
 

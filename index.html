@@ -1,17 +1,185 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=./wrench.auto.repair/coverage-report/index.html" />
-    <title>Redirecionando…</title>
-    <script>
-      window.location.replace("./wrench.auto.repair/coverage-report/index.html");
-    </script>
-  </head>
-  <body>
-    <p>
-      Se não redirecionar automaticamente,
-      <a href="./wrench.auto.repair/coverage-report/index.html">clique aqui</a>.
-    </p>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Wrench Auto Repair - Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --red: #b11212;
+      --red-soft: #e11d1d;
+      --black: #000000;
+      --card: #0a0a0a;
+      --border: #1f1f1f;
+      --text: #e5e5e5;
+      --muted: #8a8a8a;
+      --metal: #bfbfbf;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--black);
+      color: var(--text);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 12px rgba(177,18,18,0.6));
+    }
+
+    h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: var(--red);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 300px;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--red);
+      box-shadow: 0 0 25px rgba(177,18,18,0.35);
+    }
+
+    .card-header {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #050505;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-header img {
+      width: 70px;
+      opacity: 0.85;
+      filter: grayscale(100%) brightness(1.2);
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--red);
+      color: var(--red-soft);
+      background: rgba(177,18,18,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <!-- Use sua logo aqui -->
+    <img src="./logo.png" alt="Wrench Auto Repair" class="logo">
+
+    <h1>Wrench Auto Repair</h1>
+    <p class="subtitle">Relatórios de Qualidade e Segurança</p>
+
+    <div class="divider"></div>
+  </header>
+
+  <div class="container">
+
+    <!-- COVERAGE -->
+    <a class="card" href="./wrench.auto.repair/coverage-report/index.html">
+      <div class="card-header">
+        <img src="./docs/videos/thumbnail-code-coverage.png">
+      </div>
+      <div class="card-content">
+        <h2>Code Coverage</h2>
+        <p>Cobertura de testes automatizados do sistema</p>
+        <span class="tag">Qualidade</span>
+      </div>
+    </a>
+
+    <!-- OWASP -->
+    <a class="card" href="./docs/owasp/dependency-check-report.html">
+      <div class="card-header">
+        <img src="./docs/videos/thumbail-owasp-dependency-check.png">
+      </div>
+      <div class="card-content">
+        <h2>OWASP Dependency Check</h2>
+        <p>Detecção de vulnerabilidades em dependências</p>
+        <span class="tag">Segurança</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    © 2026 Wrench Auto Repair
+  </footer>
+
+</body>
 </html>

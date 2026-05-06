@@ -204,4 +204,4 @@ abaixo com os detalher dos testes.
 
 ## Relatório OWASP Dependency Check
 
-- [Relatório (05/05/2026)](./docs/owasp/dependency-check-report.html)
+- [Relatório (05/05/2026)](https://euthribeiro.github.io/tech-challange-fiap-fase-1/docs/owasp/dependency-check-report.html)

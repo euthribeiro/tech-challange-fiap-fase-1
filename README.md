@@ -156,7 +156,7 @@ docker-compose -f docker-compose.test.yml up --abort-on-container-exit
 
 ---
 
-## Documentação DDD
+## 📄 Documentação DDD
 
 No link do Miro abaixo, está toda a documentação relacionada:
 - Linguagem Pictográfica
@@ -174,13 +174,13 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 
 ---
 
-## ADR 001 - Escolha do Banco de Dados
+## 📝 ADR 001 - Escolha do Banco de Dados
 
 [ADR-001](https://github.com/euthribeiro/tech-challange-fiap-fase-1/blob/master/docs/adrs/ADR%20001%20-%20Escolha%20do%20Banco%20de%20Dados.md)
 
 ---
 
-## Cobertura de testes
+## 🔎 Cobertura de testes
 
 Para geração dos testes foi usado o XUnit, tanto para testes unitário e de integração, usando um plugin para gerar o arquivo
 abaixo com os detalher dos testes.
@@ -189,7 +189,7 @@ abaixo com os detalher dos testes.
 
 ---
 
-## Relatórios SonarQube
+## 📋 Relatórios SonarQube
 - [Relatório — Inicial (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-inicial.pdf)
 - [Relatório — Confiabildiade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade-exemplo.pdf)
 - [Relatório — Confiabildiade Part-2 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade.pdf)
@@ -202,6 +202,6 @@ abaixo com os detalher dos testes.
 
 ---
 
-## Relatório OWASP Dependency Check
+## 📋 Relatório OWASP Dependency Check
 
 - [Relatório (05/05/2026)](https://euthribeiro.github.io/tech-challange-fiap-fase-1/docs/owasp/dependency-check-report.html)

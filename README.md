@@ -174,6 +174,15 @@ Obs: a linguagem ubíqua também pode ser encontrada [aqui](./docs/linguagem-ubi
 
 ---
 
+## Cobertura de testes
+
+Para geração dos testes foi usado o XUnit, tanto para testes unitário e de integração, usando um plugin para gerar o arquivo
+abaixo com os detalher dos testes.
+
+[Cobertura](https://euthribeiro.github.io/tech-challange-fiap-fase-1/wrench.auto.repair/coverage-report/index.html)
+
+---
+
 ## Relatórios SonarQube
 - [Relatório — Inicial (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-inicial.pdf)
 - [Relatório — Confiabildiade Part-1 (04/05/2026)](./docs/sonar/wrench-auto-repair-sonar-qube-tela-issues-confiabilidade-exemplo.pdf)

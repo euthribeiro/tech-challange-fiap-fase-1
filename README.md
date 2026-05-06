@@ -144,7 +144,7 @@ Aguarde a execução até que exiba *Now listening on: http://[::]:8080* , nesse
   
 - A execução da aplicação já crie um usuário Admin: __Usuário:__ admin@wrench.com.br | __Senha:__ ?X7I3n~(694*7kGjy9'Zf%tN
 
-### Executar todos os testes (unitários e de integraação)
+### Executar todos os testes (unitários e de integração)
 
 Serão executado primeiramente todos testes unitários e após serão executados os de integração, ao final da execução de cada projeto de teste é exibida uma estatística de quantidade (testes totais, total de sucesso e total de falhas)
 
